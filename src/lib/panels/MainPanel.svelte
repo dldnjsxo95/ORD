@@ -199,7 +199,7 @@
             <CategoryPanel id={p.id} title={p.title} count={(p.entries ?? []).length}>
               {#each p.entries ?? [] as e (e.id)}
                 {@const n = e.id ? itemCount(e.id) : 0}
-                <div class="kv">
+                <div class="kv item">
                   <span class="k">{e.label}{#if e.note} <span class="note">({e.note})</span>{/if}</span>
                   <span class="cnt" class:zero={n === 0}>{n}</span>
                 </div>
@@ -244,6 +244,10 @@
   .kv { display: flex; align-items: center; justify-content: space-between; gap: 4px; height: 20px; padding: 0 4px; border-bottom: 1px solid var(--c-border-row); }
   .kv .k { color: var(--c-text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .kv .note { color: var(--c-text-3); font-size: 10px; }
+  /* 아이템 행: 유닛 행과 같은 글자 크기 (이름 9px, 요약 8px) */
+  .kv.item { font-size: 9px; color: var(--c-row-text); }
+  .kv.item .k { color: var(--c-row-text); }
+  .kv.item .note { font-size: 8px; color: var(--c-row-text-2); }
   .kv .v { color: var(--c-text); font-variant-numeric: tabular-nums; }
   .kv .v.neg { color: var(--c-danger-text); }
   /* 연결 상태 (툴바, 전체 초기화 왼쪽) */
