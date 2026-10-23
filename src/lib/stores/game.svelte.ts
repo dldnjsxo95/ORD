@@ -65,6 +65,17 @@ export function unitLabel(id: string): string {
   return u.grade ? `${u.name} (${u.grade})` : u.name;
 }
 
+/**
+ * 조합어: 초월·불멸·영원·왜곡·히든 유닛을 만들 때 채팅에 치는 말. 맵의 검색 별칭(Bi9) 첫 항목이 띄어쓰기 없는 칭호라
+ * 이것을 쓴다 (예: 타시기 초월 "해군의홍일점", 히든 비의 시류 "시류조합"). 스킨·변형은 기본 유닛의 것을 쓴다. 없으면 null.
+ */
+export function craftWord(id: string): string | null {
+  ensureIndex();
+  const own = unitIndex.get(id)?.aliases?.[0];
+  if (own) return own;
+  return unitIndex.get(base(id))?.aliases?.[0] ?? null;
+}
+
 export function unitGrade(id: string): string | null {
   ensureIndex();
   return unitIndex.get(id)?.grade ?? null;

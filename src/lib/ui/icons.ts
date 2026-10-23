@@ -8,6 +8,7 @@ export const ICONS = {
   play: 'M7 5l12 7-12 7z',
   stop: 'M6 6h12v12H6z',
   trash: 'M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3',
+  copy: 'M9 9h11v11H9zM5 15H4V4h11v1',
   lock: 'M6 11h12v9H6zM9 11V7a3 3 0 0 1 6 0v4',
   unlock: 'M6 11h12v9H6zM9 11V7a3 3 0 0 1 5.5-1.7',
   sun: 'M12 4v2M12 18v2M4 12h2M18 12h2M6.3 6.3l1.4 1.4M16.3 16.3l1.4 1.4M6.3 17.7l1.4-1.4M16.3 7.7l1.4-1.4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z',

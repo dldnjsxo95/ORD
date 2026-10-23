@@ -97,7 +97,7 @@ export interface HoverContent {
 
 export function buildHover(
   unit: Unit,
-  entry: { label?: string; note?: string; tier?: string },
+  entry: { label?: string; note?: string; tier?: string; word?: string | null },
   recipe: Recipe | undefined,
   unitName: (id: string) => string,
   combo?: ComboStatus,
@@ -118,6 +118,7 @@ export function buildHover(
       const t = (COND_TEXT[c.type] ?? ((x: Condition) => `${x.type} ${x.value}`))(c);
       if (t) push(t);
     }
+    if (entry.word) push(`조합어 : ${entry.word}`);
     if (combo?.craftable) push('▶ 지금 조합 가능');
   } else if (recipe?.kind === 'random_only') push('랜덤전용 (조합 불가)');
   else if (recipe?.kind === 'special') push('특수 획득 (조합 불가)');

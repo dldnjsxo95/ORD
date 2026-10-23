@@ -11,7 +11,7 @@
   import { BADGE_ICON as BADGE } from '$lib/badges';
   import { buildHover } from '$lib/tooltip';
   import { showHover, moveHover, hideHover } from '$lib/stores/hover.svelte';
-  import { game, recipeOf, unitName, unitGrade, gradeRank, base } from '$lib/stores/game.svelte';
+  import { game, recipeOf, unitName, unitGrade, gradeRank, base, craftWord } from '$lib/stores/game.svelte';
   import { plan } from '$lib/stores/plan.svelte';
   import { gauge, shortage, craftRecipe, baseOf } from '$lib/combo-tree';
 
@@ -84,7 +84,7 @@
   function enter(e: MouseEvent) {
     // 스킨·변형 유닛은 기본 유닛의 조합식을 보여 준다
     const recipe = recipeOf(unit.id) ?? recipeOf(base(unit.id));
-    const content = buildHover(unit, { label, note, tier }, recipe, unitName, combo);
+    const content = buildHover(unit, { label, note, tier, word: craftWord(unit.id) }, recipe, unitName, combo);
     content.used = usedCards();
     showHover(content, e.clientX, e.clientY);
   }

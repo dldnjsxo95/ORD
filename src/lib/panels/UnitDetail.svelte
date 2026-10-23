@@ -7,7 +7,8 @@
 <script lang="ts">
   import { hoverCard, infoCard } from '$lib/actions/hover';
   import { detail, pushDetail, backDetail, forwardDetail, canForward, closeDetail } from '$lib/stores/detail.svelte';
-  import { game, unit as unitOf, unitGrade } from '$lib/stores/game.svelte';
+  import { game, unit as unitOf, unitGrade, craftWord, pushLog } from '$lib/stores/game.svelte';
+  import { copyText } from '$lib/clipboard';
   import { effectiveCount, effectiveCounts } from '$lib/stores/plan.svelte';
   import { ENTRY_BY_ID } from '$lib/layout';
   import { BADGE_ICON } from '$lib/badges';
@@ -51,6 +52,16 @@
 
   const materialsText = (ms: Need[]) => ms.map((m) => `${name(m.id)}${m.count > 1 ? ` × ${m.count}` : ''}`).join(' / ');
 
+  /** 조합어(채팅에 치는 말) 복사. 결과는 하단 상태 메시지에 남긴다 */
+  const word = $derived(id ? craftWord(id) : null);
+  let copied = $state(false);
+  async function copyWord() {
+    if (!word) return;
+    copied = await copyText(word);
+    pushLog(copied ? `복사: ${word}` : `복사 실패: ${word}`);
+    setTimeout(() => (copied = false), 1200);
+  }
+
   // 다른 유닛으로 이동하면 양쪽 영역 스크롤을 맨 위로
   let leftEl: HTMLElement | undefined = $state();
   let rightEl: HTMLElement | undefined = $state();
@@ -87,6 +98,12 @@
               {#if entry?.note}<span class="note">({entry.note})</span>{/if}
               {#if entry?.panel ?? unit.grade}<span class="gr">[{entry?.panel ?? unit.grade}]</span>{/if}
               <span class="cnt" use:hoverCard={() => infoCard('현재 보유', ['게임에서 읽은 수량 (가정 배정 전)'])}>보유 {effectiveCount(id)}</span>
+              {#if word}
+                <span class="word" use:hoverCard={() => infoCard('조합어', ['조합할 때 채팅에 치는 말', '버튼을 누르면 클립보드에 복사'])}>
+                  조합어 <b class="mono">{word}</b>
+                  <button type="button" class="cp" aria-label="조합어 복사" onclick={copyWord}><Icon name={copied ? 'check' : 'copy'} size={12} /></button>
+                </span>
+              {/if}
             </div>
             {#if DESCRIPTIONS[id]}
               <div class="card">{DESCRIPTIONS[id]}</div>
@@ -187,6 +204,10 @@
   .who .note { color: var(--c-text-3); }
   .who .gr { color: var(--c-accent-text); font-weight: 600; }
   .who .cnt { color: var(--c-text-2); padding: 0 6px; border: 1px solid var(--c-border); border-radius: var(--r-2); }
+  .who .word { display: inline-flex; align-items: center; gap: 4px; color: var(--c-text-2); padding: 0 4px 0 6px; border: 1px solid var(--c-accent); border-radius: var(--r-2); }
+  .who .word b { color: var(--c-accent-text); font-weight: 600; user-select: text; }
+  .who .cp { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; padding: 0; border: 0; border-radius: 2px; background: none; color: var(--c-text-2); cursor: pointer; }
+  .who .cp:hover { background: var(--c-bg-hover); color: var(--c-text); }
   .card { flex: none; max-width: 40%; white-space: pre-line; line-height: 1.5; padding: var(--sp-2) var(--sp-4); color: var(--c-text-2); background: var(--c-bg-app); border: 1px solid var(--c-border-strong); border-radius: var(--r-3); }
 
   h3 { margin: var(--sp-4) 0 var(--sp-2); font-size: 11px; font-weight: 600; color: var(--c-accent-text); text-transform: none; }

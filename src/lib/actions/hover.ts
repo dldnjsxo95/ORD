@@ -3,7 +3,7 @@
 // 브라우저 기본 title 툴팁 대신 쓴다 (title 은 생김새가 다르고 늦게 뜬다).
 import { buildHover, type HoverContent, type HoverLine } from '$lib/tooltip';
 import { showHover, moveHover, hideHover } from '$lib/stores/hover.svelte';
-import { game, recipeOf, unitName, base } from '$lib/stores/game.svelte';
+import { game, recipeOf, unitName, base, craftWord } from '$lib/stores/game.svelte';
 import { ENTRY_BY_ID } from '$lib/layout';
 
 export type HoverSource = () => HoverContent | null | undefined;
@@ -48,7 +48,7 @@ export function unitCard(id: string, extra: Array<string | HoverLine> = []): Hov
   if (!u) return infoCard(entry?.label ?? unitName(id), extra);
   const recipe = recipeOf(id) ?? recipeOf(base(id));
   const combo = game.payload?.combos.find((c) => c.result === id);
-  const content = buildHover(u, { label: entry?.label, note: entry?.note, tier: entry?.tier }, recipe, unitName, combo);
+  const content = buildHover(u, { label: entry?.label, note: entry?.note, tier: entry?.tier, word: craftWord(id) }, recipe, unitName, combo);
   const ex = toLines(extra);
   if (ex.length) content.extra = ex;
   return content;
