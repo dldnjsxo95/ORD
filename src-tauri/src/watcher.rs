@@ -8,7 +8,10 @@ use std::{
     collections::{BTreeMap, hash_map::DefaultHasher},
     hash::{Hash, Hasher},
     path::{Path, PathBuf},
-    sync::{Arc, Mutex},
+    sync::{
+        Arc, Mutex,
+        atomic::{AtomicU64, Ordering},
+    },
     time::Duration,
 };
 
@@ -43,11 +46,14 @@ pub enum StatusPayload {
 pub struct AppState {
     pub db: Arc<Database>,
     stop: Mutex<Option<watch::Sender<bool>>>,
+    /// 감시 루프 세대. 새 감시가 이전 감시를 교체하면 올라간다. 교체된 루프는 종료 시 Stopped 를 보내지 않아
+    /// (새 루프의 Watching 뒤에 Stopped 가 도착하는 경쟁을 막는다).
+    generation: Arc<AtomicU64>,
 }
 
 impl AppState {
     pub fn new(db: Database) -> Self {
-        Self { db: Arc::new(db), stop: Mutex::new(None) }
+        Self { db: Arc::new(db), stop: Mutex::new(None), generation: Arc::new(AtomicU64::new(0)) }
     }
 }
 
@@ -82,7 +88,14 @@ async fn refresh(app: &AppHandle, db: &Database, file: &Path, last_hash: &mut Op
     let _ = app.emit(EV_STATE, StatePayload { file: file.to_string_lossy().into_owned(), state, combos });
 }
 
-async fn run(app: AppHandle, db: Arc<Database>, dir: PathBuf, mut stop: watch::Receiver<bool>) {
+async fn run(
+    app: AppHandle,
+    db: Arc<Database>,
+    dir: PathBuf,
+    mut stop: watch::Receiver<bool>,
+    my_gen: u64,
+    generation: Arc<AtomicU64>,
+) {
     let file = dir.join(STATE_FILE);
 
     // notify 콜백은 별도 스레드에서 호출되므로 채널로 tokio 쪽에 넘긴다.
@@ -122,7 +135,10 @@ async fn run(app: AppHandle, db: Arc<Database>, dir: PathBuf, mut stop: watch::R
         }
     }
     drop(watcher);
-    emit_status(&app, StatusPayload::Stopped);
+    // 사용자가 명시적으로 중지한 경우에만 알린다. 다른 감시로 교체된 경우는 조용히 끝난다.
+    if generation.load(Ordering::SeqCst) == my_gen {
+        emit_status(&app, StatusPayload::Stopped);
+    }
 }
 
 /// 기본 감시 폴더: %LOCALAPPDATA%\ord-helper
@@ -140,10 +156,11 @@ pub async fn start_watch(app: AppHandle, state: State<'_, AppState>, dir: Option
     std::fs::create_dir_all(&dir).map_err(|e| format!("{} 생성 실패: {e}", dir.display()))?;
 
     let (tx, rx) = watch::channel(false);
+    let my_gen = state.generation.fetch_add(1, Ordering::SeqCst) + 1;
     if let Some(old) = state.stop.lock().map_err(|e| e.to_string())?.replace(tx) {
         let _ = old.send(true);
     }
-    tauri::async_runtime::spawn(run(app, Arc::clone(&state.db), dir.clone(), rx));
+    tauri::async_runtime::spawn(run(app, Arc::clone(&state.db), dir.clone(), rx, my_gen, Arc::clone(&state.generation)));
     Ok(dir.to_string_lossy().into_owned())
 }
 
