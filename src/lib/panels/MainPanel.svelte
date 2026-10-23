@@ -110,7 +110,7 @@
         {#each col as p (p.id)}
           {#if p.kind === 'units'}
             <CategoryPanel id={p.id} title={p.title} count={unitIds(p.entries).length} allOn={allOn(p.entries)} onall={(on) => setAll(unitIds(p.entries), on)}>
-              {#each rows(p.entries) as r, i (r.entry.id ?? `${p.id}-${i}`)}
+              {#each rows(p.entries) as r, i (`${p.id}-${i}-${r.entry.id ?? 't'}`)}
                 {#if r.unit}
                   <UnitRow unit={r.unit} label={r.entry.label} note={r.entry.note} badges={r.entry.badges} tier={r.entry.tier} count={countOf(r.unit)} combo={comboByResult.get(r.unit.id)} dimmed={!matches(r.unit)} onadjust={(d) => adjust(r.unit!.id, d)} />
                 {:else}
