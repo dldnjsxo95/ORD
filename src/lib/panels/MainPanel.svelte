@@ -1,9 +1,8 @@
 <!-- 메인 뷰 (사용자 사양 2026-10-23): 상단 툴바 → 능력치 필터 → 8열 패널 (data/layout.json).
      수량은 실시간 보유량 + 수동 조정(+/−). 수동 조정이 있으면 백엔드 simulate 로 조합을 다시 계산한다. -->
 <script lang="ts">
-  import { getCurrentWindow } from '@tauri-apps/api/window';
-  import { onMount } from 'svelte';
   import { game, unit as unitOf } from '$lib/stores/game.svelte';
+  import { fullscreen, toggleFullscreen } from '$lib/stores/fullscreen.svelte';
   import { plan, effectiveCount, rawCount, adjust, setAll, resetAll, clearManual, hasManual, adjustItem, setSort, toggleFilter, clearFilters, setFilterOpen, combos, onLiveUpdate, type SortMode } from '$lib/stores/plan.svelte';
   import { COLUMNS, FILTERS, type Entry } from '$lib/layout';
   import type { Unit } from '$lib/api';
@@ -51,12 +50,9 @@
 
   const readyCount = $derived(combos().filter((c) => c.craftable).length);
 
-  // 전체화면
-  const win = getCurrentWindow();
-  let fullscreen = $state(false);
-  onMount(() => { win.isFullscreen().then((f) => (fullscreen = f)).catch(() => {}); });
-  async function toggleFullscreen() {
-    try { await win.setFullscreen(!fullscreen); fullscreen = !fullscreen; } catch (e) { game.error = String(e); }
+  // 전체화면 (ESC 로 해제, 상단 바 숨김: +page.svelte)
+  function onFullscreen() {
+    toggleFullscreen().catch((e) => (game.error = String(e)));
   }
 
   let noticeOpen = $state(false);
@@ -73,7 +69,7 @@
     <button type="button" class="link" onclick={() => (noticeOpen = !noticeOpen)}><Icon name="info" size={12} /> 주의사항</button>
     <Button size="sm" onclick={() => setSort('count')}>추천 조합</Button>
     <button type="button" class="link" onclick={resetAll}>전체 초기화</button>
-    <Button size="sm" variant="ghost" icon={fullscreen ? 'fullscreenExit' : 'fullscreen'} onclick={toggleFullscreen}>{fullscreen ? '전체화면 해제' : '전체화면'}</Button>
+    <Button size="sm" variant="ghost" icon={fullscreen.active ? 'fullscreenExit' : 'fullscreen'} onclick={onFullscreen} title={fullscreen.active ? 'ESC 로도 해제됩니다' : undefined}>{fullscreen.active ? '전체화면 해제 (ESC)' : '전체화면'}</Button>
     <select class="sort" value={plan.sort} onchange={(e) => setSort((e.currentTarget as HTMLSelectElement).value as SortMode)}>
       <option value="default">기본순</option>
       <option value="name">이름순</option>
