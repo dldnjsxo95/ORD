@@ -65,6 +65,8 @@ export interface NoteStat {
   value: number | null;
 }
 
+/** 이 값 이상이면 퍼센트가 아닌 고정 수치로 본다 (예: 무장도끼 "공증 5000") */
+const FLAT_MIN = 1000;
 const NUM = /-?\d+(?:\.\d+)?/;
 /** 숫자 뒤에 이 글자가 붙으면 능력치 값이 아니다: "1인공증"(1인 대상), "+20k"·"1500만"(금액·체력), "41라이전"(라운드), "1시가능", "특포1필요" */
 const NOT_VALUE = /^[인k만라시필]/;
@@ -92,6 +94,8 @@ export function statsOfNote(note: string | undefined): NoteStat[] {
     const labels = labelsOfToken(tok);
     if (labels.length === 0) continue;
     const value = valueOfToken(tok);
+    // 1000 이상은 퍼센트가 아니라 고정 수치(예: 무장도끼 "공증 5000") → 능력치에 넣지 않는다 (사용자 결정 2026-10-23)
+    if (value != null && Math.abs(value) >= FLAT_MIN) continue;
     for (const label of labels) out.push({ label, value });
   }
   return out;
