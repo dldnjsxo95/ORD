@@ -59,7 +59,6 @@
   }
 
   let noticeOpen = $state(false);
-  let customText = $state<Record<string, string>>({});
 </script>
 
 <div class="main">
@@ -114,8 +113,6 @@
               {#each rows(p.entries) as r, i (r.entry.id ?? `${p.id}-${i}`)}
                 {#if r.unit}
                   <UnitRow unit={r.unit} label={r.entry.label} note={r.entry.note} count={countOf(r.unit)} combo={comboByResult.get(r.unit.id)} dimmed={!matches(r.unit)} onadjust={(d) => adjust(r.unit!.id, d)} />
-                {:else if r.entry.custom}
-                  <div class="row-text custom"><span class="t">T</span><input type="text" placeholder="직접 입력" bind:value={customText[`${p.id}-${i}`]} /></div>
                 {:else}
                   <div class="row-text" class:unresolved={r.entry.unresolved || (r.entry.id && !r.unit)} title={r.entry.unresolved ? '데이터에서 찾지 못한 항목' : undefined}>
                     <span class="t">{r.entry.text ?? r.entry.label ?? r.entry.id}</span>{#if r.entry.unresolved}<span class="q">?</span>{/if}
@@ -189,8 +186,6 @@
   .row-text .t { overflow: hidden; text-overflow: ellipsis; }
   .row-text.unresolved { color: var(--c-text-3); }
   .row-text .q { color: var(--c-warn-text); font-weight: 700; }
-  .row-text.custom .t { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border: 1px solid var(--c-border-strong); border-radius: 2px; font-size: 10px; color: var(--c-text-3); }
-  .row-text.custom input { flex: 1; min-width: 0; height: 16px; font-size: 11px; color: var(--c-text); background: var(--c-bg-input); border: 1px solid var(--c-border); border-radius: 2px; padding: 0 4px; }
   .kv { display: flex; align-items: center; justify-content: space-between; gap: 4px; height: 20px; padding: 0 4px; border-bottom: 1px solid var(--c-border-row); }
   .kv .k { color: var(--c-text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .kv .note { color: var(--c-text-3); font-size: 10px; }

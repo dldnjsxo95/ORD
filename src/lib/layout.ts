@@ -23,8 +23,6 @@ export interface Entry {
   text?: string;
   /** 데이터에서 찾지 못한 항목 */
   unresolved?: boolean;
-  /** 직접 입력 행 */
-  custom?: boolean;
 }
 
 export interface PanelDef {
