@@ -1,6 +1,6 @@
 {
  "version": "ORDR_S2_2.323",
- "extractedAt": "2026-10-23T06:32:17.827Z",
+ "extractedAt": "2026-10-23T06:46:48.690Z",
  "source": "ORDR_S2_2.323[C].w3x",
  "grades": [
   "흔함",
@@ -22,6 +22,24 @@
   "오로성"
  ],
  "units": [
+  {
+   "id": "e018",
+   "name": "흔함선택위습",
+   "grade": null,
+   "icon": "ReplaceableTextures\\CommandButtons\\BTNWisp.blp",
+   "level": 1,
+   "attack": {
+    "type": "normal",
+    "base": 0,
+    "dice": 0,
+    "sides": 0,
+    "range": 0,
+    "cooldown": 0
+   },
+   "tags": [],
+   "badges": [],
+   "skills": []
+  },
   {
    "id": "h060",
    "name": "해적선",
@@ -86,6 +104,24 @@
    ]
   },
   {
+   "id": "h06L",
+   "name": "랜덤전용유닛",
+   "grade": null,
+   "icon": "ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn.blp",
+   "level": 3,
+   "attack": {
+    "type": "pierce",
+    "base": 16,
+    "dice": 2,
+    "sides": 4,
+    "range": 700,
+    "cooldown": 1.25
+   },
+   "tags": [],
+   "badges": [],
+   "skills": []
+  },
+  {
    "id": "H08T",
    "name": "몽키.D.루피",
    "grade": null,
@@ -99,6 +135,24 @@
     "sides": 6,
     "range": 600,
     "cooldown": 0.63
+   },
+   "tags": [],
+   "badges": [],
+   "skills": []
+  },
+  {
+   "id": "h0A4",
+   "name": "그린블러드 - 유닛에게 사용시 변신",
+   "grade": null,
+   "icon": "ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn.blp",
+   "level": 3,
+   "attack": {
+    "type": "pierce",
+    "base": 16,
+    "dice": 2,
+    "sides": 4,
+    "range": 700,
+    "cooldown": 1.25
    },
    "tags": [],
    "badges": [],

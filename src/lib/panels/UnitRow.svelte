@@ -1,4 +1,4 @@
-<!-- 유닛 한 행(20px): 초상(16px) · 이름 · 역할 배지 · (스탯 요약) · [+] [−] 수량.
+<!-- 유닛 한 행(20px): 초상(16px) · 이름 · 역할 배지 · (요약) · [+] [−] 수량.
      이름 칸은 조합 진행도만큼 채워지는 게이지, 조합 가능하면 초록. 필터가 켜져 있고 안 맞으면 흐리게. -->
 <script lang="ts">
   import type { Unit, ComboStatus } from '$lib/api';
@@ -8,18 +8,22 @@
 
   interface Props {
     unit: Unit;
+    /** 표시 이름 (없으면 유닛 이름) */
+    label?: string;
+    /** 괄호 요약 (없으면 자동 추출 statText) */
+    note?: string;
     count: number;
     combo?: ComboStatus;
     dimmed?: boolean;
-    uncertain?: boolean;
     onadjust: (delta: number) => void;
   }
-  let { unit, count, combo, dimmed = false, uncertain = false, onadjust }: Props = $props();
+  let { unit, label, note, count, combo, dimmed = false, onadjust }: Props = $props();
 
   const BADGE: Record<string, IconName> = { flag: 'flag', sword: 'sword', heart: 'heart', plus: 'plusCircle' };
   const pct = $derived(combo && combo.need ? Math.round((combo.have / combo.need) * 100) : 0);
+  const shownNote = $derived(note ?? unit.statText ?? '');
   const tip = $derived(
-    [unit.grade ? `${unit.name} (${unit.grade})` : unit.name, unit.title, unit.damageType, unit.tags?.length ? unit.tags.join(', ') : null, combo ? (combo.craftable ? '지금 조합 가능' : `재료 ${combo.have}/${combo.need}`) : null]
+    [unit.grade ? `${unit.name} (${unit.grade})` : unit.name, unit.title, unit.id, unit.tags?.length ? unit.tags.join(', ') : null, combo ? (combo.craftable ? '지금 조합 가능' : `재료 ${combo.have}/${combo.need}`) : null]
       .filter(Boolean)
       .join('\n'),
   );
@@ -29,10 +33,9 @@
   <UnitIcon id={unit.id} name={unit.name} size={16} />
   <span class="cell">
     {#if pct > 0}<span class="fill" style:width={`${pct}%`}></span>{/if}
-    <span class="nm">{unit.name}</span>
-    {#if uncertain}<span class="q" title="물딜/마딜 미분류 (임시로 마딜에 둠)">?</span>{/if}
+    <span class="nm">{label ?? unit.name}</span>
     {#each unit.badges ?? [] as b}{#if BADGE[b]}<span class="badge {b}"><Icon name={BADGE[b]} size={10} /></span>{/if}{/each}
-    {#if unit.statText}<span class="stat">({unit.statText})</span>{/if}
+    {#if shownNote}<span class="stat">({shownNote})</span>{/if}
     {#if pct > 0}<span class="pct">{pct}%</span>{/if}
   </span>
   <span class="ctl">
@@ -52,10 +55,9 @@
   .fill { position: absolute; left: 0; top: 2px; bottom: 2px; background: color-mix(in srgb, var(--c-accent) 22%, transparent); border-radius: 2px; }
   .ready .fill { background: color-mix(in srgb, var(--c-ok) 26%, transparent); }
   .nm { position: relative; white-space: nowrap; flex: none; }
-  .q { position: relative; color: var(--c-warn-text); font-weight: 700; }
   .badge { position: relative; display: inline-flex; flex: none; color: var(--c-text-3); }
   .badge.flag { color: var(--c-accent-text); } .badge.sword { color: var(--c-danger-text); } .badge.heart { color: var(--c-ok-text); } .badge.plus { color: var(--c-warn-text); }
-  /* 스탯 요약만 줄어든다 (이름·배지·퍼센트는 항상 보임) */
+  /* 요약만 줄어든다 (이름·배지·퍼센트는 항상 보임) */
   .stat { position: relative; flex: 1 1 0; min-width: 0; color: var(--c-text-3); font-size: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .pct { position: relative; margin-left: auto; padding-right: 3px; flex: none; font-size: 10px; color: var(--c-accent-text); font-variant-numeric: tabular-nums; }
   .ready .pct { color: var(--c-ok-text); }

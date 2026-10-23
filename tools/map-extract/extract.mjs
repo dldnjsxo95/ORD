@@ -135,6 +135,8 @@ const ids = new Set();
 for (const r of outRecipes) { ids.add(r.result); r.materials.forEach((m) => ids.add(m.unit)); r.upperUnits.forEach((u) => ids.add(u)); }
 for (const [a, b] of Object.entries(baseForm)) { ids.add(a); ids.add(b); }
 for (const id of Object.keys(unitStrings)) if (parseName(id).grade) ids.add(id);
+// 화면 배치(data/layout.json)에서 쓰는 보조 유닛: 흔함선택위습, 랜덤전용유닛(PICK 자리), 그린블러드
+for (const id of ['e018', 'h06L', 'h0A4']) ids.add(id);
 
 const GENERIC_ABILS = new Set(['Avul', 'AInv', 'Aloc', 'Amov', 'Aatk']);
 

@@ -1,18 +1,17 @@
-<!-- 메인 뷰 (사용자 사양 2026-10-23): 상단 툴바 → 능력치 필터 → 8열 매소너리 패널.
+<!-- 메인 뷰 (사용자 사양 2026-10-23): 상단 툴바 → 능력치 필터 → 8열 패널 (data/layout.json).
      수량은 실시간 보유량 + 수동 조정(+/−). 수동 조정이 있으면 백엔드 simulate 로 조합을 다시 계산한다. -->
 <script lang="ts">
   import { getCurrentWindow } from '@tauri-apps/api/window';
   import { onMount } from 'svelte';
-  import { game } from '$lib/stores/game.svelte';
-  import { plan, effectiveCount, adjust, setAll, resetAll, clearManual, hasManual, adjustItem, setSort, toggleFilter, clearFilters, setFilterOpen, combos, onLiveUpdate, type SortMode } from '$lib/stores/plan.svelte';
-  import { COLUMNS, FILTERS, placeUnits, type PanelDef, type Placed } from '$lib/layout';
-  import type { ComboStatus, Unit } from '$lib/api';
+  import { game, unit as unitOf } from '$lib/stores/game.svelte';
+  import { plan, effectiveCount, rawCount, adjust, setAll, resetAll, clearManual, hasManual, adjustItem, setSort, toggleFilter, clearFilters, setFilterOpen, combos, onLiveUpdate, type SortMode } from '$lib/stores/plan.svelte';
+  import { COLUMNS, FILTERS, type Entry } from '$lib/layout';
+  import type { Unit } from '$lib/api';
   import CategoryPanel from './CategoryPanel.svelte';
   import UnitRow from './UnitRow.svelte';
   import Button from '$lib/ui/Button.svelte';
   import Icon from '$lib/ui/Icon.svelte';
 
-  const placed = $derived(placeUnits(game.db?.units ?? []));
   const comboByResult = $derived(new Map(combos().map((c) => [c.result, c])));
   const filterSet = $derived(new Set(plan.filters));
   const matches = (u: Unit) => filterSet.size === 0 || plan.filters.every((f) => u.tags?.includes(f));
@@ -23,12 +22,20 @@
     onLiveUpdate();
   });
 
-  function sorted(list: Placed[]): Placed[] {
-    if (plan.sort === 'name') return [...list].sort((a, b) => a.unit.name.localeCompare(b.unit.name, 'ko'));
-    if (plan.sort === 'count') return [...list].sort((a, b) => effectiveCount(b.unit.id) - effectiveCount(a.unit.id) || a.unit.name.localeCompare(b.unit.name, 'ko'));
+  /** 변형 유닛(baseForm 있음)은 그 코드의 원본 수량, 기본 유닛은 변형 합산 수량 */
+  function countOf(u: Unit): number {
+    return u.baseForm ? rawCount(u.id) : effectiveCount(u.id);
+  }
+
+  interface Row { entry: Entry; unit?: Unit }
+  function rows(entries: Entry[] | undefined): Row[] {
+    const list: Row[] = (entries ?? []).map((entry) => ({ entry, unit: entry.id ? unitOf(entry.id) : undefined }));
+    if (plan.sort === 'name') return [...list].sort((a, b) => (a.entry.label ?? a.unit?.name ?? a.entry.text ?? '').localeCompare(b.entry.label ?? b.unit?.name ?? b.entry.text ?? '', 'ko'));
+    if (plan.sort === 'count') return [...list].sort((a, b) => (b.unit ? countOf(b.unit) : -1) - (a.unit ? countOf(a.unit) : -1));
     return list;
   }
-  const allOn = (list: Placed[]) => list.length > 0 && list.every((p) => effectiveCount(p.unit.id) > 0);
+  const unitIds = (entries: Entry[] | undefined) => (entries ?? []).filter((e) => e.id && unitOf(e.id)).map((e) => e.id!);
+  const allOn = (entries: Entry[] | undefined) => { const ids = unitIds(entries); return ids.length > 0 && ids.every((id) => effectiveCount(id) > 0); };
 
   /** 현재 능력치: 보유 유닛(수량 반영)의 태그 집계 */
   const statRows = $derived.by(() => {
@@ -39,13 +46,6 @@
       for (const t of u.tags ?? []) acc.set(t, (acc.get(t) ?? 0) + n);
     }
     return [...acc.entries()].sort((a, b) => b[1] - a[1]);
-  });
-
-  /** 아이템: 조합식이 요구하는 기록지침 아이템 목록 */
-  const items = $derived.by(() => {
-    const m = new Map<string, string>();
-    for (const r of game.db?.recipes ?? []) for (const i of r.items) m.set(i.id, i.name);
-    return [...m.entries()].sort((a, b) => a[0].localeCompare(b[0]));
   });
 
   const readyCount = $derived(combos().filter((c) => c.craftable).length);
@@ -59,6 +59,7 @@
   }
 
   let noticeOpen = $state(false);
+  let customText = $state<Record<string, string>>({});
 </script>
 
 <div class="main">
@@ -81,8 +82,8 @@
   </div>
   {#if noticeOpen}
     <div class="notice">
-      물딜/마딜/스턴 분류와 능력치 태그는 스킬 설명 문구로 자동 추정한 값입니다. "?" 표시는 물딜/마딜 판정이 없어 임시로 마딜에 둔 유닛이며,
-      data/overrides.json 으로 바로잡을 수 있습니다. 수량은 게임에서 읽은 값에 +/− 조정을 더한 것이고, 조정 중에는 조합이 그 값으로 다시 계산됩니다.
+      괄호 요약은 사양서의 표기이고, 능력치 필터 태그는 스킬 설명 문구에서 자동 추정한 값입니다. 수량은 게임에서 읽은 값에 +/− 조정을 더한 것이며,
+      조정 중에는 조합이 그 값으로 다시 계산됩니다. 변형 유닛(쵸파 폭주, 상디 제르마 등)은 해당 코드의 원본 수량을 따로 보여 줍니다.
     </div>
   {/if}
 
@@ -109,12 +110,18 @@
       <div class="col">
         {#each col as p (p.id)}
           {#if p.kind === 'units'}
-            {@const list = sorted(placed.get(p.id) ?? [])}
-            <CategoryPanel id={p.id} title={p.title} count={list.length} allOn={allOn(list)} onall={(on) => setAll(list.map((x) => x.unit.id), on)}>
-              {#each list as x (x.unit.id)}
-                <UnitRow unit={x.unit} count={effectiveCount(x.unit.id)} combo={comboByResult.get(x.unit.id)} dimmed={!matches(x.unit)} uncertain={x.uncertain} onadjust={(d) => adjust(x.unit.id, d)} />
+            <CategoryPanel id={p.id} title={p.title} count={unitIds(p.entries).length} allOn={allOn(p.entries)} onall={(on) => setAll(unitIds(p.entries), on)}>
+              {#each rows(p.entries) as r, i (r.entry.id ?? `${p.id}-${i}`)}
+                {#if r.unit}
+                  <UnitRow unit={r.unit} label={r.entry.label} note={r.entry.note} count={countOf(r.unit)} combo={comboByResult.get(r.unit.id)} dimmed={!matches(r.unit)} onadjust={(d) => adjust(r.unit!.id, d)} />
+                {:else if r.entry.custom}
+                  <div class="row-text custom"><span class="t">T</span><input type="text" placeholder="직접 입력" bind:value={customText[`${p.id}-${i}`]} /></div>
+                {:else}
+                  <div class="row-text" class:unresolved={r.entry.unresolved || (r.entry.id && !r.unit)} title={r.entry.unresolved ? '데이터에서 찾지 못한 항목' : undefined}>
+                    <span class="t">{r.entry.text ?? r.entry.label ?? r.entry.id}</span>{#if r.entry.unresolved}<span class="q">?</span>{/if}
+                  </div>
+                {/if}
               {/each}
-              {#if list.length === 0}<div class="empty">—</div>{/if}
             </CategoryPanel>
           {:else if p.kind === 'stats'}
             <CategoryPanel id={p.id} title={p.title} count={statRows.length}>
@@ -137,14 +144,14 @@
               </div>
             </CategoryPanel>
           {:else}
-            <CategoryPanel id={p.id} title={p.title} count={items.length}>
-              {#each items as [id, name] (id)}
+            <CategoryPanel id={p.id} title={p.title} count={(p.entries ?? []).length}>
+              {#each p.entries ?? [] as e (e.id)}
                 <div class="kv">
-                  <span class="k">{name}</span>
+                  <span class="k">{e.label}{#if e.note} <span class="note">({e.note})</span>{/if}</span>
                   <span class="ctl">
-                    <button type="button" onclick={() => adjustItem(id, 1)}>+</button>
-                    <button type="button" onclick={() => adjustItem(id, -1)} disabled={!(plan.items[id] ?? 0)}>−</button>
-                    <span class="v mono" class:zero={!(plan.items[id] ?? 0)}>{plan.items[id] ?? 0}</span>
+                    <button type="button" onclick={() => adjustItem(e.id!, 1)}>+</button>
+                    <button type="button" onclick={() => adjustItem(e.id!, -1)} disabled={!(plan.items[e.id!] ?? 0)}>−</button>
+                    <span class="v mono" class:zero={!(plan.items[e.id!] ?? 0)}>{plan.items[e.id!] ?? 0}</span>
                   </span>
                 </div>
               {/each}
@@ -178,11 +185,18 @@
   .columns { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 3px; padding: 3px; flex: 1; min-height: 0; overflow: auto; align-content: start; }
   .col { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
   .empty { padding: 2px 6px; color: var(--c-text-3); }
+  .row-text { display: flex; align-items: center; gap: 4px; height: 20px; padding: 0 4px; color: var(--c-text-2); border-bottom: 1px solid var(--c-border-row); white-space: nowrap; overflow: hidden; }
+  .row-text .t { overflow: hidden; text-overflow: ellipsis; }
+  .row-text.unresolved { color: var(--c-text-3); }
+  .row-text .q { color: var(--c-warn-text); font-weight: 700; }
+  .row-text.custom .t { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border: 1px solid var(--c-border-strong); border-radius: 2px; font-size: 10px; color: var(--c-text-3); }
+  .row-text.custom input { flex: 1; min-width: 0; height: 16px; font-size: 11px; color: var(--c-text); background: var(--c-bg-input); border: 1px solid var(--c-border); border-radius: 2px; padding: 0 4px; }
   .kv { display: flex; align-items: center; justify-content: space-between; gap: 4px; height: 20px; padding: 0 4px; border-bottom: 1px solid var(--c-border-row); }
   .kv .k { color: var(--c-text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .kv .note { color: var(--c-text-3); font-size: 10px; }
   .kv .v { color: var(--c-text); font-variant-numeric: tabular-nums; }
   .kv .v.zero { color: var(--c-text-3); }
-  .ctl { display: inline-flex; align-items: center; gap: 1px; }
+  .ctl { display: inline-flex; align-items: center; gap: 1px; flex: none; }
   .ctl button { width: 16px; height: 16px; padding: 0; border: 1px solid var(--c-border-strong); border-radius: 2px; background: var(--c-bg-input); color: var(--c-text-2); font-size: 11px; line-height: 1; cursor: pointer; }
   .ctl button:hover:not(:disabled) { background: var(--c-bg-raised); color: var(--c-text); }
   .ctl button:disabled { opacity: 0.35; cursor: default; }

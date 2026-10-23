@@ -54,6 +54,11 @@ export function effectiveCount(id: string): number {
   return Math.max(0, liveCount(id) + (plan.manual[id] ?? 0));
 }
 
+/** 변형 유닛용: 정리 전 원본 수량 + 수동 조정 (그 코드만) */
+export function rawCount(id: string): number {
+  return Math.max(0, (game.payload?.state.units[id] ?? 0) + (plan.manual[id] ?? 0));
+}
+
 export function hasManual(): boolean {
   return Object.keys(plan.manual).length > 0;
 }
