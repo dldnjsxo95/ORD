@@ -1,7 +1,7 @@
 <!-- 메인 창, VS Code 셸: 타이틀바; 액티비티 바 + [뷰 위 하단 패널]; 상태 표시줄. -->
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
-  import { ui, setBottomVisible, VIEWS } from '$lib/stores/ui.svelte';
+  import { ui, setBottomVisible } from '$lib/stores/ui.svelte';
   import { initGame, disposeGame } from '$lib/stores/game.svelte';
   import TopBar from '$lib/shell/TopBar.svelte';
   import ActivityBar from '$lib/shell/ActivityBar.svelte';
@@ -30,7 +30,6 @@
     <ActivityBar />
     <div class="center">
       <section class="view">
-        <header class="view-head"><span class="view-title">{VIEWS[ui.view].title}</span></header>
         <div class="view-body">
           {#if ui.view === 'main'}<MainPanel />{:else}<SettingsPanel />{/if}
         </div>
@@ -46,7 +45,5 @@
   .body { display: flex; flex: 1; min-height: 0; }
   .center { display: flex; flex-direction: column; flex: 1; min-width: 0; min-height: 0; }
   .view { flex: 1; min-height: 0; display: flex; flex-direction: column; background: var(--c-bg-panel); }
-  .view-head { display: flex; align-items: center; height: var(--tab-h); padding: 0 var(--sp-5); flex: none; border-bottom: 1px solid var(--c-border); }
-  .view-title { font-size: var(--fs-1); text-transform: uppercase; letter-spacing: 0.04em; color: var(--c-text-2); }
   .view-body { flex: 1; min-height: 0; overflow: auto; }
 </style>
