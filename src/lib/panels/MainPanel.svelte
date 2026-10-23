@@ -51,6 +51,8 @@
   });
 
   const readyCount = $derived(combos().filter((c) => c.craftable).length);
+  /** 게임과 연동 중(실시간 state 수신): 수량은 게임 값이므로 +/− 버튼을 숨긴다 */
+  const live = $derived(game.watching && game.payload != null);
 
   // 전체화면 (ESC 로 해제, 상단 바 숨김: +page.svelte)
   function onFullscreen() {
@@ -111,7 +113,7 @@
             <CategoryPanel id={p.id} title={p.title} count={unitIds(p.entries).length} allOn={allOn(p.entries)} onall={(on) => setAll(unitIds(p.entries), on)}>
               {#each rows(p.entries) as r, i (`${p.id}-${i}-${r.entry.id ?? 't'}`)}
                 {#if r.unit}
-                  <UnitRow unit={r.unit} label={r.entry.label} note={r.entry.note} badges={r.entry.badges} tier={r.entry.tier} count={countOf(r.unit)} combo={comboByResult.get(r.unit.id)} dimmed={!matches(r.unit)} onadjust={(d) => adjust(r.unit!.id, d)} />
+                  <UnitRow unit={r.unit} label={r.entry.label} note={r.entry.note} badges={r.entry.badges} tier={r.entry.tier} count={countOf(r.unit)} combo={comboByResult.get(r.unit.id)} dimmed={!matches(r.unit)} adjustable={!live} onadjust={(d) => adjust(r.unit!.id, d)} />
                 {:else}
                   <div class="row-text" class:unresolved={r.entry.unresolved || (r.entry.id && !r.unit)} title={r.entry.unresolved ? '데이터에서 찾지 못한 항목' : undefined}>
                     <span class="t">{r.entry.text ?? r.entry.label ?? r.entry.id}</span>
