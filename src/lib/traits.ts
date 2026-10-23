@@ -48,10 +48,13 @@ const RULES: Array<[RegExp, string[]]> = [
   [/^단일/, ['단일']],
 ];
 
+/** 적에게 걸리는 효과 (예: 새턴 "적 체젠35만", 나스쥬로 "라인체력1500만", 워큐리 "보스체력1500만"). 내 능력치가 아니므로 라벨 없음 */
+const ENEMY = /^적\b|^적\s|^적체|^라인체력|^보스체력/;
+
 /** 괄호 요약 한 토큰 → 필터 라벨들 (없으면 빈 배열) */
 export function labelsOfToken(tok: string): string[] {
   const t = tok.trim();
-  if (!t) return [];
+  if (!t || ENEMY.test(t)) return [];
   for (const [re, labels] of RULES) if (re.test(t)) return labels;
   return [];
 }
@@ -63,6 +66,20 @@ export interface NoteStat {
 }
 
 const NUM = /-?\d+(?:\.\d+)?/;
+/** 숫자 뒤에 이 글자가 붙으면 능력치 값이 아니다: "1인공증"(1인 대상), "+20k"·"1500만"(금액·체력), "41라이전"(라운드), "1시가능", "특포1필요" */
+const NOT_VALUE = /^[인k만라시필]/;
+
+/**
+ * 토큰에 붙은 능력치 숫자. 값이 아닌 숫자(대상 수·금액·라운드 등)는 null.
+ * "이감70->40*특강시" 처럼 숫자가 여러 개면 첫 번째(기본값)를 쓴다.
+ */
+export function valueOfToken(tok: string): number | null {
+  const m = NUM.exec(tok);
+  if (!m) return null;
+  if (NOT_VALUE.test(tok.slice(m.index + m[0].length))) return null;
+  const v = Number(m[0]);
+  return Number.isFinite(v) ? v : null;
+}
 
 /**
  * 괄호 요약 → 라벨 + 숫자. "현재 능력치" 합산용.
@@ -74,9 +91,8 @@ export function statsOfNote(note: string | undefined): NoteStat[] {
   for (const tok of note.split(/[,/]/)) {
     const labels = labelsOfToken(tok);
     if (labels.length === 0) continue;
-    const m = tok.match(NUM);
-    const value = m ? Number(m[0]) : null;
-    for (const label of labels) out.push({ label, value: Number.isFinite(value as number) ? value : null });
+    const value = valueOfToken(tok);
+    for (const label of labels) out.push({ label, value });
   }
   return out;
 }
