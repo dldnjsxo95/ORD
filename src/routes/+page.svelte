@@ -7,14 +7,9 @@
   let watching = $state(false);
   let payload = $state<StatePayload | null>(null);
   let lastAt = $state('');
-  let log = $state<string[]>([]);
+  let error = $state('');
 
   const unlisteners: Array<() => void> = [];
-
-  function pushLog(message: string) {
-    const time = new Date().toLocaleTimeString('ko-KR', { hour12: false });
-    log = [`${time}  ${message}`, ...log].slice(0, 200);
-  }
 
   function unitName(id: string): string {
     return db?.units.find((u) => u.id === id)?.name ?? id;
@@ -24,8 +19,9 @@
     try {
       dir = await api.startWatch(dir || undefined);
       watching = true;
+      error = '';
     } catch (e) {
-      pushLog(`시작 실패: ${e}`);
+      error = `시작 실패: ${e}`;
     }
   }
 
@@ -41,17 +37,13 @@
       await api.onState((p) => {
         payload = p;
         lastAt = new Date().toLocaleTimeString('ko-KR', { hour12: false });
-        const total = Object.values(p.state.units).reduce((a, b) => a + b, 0);
-        const ready = p.combos.filter((c) => c.craftable).length;
-        pushLog(`갱신  t=${p.state.t.toFixed(1)}s  골드 ${p.state.gold}  유닛 ${total}개  조합 가능 ${ready}건`);
       }),
       await api.onStatus((s) => {
-        if (s.kind === 'watching') pushLog(`감시 시작: ${s.dir}`);
-        else if (s.kind === 'stopped') pushLog('감시 중지');
-        else pushLog(`오류: ${s.message}`);
+        if (s.kind === 'watching') watching = true;
+        else if (s.kind === 'stopped') watching = false;
+        else error = s.message;
       }),
     );
-    pushLog(`조합 DB ${db.version}: 유닛 ${db.units.length}종, 조합식 ${db.recipes.length}개`);
     await start();
   });
 
@@ -83,6 +75,9 @@
         <span>마지막 갱신 {lastAt}</span>
       {:else}
         <span class="muted">state.json 을 기다리는 중</span>
+      {/if}
+      {#if error}
+        <span class="error">{error}</span>
       {/if}
     </div>
   </header>
@@ -130,11 +125,6 @@
           </div>
         </div>
       {/each}
-    </div>
-
-    <div class="panel log">
-      <h2>로그</h2>
-      <pre>{log.join('\n')}</pre>
     </div>
   </section>
 </main>
@@ -199,12 +189,15 @@
   .status span.on {
     color: #4ade80;
   }
+  .status span.error {
+    color: #f87171;
+  }
   .muted {
     color: #6b7075;
   }
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1.4fr 1.2fr;
+    grid-template-columns: 1fr 1.6fr;
     gap: 12px;
     flex: 1;
     min-height: 0;
@@ -260,11 +253,5 @@
     border-radius: 10px;
     margin-left: 4px;
     color: #e6e6e6;
-  }
-  .log pre {
-    margin: 0;
-    font-size: 12px;
-    white-space: pre-wrap;
-    color: #c0c4c8;
   }
 </style>
