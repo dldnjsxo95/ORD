@@ -115,7 +115,7 @@ export function buildHover(
   else if (unit.grade === '흔함') push('뽑기');
   else push('조합식 없음');
 
-  let features = expandNote(entry.note);
-  if (features.length === 0 && unit.tags?.length) features = unit.tags.slice(0, 8);
+  // 특징은 괄호 요약만. 추출 태그(unit.tags)는 보여 주지 않는다.
+  const features = expandNote(entry.note);
   return { title, recipe: lines, features };
 }

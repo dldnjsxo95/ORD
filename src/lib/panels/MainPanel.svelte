@@ -5,6 +5,7 @@
   import { fullscreen, toggleFullscreen } from '$lib/stores/fullscreen.svelte';
   import { plan, effectiveCount, rawCount, adjust, setAll, resetAll, clearManual, hasManual, adjustItem, setSort, toggleFilter, clearFilters, setFilterOpen, combos, onLiveUpdate, type SortMode } from '$lib/stores/plan.svelte';
   import { COLUMNS, FILTERS, type Entry } from '$lib/layout';
+  import { traitsOf } from '$lib/traits';
   import type { Unit } from '$lib/api';
   import CategoryPanel from './CategoryPanel.svelte';
   import UnitRow from './UnitRow.svelte';
@@ -14,7 +15,8 @@
 
   const comboByResult = $derived(new Map(combos().map((c) => [c.result, c])));
   const filterSet = $derived(new Set(plan.filters));
-  const matches = (u: Unit) => filterSet.size === 0 || plan.filters.every((f) => u.tags?.includes(f));
+  // 필터·능력치는 괄호 요약(traits.ts)만 본다. 추출 태그(u.tags)는 쓰지 않는다.
+  const matches = (u: Unit) => filterSet.size === 0 || plan.filters.every((f) => traitsOf(u.id).includes(f));
 
   // 실시간 갱신 시 수동 조정이 있으면 재계산
   $effect(() => {
@@ -37,13 +39,13 @@
   const unitIds = (entries: Entry[] | undefined) => (entries ?? []).filter((e) => e.id && unitOf(e.id)).map((e) => e.id!);
   const allOn = (entries: Entry[] | undefined) => { const ids = unitIds(entries); return ids.length > 0 && ids.every((id) => effectiveCount(id) > 0); };
 
-  /** 현재 능력치: 보유 유닛(수량 반영)의 태그 집계 */
+  /** 현재 능력치: 보유 유닛(수량 반영)의 괄호 요약 라벨 집계 */
   const statRows = $derived.by(() => {
     const acc = new Map<string, number>();
     for (const u of game.db?.units ?? []) {
       const n = effectiveCount(u.id);
       if (!n) continue;
-      for (const t of u.tags ?? []) acc.set(t, (acc.get(t) ?? 0) + n);
+      for (const t of traitsOf(u.id)) acc.set(t, (acc.get(t) ?? 0) + n);
     }
     return [...acc.entries()].sort((a, b) => b[1] - a[1]);
   });
