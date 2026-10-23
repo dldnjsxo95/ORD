@@ -32,7 +32,8 @@ fn write_atomic(path: &Path, text: &str) -> std::io::Result<()> {
 
 fn main() -> std::io::Result<()> {
     let args: Vec<String> = env::args().skip(1).collect();
-    let out = args.first().map(PathBuf::from).unwrap_or_else(default_out);
+    // 빈 문자열은 "기본 경로" 로 취급한다 (간격만 바꾸고 싶을 때 `-- "" 500`)
+    let out = args.first().filter(|s| !s.trim().is_empty()).map(PathBuf::from).unwrap_or_else(default_out);
     let interval: u64 = args.get(1).and_then(|s| s.parse().ok()).unwrap_or(1000);
     if let Some(dir) = out.parent() {
         fs::create_dir_all(dir)?;

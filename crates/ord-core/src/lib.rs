@@ -21,4 +21,12 @@ mod tests {
         let problems = db.validate();
         assert!(problems.is_empty(), "recipes.json 문제: {problems:#?}");
     }
+
+    /// mock-exporter 가 쓴 state.json 을 그대로 파싱할 수 있어야 한다.
+    #[test]
+    fn mock_state_fixture_parses() {
+        let s = GameState::from_json(include_str!("../../../fixtures/state.mock.json")).expect("state.mock.json 파싱");
+        assert_eq!(s.v, 1);
+        assert_eq!(s.units.get("o201"), Some(&2));
+    }
 }
