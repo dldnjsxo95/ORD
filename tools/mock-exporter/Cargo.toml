@@ -1,0 +1,10 @@
+[package]
+name = "mock-exporter"
+version = "0.1.0"
+description = "워크3 없이 state.json 을 흉내내어 쓰는 개발용 도구"
+edition.workspace = true
+authors.workspace = true
+
+[dependencies]
+ord-core = { path = "../../crates/ord-core" }
+serde_json = "1"

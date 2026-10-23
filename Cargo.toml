@@ -1,0 +1,15 @@
+[workspace]
+resolver = "2"
+members = ["src-tauri", "crates/ord-core", "tools/mock-exporter"]
+
+[workspace.package]
+edition = "2024"
+authors = ["pnc"]
+
+# Tauri 번들 크기 최적화: https://tauri.app/concept/size/#cargo-configuration
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true

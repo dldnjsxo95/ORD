@@ -1,0 +1,10 @@
+[package]
+name = "ord-core"
+version = "0.1.0"
+description = "원랜디 조합 계산 엔진 (순수 라이브러리, Tauri 비의존)"
+edition.workspace = true
+authors.workspace = true
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
