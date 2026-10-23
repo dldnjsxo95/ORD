@@ -1,4 +1,6 @@
 // 셸 UI 상태 (테마, 활성 뷰, 하단 패널). localStorage 에 보존한다.
+// 개발 모드: 이 모듈이 바뀌면 페이지 전체를 다시 불러온다
+if (import.meta.hot) import.meta.hot.accept(() => window.location.reload());
 
 export type ViewId = 'main' | 'settings';
 export type Theme = 'dark' | 'light';

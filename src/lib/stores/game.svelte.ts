@@ -23,8 +23,21 @@ export const game = $state<GameStore>({
   log: [],
 });
 
+// 개발 모드: 이 모듈이 바뀌면 부분 갱신 대신 페이지를 다시 불러온다 (모듈 상태와 색인이 섞이는 문제 방지)
+if (import.meta.hot) import.meta.hot.accept(() => window.location.reload());
+
 let unitIndex = new Map<string, Unit>();
 let recipeByResult = new Map<string, Recipe>();
+let indexedDb: Database | null = null;
+
+/** DB 가 바뀌었거나 색인이 비어 있으면 다시 만든다 */
+function ensureIndex() {
+  if (game.db && indexedDb !== game.db) {
+    unitIndex = new Map(game.db.units.map((u) => [u.id, u]));
+    recipeByResult = new Map(game.db.recipes.map((r) => [r.result, r]));
+    indexedDb = game.db;
+  }
+}
 
 function now() {
   return new Date().toLocaleTimeString('ko-KR', { hour12: false });
@@ -35,21 +48,25 @@ export function pushLog(message: string) {
 }
 
 export function unit(id: string): Unit | undefined {
+  ensureIndex();
   return unitIndex.get(id);
 }
 
 export function unitName(id: string): string {
+  ensureIndex();
   return unitIndex.get(id)?.name ?? id;
 }
 
 /** "타시기 (초월)" 꼴. 모르는 코드는 코드 그대로. */
 export function unitLabel(id: string): string {
+  ensureIndex();
   const u = unitIndex.get(id);
   if (!u) return id;
   return u.grade ? `${u.name} (${u.grade})` : u.name;
 }
 
 export function unitGrade(id: string): string | null {
+  ensureIndex();
   return unitIndex.get(id)?.grade ?? null;
 }
 
@@ -59,11 +76,13 @@ export function gradeRank(grade: string | null | undefined): number {
 }
 
 export function recipeOf(resultId: string): Recipe | undefined {
+  ensureIndex();
   return recipeByResult.get(resultId);
 }
 
 /** 스킨·변형 유닛이면 기본 유닛 id (최대 8단계), 아니면 그대로 */
 export function base(id: string): string {
+  ensureIndex();
   let cur = id;
   for (let i = 0; i < 8; i++) {
     const b = unitIndex.get(cur)?.baseForm;
@@ -107,8 +126,7 @@ export async function initGame() {
   started = true;
   try {
     game.db = await api.getDatabase();
-    unitIndex = new Map(game.db.units.map((u) => [u.id, u]));
-    recipeByResult = new Map(game.db.recipes.map((r) => [r.result, r]));
+    ensureIndex();
     game.dir = await resolveDir();
     pushLog(`조합 DB ${game.db.version}: 유닛 ${game.db.units.length}종, 조합식 ${game.db.recipes.length}개`);
     unlisteners.push(

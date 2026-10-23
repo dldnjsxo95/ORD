@@ -1,6 +1,9 @@
 // 계획 상태: 수동 수량 조정(+/−), 정렬, 능력치 필터, 패널 접기. 실시간 보유량 위에 얹는 what-if 계층.
 // 수동 조정이 하나라도 있으면 백엔드 simulate 로 조합을 다시 계산한다.
 
+// 개발 모드: 이 모듈이 바뀌면 페이지 전체를 다시 불러온다
+if (import.meta.hot) import.meta.hot.accept(() => window.location.reload());
+
 import { api, type ComboStatus } from '$lib/api';
 import { game } from './game.svelte';
 
