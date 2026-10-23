@@ -12,7 +12,6 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "tauri": "tauri",
     "app": "tauri dev",
-    "mock": "cargo run -q -p mock-exporter -- \"\" 500",
     "exe": "tauri build --bundles nsis",
     "extract": "node tools/map-extract/extract.mjs \"maps/ORDR_S2_2.323[C].w3x\""
   },

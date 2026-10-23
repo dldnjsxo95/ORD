@@ -1,6 +1,6 @@
 //! state.json 파일 감시 파이프라인.
 //!
-//! 내보내기(scripts/ord-export.lua 또는 tools/mock-exporter)가 파일 전체를 매번 다시 쓰므로
+//! 내보내기(scripts/ord-export.lua)가 파일 전체를 매번 다시 쓰므로
 //! "줄 단위 tail" 이 아니라 "스냅샷 교체" 로 다룬다. notify 이벤트와 1초 폴링을 함께 써서
 //! 이벤트 누락과 쓰기 도중 읽기(파싱 실패 → 다음 틱 재시도)를 모두 복구한다.
 

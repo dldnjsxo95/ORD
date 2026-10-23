@@ -10,15 +10,3 @@ pub mod solver;
 pub use model::{Attack, Condition, Database, GameState, Ingredient, ItemReq, Recipe, RecipeKind, Skill, Unit};
 pub use solver::{ComboStatus, OwnedUnit, base_of, evaluate, normalize_owned};
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// mock-exporter 가 쓴 state.json 을 그대로 파싱할 수 있어야 한다.
-    #[test]
-    fn mock_state_fixture_parses() {
-        let s = GameState::from_json(include_str!("../../../fixtures/state.mock.json")).expect("state.mock.json 파싱");
-        assert_eq!(s.v, 1);
-        assert!(!s.units.is_empty());
-    }
-}
