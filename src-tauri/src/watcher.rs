@@ -75,16 +75,24 @@ async fn refresh(app: &AppHandle, db: &Database, file: &Path, last_hash: &mut Op
         Err(e) if e.kind() == std::io::ErrorKind::NotFound => return,
         Err(e) => return emit_error(app, format!("{} 읽기 실패: {e}", file.display())),
     };
+    let text = String::from_utf8_lossy(&bytes);
+    // 쓰는 도중이거나 불완전한 내용이면 파싱이 실패한다. 다음 이벤트나 폴링 틱에서 재시도.
+    let Ok(state) = GameState::from_json(text.trim()) else { return };
+
+    // 내보내기 스크립트는 0.5초마다 시각(t)만 바뀐 파일을 다시 쓴다. 화면에 의미 있는 값이 같으면
+    // 이벤트를 보내지 않아 프런트가 매 틱 전체를 다시 그리는 일을 막는다.
     let mut hasher = DefaultHasher::new();
-    bytes.hash(&mut hasher);
+    state.map.hash(&mut hasher);
+    state.player.hash(&mut hasher);
+    state.gold.hash(&mut hasher);
+    state.wood.hash(&mut hasher);
+    state.units.hash(&mut hasher);
+    state.items.hash(&mut hasher);
+    state.evolution.hash(&mut hasher);
     let hash = hasher.finish();
     if *last_hash == Some(hash) {
         return;
     }
-
-    let text = String::from_utf8_lossy(&bytes);
-    // 쓰는 도중이거나 불완전한 내용이면 파싱이 실패한다. 다음 이벤트나 폴링 틱에서 재시도.
-    let Ok(state) = GameState::from_json(text.trim()) else { return };
     *last_hash = Some(hash);
 
     let combos = evaluate(db, &state.units, Some(state.gold), state.wood);

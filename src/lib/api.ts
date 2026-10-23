@@ -80,6 +80,12 @@ export interface GameState {
   gold: number;
   wood: number | null;
   units: Record<string, number>;
+  /** 기록지침(아이템) 코드 -> 보유(1) */
+  items?: Record<string, number>;
+  /** 진화체 유닛 typeId (시작 위치의 진화 대상). 없으면 null */
+  evolution?: string | null;
+  /** rawcode -> 게임 내 이름 */
+  names?: Record<string, string>;
 }
 export interface OwnedUnit {
   id: string;

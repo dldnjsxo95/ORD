@@ -166,6 +166,15 @@ pub struct GameState {
     /// rawcode -> 보유 수 (변형·분신 정리 전의 원본)
     #[serde(default)]
     pub units: BTreeMap<String, u32>,
+    /// 기록지침(아이템) 코드(AI00 등) -> 보유(1). 플레이어 어빌리티 또는 인벤토리 아이템으로 감지
+    #[serde(default)]
+    pub items: BTreeMap<String, u32>,
+    /// 진화체 유닛 typeId (시작 위치의 중립 유닛). 없으면 None
+    #[serde(default)]
+    pub evolution: Option<String>,
+    /// rawcode -> 게임 내 이름 (DB 에 없는 코드를 확인하는 용도)
+    #[serde(default)]
+    pub names: BTreeMap<String, String>,
 }
 
 impl Database {
