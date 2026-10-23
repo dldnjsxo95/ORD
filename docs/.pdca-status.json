@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-10-23T05:25:14.281Z",
+  "lastUpdated": "2026-10-23T06:11:22.513Z",
   "activeFeatures": [
     "ord-core",
     "mock-exporter",
@@ -23,9 +23,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-10-23T04:27:27.528Z",
-        "lastUpdated": "2026-10-23T04:43:53.717Z"
+        "lastUpdated": "2026-10-23T06:11:22.513Z"
       },
-      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\crates\\ord-core\\src\\lib.rs"
+      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\crates\\ord-core\\src\\solver.rs"
     },
     "mock-exporter": {
       "phase": "do",
@@ -36,7 +36,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-10-23T04:27:30.516Z",
-        "lastUpdated": "2026-10-23T04:45:14.464Z"
+        "lastUpdated": "2026-10-23T06:08:26.789Z"
       },
       "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\tools\\mock-exporter\\src\\main.rs"
     },
@@ -49,7 +49,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-10-23T04:27:33.164Z",
-        "lastUpdated": "2026-10-23T05:01:24.003Z"
+        "lastUpdated": "2026-10-23T06:10:16.997Z"
       },
       "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\routes\\+page.svelte"
     },
@@ -75,7 +75,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-10-23T04:43:44.717Z",
-        "lastUpdated": "2026-10-23T04:43:44.717Z"
+        "lastUpdated": "2026-10-23T06:10:14.782Z"
       },
       "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\api.ts"
     },
@@ -101,9 +101,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-10-23T05:01:17.428Z",
-        "lastUpdated": "2026-10-23T05:24:13.941Z"
+        "lastUpdated": "2026-10-23T06:10:15.797Z"
       },
-      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\stores\\game.svelte.ts"
+      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\stores\\ui.svelte.ts"
     },
     "shell": {
       "phase": "do",
@@ -114,9 +114,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-10-23T05:01:18.610Z",
-        "lastUpdated": "2026-10-23T05:24:14.250Z"
+        "lastUpdated": "2026-10-23T06:10:17.534Z"
       },
-      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\shell\\TopBar.svelte"
+      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\shell\\StatusBar.svelte"
     },
     "panels": {
       "phase": "do",
@@ -127,9 +127,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-10-23T05:01:21.554Z",
-        "lastUpdated": "2026-10-23T05:24:14.712Z"
+        "lastUpdated": "2026-10-23T06:10:16.287Z"
       },
-      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\panels\\SettingsPanel.svelte"
+      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\panels\\MainPanel.svelte"
     }
   },
   "pipeline": {
@@ -140,7 +140,7 @@
   "session": {
     "startedAt": "2026-10-23T04:27:27.528Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-10-23T05:25:14.281Z"
+    "lastActivity": "2026-10-23T06:11:22.513Z"
   },
   "history": [
     {
@@ -428,6 +428,72 @@
     {
       "timestamp": "2026-10-23T05:25:14.281Z",
       "feature": "src-tauri",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:08:25.215Z",
+      "feature": "ord-core",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:08:25.700Z",
+      "feature": "ord-core",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:08:26.184Z",
+      "feature": "ord-core",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:08:26.789Z",
+      "feature": "mock-exporter",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:10:14.782Z",
+      "feature": "ORD",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:10:15.309Z",
+      "feature": "stores",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:10:15.797Z",
+      "feature": "stores",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:10:16.287Z",
+      "feature": "panels",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:10:16.997Z",
+      "feature": "routes",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:10:17.534Z",
+      "feature": "shell",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:11:22.513Z",
+      "feature": "ord-core",
       "phase": "do",
       "action": "updated"
     }

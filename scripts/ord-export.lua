@@ -45,9 +45,10 @@ local function snapshot()
   table.sort(parts)
 
   return string.format(
-    '{"v":%d,"t":%.3f,"map":%s,"player":%d,"gold":%d,"units":{%s}}',
+    '{"v":%d,"t":%.3f,"map":%s,"player":%d,"gold":%d,"wood":%d,"units":{%s}}',
     SCHEMA_V, os.clock(), jsonStr(war3.getMapName() or ""), me,
     war3.getPlayerState(me, PLAYER_STATE_RESOURCE_GOLD) or 0,
+    war3.getPlayerState(me, PLAYER_STATE_RESOURCE_LUMBER) or 0,
     table.concat(parts, ","))
 end
 

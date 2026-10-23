@@ -7,8 +7,7 @@
   import ActivityBar from '$lib/shell/ActivityBar.svelte';
   import StatusBar from '$lib/shell/StatusBar.svelte';
   import BottomPanel from '$lib/shell/BottomPanel.svelte';
-  import CombosPanel from '$lib/panels/CombosPanel.svelte';
-  import UnitsPanel from '$lib/panels/UnitsPanel.svelte';
+  import MainPanel from '$lib/panels/MainPanel.svelte';
   import SettingsPanel from '$lib/panels/SettingsPanel.svelte';
 
   onMount(() => {
@@ -33,9 +32,7 @@
       <section class="view">
         <header class="view-head"><span class="view-title">{VIEWS[ui.view].title}</span></header>
         <div class="view-body">
-          {#if ui.view === 'combos'}<CombosPanel />
-          {:else if ui.view === 'units'}<UnitsPanel />
-          {:else}<SettingsPanel />{/if}
+          {#if ui.view === 'main'}<MainPanel />{:else}<SettingsPanel />{/if}
         </div>
       </section>
       <BottomPanel />

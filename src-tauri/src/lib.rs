@@ -4,8 +4,8 @@ use watcher::AppState;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
-    // 조합 DB 는 빌드 시점에 번들한다. 교체하려면 data/recipes.json 을 바꾸고 다시 빌드.
-    let db = ord_core::Database::from_json(include_str!("../../data/recipes.json")).expect("data/recipes.json");
+    // 조합 DB 는 빌드 시점에 번들한다. 교체하려면 npm run extract 로 data/ord-2.323.json 을 다시 만들고 빌드.
+    let db = ord_core::Database::from_json(include_str!("../../data/ord-2.323.json")).expect("data/ord-2.323.json");
 
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())

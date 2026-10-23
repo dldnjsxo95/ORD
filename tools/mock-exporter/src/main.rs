@@ -3,7 +3,8 @@
 //! 사용: cargo run -p mock-exporter -- [출력경로] [간격ms]
 //! 기본: %LOCALAPPDATA%\ord-helper\state.json, 1000ms
 //!
-//! 시나리오: 1티어 유닛을 하나씩 뽑고, 조합이 가능해지면 바로 조합한다.
+//! 시나리오: 흔함 유닛을 하나씩 뽑고(실제 2.323 rawcode), 조합이 가능해지면 바로 조합한다.
+//! 가끔 스킨 변형 유닛도 섞어 변형 합산이 화면에서 보이게 한다.
 
 use std::{
     env, fs,
@@ -39,35 +40,59 @@ fn main() -> std::io::Result<()> {
         fs::create_dir_all(dir)?;
     }
 
-    let db = Database::from_json(include_str!("../../../data/recipes.json")).expect("recipes.json");
-    let pool: Vec<&str> = db.units.iter().filter(|u| u.tier == 1).map(|u| u.id.as_str()).collect();
-    assert!(!pool.is_empty(), "recipes.json 에 1티어 유닛이 없음");
+    let db = Database::from_json(include_str!("../../../data/ord-2.323.json")).expect("ord-2.323.json");
+    let pool: Vec<&str> = db.units.iter().filter(|u| u.grade.as_deref() == Some("흔함")).map(|u| u.id.as_str()).collect();
+    assert!(!pool.is_empty(), "DB 에 흔함 유닛이 없음");
+    // 스킨 변형 하나 (여름휴가 타시기 → 타시기 - 초월) 를 가끔 섞는다
+    let skin = db.units.iter().find(|u| u.base_form.is_some() && !u.summon).map(|u| u.id.clone());
 
     let mut state = GameState {
         v: 1,
-        map: "원피스 랜덤 디펜스 2.323 (mock)".into(),
+        map: format!("원피스 랜덤 디펜스 {} (mock)", db.version),
         player: 0,
         gold: 500,
+        wood: Some(0),
         ..Default::default()
     };
-    println!("mock-exporter -> {} ({interval}ms)", out.display());
+    println!("mock-exporter -> {} ({interval}ms), 뽑기 풀 {}종", out.display(), pool.len());
 
     for step in 0usize.. {
-        let drawn = pool[step % pool.len()];
+        // 뽑기: 단순 의사난수 (재현 가능)
+        let drawn = pool[(step * 7 + step / 3) % pool.len()];
         *state.units.entry(drawn.to_string()).or_insert(0) += 1;
-        state.gold += 30;
-        println!("뽑기: {drawn}");
+        state.gold += 40;
+        if step % 10 == 9 {
+            state.wood = Some(state.wood.unwrap_or(0) + 1);
+        }
+        if step % 25 == 24
+            && let Some(s) = &skin
+        {
+            *state.units.entry(s.clone()).or_insert(0) += 1;
+        }
+        println!("뽑기: {drawn} {}", db.unit(drawn).map(|u| u.name.as_str()).unwrap_or(""));
 
-        if let Some(c) = ord_core::evaluate(&db, &state.units).into_iter().find(|c| c.craftable) {
-            if let Some(r) = db.recipes.iter().find(|r| r.result == c.result) {
-                for ing in &r.inputs {
-                    if let Some(n) = state.units.get_mut(&ing.unit) {
-                        *n -= ing.count;
-                        if *n == 0 {
-                            state.units.remove(&ing.unit);
+        // 조합 가능한 첫 조합을 수행 (재료는 기본 유닛 기준으로 차감)
+        if let Some(c) = ord_core::evaluate(&db, &state.units, Some(state.gold), state.wood).into_iter().find(|c| c.craftable) {
+            if let Some(r) = db.recipes.iter().find(|r| r.id == c.recipe_id) {
+                let index = db.index();
+                for ing in &r.materials {
+                    let base = ord_core::base_of(&index, &ing.unit).to_string();
+                    let mut left = ing.count;
+                    // 기본 유닛 또는 그 변형 중 아무거나 차감
+                    for (id, n) in state.units.iter_mut() {
+                        if left == 0 {
+                            break;
+                        }
+                        if ord_core::base_of(&index, id) == base && *n > 0 {
+                            let take = (*n).min(left);
+                            *n -= take;
+                            left -= take;
                         }
                     }
                 }
+                state.units.retain(|_, n| *n > 0);
+                state.gold -= r.gold;
+                state.wood = state.wood.map(|w| w - r.wood - r.wood_incremental);
                 *state.units.entry(c.result.clone()).or_insert(0) += 1;
                 println!("조합: {} ({})", c.result_name, c.result);
             }

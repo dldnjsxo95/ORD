@@ -13,6 +13,7 @@
   {#if state}
     <span class="item" title="맵"><Icon name="folder" size={12} /> {state.map || '(맵 이름 없음)'}</span>
     <span class="item mono" title="골드"><Icon name="coins" size={12} /> {state.gold.toLocaleString()}</span>
+    {#if state.wood != null}<span class="item mono" title="목재"><Icon name="flask" size={12} /> {state.wood}</span>{/if}
     <span class="item" title="보유 유닛"><Icon name="cube" size={12} /> 유닛 {ownedTotal()}</span>
     <span class="item" class:ok={craftableCount() > 0} title="지금 조합 가능"><Icon name="layers" size={12} /> 조합 {craftableCount()}</span>
     <span class="item muted" title="마지막 갱신"><Icon name="clock" size={12} /> {game.lastAt}</span>

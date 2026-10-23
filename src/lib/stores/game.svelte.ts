@@ -1,7 +1,7 @@
 // 게임 상태 스토어: 백엔드 이벤트를 받아 화면 어디서나 읽을 수 있게 한다.
-// 게임 규칙 계산은 여기 두지 않는다 (ord-core 가 한다). 이름 조회와 집계만 한다.
+// 게임 규칙 계산(변형 합산, 조합 판정)은 Rust(ord-core)가 한다. 여기서는 이름 조회와 집계만 한다.
 
-import { api, type Database, type StatePayload } from '$lib/api';
+import { api, type Database, type Recipe, type StatePayload, type Unit } from '$lib/api';
 
 interface GameStore {
   db: Database | null;
@@ -23,6 +23,9 @@ export const game = $state<GameStore>({
   log: [],
 });
 
+let unitIndex = new Map<string, Unit>();
+let recipeByResult = new Map<string, Recipe>();
+
 function now() {
   return new Date().toLocaleTimeString('ko-KR', { hour12: false });
 }
@@ -31,16 +34,41 @@ export function pushLog(message: string) {
   game.log = [`${now()}  ${message}`, ...game.log].slice(0, 300);
 }
 
-export function unitName(id: string): string {
-  return game.db?.units.find((u) => u.id === id)?.name ?? id;
+export function unit(id: string): Unit | undefined {
+  return unitIndex.get(id);
 }
 
-export function unitTier(id: string): number {
-  return game.db?.units.find((u) => u.id === id)?.tier ?? 0;
+export function unitName(id: string): string {
+  return unitIndex.get(id)?.name ?? id;
+}
+
+/** "타시기 (초월)" 꼴. 모르는 코드는 코드 그대로. */
+export function unitLabel(id: string): string {
+  const u = unitIndex.get(id);
+  if (!u) return id;
+  return u.grade ? `${u.name} (${u.grade})` : u.name;
+}
+
+export function unitGrade(id: string): string | null {
+  return unitIndex.get(id)?.grade ?? null;
+}
+
+/** 등급 순위 (낮을수록 낮은 등급). 모르면 -1. */
+export function gradeRank(grade: string | null | undefined): number {
+  return grade ? (game.db?.grades.indexOf(grade) ?? -1) : -1;
+}
+
+export function recipeOf(resultId: string): Recipe | undefined {
+  return recipeByResult.get(resultId);
+}
+
+/** 이 유닛을 재료로 쓰는 조합식들 */
+export function usesOf(unitId: string): Recipe[] {
+  return game.db?.recipes.filter((r) => r.kind === 'craft' && r.materials.some((m) => m.unit === unitId)) ?? [];
 }
 
 export function ownedTotal(): number {
-  return Object.values(game.payload?.state.units ?? {}).reduce((a, b) => a + b, 0);
+  return game.payload?.owned.reduce((a, o) => a + o.count, 0) ?? 0;
 }
 
 export function craftableCount(): number {
@@ -68,6 +96,8 @@ export async function initGame() {
   started = true;
   try {
     game.db = await api.getDatabase();
+    unitIndex = new Map(game.db.units.map((u) => [u.id, u]));
+    recipeByResult = new Map(game.db.recipes.map((r) => [r.result, r]));
     game.dir = await resolveDir();
     pushLog(`조합 DB ${game.db.version}: 유닛 ${game.db.units.length}종, 조합식 ${game.db.recipes.length}개`);
     unlisteners.push(

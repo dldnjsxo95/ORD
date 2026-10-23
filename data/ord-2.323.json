@@ -1,6 +1,6 @@
 {
  "version": "ORDR_S2_2.323",
- "extractedAt": "2026-10-23T05:52:20.986Z",
+ "extractedAt": "2026-10-23T06:11:23.290Z",
  "source": "ORDR_S2_2.323[C].w3x",
  "grades": [
   "흔함",
@@ -3633,7 +3633,8 @@
     "range": 450,
     "cooldown": 0.3
    },
-   "skills": []
+   "skills": [],
+   "summon": true
   },
   {
    "id": "h09X",
@@ -4814,7 +4815,8 @@
     "range": 460,
     "cooldown": 0.39
    },
-   "skills": []
+   "skills": [],
+   "summon": true
   },
   {
    "id": "h06P",
@@ -4852,7 +4854,8 @@
     "range": 900,
     "cooldown": 1.5
    },
-   "skills": []
+   "skills": [],
+   "summon": true
   },
   {
    "id": "h07H",
@@ -6124,7 +6127,8 @@
     "range": 900,
     "cooldown": 0.83
    },
-   "skills": []
+   "skills": [],
+   "summon": true
   },
   {
    "id": "h07F",
@@ -7854,7 +7858,8 @@
     "range": 700,
     "cooldown": 0.64
    },
-   "skills": []
+   "skills": [],
+   "summon": true
   },
   {
    "id": "H05N",
@@ -7923,7 +7928,8 @@
     "range": 1000,
     "cooldown": 0.65
    },
-   "skills": []
+   "skills": [],
+   "summon": true
   },
   {
    "id": "h079",
@@ -8029,7 +8035,8 @@
     "range": 1000,
     "cooldown": 0.65
    },
-   "skills": []
+   "skills": [],
+   "summon": true
   },
   {
    "id": "H08E",
@@ -8135,7 +8142,8 @@
     "range": 900,
     "cooldown": 0.9
    },
-   "skills": []
+   "skills": [],
+   "summon": true
   },
   {
    "id": "h08L",
@@ -9710,7 +9718,8 @@
     "range": 1000,
     "cooldown": 0.71
    },
-   "skills": []
+   "skills": [],
+   "summon": true
   },
   {
    "id": "H0AM",
@@ -10334,7 +10343,8 @@
     "range": 700,
     "cooldown": 0.64
    },
-   "skills": []
+   "skills": [],
+   "summon": true
   },
   {
    "id": "h0BR",
@@ -10700,7 +10710,8 @@
     "range": 900,
     "cooldown": 0.9
    },
-   "skills": []
+   "skills": [],
+   "summon": true
   },
   {
    "id": "H0C9",
@@ -11423,7 +11434,8 @@
     "range": 650,
     "cooldown": 2.25
    },
-   "skills": []
+   "skills": [],
+   "summon": true
   },
   {
    "id": "h081",
@@ -12153,7 +12165,8 @@
     "range": 400,
     "cooldown": 0.11
    },
-   "skills": []
+   "skills": [],
+   "summon": true
   },
   {
    "id": "h07Z",
@@ -12406,7 +12419,8 @@
     "range": 400,
     "cooldown": 0
    },
-   "skills": []
+   "skills": [],
+   "summon": true
   },
   {
    "id": "h0CJ",
@@ -12474,7 +12488,8 @@
     "range": 800,
     "cooldown": 0.05
    },
-   "skills": []
+   "skills": [],
+   "summon": true
   },
   {
    "id": "h03V",
@@ -15666,7 +15681,7 @@
   {
    "id": "UU01",
    "result": "h05X",
-   "kind": "craft",
+   "kind": "special",
    "materials": [],
    "gold": 0,
    "wood": 0,
@@ -17449,7 +17464,7 @@
   {
    "id": "YY26",
    "result": "h060",
-   "kind": "craft",
+   "kind": "special",
    "materials": [],
    "gold": 0,
    "wood": 0,
@@ -21068,7 +21083,7 @@
   {
    "id": "TEST",
    "result": "h0BC",
-   "kind": "craft",
+   "kind": "special",
    "materials": [],
    "gold": 10000,
    "wood": 0,

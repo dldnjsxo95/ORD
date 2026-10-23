@@ -119,6 +119,8 @@ const outRecipes = recipes.map((r) => {
         else o.conditions.push({ type: e.kind, value: e.count, raw: e.value });
     }
   }
+  // 재료 유닛이 하나도 없는 조합식(이벤트 획득, 맵 제작자의 TEST 항목 등)은 조합으로 취급하지 않는다.
+  if (o.kind === 'craft' && o.materials.length === 0) o.kind = 'special';
   return o;
 });
 
@@ -162,6 +164,12 @@ const units = [...ids].filter((id) => unitStrings[id]).map((id) => {
     skills,
   };
 }).sort((a, b) => (GRADES.indexOf(a.grade) - GRADES.indexOf(b.grade)) || a.id.localeCompare(b.id));
+
+// ── 분신(소환물) 표시: 등급 표기는 있지만 어떤 조합에도 안 쓰이고 변형 매핑도 없고 스킬도 없는 유닛 ──
+const involved = new Set();
+for (const r of outRecipes) { involved.add(r.result); r.materials.forEach((m) => involved.add(m.unit)); r.upperUnits.forEach((u) => involved.add(u)); }
+for (const [a, b] of Object.entries(baseForm)) { involved.add(a); involved.add(b); }
+for (const u of units) if (u.grade && !involved.has(u.id) && u.skills.length === 0) u.summon = true;
 
 // ── 정합성 ──────────────────────────────────────────────────────────────
 const known = new Set(units.map((u) => u.id));
@@ -212,4 +220,5 @@ console.log(`버전 ${db.version} | 유닛 ${units.length} | 레시피 ${outReci
 console.log('등급별:', JSON.stringify(gradeCount));
 console.log('피해 유형 힌트:', JSON.stringify(units.reduce((a, u) => ((a[u.damageHint ?? '없음'] = (a[u.damageHint ?? '없음'] ?? 0) + 1), a), {})));
 console.log('등급 없는 유닛:', units.filter((u) => !u.grade).map((u) => `${u.id}:${u.name}`).join(', '));
+console.log('분신(summon) 표시:', units.filter((u) => u.summon).length, '종');
 console.log(problems.length ? `문제 ${problems.length}건:\n  ${problems.join('\n  ')}` : '정합성 문제 없음');

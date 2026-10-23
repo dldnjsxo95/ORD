@@ -1,11 +1,10 @@
 // 셸 UI 상태 (테마, 활성 뷰, 하단 패널). localStorage 에 보존한다.
 
-export type ViewId = 'combos' | 'units' | 'settings';
+export type ViewId = 'main' | 'settings';
 export type Theme = 'dark' | 'light';
 
-export const VIEWS: Record<ViewId, { title: string; icon: 'layers' | 'cube' | 'settings' }> = {
-  combos: { title: '조합', icon: 'layers' },
-  units: { title: '유닛', icon: 'cube' },
+export const VIEWS: Record<ViewId, { title: string; icon: 'layers' | 'settings' }> = {
+  main: { title: '조합', icon: 'layers' },
   settings: { title: '설정', icon: 'settings' },
 };
 
@@ -19,10 +18,12 @@ interface UiState {
 const KEY = 'ord-helper.ui';
 
 function load(): UiState {
-  const base: UiState = { theme: 'dark', view: 'combos', bottomVisible: false, bottomHeight: 180 };
+  const base: UiState = { theme: 'dark', view: 'main', bottomVisible: false, bottomHeight: 180 };
   try {
     const raw = typeof localStorage !== 'undefined' ? localStorage.getItem(KEY) : null;
-    return raw ? { ...base, ...JSON.parse(raw) } : base;
+    const saved = raw ? { ...base, ...JSON.parse(raw) } : base;
+    if (!(saved.view in VIEWS)) saved.view = 'main'; // 예전 뷰 id 호환
+    return saved;
   } catch {
     return base;
   }

@@ -16,7 +16,7 @@ use std::{
 };
 
 use notify::{Config, Event, EventKind, RecommendedWatcher, RecursiveMode, Watcher};
-use ord_core::{ComboStatus, Database, GameState, evaluate};
+use ord_core::{ComboStatus, Database, GameState, OwnedUnit, evaluate, normalize_owned};
 use serde::Serialize;
 use tauri::{AppHandle, Emitter, State};
 use tokio::sync::{mpsc, watch};
@@ -31,7 +31,10 @@ pub const EV_STATUS: &str = "ord://status";
 #[derive(Clone, Serialize)]
 pub struct StatePayload {
     pub file: String,
+    /// 원본 (rawcode -> 수량, 변형·분신 정리 전)
     pub state: GameState,
+    /// 분신 제외, 변형은 기본 유닛으로 합산한 보유 목록
+    pub owned: Vec<OwnedUnit>,
     pub combos: Vec<ComboStatus>,
 }
 
@@ -84,8 +87,9 @@ async fn refresh(app: &AppHandle, db: &Database, file: &Path, last_hash: &mut Op
     let Ok(state) = GameState::from_json(text.trim()) else { return };
     *last_hash = Some(hash);
 
-    let combos = evaluate(db, &state.units);
-    let _ = app.emit(EV_STATE, StatePayload { file: file.to_string_lossy().into_owned(), state, combos });
+    let combos = evaluate(db, &state.units, Some(state.gold), state.wood);
+    let owned = normalize_owned(db, &state.units);
+    let _ = app.emit(EV_STATE, StatePayload { file: file.to_string_lossy().into_owned(), state, owned, combos });
 }
 
 async fn run(
@@ -180,6 +184,6 @@ pub fn get_database(state: State<'_, AppState>) -> Database {
 
 /// what-if: 임의의 보유 유닛으로 조합을 평가한다 (파일 상태와 무관)
 #[tauri::command]
-pub fn simulate(state: State<'_, AppState>, units: BTreeMap<String, u32>) -> Vec<ComboStatus> {
-    evaluate(&state.db, &units)
+pub fn simulate(state: State<'_, AppState>, units: BTreeMap<String, u32>, gold: Option<i64>, wood: Option<i64>) -> Vec<ComboStatus> {
+    evaluate(&state.db, &units, gold, wood)
 }
