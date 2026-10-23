@@ -5,7 +5,7 @@
 if (import.meta.hot) import.meta.hot.accept(() => window.location.reload());
 
 import { api, type ComboStatus } from '$lib/api';
-import { game } from './game.svelte';
+import { game, base, pushLog, unitName } from './game.svelte';
 
 /** 정렬: 기본(사양서 순) / 이름 / 수량 / 패 활용 (보유 패를 높은 등급부터 많이 쓰는 조합이 위) */
 export type SortMode = 'default' | 'name' | 'count' | 'usage';
@@ -22,12 +22,14 @@ interface PlanState {
   simulated: ComboStatus[] | null;
   /** 우클릭으로 "간다"고 가정한 유닛들 (순서대로 패를 배정). 세션 한정, 저장하지 않음 */
   assumed: string[];
+  /** 가정한 시점의 실시간 보유 수 (유닛 id → 수). 보유가 이보다 늘면 = 실제로 만들어졌으므로 가정을 자동 해제한다 */
+  assumedBase: Record<string, number>;
 }
 
 const KEY = 'ord-helper.plan';
 
 function load(): PlanState {
-  const base: PlanState = { manual: {}, skillPoints: 0, sort: 'default', filters: [], filterOpen: true, collapsed: {}, simulated: null, assumed: [] };
+  const base: PlanState = { manual: {}, skillPoints: 0, sort: 'default', filters: [], filterOpen: true, collapsed: {}, simulated: null, assumed: [], assumedBase: {} };
   try {
     const raw = localStorage.getItem(KEY);
     if (!raw) return base;
@@ -101,13 +103,40 @@ export function clearManual() {
   plan.simulated = null;
 }
 
+/** 유닛(스킨·변형 포함)의 실시간 보유 수. 가정 해제 판정용 */
+function liveCountWithBase(id: string): number {
+  const b = base(id);
+  let n = 0;
+  for (const o of game.payload?.owned ?? []) if (o.id === id || o.id === b || base(o.id) === b) n += o.count;
+  return n;
+}
+
 /** 우클릭: 이 유닛을 간다고 가정 (이미 가정했으면 해제) */
 export function toggleAssumed(id: string) {
-  plan.assumed = plan.assumed.includes(id) ? plan.assumed.filter((x) => x !== id) : [...plan.assumed, id];
+  if (plan.assumed.includes(id)) {
+    plan.assumed = plan.assumed.filter((x) => x !== id);
+    delete plan.assumedBase[id];
+  } else {
+    plan.assumed = [...plan.assumed, id];
+    plan.assumedBase[id] = liveCountWithBase(id);
+  }
 }
 
 export function clearAssumed() {
   plan.assumed = [];
+  plan.assumedBase = {};
+}
+
+/** 실시간 갱신 시: 가정한 유닛이 실제로 생성됐으면(보유가 가정 시점보다 늘면) 가정을 자동으로 푼다 */
+function releaseCraftedAssumed() {
+  if (!game.payload || plan.assumed.length === 0) return;
+  const done = plan.assumed.filter((id) => liveCountWithBase(id) > (plan.assumedBase[id] ?? 0));
+  if (done.length === 0) return;
+  plan.assumed = plan.assumed.filter((id) => !done.includes(id));
+  for (const id of done) {
+    delete plan.assumedBase[id];
+    pushLog(`가정 해제: ${unitName(id)} 생성됨`);
+  }
 }
 
 export function setSort(sort: SortMode) {
@@ -156,7 +185,8 @@ function scheduleSimulate() {
   }, 120);
 }
 
-/** 실시간 데이터가 갱신되면 수동 조정이 있을 때 다시 계산한다 (MainPanel 의 effect 에서 호출) */
+/** 실시간 데이터가 갱신되면: 생성된 가정 유닛을 풀고, 수동 조정이 있을 때 다시 계산한다 (MainPanel 의 effect 에서 호출) */
 export function onLiveUpdate() {
+  releaseCraftedAssumed();
   if (hasManual()) scheduleSimulate();
 }
