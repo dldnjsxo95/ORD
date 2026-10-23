@@ -25,8 +25,9 @@ export default defineConfig(() => ({
         }
       : undefined,
     watch: {
-      // 3. tell Vite to ignore watching `src-tauri`
-      ignored: ["**/src-tauri/**"],
+      // 3. tell Vite to ignore watching `src-tauri`, and the release build outputs (`npm run exe` 가 쓰는 build/·target/ —
+      //    이걸 지켜보면 개발 앱이 릴리스 빌드 중에 계속 다시 불러와 멈춘 것처럼 보인다)
+      ignored: ["**/src-tauri/**", "**/build/**", "**/target/**", "**/maps/**", "**/docs/**"],
     },
   },
 }));
