@@ -27,6 +27,12 @@ export interface Unit {
   /** 물딜 | 마딜 | null(미분류) */
   damageType?: string | null;
   stun?: boolean;
+  /** 능력치 태그 (필터 라벨과 같음, 휴리스틱) */
+  tags?: string[];
+  /** 짧은 스탯 요약 (예: "방깎20, 공증30") */
+  statText?: string | null;
+  /** 역할 배지: flag | sword | heart | plus */
+  badges?: string[];
   baseForm?: string | null;
   summon?: boolean;
   aliases?: string[];

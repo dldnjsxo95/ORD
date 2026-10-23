@@ -1,123 +1,190 @@
-<!-- 메인 뷰: 전체 유닛을 분류 격자로, 스크롤 없이 화면에 맞춰 축소해서 보여준다.
-     보유 유닛은 수량 배지, 지금 조합 가능한 결과 유닛은 초록 테두리, 재료가 일부 모인 유닛은 아래 진행 바. -->
+<!-- 메인 뷰 (사용자 사양 2026-10-23): 상단 툴바 → 능력치 필터 → 8열 매소너리 패널.
+     수량은 실시간 보유량 + 수동 조정(+/−). 수동 조정이 있으면 백엔드 simulate 로 조합을 다시 계산한다. -->
 <script lang="ts">
+  import { getCurrentWindow } from '@tauri-apps/api/window';
+  import { onMount } from 'svelte';
   import { game } from '$lib/stores/game.svelte';
-  import { CATEGORIES, categorize } from '$lib/categories';
-  import type { Unit } from '$lib/api';
-  import UnitIcon from '$lib/ui/UnitIcon.svelte';
+  import { plan, effectiveCount, adjust, setAll, resetAll, clearManual, hasManual, adjustItem, setSort, toggleFilter, clearFilters, setFilterOpen, combos, onLiveUpdate, type SortMode } from '$lib/stores/plan.svelte';
+  import { COLUMNS, FILTERS, placeUnits, type PanelDef, type Placed } from '$lib/layout';
+  import type { ComboStatus, Unit } from '$lib/api';
+  import CategoryPanel from './CategoryPanel.svelte';
+  import UnitRow from './UnitRow.svelte';
+  import Button from '$lib/ui/Button.svelte';
+  import Icon from '$lib/ui/Icon.svelte';
 
-  const groups = $derived(categorize(game.db?.units ?? []));
-  const ownedCount = $derived(new Map((game.payload?.owned ?? []).map((o) => [o.id, o.count])));
-  const combos = $derived(new Map((game.payload?.combos ?? []).map((c) => [c.result, c])));
+  const placed = $derived(placeUnits(game.db?.units ?? []));
+  const comboByResult = $derived(new Map(combos().map((c) => [c.result, c])));
+  const filterSet = $derived(new Set(plan.filters));
+  const matches = (u: Unit) => filterSet.size === 0 || plan.filters.every((f) => u.tags?.includes(f));
 
-  function tip(u: Unit): string {
-    const c = combos.get(u.id);
-    const lines = [u.grade ? `${u.name} (${u.grade})` : u.name];
-    if (u.title) lines.push(u.title);
-    if (u.damageType) lines.push(u.damageType);
-    if (c) lines.push(c.craftable ? '지금 조합 가능' : `재료 ${c.have}/${c.need}`);
-    return lines.join('\n');
+  // 실시간 갱신 시 수동 조정이 있으면 재계산
+  $effect(() => {
+    void game.payload;
+    onLiveUpdate();
+  });
+
+  function sorted(list: Placed[]): Placed[] {
+    if (plan.sort === 'name') return [...list].sort((a, b) => a.unit.name.localeCompare(b.unit.name, 'ko'));
+    if (plan.sort === 'count') return [...list].sort((a, b) => effectiveCount(b.unit.id) - effectiveCount(a.unit.id) || a.unit.name.localeCompare(b.unit.name, 'ko'));
+    return list;
   }
+  const allOn = (list: Placed[]) => list.length > 0 && list.every((p) => effectiveCount(p.unit.id) > 0);
 
-  // ── 화면 맞춤: 내용이 영역보다 크면 transform: scale 로 줄인다 (스크롤 없음) ──
-  let host: HTMLDivElement | undefined = $state();
-  let content: HTMLDivElement | undefined = $state();
-  let scale = $state(1);
-  let contentWidth = $state(0);
-
-  function fit() {
-    if (!host || !content) return;
-    const hw = host.clientWidth;
-    const hh = host.clientHeight;
-    if (!hw || !hh) return;
-    // 1차: 원래 너비로 높이 측정
-    let s = 1;
-    let w = hw;
-    for (let i = 0; i < 3; i++) {
-      contentWidth = w;
-      content.style.width = `${w}px`;
-      const ch = content.scrollHeight;
-      const next = Math.min(1, hh / ch);
-      if (Math.abs(next - s) < 0.005) { s = next; break; }
-      s = next;
-      w = hw / s; // 줄인 만큼 너비를 넓혀 화면 폭을 채운다
+  /** 현재 능력치: 보유 유닛(수량 반영)의 태그 집계 */
+  const statRows = $derived.by(() => {
+    const acc = new Map<string, number>();
+    for (const u of game.db?.units ?? []) {
+      const n = effectiveCount(u.id);
+      if (!n) continue;
+      for (const t of u.tags ?? []) acc.set(t, (acc.get(t) ?? 0) + n);
     }
-    scale = s;
-    contentWidth = w;
+    return [...acc.entries()].sort((a, b) => b[1] - a[1]);
+  });
+
+  /** 아이템: 조합식이 요구하는 기록지침 아이템 목록 */
+  const items = $derived.by(() => {
+    const m = new Map<string, string>();
+    for (const r of game.db?.recipes ?? []) for (const i of r.items) m.set(i.id, i.name);
+    return [...m.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+  });
+
+  const readyCount = $derived(combos().filter((c) => c.craftable).length);
+
+  // 전체화면
+  const win = getCurrentWindow();
+  let fullscreen = $state(false);
+  onMount(() => { win.isFullscreen().then((f) => (fullscreen = f)).catch(() => {}); });
+  async function toggleFullscreen() {
+    try { await win.setFullscreen(!fullscreen); fullscreen = !fullscreen; } catch (e) { game.error = String(e); }
   }
 
-  $effect(() => {
-    if (!host) return;
-    const ro = new ResizeObserver(() => fit());
-    ro.observe(host);
-    return () => ro.disconnect();
-  });
-  // 데이터가 바뀌면 다시 맞춘다
-  $effect(() => {
-    void groups;
-    void ownedCount;
-    requestAnimationFrame(fit);
-  });
+  let noticeOpen = $state(false);
 </script>
 
-<div class="fit-host" bind:this={host}>
-  <div class="grid" bind:this={content} style:transform={`scale(${scale})`} style:width={contentWidth ? `${contentWidth}px` : undefined}>
-    {#each CATEGORIES as cat (cat.id)}
-      {@const list = groups.get(cat.id) ?? []}
-      {#if list.length || !cat.rest}
-        <section class="cat" class:rest={cat.rest}>
-          <h3>{cat.title} <small>{list.length}</small></h3>
-          <div class="tiles">
-            {#each list as u (u.id)}
-              {@const n = ownedCount.get(u.id) ?? 0}
-              {@const c = combos.get(u.id)}
-              {@const pct = c && c.need ? Math.round((c.have / c.need) * 100) : 0}
-              <div class="tile" class:owned={n > 0} class:ready={c?.craftable} title={tip(u)}>
-                <UnitIcon id={u.id} name={u.name} size={22} />
-                <span class="nm-wrap">
-                  {#if pct > 0}<span class="fill" style:width={`${pct}%`}></span>{/if}
-                  <span class="nm">{u.name}</span>
-                  {#if cat.rest}<span class="gr">{u.grade}</span>{/if}
-                  {#if pct > 0}<span class="pct">{pct}%</span>{/if}
+<div class="main">
+  <!-- 1. 상단 툴바 -->
+  <div class="toolbar">
+    <span class="left">
+      {#if hasManual()}<Button size="sm" variant="ghost" onclick={clearManual}>실시간 값으로 복귀</Button>{/if}
+      {#if readyCount}<span class="ready-badge">조합 가능 {readyCount}</span>{/if}
+    </span>
+    <span class="spacer"></span>
+    <button type="button" class="link" onclick={() => (noticeOpen = !noticeOpen)}><Icon name="info" size={12} /> 주의사항</button>
+    <Button size="sm" onclick={() => setSort('count')}>추천 조합</Button>
+    <button type="button" class="link" onclick={resetAll}>전체 초기화</button>
+    <Button size="sm" variant="ghost" icon={fullscreen ? 'fullscreenExit' : 'fullscreen'} onclick={toggleFullscreen}>{fullscreen ? '전체화면 해제' : '전체화면'}</Button>
+    <select class="sort" value={plan.sort} onchange={(e) => setSort((e.currentTarget as HTMLSelectElement).value as SortMode)}>
+      <option value="default">기본순</option>
+      <option value="name">이름순</option>
+      <option value="count">수량순</option>
+    </select>
+  </div>
+  {#if noticeOpen}
+    <div class="notice">
+      물딜/마딜/스턴 분류와 능력치 태그는 스킬 설명 문구로 자동 추정한 값입니다. "?" 표시는 물딜/마딜 판정이 없어 임시로 마딜에 둔 유닛이며,
+      data/overrides.json 으로 바로잡을 수 있습니다. 수량은 게임에서 읽은 값에 +/− 조정을 더한 것이고, 조정 중에는 조합이 그 값으로 다시 계산됩니다.
+    </div>
+  {/if}
+
+  <!-- 2. 능력치 필터 -->
+  <button type="button" class="filter-bar" onclick={() => setFilterOpen(!plan.filterOpen)}>
+    능력치 필터 {#if plan.filters.length}<span class="n">{plan.filters.length}</span>{/if}
+    <Icon name={plan.filterOpen ? 'chevronDown' : 'chevronRight'} size={12} />
+  </button>
+  {#if plan.filterOpen}
+    <div class="filters">
+      {#each FILTERS as f (f)}
+        <label class="f" class:on={filterSet.has(f)}>
+          <input type="checkbox" checked={filterSet.has(f)} onchange={() => toggleFilter(f)} />
+          <span>{f}</span>
+        </label>
+      {/each}
+      {#if plan.filters.length}<button type="button" class="link clear" onclick={clearFilters}>필터 해제</button>{/if}
+    </div>
+  {/if}
+
+  <!-- 3. 8열 패널 -->
+  <div class="columns">
+    {#each COLUMNS as col, ci (ci)}
+      <div class="col">
+        {#each col as p (p.id)}
+          {#if p.kind === 'units'}
+            {@const list = sorted(placed.get(p.id) ?? [])}
+            <CategoryPanel id={p.id} title={p.title} count={list.length} allOn={allOn(list)} onall={(on) => setAll(list.map((x) => x.unit.id), on)}>
+              {#each list as x (x.unit.id)}
+                <UnitRow unit={x.unit} count={effectiveCount(x.unit.id)} combo={comboByResult.get(x.unit.id)} dimmed={!matches(x.unit)} uncertain={x.uncertain} onadjust={(d) => adjust(x.unit.id, d)} />
+              {/each}
+              {#if list.length === 0}<div class="empty">—</div>{/if}
+            </CategoryPanel>
+          {:else if p.kind === 'stats'}
+            <CategoryPanel id={p.id} title={p.title} count={statRows.length}>
+              {#each statRows as [tag, n] (tag)}
+                <div class="kv"><span class="k">{tag}</span><span class="v">{n}</span></div>
+              {/each}
+              {#if statRows.length === 0}<div class="empty">보유 유닛 없음</div>{/if}
+            </CategoryPanel>
+          {:else if p.kind === 'resources'}
+            <CategoryPanel id={p.id} title={p.title}>
+              <div class="kv"><span class="k">골드</span><span class="v mono">{(game.payload?.state.gold ?? 0).toLocaleString()}</span></div>
+              <div class="kv"><span class="k">목재</span><span class="v mono">{game.payload?.state.wood ?? '-'}</span></div>
+              <div class="kv">
+                <span class="k">특성 포인트</span>
+                <span class="ctl">
+                  <button type="button" onclick={() => (plan.skillPoints += 1)}>+</button>
+                  <button type="button" onclick={() => (plan.skillPoints = Math.max(0, plan.skillPoints - 1))} disabled={plan.skillPoints === 0}>−</button>
+                  <span class="v mono">{plan.skillPoints}</span>
                 </span>
-                {#if n > 0}<span class="cnt">{n}</span>{/if}
               </div>
-            {/each}
-            {#if list.length === 0}<span class="empty">—</span>{/if}
-          </div>
-        </section>
-      {/if}
+            </CategoryPanel>
+          {:else}
+            <CategoryPanel id={p.id} title={p.title} count={items.length}>
+              {#each items as [id, name] (id)}
+                <div class="kv">
+                  <span class="k">{name}</span>
+                  <span class="ctl">
+                    <button type="button" onclick={() => adjustItem(id, 1)}>+</button>
+                    <button type="button" onclick={() => adjustItem(id, -1)} disabled={!(plan.items[id] ?? 0)}>−</button>
+                    <span class="v mono" class:zero={!(plan.items[id] ?? 0)}>{plan.items[id] ?? 0}</span>
+                  </span>
+                </div>
+              {/each}
+            </CategoryPanel>
+          {/if}
+        {/each}
+      </div>
     {/each}
   </div>
 </div>
 
 <style>
-  .fit-host { position: relative; width: 100%; height: 100%; overflow: hidden; }
-  /* 분류 하나가 한 줄을 차지하고, 높이는 타일 수만큼만 쓴다 */
-  .grid {
-    transform-origin: top left; box-sizing: border-box; padding: var(--sp-3) var(--sp-4);
-    display: flex; flex-direction: column; gap: var(--sp-2);
-  }
-  .cat { min-width: 0; }
-  h3 { margin: 0 0 var(--sp-1); font-size: var(--fs-1); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--c-accent-text); border-bottom: 1px solid var(--c-border); padding-bottom: 2px; }
-  h3 small { color: var(--c-text-3); margin-left: var(--sp-1); font-weight: 400; }
-  .tiles { display: flex; flex-wrap: wrap; gap: 3px; }
-  .tile {
-    position: relative; display: inline-flex; align-items: center; gap: 4px; height: 26px; padding: 0 4px 0 2px; box-sizing: border-box;
-    border: 1px solid var(--c-border); border-radius: var(--r-1); background: var(--c-bg-app); font-size: var(--fs-1); color: var(--c-text-2);
-    overflow: hidden; user-select: none;
-  }
-  .tile:hover { color: var(--c-text); border-color: var(--c-border-strong); }
-  .tile.owned { color: var(--c-text); border-color: var(--c-border-strong); background: var(--c-bg-input); }
-  .tile.ready { border-color: var(--c-ok); }
-  /* 이름 칸: 진행도만큼 왼쪽부터 채워지는 게이지 + 퍼센트 */
-  .nm-wrap { position: relative; display: inline-flex; align-items: center; gap: 4px; height: 100%; padding: 0 4px; border-radius: var(--r-1); overflow: hidden; }
-  .fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--c-accent-soft); }
-  .ready .fill { background: color-mix(in srgb, var(--c-ok) 28%, transparent); }
-  .nm { position: relative; white-space: nowrap; }
-  .pct { position: relative; font-variant-numeric: tabular-nums; color: var(--c-accent-text); font-size: 10px; }
-  .ready .pct { color: var(--c-ok-text); }
-  .cnt { font-variant-numeric: tabular-nums; color: var(--c-accent-text); font-weight: 600; }
-  .gr { position: relative; color: var(--c-text-3); }
-  .empty { color: var(--c-text-3); font-size: var(--fs-1); }
+  .main { display: flex; flex-direction: column; height: 100%; font-size: 11px; }
+  .toolbar { display: flex; align-items: center; gap: var(--sp-2); height: 28px; padding: 0 var(--sp-3); flex: none; border-bottom: 1px solid var(--c-border); background: var(--c-bg-app); }
+  .toolbar .left { display: inline-flex; gap: var(--sp-2); align-items: center; }
+  .ready-badge { color: var(--c-ok-text); font-weight: 600; }
+  .link { border: 0; background: none; color: var(--c-text-2); font: inherit; font-size: 11px; cursor: pointer; padding: 2px 4px; display: inline-flex; align-items: center; gap: 2px; }
+  .link:hover { color: var(--c-text); }
+  .sort { height: 20px; font-size: 11px; color: var(--c-text); background: var(--c-bg-input); border: 1px solid var(--c-border-strong); border-radius: var(--r-1); }
+  .notice { padding: var(--sp-2) var(--sp-4); color: var(--c-text-2); background: var(--c-bg-panel); border-bottom: 1px solid var(--c-border); line-height: 1.5; }
+  .filter-bar { height: 20px; border: 0; border-bottom: 1px solid var(--c-border); background: var(--c-bg-panel); color: var(--c-text-2); font: inherit; font-size: 11px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; flex: none; }
+  .filter-bar:hover { color: var(--c-text); }
+  .filter-bar .n { color: var(--c-accent-text); font-weight: 600; }
+  /* 넓은 창에서 19열 × 2행, 좁으면 열 수가 줄어든다 */
+  .filters { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 1px 4px; padding: 3px var(--sp-3); border-bottom: 1px solid var(--c-border); background: var(--c-bg-panel); flex: none; }
+  .f { display: inline-flex; align-items: center; gap: 3px; font-size: 10px; color: var(--c-text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; }
+  .f.on { color: var(--c-accent-text); }
+  .f input { width: 11px; height: 11px; margin: 0; accent-color: var(--c-accent); flex: none; }
+  .f span { overflow: hidden; text-overflow: ellipsis; }
+  .clear { grid-column: span 2; justify-self: end; }
+  .columns { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 3px; padding: 3px; flex: 1; min-height: 0; overflow: auto; align-content: start; }
+  .col { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .empty { padding: 2px 6px; color: var(--c-text-3); }
+  .kv { display: flex; align-items: center; justify-content: space-between; gap: 4px; height: 20px; padding: 0 4px; border-bottom: 1px solid var(--c-border-row); }
+  .kv .k { color: var(--c-text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .kv .v { color: var(--c-text); font-variant-numeric: tabular-nums; }
+  .kv .v.zero { color: var(--c-text-3); }
+  .ctl { display: inline-flex; align-items: center; gap: 1px; }
+  .ctl button { width: 16px; height: 16px; padding: 0; border: 1px solid var(--c-border-strong); border-radius: 2px; background: var(--c-bg-input); color: var(--c-text-2); font-size: 11px; line-height: 1; cursor: pointer; }
+  .ctl button:hover:not(:disabled) { background: var(--c-bg-raised); color: var(--c-text); }
+  .ctl button:disabled { opacity: 0.35; cursor: default; }
+  .ctl .v { min-width: 16px; text-align: right; }
 </style>

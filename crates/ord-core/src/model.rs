@@ -45,6 +45,15 @@ pub struct Unit {
     /// 스턴 유닛 표시 (overrides 로 확정)
     #[serde(default)]
     pub stun: bool,
+    /// 능력치 태그 (스킬 툴팁 키워드, 휴리스틱). 화면 필터 라벨과 같다.
+    #[serde(default)]
+    pub tags: Vec<String>,
+    /// 짧은 스탯 요약 (예: "방깎20, 공증30")
+    #[serde(default)]
+    pub stat_text: Option<String>,
+    /// 역할 배지: flag | sword | heart | plus
+    #[serde(default)]
+    pub badges: Vec<String>,
     /// 스킨·변형 유닛이면 기본 유닛 id. 보유 수를 셀 때 기본 유닛으로 합산한다.
     #[serde(default)]
     pub base_form: Option<String>,

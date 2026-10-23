@@ -137,6 +137,65 @@ for (const [a, b] of Object.entries(baseForm)) { ids.add(a); ids.add(b); }
 for (const id of Object.keys(unitStrings)) if (parseName(id).grade) ids.add(id);
 
 const GENERIC_ABILS = new Set(['Avul', 'AInv', 'Aloc', 'Amov', 'Aatk']);
+
+// ── 능력치 태그 규칙 (스킬 툴팁 키워드, 휴리스틱). 라벨은 화면 필터와 같다. ──
+const TAG_RULES = [
+  ['방어력 감소', /방어력[^\n]{0,12}(감소|낮|깎)/],
+  ['이동속도 감소', /이동\s*속도[^\n]{0,10}(감소|느려|낮)/],
+  ['발동이동속도 감소', /(공격|피격|시전)[^\n]{0,20}이동\s*속도[^\n]{0,10}감소/],
+  ['공격속도 증가(단일)', /(아군|대상|단일)[^\n]{0,15}공격\s*속도[^\n]{0,10}증가/],
+  ['공격력 증가', /공격력[^\n]{0,10}증가/],
+  ['스턴', /기절|스턴/],
+  ['공격속도 증가', /공격\s*속도[^\n]{0,10}증가/],
+  ['마나 재생', /마나[^\n]{0,8}(재생|회복)/],
+  ['아머브레이크', /아머\s*브레이크|방어력[^\n]{0,6}파괴/],
+  ['보조딜', /(아군|주변)[^\n]{0,20}(데미지|피해)[^\n]{0,8}증가/],
+  ['바제스', /바제스/],
+  ['발동방어력 감소', /(공격|피격|시전)[^\n]{0,20}방어력[^\n]{0,10}감소/],
+  ['발동공격력 증가', /(공격|피격|시전)[^\n]{0,20}공격력[^\n]{0,10}증가/],
+  ['광폭화 잡기', /광폭/],
+  ['단일방어력 감소', /(단일|대상)[^\n]{0,12}방어력[^\n]{0,10}감소/],
+  ['단일마법 대미지 증가', /(단일|대상)[^\n]{0,12}마법\s*(데미지|피해)[^\n]{0,8}증가/],
+  ['모든피해증가', /모든\s*(피해|데미지)[^\n]{0,8}증가/],
+  ['방어력 무시 대미지', /방어\s*(력)?\s*무시/],
+  ['유닛삭제', /(유닛|적)[^\n]{0,8}(삭제|제거|즉사)/],
+  ['마법 대미지 증가', /마법\s*(데미지|피해)[^\n]{0,8}증가/],
+  ['범위 전체 체력 퍼센트 대미지', /(범위|주변)[^\n]{0,20}(최대|전체)\s*체력[^\n]{0,6}%/],
+  ['보스 잡기', /보스/],
+  ['단일', /단일/],
+  ['범위 현재 체력 퍼센트 대미지', /(범위|주변)[^\n]{0,20}현재\s*체력[^\n]{0,6}%/],
+  ['끝딜', /끝딜|마무리/],
+  ['마법 방어력 감소', /마법\s*방어[^\n]{0,8}감소|마방/],
+  ['체력 재생', /체력[^\n]{0,8}(재생|회복)/],
+  ['폭발형 대미지 증폭', /폭발[^\n]{0,12}(증폭|증가)/],
+  ['범위 잃은 체력 퍼센트 대미지', /(범위|주변)[^\n]{0,20}잃은\s*체력[^\n]{0,6}%/],
+  ['단일아머브레이크', /(단일|대상)[^\n]{0,12}아머\s*브레이크/],
+  ['중첩방어력 감소', /중첩[^\n]{0,15}방어력[^\n]{0,10}감소|방어력[^\n]{0,15}중첩/],
+  ['순간이동', /순간\s*이동|블링크/],
+  ['범위 퍼센트 대미지', /(범위|주변)[^\n]{0,20}%\s*(데미지|피해)/],
+  ['범위 끝딜', /(범위|주변)[^\n]{0,12}(끝딜|마무리)/],
+];
+/** 툴팁에서 짧은 스탯 요약을 뽑는다 (예: "방깎20, 공증30, 스턴"). 휴리스틱. */
+function statSummary(text) {
+  const parts = [];
+  const num = (re) => { const m = text.match(re); return m ? m[1] : null; };
+  const a = num(/방어력[^\n]{0,6}?(\d+)\s*(감소|깎)/); if (a) parts.push(`방깎${a}`);
+  const b = num(/공격력[^\n]{0,6}?(\d+)\s*%?\s*증가/); if (b) parts.push(`공증${b}`);
+  const c = num(/공격\s*속도[^\n]{0,6}?(\d+)\s*%?\s*증가/); if (c) parts.push(`공속${c}`);
+  const d = num(/이동\s*속도[^\n]{0,6}?(\d+)\s*%?\s*감소/); if (d) parts.push(`이감${d}`);
+  if (/기절|스턴/.test(text)) parts.push('스턴');
+  if (/영구/.test(text)) parts.push('영구');
+  return parts.join(', ');
+}
+/** 역할 배지: flag(버프) sword(딜) heart(회복) plus(지원) */
+function roleBadges(text, tags) {
+  const out = [];
+  if (tags.some((t) => /증가|버프/.test(t)) || /아군[^\n]{0,20}증가/.test(text)) out.push('flag');
+  if (/(데미지|피해)/.test(text)) out.push('sword');
+  if (/체력[^\n]{0,8}(재생|회복)|치유|힐/.test(text)) out.push('heart');
+  if (/마나[^\n]{0,8}(재생|회복)|쿨타임[^\n]{0,8}감소/.test(text)) out.push('plus');
+  return out;
+}
 const units = [...ids].filter((id) => unitStrings[id]).map((id) => {
   const { name, grade, title } = parseName(id);
   const w = weapons[id] ?? {};
@@ -154,8 +213,11 @@ const units = [...ids].filter((id) => unitStrings[id]).map((id) => {
   const physDmg = (text.match(/물리\s*(데미지|피해)/g) ?? []).length;
   const magicDmg = (text.match(/마법\s*(데미지|피해)/g) ?? []).length;
   const damageType = physDmg > magicDmg ? '물딜' : magicDmg > physDmg ? '마딜' : null;
-  // 스턴 유닛(임시 규칙): 스킬 이름에 기절·스턴이 들어가면 표시. overrides 로 확정한다.
-  const stun = skills.some((s) => /기절|스턴/.test(s.name));
+  const tags = TAG_RULES.filter(([, re]) => re.test(text)).map(([label]) => label);
+  const statText = statSummary(text);
+  const badges = roleBadges(text, tags);
+  // 스턴 유닛: 물딜/마딜 다수결이 없고 기절 스킬이 있으면 스턴 분류. overrides 로 확정한다.
+  const stun = !damageType && /기절|스턴/.test(text);
   return {
     id, name, grade, title: title || undefined,
     icon: unitStrings[id].Art || undefined,
@@ -167,6 +229,9 @@ const units = [...ids].filter((id) => unitStrings[id]).map((id) => {
     damageHint: damageHint || undefined,
     damageType: damageType || undefined,
     stun: stun || undefined,
+    tags,
+    statText: statText || undefined,
+    badges,
     baseForm: baseForm[id],
     aliases: aliases[id],
     skills,

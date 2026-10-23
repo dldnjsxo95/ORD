@@ -1,6 +1,6 @@
 {
  "version": "ORDR_S2_2.323",
- "extractedAt": "2026-10-23T06:21:46.172Z",
+ "extractedAt": "2026-10-23T06:32:17.827Z",
  "source": "ORDR_S2_2.323[C].w3x",
  "grades": [
   "흔함",
@@ -36,6 +36,8 @@
     "range": 600,
     "cooldown": 0.9
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0BB",
@@ -63,6 +65,8 @@
     "range": 400,
     "cooldown": 1
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0K9",
@@ -96,6 +100,8 @@
     "range": 600,
     "cooldown": 0.63
    },
+   "tags": [],
+   "badges": [],
    "skills": []
   },
   {
@@ -112,6 +118,8 @@
     "range": 700,
     "cooldown": 1.25
    },
+   "tags": [],
+   "badges": [],
    "skills": []
   },
   {
@@ -128,6 +136,8 @@
     "range": 420,
     "cooldown": 0.98
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -155,6 +165,8 @@
     "range": 420,
     "cooldown": 1.03
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -182,6 +194,8 @@
     "range": 420,
     "cooldown": 1.02
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -209,6 +223,8 @@
     "range": 420,
     "cooldown": 0.77
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -236,6 +252,8 @@
     "range": 420,
     "cooldown": 0.99
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -263,6 +281,8 @@
     "range": 420,
     "cooldown": 0.94
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -290,6 +310,8 @@
     "range": 420,
     "cooldown": 0.84
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -317,6 +339,8 @@
     "range": 420,
     "cooldown": 0.57
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -344,6 +368,8 @@
     "range": 420,
     "cooldown": 0.96
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -373,6 +399,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -410,6 +440,8 @@
     "range": 500,
     "cooldown": 1.07
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A07Y",
@@ -442,6 +474,13 @@
     "range": 500,
     "cooldown": 0.74
    },
+   "stun": true,
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [],
    "skills": [
     {
      "id": "A07Y",
@@ -481,6 +520,14 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -520,6 +567,14 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -557,6 +612,8 @@
     "range": 600,
     "cooldown": 1
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A07Y",
@@ -589,6 +646,8 @@
     "range": 1050,
     "cooldown": 0.61
    },
+   "tags": [],
+   "badges": [],
    "skills": []
   },
   {
@@ -605,6 +664,8 @@
     "range": 500,
     "cooldown": 0.85
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A07Y",
@@ -637,6 +698,8 @@
     "range": 1000,
     "cooldown": 0.9
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A07Y",
@@ -671,6 +734,12 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "단일"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -708,6 +777,8 @@
     "range": 600,
     "cooldown": 0.89
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A07Y",
@@ -742,6 +813,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -779,6 +854,8 @@
     "range": 1320,
     "cooldown": 1.4
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A07Y",
@@ -811,6 +888,8 @@
     "range": 600,
     "cooldown": 1.2
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A07Y",
@@ -848,6 +927,8 @@
     "range": 600,
     "cooldown": 1
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -887,6 +968,13 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소"
+   ],
+   "statText": "이감5",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0JE",
@@ -926,6 +1014,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0JE",
@@ -965,6 +1057,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0JE",
@@ -1002,6 +1098,8 @@
     "range": 600,
     "cooldown": 1
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -1041,6 +1139,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0JE",
@@ -1080,6 +1182,16 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "공격속도 증가",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0JE",
@@ -1122,6 +1234,8 @@
     "range": 500,
     "cooldown": 0.35
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0EK",
@@ -1161,6 +1275,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0E7",
@@ -1198,6 +1316,8 @@
     "range": 425,
     "cooldown": 0.33
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0EH",
@@ -1235,6 +1355,11 @@
     "range": 1000,
     "cooldown": 0.8
    },
+   "tags": [
+    "이동속도 감소"
+   ],
+   "statText": "이감5",
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -1274,6 +1399,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0JE",
@@ -1311,6 +1440,8 @@
     "range": 1050,
     "cooldown": 0.6
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -1345,6 +1476,14 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0EF",
@@ -1384,6 +1523,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0EE",
@@ -1423,6 +1566,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0ED",
@@ -1462,6 +1609,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0JE",
@@ -1501,6 +1652,14 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0EB",
@@ -1538,6 +1697,11 @@
     "range": 600,
     "cooldown": 1
    },
+   "tags": [
+    "방어력 감소"
+   ],
+   "statText": "방깎3",
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -1577,6 +1741,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0E9",
@@ -1621,6 +1789,14 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0EF",
@@ -1660,6 +1836,10 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0EI",
@@ -1697,6 +1877,11 @@
     "range": 600,
     "cooldown": 0.76
    },
+   "tags": [
+    "이동속도 감소"
+   ],
+   "statText": "이감5",
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -1736,6 +1921,14 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0JE",
@@ -1773,6 +1966,8 @@
     "range": 550,
     "cooldown": 0.75
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0EJ",
@@ -1805,6 +2000,8 @@
     "range": 600,
     "cooldown": 1.03
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -1837,6 +2034,11 @@
     "range": 600,
     "cooldown": 0.5
    },
+   "tags": [
+    "방어력 감소"
+   ],
+   "statText": "방깎3",
+   "badges": [],
    "skills": [
     {
      "id": "A0EO",
@@ -1874,6 +2076,11 @@
     "range": 550,
     "cooldown": 0.9
    },
+   "tags": [
+    "이동속도 감소"
+   ],
+   "statText": "이감5",
+   "badges": [],
    "skills": [
     {
      "id": "A0JE",
@@ -1913,6 +2120,17 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "광폭화 잡기",
+    "단일",
+    "마법 방어력 감소"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0EQ",
@@ -1950,6 +2168,13 @@
     "range": 600,
     "cooldown": 0.65
    },
+   "tags": [
+    "공격속도 증가"
+   ],
+   "statText": "공속100",
+   "badges": [
+    "flag"
+   ],
    "skills": [
     {
      "id": "A0JE",
@@ -1989,6 +2214,14 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "공격속도 증가"
+   ],
+   "statText": "공속30",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0ET",
@@ -2028,6 +2261,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0JE",
@@ -2067,6 +2304,12 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "단일"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A083",
@@ -2106,6 +2349,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0K2",
@@ -2150,6 +2397,14 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -2194,6 +2449,17 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "공격속도 증가(단일)",
+    "스턴",
+    "공격속도 증가",
+    "단일"
+   ],
+   "statText": "공속10, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0FT",
@@ -2233,6 +2499,14 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0FU",
@@ -2282,6 +2556,12 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "단일"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -2316,6 +2596,16 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "아머브레이크",
+    "단일",
+    "단일아머브레이크"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0F9",
@@ -2355,6 +2645,12 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "순간이동"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A02Q",
@@ -2398,6 +2694,15 @@
     "cooldown": 0.84
    },
    "damageHint": "혼합",
+   "stun": true,
+   "tags": [
+    "스턴",
+    "순간이동"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A038",
@@ -2436,6 +2741,15 @@
     "cooldown": 0.7
    },
    "damageHint": "혼합",
+   "stun": true,
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -2473,6 +2787,11 @@
     "range": 650,
     "cooldown": 0.8
    },
+   "tags": [
+    "방어력 감소"
+   ],
+   "statText": "방깎10",
+   "badges": [],
    "skills": [
     {
      "id": "A07Y",
@@ -2507,6 +2826,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "바제스"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0FL",
@@ -2540,6 +2867,15 @@
     "cooldown": 0.83
    },
    "damageHint": "혼합",
+   "stun": true,
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0FI",
@@ -2579,6 +2915,14 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -2613,6 +2957,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0FH",
@@ -2647,6 +2999,12 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "단일"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -2679,6 +3037,13 @@
     "range": 600,
     "cooldown": 0.67
    },
+   "stun": true,
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [],
    "skills": [
     {
      "id": "A07Y",
@@ -2713,6 +3078,13 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "보스 잡기",
+    "단일"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -2747,6 +3119,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -2780,6 +3156,15 @@
     "cooldown": 0.42
    },
    "damageHint": "혼합",
+   "tags": [
+    "공격속도 증가",
+    "단일"
+   ],
+   "statText": "공속33",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0K6",
@@ -2824,6 +3209,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -2858,6 +3247,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0UG",
@@ -2897,6 +3290,14 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -2931,6 +3332,11 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [],
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -2970,6 +3376,10 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -3004,6 +3414,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0EY",
@@ -3048,6 +3466,15 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격력 증가",
+    "스턴"
+   ],
+   "statText": "공증35, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -3082,6 +3509,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "스턴"
+   ],
+   "statText": "이감10, 스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -3121,6 +3556,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "순간이동"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -3159,6 +3602,18 @@
     "cooldown": 0.85
    },
    "damageHint": "혼합",
+   "stun": true,
+   "tags": [
+    "이동속도 감소",
+    "공격력 증가",
+    "스턴",
+    "단일"
+   ],
+   "statText": "공증2500, 이감15, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A03U",
@@ -3198,6 +3653,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0F3",
@@ -3232,6 +3695,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0EV",
@@ -3266,6 +3737,10 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0F0",
@@ -3300,6 +3775,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "공격력 증가",
+    "단일"
+   ],
+   "statText": "공증20, 이감15",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -3344,6 +3829,12 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "단일"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -3378,6 +3869,12 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "단일"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -3412,6 +3909,15 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "공격력 증가",
+    "발동공격력 증가",
+    "단일"
+   ],
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0EW",
@@ -3446,6 +3952,15 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격속도 증가",
+    "순간이동"
+   ],
+   "statText": "공속120",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -3490,6 +4005,12 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "단일"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0K3",
@@ -3529,6 +4050,12 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "단일"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -3561,6 +4088,11 @@
     "range": 1000,
     "cooldown": 0.4
    },
+   "tags": [
+    "이동속도 감소"
+   ],
+   "statText": "이감20",
+   "badges": [],
    "skills": [
     {
      "id": "A07Y",
@@ -3593,6 +4125,11 @@
     "range": 500,
     "cooldown": 0.96
    },
+   "tags": [
+    "방어력 감소"
+   ],
+   "statText": "방깎10",
+   "badges": [],
    "skills": [
     {
      "id": "A0FW",
@@ -3627,6 +4164,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A07Y",
@@ -3659,6 +4204,8 @@
     "range": 1500,
     "cooldown": 1.2
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0KB",
@@ -3691,6 +4238,8 @@
     "range": 450,
     "cooldown": 0.3
    },
+   "tags": [],
+   "badges": [],
    "skills": [],
    "summon": true
   },
@@ -3708,6 +4257,14 @@
     "range": 600,
     "cooldown": 0.61
    },
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소"
+   ],
+   "statText": "방깎5, 이감10",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A132",
@@ -3747,6 +4304,17 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "공격력 증가",
+    "공격속도 증가",
+    "단일"
+   ],
+   "statText": "공속35, 이감30",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0AS",
@@ -3781,6 +4349,15 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "단일"
+   ],
+   "statText": "방깎33, 스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0AO",
@@ -3815,6 +4392,13 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소"
+   ],
+   "statText": "이감42",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0AK",
@@ -3849,6 +4433,19 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격속도 증가(단일)",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "공속17, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0AD",
@@ -3878,6 +4475,14 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0AB",
@@ -3907,6 +4512,18 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0A7",
@@ -3941,6 +4558,16 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "이동속도 감소",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "이감30",
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A011",
@@ -3980,6 +4607,18 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A09Z",
@@ -4009,6 +4648,18 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "스턴",
+    "마나 재생",
+    "아머브레이크",
+    "단일"
+   ],
+   "statText": "이감50, 스턴",
+   "badges": [
+    "sword",
+    "plus"
+   ],
    "skills": [
     {
      "id": "A06W",
@@ -4043,6 +4694,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "공격력 증가",
+    "스턴"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A09L",
@@ -4077,6 +4738,17 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A18P",
@@ -4111,6 +4783,19 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A09U",
@@ -4140,6 +4825,16 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "방깎12, 스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A09D",
@@ -4179,6 +4874,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "순간이동"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A098",
@@ -4217,6 +4920,21 @@
     "cooldown": 0.95
    },
    "damageHint": "혼합",
+   "stun": true,
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "단일",
+    "마법 방어력 감소"
+   ],
+   "statText": "이감25, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A05K",
@@ -4246,6 +4964,17 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "공격속도 증가",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "공속45, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A094",
@@ -4275,6 +5004,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "단일"
+   ],
+   "statText": "이감35",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A090",
@@ -4314,6 +5051,12 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "단일"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A08Z",
@@ -4343,6 +5086,14 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A077",
@@ -4371,6 +5122,17 @@
     "cooldown": 0.67
    },
    "damageHint": "혼합",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "공격력 증가",
+    "단일"
+   ],
+   "statText": "방깎20, 공증30, 이감20",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A072",
@@ -4405,6 +5167,17 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "유닛삭제",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A070",
@@ -4439,6 +5212,13 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소"
+   ],
+   "statText": "방깎30",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A08U",
@@ -4468,6 +5248,15 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "아머브레이크",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A06T",
@@ -4497,6 +5286,16 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "아머브레이크",
+    "단일"
+   ],
+   "statText": "방깎20, 스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A06O",
@@ -4525,6 +5324,21 @@
     "cooldown": 0.74
    },
    "damageHint": "혼합",
+   "stun": true,
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "방깎15, 이감25, 스턴",
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A06G",
@@ -4559,6 +5373,20 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "공격속도 증가(단일)",
+    "공격속도 증가",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "순간이동"
+   ],
+   "statText": "공속150, 이감99",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A05N",
@@ -4598,6 +5426,22 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격력 증가",
+    "스턴",
+    "마나 재생",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "공증20, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart",
+    "plus"
+   ],
    "skills": [
     {
      "id": "A05I",
@@ -4625,6 +5469,15 @@
     "range": 425,
     "cooldown": 0.51
    },
+   "stun": true,
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "발동방어력 감소",
+    "보스 잡기"
+   ],
+   "statText": "방깎20, 스턴",
+   "badges": [],
    "skills": [
     {
      "id": "A08G",
@@ -4659,6 +5512,17 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "아머브레이크",
+    "단일"
+   ],
+   "statText": "방깎25, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A063",
@@ -4698,6 +5562,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "공격속도 증가",
+    "단일"
+   ],
+   "statText": "방깎25, 영구",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0S0",
@@ -4737,6 +5611,17 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "광폭화 잡기",
+    "범위 전체 체력 퍼센트 대미지",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A06B",
@@ -4766,6 +5651,18 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "공격속도 증가(단일)",
+    "공격속도 증가",
+    "단일",
+    "순간이동"
+   ],
+   "statText": "방깎18, 공속20",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A1A6",
@@ -4810,6 +5707,20 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "공격력 증가",
+    "공격속도 증가",
+    "아머브레이크",
+    "보스 잡기",
+    "체력 재생"
+   ],
+   "statText": "방깎27",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A06D",
@@ -4844,6 +5755,15 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0UH",
@@ -4881,6 +5801,14 @@
     "range": 600,
     "cooldown": 1.25
    },
+   "tags": [
+    "공격력 증가",
+    "공격속도 증가"
+   ],
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A065",
@@ -4903,6 +5831,8 @@
     "range": 460,
     "cooldown": 0.39
    },
+   "tags": [],
+   "badges": [],
    "skills": [],
    "summon": true
   },
@@ -4920,6 +5850,8 @@
     "range": 450,
     "cooldown": 0.3
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A07D",
@@ -4942,6 +5874,8 @@
     "range": 900,
     "cooldown": 1.5
    },
+   "tags": [],
+   "badges": [],
    "skills": [],
    "summon": true
   },
@@ -4959,6 +5893,8 @@
     "range": 450,
     "cooldown": 0.38
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A080",
@@ -4983,6 +5919,17 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "공격속도 증가(단일)",
+    "공격속도 증가",
+    "단일"
+   ],
+   "statText": "공속20, 이감25",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A06L",
@@ -5010,6 +5957,8 @@
     "range": 600,
     "cooldown": 0.85
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A114",
@@ -5034,6 +5983,19 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격력 증가",
+    "광폭화 잡기",
+    "범위 전체 체력 퍼센트 대미지",
+    "보스 잡기",
+    "단일",
+    "체력 재생"
+   ],
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A0AH",
@@ -5063,6 +6025,15 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0UH",
@@ -5102,6 +6073,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "발동이동속도 감소",
+    "단일"
+   ],
+   "statText": "방깎5, 이감10",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A10A",
@@ -5141,6 +6122,16 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "이동속도 감소",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "이감30",
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A011",
@@ -5178,6 +6169,17 @@
     "range": 575,
     "cooldown": 5
    },
+   "stun": true,
+   "tags": [
+    "이동속도 감소",
+    "스턴",
+    "공격속도 증가"
+   ],
+   "statText": "이감10, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0II",
@@ -5207,6 +6209,15 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "광폭화 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A19D",
@@ -5231,6 +6242,19 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "공격속도 증가",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "방깎22, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0HJ",
@@ -5268,6 +6292,9 @@
     "range": 450,
     "cooldown": 0.38
    },
+   "tags": [],
+   "statText": "영구",
+   "badges": [],
    "skills": [
     {
      "id": "A0HM",
@@ -5295,6 +6322,8 @@
     "range": 800,
     "cooldown": 0.71
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A1CU",
@@ -5319,6 +6348,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "시류조합",
     "shiryu"
@@ -5357,6 +6394,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "써니호조합",
     "sunny"
@@ -5395,6 +6442,17 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "방깎20, 이감25",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "사보조합",
     "sabo"
@@ -5433,6 +6491,18 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "발동이동속도 감소",
+    "마나 재생",
+    "단일"
+   ],
+   "statText": "방깎15, 이감15",
+   "badges": [
+    "sword",
+    "plus"
+   ],
    "aliases": [
     "료쿠규조합",
     "ryokugyu"
@@ -5476,6 +6546,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴"
+   ],
+   "statText": "방깎11, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "봉쿠레조합",
     "bonkurei"
@@ -5509,6 +6587,15 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격속도 증가(단일)",
+    "공격속도 증가"
+   ],
+   "statText": "공속22",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "발라티에조합",
     "baratie"
@@ -5540,6 +6627,11 @@
     "range": 650,
     "cooldown": 1.3
    },
+   "tags": [
+    "이동속도 감소"
+   ],
+   "statText": "이감40",
+   "badges": [],
    "aliases": [
     "모비딕호조합",
     "mobydick"
@@ -5578,6 +6670,14 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "반더데켄조합",
     "decken"
@@ -5616,6 +6716,15 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "단일"
+   ],
+   "statText": "방깎18, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "레베카조합",
     "rebecca"
@@ -5654,6 +6763,17 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "방깎20, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "레드포스호조합",
     "redforce"
@@ -5692,6 +6812,17 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "아머브레이크",
+    "단일",
+    "단일아머브레이크"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "베르고조합",
     "vergo"
@@ -5730,6 +6861,17 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "스턴",
+    "마법 방어력 감소",
+    "폭발형 대미지 증폭"
+   ],
+   "statText": "이감30, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "방주맥심조합",
     "maxim"
@@ -5768,6 +6910,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "체력 재생"
+   ],
+   "statText": "방깎11, 스턴",
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "aliases": [
     "이완코브조합",
     "ivankov"
@@ -5801,6 +6953,17 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "이감10, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "아카이누조합",
     "akainu"
@@ -5834,6 +6997,17 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "발동이동속도 감소",
+    "스턴",
+    "단일",
+    "폭발형 대미지 증폭"
+   ],
+   "statText": "이감35, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "아오키지조합",
     "aokiji"
@@ -5872,6 +7046,18 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "공격력 증가",
+    "공격속도 증가",
+    "발동공격력 증가",
+    "단일"
+   ],
+   "statText": "방깎25",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "검호조합",
     "mihawk"
@@ -5920,6 +7106,15 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "류마조합",
     "ryuma"
@@ -5948,6 +7143,17 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "방깎12, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "킬러조합",
     "killer"
@@ -5986,6 +7192,16 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "키쿠조합",
     "kiku"
@@ -6019,6 +7235,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "피셔타이거조합",
     "tiger"
@@ -6052,6 +7278,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "보스 잡기",
+    "단일",
+    "순간이동"
+   ],
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "스튜시조합",
     "stussy"
@@ -6085,6 +7319,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "체력 재생"
+   ],
+   "statText": "방깎11, 스턴",
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A0DF",
@@ -6114,6 +7358,14 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "캐럿조합",
     "carrot"
@@ -6152,6 +7404,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "보스 잡기",
+    "단일",
+    "순간이동"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0GO",
@@ -6181,6 +7441,12 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "단일"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0QW",
@@ -6215,6 +7481,15 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "단일"
+   ],
+   "statText": "방깎11, 이감20",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0R6",
@@ -6247,6 +7522,8 @@
     "range": 900,
     "cooldown": 0.83
    },
+   "tags": [],
+   "badges": [],
    "skills": [],
    "summon": true
   },
@@ -6264,6 +7541,8 @@
     "range": 485,
     "cooldown": 0.48
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A07E",
@@ -6288,6 +7567,15 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "단일",
+    "폭발형 대미지 증폭"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0RD",
@@ -6327,6 +7615,18 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격속도 증가(단일)",
+    "공격력 증가",
+    "공격속도 증가",
+    "아머브레이크",
+    "단일"
+   ],
+   "statText": "공증2500, 공속150",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0CR",
@@ -6356,6 +7656,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격속도 증가",
+    "단일",
+    "순간이동"
+   ],
+   "statText": "공속33",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A1BF",
@@ -6385,6 +7695,21 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "아머브레이크",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "마법 방어력 감소",
+    "폭발형 대미지 증폭",
+    "순간이동"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A130",
@@ -6429,6 +7754,22 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "스턴",
+    "마나 재생",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "마법 방어력 감소",
+    "순간이동"
+   ],
+   "statText": "이감35, 스턴",
+   "badges": [
+    "sword",
+    "plus"
+   ],
    "skills": [
     {
      "id": "A19R",
@@ -6477,6 +7818,17 @@
     "cooldown": 0.56
    },
    "damageHint": "혼합",
+   "stun": true,
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "스턴",
+    "단일"
+   ],
+   "statText": "방깎25, 이감40, 스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A02U",
@@ -6521,6 +7873,18 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "공격속도 증가",
+    "보스 잡기",
+    "단일",
+    "순간이동"
+   ],
+   "statText": "공속45, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0G5",
@@ -6565,6 +7929,20 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "방깎38, 공증3000, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0TD",
@@ -6614,6 +7992,21 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "아머브레이크",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "방깎30, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0VR",
@@ -6658,6 +8051,20 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "체력 재생",
+    "순간이동"
+   ],
+   "statText": "이감30, 스턴",
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A0ZE",
@@ -6707,6 +8114,21 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "발동공격력 증가",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "공속125, 이감45, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A175",
@@ -6756,6 +8178,22 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "마나 재생",
+    "아머브레이크",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "방깎25, 공증33, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "plus"
+   ],
    "skills": [
     {
      "id": "A0MV",
@@ -6800,6 +8238,19 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "이동속도 감소",
+    "공격력 증가",
+    "공격속도 증가",
+    "발동공격력 증가",
+    "단일"
+   ],
+   "statText": "공속125, 이감45",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "baseForm": "h08O",
    "skills": [
     {
@@ -6850,6 +8301,23 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "발동이동속도 감소",
+    "공격력 증가",
+    "공격속도 증가",
+    "아머브레이크",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "단일아머브레이크"
+   ],
+   "statText": "방깎20, 공속25, 이감45",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0SA",
@@ -6893,6 +8361,10 @@
     "cooldown": 4
    },
    "damageHint": "마법",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0YN",
@@ -6922,6 +8394,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0YB",
@@ -6956,6 +8432,14 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "순간이동"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A19W",
@@ -6995,6 +8479,13 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0Y3",
@@ -7027,6 +8518,10 @@
     "range": 1000,
     "cooldown": 0.65
    },
+   "tags": [],
+   "badges": [
+    "flag"
+   ],
    "skills": [
     {
      "id": "A12C",
@@ -7061,6 +8556,16 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "단일방어력 감소",
+    "단일"
+   ],
+   "statText": "방깎50, 스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A19U",
@@ -7093,6 +8598,20 @@
     "range": 600,
     "cooldown": 0.6
    },
+   "stun": true,
+   "tags": [
+    "공격력 증가",
+    "스턴",
+    "마나 재생",
+    "보스 잡기",
+    "체력 재생"
+   ],
+   "statText": "공증40, 스턴",
+   "badges": [
+    "flag",
+    "heart",
+    "plus"
+   ],
    "skills": [
     {
      "id": "A0Y6",
@@ -7125,6 +8644,14 @@
     "range": 1000,
     "cooldown": 0.55
    },
+   "stun": true,
+   "tags": [
+    "이동속도 감소",
+    "스턴",
+    "보스 잡기"
+   ],
+   "statText": "이감20, 스턴",
+   "badges": [],
    "skills": [
     {
      "id": "A1AD",
@@ -7162,6 +8689,11 @@
     "range": 1000,
     "cooldown": 1.18
    },
+   "tags": [
+    "방어력 감소"
+   ],
+   "statText": "방깎15",
+   "badges": [],
    "skills": [
     {
      "id": "A0Y9",
@@ -7196,6 +8728,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격속도 증가",
+    "단일"
+   ],
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0Z0",
@@ -7230,6 +8770,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "공격속도 증가(단일)",
+    "공격속도 증가"
+   ],
+   "statText": "공속10, 이감70",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0YK",
@@ -7264,6 +8814,13 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "보스 잡기",
+    "단일"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A19S",
@@ -7293,6 +8850,10 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A19V",
@@ -7322,6 +8883,12 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "단일"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0XT",
@@ -7351,6 +8918,14 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소"
+   ],
+   "statText": "방깎20, 이감30",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0X8",
@@ -7395,6 +8970,18 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "발동이동속도 감소",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "순간이동"
+   ],
+   "statText": "이감20",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0W9",
@@ -7439,6 +9026,20 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "마나 재생",
+    "단일",
+    "마법 방어력 감소",
+    "체력 재생"
+   ],
+   "statText": "이감30",
+   "badges": [
+    "sword",
+    "heart",
+    "plus"
+   ],
    "skills": [
     {
      "id": "A10K",
@@ -7483,6 +9084,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "스턴"
+   ],
+   "statText": "이감30, 스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0ZS",
@@ -7517,6 +9126,18 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격속도 증가",
+    "마나 재생",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "공속25",
+   "badges": [
+    "flag",
+    "sword",
+    "plus"
+   ],
    "skills": [
     {
      "id": "A0XK",
@@ -7556,6 +9177,20 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "마나 재생",
+    "아머브레이크",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "방깎25, 스턴",
+   "badges": [
+    "sword",
+    "heart",
+    "plus"
+   ],
    "skills": [
     {
      "id": "A0XD",
@@ -7595,6 +9230,20 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "공격속도 증가",
+    "보스 잡기",
+    "단일",
+    "마법 방어력 감소",
+    "순간이동"
+   ],
+   "statText": "공속12, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0VT",
@@ -7634,6 +9283,16 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "방깎44, 스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0VZ",
@@ -7673,6 +9332,17 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "스턴",
+    "유닛삭제",
+    "폭발형 대미지 증폭",
+    "순간이동"
+   ],
+   "statText": "이감45, 스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0Z8",
@@ -7712,6 +9382,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "이감30",
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A0XU",
@@ -7751,6 +9431,15 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "스턴",
+    "아머브레이크"
+   ],
+   "statText": "이감50, 스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0WW",
@@ -7790,6 +9479,15 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일",
+    "폭발형 대미지 증폭"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0X1",
@@ -7829,6 +9527,19 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "발동이동속도 감소",
+    "스턴",
+    "아머브레이크",
+    "유닛삭제",
+    "단일"
+   ],
+   "statText": "방깎5, 이감20, 스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0S1",
@@ -7873,6 +9584,19 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "스턴",
+    "발동방어력 감소",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "방깎40, 이감50, 스턴",
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A0ZI",
@@ -7917,6 +9641,13 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "baseForm": "h09M",
    "skills": [
     {
@@ -7950,6 +9681,8 @@
     "range": 450,
     "cooldown": 0.38
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A10P",
@@ -7972,6 +9705,17 @@
     "range": 420,
     "cooldown": 5
    },
+   "tags": [
+    "이동속도 감소",
+    "공격속도 증가(단일)",
+    "공격속도 증가",
+    "마나 재생"
+   ],
+   "statText": "공속25, 이감7",
+   "badges": [
+    "flag",
+    "plus"
+   ],
    "skills": [
     {
      "id": "A0VK",
@@ -7999,6 +9743,8 @@
     "range": 400,
     "cooldown": 1
    },
+   "tags": [],
+   "badges": [],
    "skills": []
   },
   {
@@ -8015,6 +9761,8 @@
     "range": 700,
     "cooldown": 0.64
    },
+   "tags": [],
+   "badges": [],
    "skills": [],
    "summon": true
   },
@@ -8035,6 +9783,18 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "아머브레이크",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "해군의홍일점",
     "tashigi tr"
@@ -8086,6 +9846,8 @@
     "range": 1000,
     "cooldown": 0.65
    },
+   "tags": [],
+   "badges": [],
    "skills": [],
    "summon": true
   },
@@ -8103,6 +9865,8 @@
     "range": 600,
     "cooldown": 1.85
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0NM",
@@ -8127,6 +9891,12 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "단일"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A090",
@@ -8152,6 +9922,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "공격속도 증가",
+    "단일"
+   ],
+   "statText": "공속12, 이감45",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "baseForm": "H08V",
    "skills": [
     {
@@ -8195,6 +9975,8 @@
     "range": 1000,
     "cooldown": 0.65
    },
+   "tags": [],
+   "badges": [],
    "skills": [],
    "summon": true
   },
@@ -8215,6 +9997,16 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "체력 재생"
+   ],
+   "statText": "방깎45, 스턴",
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "baseForm": "H098",
    "skills": [
     {
@@ -8256,6 +10048,17 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "순간이동"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "baseForm": "H0B5",
    "skills": [
     {
@@ -8304,6 +10107,8 @@
     "range": 900,
     "cooldown": 0.9
    },
+   "tags": [],
+   "badges": [],
    "skills": [],
    "summon": true
   },
@@ -8323,6 +10128,15 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "단일"
+   ],
+   "statText": "방깎7, 이감7",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0PO",
@@ -8360,6 +10174,12 @@
     "range": 550,
     "cooldown": 5
    },
+   "tags": [
+    "공격속도 증가"
+   ],
+   "badges": [
+    "flag"
+   ],
    "skills": [
     {
      "id": "A12S",
@@ -8390,6 +10210,14 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "범위 잃은 체력 퍼센트 대미지"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "해왕류를다스리는인어공주",
     "shirahoshi tr"
@@ -8439,6 +10267,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "공격속도 증가",
+    "단일"
+   ],
+   "statText": "공속12, 이감45",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "날씨는맑음",
     "nami tr"
@@ -8488,6 +10326,17 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "순간이동"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "검은정의를좇는하얀새",
     "lucci tr"
@@ -8542,6 +10391,21 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "아머브레이크",
+    "단일",
+    "단일아머브레이크"
+   ],
+   "statText": "방깎2, 공속100, 이감99, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "분노하는맹호",
     "fujitora tr"
@@ -8596,6 +10460,13 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "단일"
+   ],
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "무적의아이언파이러츠",
     "franky tr"
@@ -8650,6 +10521,18 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "공격속도 증가",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "공속20, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "정상해전종결자",
     "shanks tr"
@@ -8704,6 +10587,21 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "스턴",
+    "광폭화 잡기",
+    "모든피해증가",
+    "보스 잡기",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "이감75, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "aliases": [
     "치밀하고비열한어둠",
     "teach tr"
@@ -8751,6 +10649,17 @@
     "range": 600,
     "cooldown": 0.62
    },
+   "tags": [
+    "방어력 감소",
+    "공격속도 증가(단일)",
+    "공격력 증가",
+    "공격속도 증가",
+    "발동공격력 증가"
+   ],
+   "statText": "방깎50, 공속40, 영구",
+   "badges": [
+    "flag"
+   ],
    "aliases": [
     "순록의사!",
     "chopper tr"
@@ -8795,6 +10704,20 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "방깎35, 이감30, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "혁명군참모총장",
     "sabo tr"
@@ -8849,6 +10772,17 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "공격속도 증가(단일)",
+    "공격속도 증가",
+    "단일"
+   ],
+   "statText": "방깎50, 공속40",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "baseForm": "H091",
    "skills": [
     {
@@ -8885,6 +10819,19 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "공격속도 증가",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "방깎25, 공속7, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "aliases": [
     "운명의마술사",
     "hawkins tr"
@@ -8939,6 +10886,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "스턴",
+    "광폭화 잡기",
+    "단일"
+   ],
+   "statText": "이감12, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "해군원수붉은개",
     "akainu tr"
@@ -8988,6 +10945,20 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "공격력 증가",
+    "광폭화 잡기",
+    "단일",
+    "체력 재생",
+    "순간이동"
+   ],
+   "statText": "공증20, 이감99",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "aliases": [
     "백개의심장을바친자",
     "law tr"
@@ -9042,6 +11013,18 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "발동이동속도 감소",
+    "스턴",
+    "마나 재생",
+    "폭발형 대미지 증폭"
+   ],
+   "statText": "이감20, 스턴",
+   "badges": [
+    "sword",
+    "plus"
+   ],
    "aliases": [
     "전해군대장푸른꿩",
     "aokiji tr"
@@ -9096,6 +11079,16 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "체력 재생"
+   ],
+   "statText": "방깎45, 스턴",
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "aliases": [
     "악마의자식",
     "robin tr"
@@ -9140,6 +11133,20 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "공격력 증가",
+    "스턴",
+    "아머브레이크",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "공증2750, 이감33, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "해적왕이될사나이",
     "luffy tr"
@@ -9189,6 +11196,21 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "공격속도 증가(단일)",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "아머브레이크",
+    "단일"
+   ],
+   "statText": "방깎25, 공속20, 이감50, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "바다의협객",
     "jinbe tr"
@@ -9243,6 +11265,19 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "마나 재생",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "방깎8, 스턴",
+   "badges": [
+    "sword",
+    "plus"
+   ],
    "aliases": [
     "바다의전사",
     "usopp tr"
@@ -9302,6 +11337,18 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "마나 재생",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "방깎8, 스턴",
+   "badges": [
+    "sword",
+    "plus"
+   ],
    "baseForm": "H09B",
    "skills": [
     {
@@ -9348,6 +11395,16 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "마나 재생"
+   ],
+   "statText": "방깎60, 이감75",
+   "badges": [
+    "sword",
+    "plus"
+   ],
    "baseForm": "H09E",
    "skills": [
     {
@@ -9398,6 +11455,16 @@
     "cooldown": 0.62
    },
    "damageHint": "혼합",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "마나 재생"
+   ],
+   "statText": "방깎60, 이감75",
+   "badges": [
+    "sword",
+    "plus"
+   ],
    "aliases": [
     "어둠의조커",
     "joker tr"
@@ -9457,6 +11524,16 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "스턴",
+    "단일"
+   ],
+   "statText": "방깎30, 이감30, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "최강의검사",
     "zoro tr"
@@ -9511,6 +11588,21 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격속도 증가(단일)",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "마나 재생",
+    "단일",
+    "순간이동"
+   ],
+   "statText": "공증12, 공속15, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "plus"
+   ],
    "baseForm": "H09H",
    "skills": [
     {
@@ -9562,6 +11654,15 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일",
+    "순간이동"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "지옥에서돌아온자",
     "sanji tr"
@@ -9616,6 +11717,20 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "스턴",
+    "공격속도 증가",
+    "보스 잡기",
+    "단일",
+    "마법 방어력 감소"
+   ],
+   "statText": "공속100, 이감15, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "소울킹",
     "brook tr"
@@ -9664,6 +11779,15 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "공격속도 증가"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A12S",
@@ -9691,6 +11815,12 @@
     "range": 550,
     "cooldown": 5
    },
+   "tags": [
+    "공격속도 증가"
+   ],
+   "badges": [
+    "flag"
+   ],
    "skills": [
     {
      "id": "A12S",
@@ -9718,6 +11848,8 @@
     "range": 550,
     "cooldown": 5
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A12S",
@@ -9748,6 +11880,18 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "아머브레이크",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "baseForm": "H05N",
    "skills": [
     {
@@ -9797,6 +11941,18 @@
     "range": 600,
     "cooldown": 0.62
    },
+   "stun": true,
+   "tags": [
+    "이동속도 감소",
+    "공격속도 증가(단일)",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가"
+   ],
+   "statText": "공증40, 공속40, 이감40, 스턴",
+   "badges": [
+    "flag"
+   ],
    "aliases": [
     "세계최고의과학자",
     "vegapunk tr"
@@ -9841,6 +11997,17 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "방깎40, 스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0RC",
@@ -9876,6 +12043,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가"
+   ],
+   "statText": "공속45, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A047",
@@ -9908,6 +12085,8 @@
     "range": 1000,
     "cooldown": 0.71
    },
+   "tags": [],
+   "badges": [],
    "skills": [],
    "summon": true
   },
@@ -9927,6 +12106,14 @@
     "cooldown": 0.75
    },
    "damageHint": "혼합",
+   "stun": true,
+   "tags": [
+    "스턴"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0RA",
@@ -9957,6 +12144,21 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "공격속도 증가(단일)",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "아머브레이크",
+    "단일"
+   ],
+   "statText": "방깎25, 공속20, 이감50, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "baseForm": "H09A",
    "skills": [
     {
@@ -10008,6 +12210,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "발동이동속도 감소",
+    "스턴",
+    "폭발형 대미지 증폭"
+   ],
+   "statText": "이감20, 스턴",
+   "badges": [
+    "sword"
+   ],
    "baseForm": "H097",
    "skills": [
     {
@@ -10054,6 +12266,19 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "공증2500, 공속15, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "다섯번째황제",
     "snakeman tr"
@@ -10108,6 +12333,19 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "공증2500, 공속15, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "baseForm": "H0B2",
    "skills": [
     {
@@ -10154,6 +12392,20 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "공격력 증가",
+    "스턴",
+    "단일",
+    "체력 재생",
+    "폭발형 대미지 증폭"
+   ],
+   "statText": "이감35, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "aliases": [
     "신세대의이단아",
     "kid tr"
@@ -10208,6 +12460,15 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일",
+    "순간이동"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "해군대장노란원숭이",
     "kizaru tr"
@@ -10260,6 +12521,17 @@
     "range": 625,
     "cooldown": 1.2
    },
+   "tags": [
+    "방어력 감소",
+    "공격속도 증가(단일)",
+    "공격력 증가",
+    "공격속도 증가",
+    "발동공격력 증가"
+   ],
+   "statText": "방깎50, 공속40",
+   "badges": [
+    "flag"
+   ],
    "baseForm": "H091",
    "skills": [
     {
@@ -10295,6 +12567,23 @@
     "cooldown": 0.99
    },
    "damageHint": "혼합",
+   "stun": true,
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "방깎25, 공증75000, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart",
+    "plus"
+   ],
    "aliases": [
     "오니히메",
     "yamato tr"
@@ -10348,6 +12637,23 @@
     "cooldown": 0.92
    },
    "damageHint": "혼합",
+   "stun": true,
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "방깎25, 공증75000, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart",
+    "plus"
+   ],
    "baseForm": "H0BD",
    "skills": [
     {
@@ -10394,6 +12700,19 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "발동이동속도 감소",
+    "마나 재생",
+    "아머브레이크",
+    "단일"
+   ],
+   "statText": "방깎35, 이감25",
+   "badges": [
+    "sword",
+    "plus"
+   ],
    "aliases": [
     "신해군대장초록소",
     "ryokugyu tr"
@@ -10448,6 +12767,20 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "공격력 증가",
+    "광폭화 잡기",
+    "단일",
+    "체력 재생",
+    "순간이동"
+   ],
+   "statText": "공증20, 이감99",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "baseForm": "H096",
    "skills": [
     {
@@ -10499,6 +12832,19 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "발동이동속도 감소",
+    "마나 재생",
+    "아머브레이크",
+    "단일"
+   ],
+   "statText": "방깎35, 이감25",
+   "badges": [
+    "sword",
+    "plus"
+   ],
    "baseForm": "H0BL",
    "skills": [
     {
@@ -10542,6 +12888,8 @@
     "range": 700,
     "cooldown": 0.64
    },
+   "tags": [],
+   "badges": [],
    "skills": [],
    "summon": true
   },
@@ -10559,6 +12907,8 @@
     "range": 625,
     "cooldown": 0.8
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A149",
@@ -10589,6 +12939,16 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "스턴",
+    "단일"
+   ],
+   "statText": "방깎30, 이감30, 스턴",
+   "badges": [
+    "sword"
+   ],
    "baseForm": "H09F",
    "skills": [
     {
@@ -10635,6 +12995,11 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [],
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "baseForm": "H08Y",
    "skills": [
     {
@@ -10681,6 +13046,20 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "마나 재생",
+    "단일",
+    "체력 재생",
+    "중첩방어력 감소"
+   ],
+   "statText": "방깎1, 스턴",
+   "badges": [
+    "sword",
+    "heart",
+    "plus"
+   ],
    "aliases": [
     "일그러진미래",
     "bonney tr"
@@ -10730,6 +13109,20 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "마나 재생",
+    "단일",
+    "체력 재생",
+    "중첩방어력 감소"
+   ],
+   "statText": "방깎1, 스턴",
+   "badges": [
+    "sword",
+    "heart",
+    "plus"
+   ],
    "baseForm": "H0BX",
    "skills": [
     {
@@ -10775,6 +13168,23 @@
     "cooldown": 0.99
    },
    "damageHint": "혼합",
+   "stun": true,
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "방깎25, 공증75000, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart",
+    "plus"
+   ],
    "baseForm": "H0BD",
    "skills": [
     {
@@ -10825,6 +13235,23 @@
     "cooldown": 0.92
    },
    "damageHint": "혼합",
+   "stun": true,
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "방깎25, 공증75000, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart",
+    "plus"
+   ],
    "baseForm": "H0BD",
    "skills": [
     {
@@ -10871,6 +13298,14 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "범위 잃은 체력 퍼센트 대미지"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "baseForm": "H08U",
    "skills": [
     {
@@ -10914,6 +13349,8 @@
     "range": 900,
     "cooldown": 0.9
    },
+   "tags": [],
+   "badges": [],
    "skills": [],
    "summon": true
   },
@@ -10934,6 +13371,20 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "공격력 증가",
+    "스턴",
+    "아머브레이크",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "공증2750, 이감33, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "baseForm": "H099",
    "skills": [
     {
@@ -10980,6 +13431,17 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "순간이동"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "baseForm": "H08W",
    "skills": [
     {
@@ -11036,6 +13498,20 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격속도 증가(단일)",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "발동공격력 증가",
+    "단일",
+    "순간이동"
+   ],
+   "statText": "공속10, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "해군의미래",
     "koby tr"
@@ -11094,6 +13570,22 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "공격속도 증가(단일)",
+    "스턴",
+    "공격속도 증가",
+    "아머브레이크",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "방깎20, 공속45, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "aliases": [
     "명왕실버즈레일리",
     "rayleigh im"
@@ -11147,6 +13639,20 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "방깎45, 이감10, 스턴",
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "aliases": [
     "대해적흰수염",
     "newgate im"
@@ -11195,6 +13701,16 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "아머브레이크",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword",
+    "plus"
+   ],
    "aliases": [
     "천신금사자시키",
     "shiki im"
@@ -11248,6 +13764,17 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "공격속도 증가",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "공속45, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "해군영웅거프",
     "garp im"
@@ -11301,6 +13828,19 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격속도 증가(단일)",
+    "스턴",
+    "공격속도 증가",
+    "유닛삭제",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "공속20, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "폭풍을몰아오는바람",
     "dragon im"
@@ -11349,6 +13889,17 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격력 증가",
+    "스턴",
+    "체력 재생"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "aliases": [
     "부처님센고쿠",
     "Sengoku im"
@@ -11392,6 +13943,16 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "산먹깨비",
     "gaban im"
@@ -11435,6 +13996,20 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "스턴",
+    "공격속도 증가",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "순간이동"
+   ],
+   "statText": "공속130, 이감35, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "신념의흑완제트",
     "z im"
@@ -11488,6 +14063,16 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "스턴",
+    "단일"
+   ],
+   "statText": "방깎60, 이감99, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "해적왕골D로져",
     "roger im"
@@ -11536,6 +14121,21 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "발동공격력 증가",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "공속175, 이감70, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "aliases": [
     "탐식의강철풍선",
     "bigmom im"
@@ -11587,6 +14187,8 @@
     "range": 900,
     "cooldown": 0.9
    },
+   "tags": [],
+   "badges": [],
    "baseForm": "h04Q",
    "skills": []
   },
@@ -11606,6 +14208,21 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "이동속도 감소",
+    "발동이동속도 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "aliases": [
     "백수의제왕카이도",
     "kaido im"
@@ -11652,6 +14269,8 @@
     "range": 650,
     "cooldown": 2.25
    },
+   "tags": [],
+   "badges": [],
    "skills": [],
    "summon": true
   },
@@ -11671,6 +14290,18 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "스턴",
+    "아머브레이크",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "이감20, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "괴물의후계자",
     "bullet im"
@@ -11724,6 +14355,20 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "발동공격력 증가",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "공증35, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "baseForm": "h07M",
    "skills": [
     {
@@ -11769,6 +14414,20 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "방깎45, 이감10, 스턴",
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "baseForm": "h04A",
    "skills": [
     {
@@ -11812,6 +14471,8 @@
     "range": 525,
     "cooldown": 1.5
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0BX",
@@ -11834,6 +14495,11 @@
     "range": 525,
     "cooldown": 1.5
    },
+   "tags": [
+    "방어력 감소"
+   ],
+   "statText": "방깎5",
+   "badges": [],
    "skills": [
     {
      "id": "A0BU",
@@ -11858,6 +14524,13 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "광폭화 잡기",
+    "보스 잡기"
+   ],
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0C9",
@@ -11882,6 +14555,13 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0CQ",
@@ -11906,6 +14586,17 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격력 증가",
+    "스턴",
+    "체력 재생"
+   ],
+   "statText": "공증10, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "baseForm": "h04E",
    "skills": [
     {
@@ -11946,6 +14637,21 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "마법 대미지 증가",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "baseForm": "h07M",
    "skills": [
     {
@@ -11991,6 +14697,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "파이러츠왕녀",
     "vivi et"
@@ -12044,6 +14760,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "스턴",
+    "단일",
+    "폭발형 대미지 증폭"
+   ],
+   "statText": "이감45, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "매의눈미호크",
     "mihawk et"
@@ -12092,6 +14818,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "스턴",
+    "범위 전체 체력 퍼센트 대미지",
+    "단일"
+   ],
+   "statText": "이감45, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "화권의에이스",
     "ace et"
@@ -12145,6 +14881,19 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "단일"
+   ],
+   "statText": "방깎30, 공증33, 이감25, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "천냥광대",
     "buggy et"
@@ -12193,6 +14942,17 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "아머브레이크",
+    "단일",
+    "단일아머브레이크"
+   ],
+   "statText": "방깎35, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "해적왕자",
     "cavendish et"
@@ -12246,6 +15006,18 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "범위 전체 체력 퍼센트 대미지",
+    "보스 잡기",
+    "단일",
+    "마법 방어력 감소"
+   ],
+   "statText": "방깎5, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "아마존릴리의여제",
     "hancock et"
@@ -12299,6 +15071,27 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "공격속도 증가(단일)",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "마나 재생",
+    "보스 잡기",
+    "단일",
+    "마법 방어력 감소",
+    "체력 재생",
+    "폭발형 대미지 증폭"
+   ],
+   "statText": "공증30, 공속15, 이감45, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart",
+    "plus"
+   ],
    "aliases": [
     "세계의가희",
     "u-ta et"
@@ -12352,6 +15145,18 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "공격속도 증가",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "공속25, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "최고의엔터테이너",
     "tesoro et"
@@ -12398,6 +15203,8 @@
     "range": 400,
     "cooldown": 0.11
    },
+   "tags": [],
+   "badges": [],
    "skills": [],
    "summon": true
   },
@@ -12417,6 +15224,16 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "이동속도 감소",
+    "스턴",
+    "단일",
+    "폭발형 대미지 증폭"
+   ],
+   "statText": "이감45, 스턴",
+   "badges": [
+    "sword"
+   ],
    "baseForm": "h058",
    "skills": [
     {
@@ -12462,6 +15279,14 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "참된호걸",
     "oden et"
@@ -12510,6 +15335,18 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "범위 전체 체력 퍼센트 대미지",
+    "보스 잡기",
+    "단일",
+    "마법 방어력 감소"
+   ],
+   "statText": "방깎5, 스턴",
+   "badges": [
+    "sword"
+   ],
    "baseForm": "h05C",
    "skills": [
     {
@@ -12560,6 +15397,27 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "공격속도 증가(단일)",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "마나 재생",
+    "보스 잡기",
+    "단일",
+    "마법 방어력 감소",
+    "체력 재생",
+    "폭발형 대미지 증폭"
+   ],
+   "statText": "공증30, 공속15, 이감45, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart",
+    "plus"
+   ],
    "baseForm": "h067",
    "skills": [
     {
@@ -12611,6 +15469,17 @@
    },
    "damageHint": "혼합",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "방깎35, 스턴",
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "aliases": [
     "태양의신",
     "nika et"
@@ -12657,6 +15526,8 @@
     "range": 400,
     "cooldown": 0
    },
+   "tags": [],
+   "badges": [],
    "skills": [],
    "summon": true
   },
@@ -12676,6 +15547,17 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "보스 잡기"
+   ],
+   "statText": "공속50, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "전설의사무라이",
     "ryuma et"
@@ -12727,6 +15609,8 @@
     "range": 800,
     "cooldown": 0.05
    },
+   "tags": [],
+   "badges": [],
    "skills": [],
    "summon": true
   },
@@ -12746,6 +15630,19 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "마나 재생",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "plus"
+   ],
    "aliases": [
     "혁명군대리사범",
     "koala"
@@ -12782,6 +15679,17 @@
     "range": 850,
     "cooldown": 0.82
    },
+   "stun": true,
+   "tags": [
+    "이동속도 감소",
+    "스턴",
+    "단일",
+    "폭발형 대미지 증폭"
+   ],
+   "statText": "이감45, 스턴",
+   "badges": [
+    "sword"
+   ],
    "aliases": [
     "고스트프린세스",
     "perona"
@@ -12824,6 +15732,20 @@
     "cooldown": 0.84
    },
    "damageHint": "혼합",
+   "stun": true,
+   "tags": [
+    "방어력 감소",
+    "공격력 증가",
+    "스턴",
+    "공격속도 증가",
+    "단일",
+    "범위 잃은 체력 퍼센트 대미지"
+   ],
+   "statText": "방깎15, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "환혹의마리아네트",
     "blackmaria"
@@ -12870,6 +15792,15 @@
     "range": 850,
     "cooldown": 0.6
    },
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "공격력 증가"
+   ],
+   "statText": "방깎40, 공증25, 이감25",
+   "badges": [
+    "flag"
+   ],
    "aliases": [
     "해적왕의아들",
     "ace"
@@ -12901,6 +15832,17 @@
     "range": 850,
     "cooldown": 0.82
    },
+   "stun": true,
+   "tags": [
+    "이동속도 감소",
+    "스턴",
+    "단일",
+    "폭발형 대미지 증폭"
+   ],
+   "statText": "이감45, 스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0BI",
@@ -12940,6 +15882,18 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "바제스",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword",
+    "plus"
+   ],
    "aliases": [
     "괴력의챔피언",
     "burgess"
@@ -12978,6 +15932,18 @@
    },
    "damageHint": "혼합",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "아머브레이크",
+    "광폭화 잡기",
+    "보스 잡기"
+   ],
+   "statText": "방깎20, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "aliases": [
     "역재의사이보그",
     "queen"
@@ -13014,6 +15980,18 @@
     "range": 525,
     "cooldown": 0.13
    },
+   "stun": true,
+   "tags": [
+    "스턴",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A055",
@@ -13038,6 +16016,14 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "단일"
+   ],
+   "statText": "스턴",
+   "badges": [
+    "sword"
+   ],
    "skills": [
     {
      "id": "A0DI",
@@ -13065,6 +16051,9 @@
     "range": 400,
     "cooldown": 1
    },
+   "tags": [],
+   "statText": "영구",
+   "badges": [],
    "skills": [
     {
      "id": "A0LQ",
@@ -13087,6 +16076,11 @@
     "range": 475,
     "cooldown": 1
    },
+   "tags": [
+    "방어력 감소"
+   ],
+   "statText": "방깎25",
+   "badges": [],
    "skills": [
     {
      "id": "A0LM",
@@ -13109,6 +16103,13 @@
     "range": 450,
     "cooldown": 0.82
    },
+   "tags": [
+    "공격력 증가"
+   ],
+   "statText": "공증60",
+   "badges": [
+    "flag"
+   ],
    "skills": [
     {
      "id": "A0LS",
@@ -13131,6 +16132,14 @@
     "range": 600,
     "cooldown": 0.75
    },
+   "tags": [
+    "공격속도 증가(단일)",
+    "공격속도 증가"
+   ],
+   "statText": "공속11",
+   "badges": [
+    "flag"
+   ],
    "skills": [
     {
      "id": "A0DQ",
@@ -13168,6 +16177,11 @@
     "range": 450,
     "cooldown": 0.82
    },
+   "tags": [
+    "이동속도 감소"
+   ],
+   "statText": "이감20",
+   "badges": [],
    "skills": [
     {
      "id": "A12T",
@@ -13195,6 +16209,8 @@
     "range": 650,
     "cooldown": 1.5
    },
+   "tags": [],
+   "badges": [],
    "skills": [
     {
      "id": "A0DD",
@@ -13224,6 +16240,20 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "스턴",
+    "공격속도 증가",
+    "광폭화 잡기",
+    "범위 전체 체력 퍼센트 대미지",
+    "보스 잡기",
+    "단일",
+    "폭발형 대미지 증폭"
+   ],
+   "statText": "공속45, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A13S",
@@ -13263,6 +16293,20 @@
    },
    "damageHint": "물리",
    "damageType": "물딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "공격속도 증가",
+    "아머브레이크",
+    "단일",
+    "체력 재생"
+   ],
+   "statText": "방깎20, 공속30, 스턴",
+   "badges": [
+    "flag",
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A147",
@@ -13302,6 +16346,22 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "이동속도 감소",
+    "스턴",
+    "공격속도 증가",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "마법 방어력 감소",
+    "순간이동"
+   ],
+   "statText": "공속30, 이감30, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A098",
@@ -13351,6 +16411,21 @@
    },
    "damageHint": "마법",
    "damageType": "마딜",
+   "tags": [
+    "방어력 감소",
+    "스턴",
+    "공격속도 증가",
+    "아머브레이크",
+    "광폭화 잡기",
+    "보스 잡기",
+    "단일",
+    "단일아머브레이크"
+   ],
+   "statText": "방깎35, 공속30, 스턴",
+   "badges": [
+    "flag",
+    "sword"
+   ],
    "skills": [
     {
      "id": "A13W",
@@ -13389,6 +16464,14 @@
     "cooldown": 2.31
    },
    "damageHint": "마법",
+   "tags": [
+    "보스 잡기",
+    "체력 재생"
+   ],
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A13H",
@@ -13412,6 +16495,14 @@
     "cooldown": 2.31
    },
    "damageHint": "마법",
+   "tags": [
+    "보스 잡기",
+    "체력 재생"
+   ],
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A13H",
@@ -13435,6 +16526,14 @@
     "cooldown": 2.31
    },
    "damageHint": "마법",
+   "tags": [
+    "보스 잡기",
+    "체력 재생"
+   ],
+   "badges": [
+    "sword",
+    "heart"
+   ],
    "skills": [
     {
      "id": "A13H",
