@@ -1,6 +1,6 @@
 {
  "version": "ORDR_S2_2.323",
- "extractedAt": "2026-10-23T06:11:23.290Z",
+ "extractedAt": "2026-10-23T06:21:46.172Z",
  "source": "ORDR_S2_2.323[C].w3x",
  "grades": [
   "흔함",
@@ -372,6 +372,7 @@
     "cooldown": 1.3
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -479,6 +480,7 @@
     "cooldown": 0.96
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A07Y",
@@ -517,6 +519,7 @@
     "cooldown": 1.6
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A07Y",
@@ -667,6 +670,7 @@
     "cooldown": 1.1
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A07Y",
@@ -737,6 +741,7 @@
     "cooldown": 1.32
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -881,6 +886,7 @@
     "cooldown": 1
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0JE",
@@ -919,6 +925,7 @@
     "cooldown": 1.1
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0JE",
@@ -957,6 +964,7 @@
     "cooldown": 0.47
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0JE",
@@ -1032,6 +1040,7 @@
     "cooldown": 0.88
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0JE",
@@ -1070,6 +1079,7 @@
     "cooldown": 0.68
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0JE",
@@ -1150,6 +1160,7 @@
     "cooldown": 0.88
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0E7",
@@ -1262,6 +1273,7 @@
     "cooldown": 1
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0JE",
@@ -1332,6 +1344,7 @@
     "cooldown": 0.55
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0EF",
@@ -1370,6 +1383,7 @@
     "cooldown": 1
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0EE",
@@ -1408,6 +1422,7 @@
     "cooldown": 0.55
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0ED",
@@ -1446,6 +1461,7 @@
     "cooldown": 1.3
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0JE",
@@ -1484,6 +1500,7 @@
     "cooldown": 1.2
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0EB",
@@ -1559,6 +1576,7 @@
     "cooldown": 0.25
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0E9",
@@ -1602,6 +1620,7 @@
     "cooldown": 1
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0EF",
@@ -1640,6 +1659,7 @@
     "cooldown": 0.8
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0EI",
@@ -1715,6 +1735,7 @@
     "cooldown": 0.8
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0JE",
@@ -1891,6 +1912,7 @@
     "cooldown": 1.15
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0EQ",
@@ -1966,6 +1988,7 @@
     "cooldown": 0.57
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0ET",
@@ -2004,6 +2027,7 @@
     "cooldown": 0.75
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0JE",
@@ -2042,6 +2066,7 @@
     "cooldown": 0.8
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A083",
@@ -2080,6 +2105,7 @@
     "cooldown": 0.65
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0K2",
@@ -2123,6 +2149,7 @@
     "cooldown": 0.68
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -2166,6 +2193,7 @@
     "cooldown": 0.56
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0FT",
@@ -2204,6 +2232,7 @@
     "cooldown": 0.82
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0FU",
@@ -2252,6 +2281,7 @@
     "cooldown": 1
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -2285,6 +2315,7 @@
     "cooldown": 1.09
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0F9",
@@ -2323,6 +2354,7 @@
     "cooldown": 0.68
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A02Q",
@@ -2474,6 +2506,7 @@
     "cooldown": 0.85
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0FL",
@@ -2545,6 +2578,7 @@
     "cooldown": 1.5
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -2578,6 +2612,7 @@
     "cooldown": 0.79
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0FH",
@@ -2611,6 +2646,7 @@
     "cooldown": 0.6
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -2676,6 +2712,7 @@
     "cooldown": 0.87
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -2709,6 +2746,7 @@
     "cooldown": 0.77
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -2785,6 +2823,7 @@
     "cooldown": 0.9
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -2818,6 +2857,7 @@
     "cooldown": 0.77
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0UG",
@@ -2856,6 +2896,7 @@
     "cooldown": 0.69
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A07Y",
@@ -2889,6 +2930,7 @@
     "cooldown": 0.7
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A07Y",
@@ -2927,6 +2969,7 @@
     "cooldown": 0.69
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A07Y",
@@ -2960,6 +3003,7 @@
     "cooldown": 0.8
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0EY",
@@ -3003,6 +3047,7 @@
     "cooldown": 0.95
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -3036,6 +3081,7 @@
     "cooldown": 0.94
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -3074,6 +3120,7 @@
     "cooldown": 1
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -3150,6 +3197,7 @@
     "cooldown": 0.97
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0F3",
@@ -3183,6 +3231,7 @@
     "cooldown": 1
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0EV",
@@ -3216,6 +3265,7 @@
     "cooldown": 1
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0F0",
@@ -3249,6 +3299,7 @@
     "cooldown": 0.61
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -3292,6 +3343,7 @@
     "cooldown": 0.4
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -3325,6 +3377,7 @@
     "cooldown": 0.82
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -3358,6 +3411,7 @@
     "cooldown": 0.95
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0EW",
@@ -3391,6 +3445,7 @@
     "cooldown": 0.62
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -3434,6 +3489,7 @@
     "cooldown": 1.05
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0K3",
@@ -3472,6 +3528,7 @@
     "cooldown": 0.75
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -3569,6 +3626,7 @@
     "cooldown": 0.85
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A07Y",
@@ -3688,6 +3746,7 @@
     "cooldown": 1.25
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0AS",
@@ -3721,6 +3780,7 @@
     "cooldown": 0.7
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0AO",
@@ -3754,6 +3814,7 @@
     "cooldown": 0.66
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0AK",
@@ -3787,6 +3848,7 @@
     "cooldown": 1.33
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0AD",
@@ -3815,6 +3877,7 @@
     "cooldown": 0.52
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0AB",
@@ -3843,6 +3906,7 @@
     "cooldown": 0.79
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0A7",
@@ -3876,6 +3940,7 @@
     "cooldown": 0.64
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A011",
@@ -3914,6 +3979,7 @@
     "cooldown": 0.72
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A09Z",
@@ -3942,6 +4008,7 @@
     "cooldown": 0.84
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A06W",
@@ -3975,6 +4042,7 @@
     "cooldown": 0.77
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A09L",
@@ -4008,6 +4076,7 @@
     "cooldown": 0.84
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A18P",
@@ -4041,6 +4110,7 @@
     "cooldown": 1.4
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A09U",
@@ -4069,6 +4139,7 @@
     "cooldown": 0.71
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A09D",
@@ -4107,6 +4178,7 @@
     "cooldown": 0.69
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A098",
@@ -4173,6 +4245,7 @@
     "cooldown": 0.76
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A094",
@@ -4201,6 +4274,7 @@
     "cooldown": 0.88
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A090",
@@ -4239,6 +4313,7 @@
     "cooldown": 0.45
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A08Z",
@@ -4267,6 +4342,7 @@
     "cooldown": 0.66
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A077",
@@ -4328,6 +4404,7 @@
     "cooldown": 0.73
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A070",
@@ -4361,6 +4438,7 @@
     "cooldown": 0.38
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A08U",
@@ -4389,6 +4467,7 @@
     "cooldown": 0.75
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A06T",
@@ -4417,6 +4496,7 @@
     "cooldown": 0.58
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A06O",
@@ -4478,6 +4558,7 @@
     "cooldown": 0.64
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A05N",
@@ -4516,6 +4597,7 @@
     "cooldown": 0.57
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A05I",
@@ -4576,6 +4658,7 @@
     "cooldown": 0.85
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A063",
@@ -4614,6 +4697,7 @@
     "cooldown": 0.6
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0S0",
@@ -4652,6 +4736,7 @@
     "cooldown": 0.63
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A06B",
@@ -4680,6 +4765,7 @@
     "cooldown": 0.85
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A1A6",
@@ -4723,6 +4809,7 @@
     "cooldown": 1.02
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A06D",
@@ -4756,6 +4843,7 @@
     "cooldown": 0.7
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0UH",
@@ -4894,6 +4982,7 @@
     "cooldown": 0.91
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A06L",
@@ -4944,6 +5033,7 @@
     "cooldown": 0.92
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0AH",
@@ -4972,6 +5062,7 @@
     "cooldown": 0.7
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0UH",
@@ -5010,6 +5101,7 @@
     "cooldown": 0.92
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A10A",
@@ -5048,6 +5140,7 @@
     "cooldown": 0.64
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A011",
@@ -5113,6 +5206,7 @@
     "cooldown": 0.39
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A19D",
@@ -5136,6 +5230,7 @@
     "cooldown": 4.5
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0HJ",
@@ -5223,6 +5318,7 @@
     "cooldown": 0.7
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "시류조합",
     "shiryu"
@@ -5260,6 +5356,7 @@
     "cooldown": 0.45
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "써니호조합",
     "sunny"
@@ -5297,6 +5394,7 @@
     "cooldown": 0.83
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "사보조합",
     "sabo"
@@ -5334,6 +5432,7 @@
     "cooldown": 0.95
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "료쿠규조합",
     "ryokugyu"
@@ -5376,6 +5475,7 @@
     "cooldown": 0.94
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "봉쿠레조합",
     "bonkurei"
@@ -5408,6 +5508,7 @@
     "cooldown": 0.28
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "발라티에조합",
     "baratie"
@@ -5476,6 +5577,7 @@
     "cooldown": 0.66
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "반더데켄조합",
     "decken"
@@ -5513,6 +5615,7 @@
     "cooldown": 0.82
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "aliases": [
     "레베카조합",
     "rebecca"
@@ -5550,6 +5653,7 @@
     "cooldown": 0.64
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "레드포스호조합",
     "redforce"
@@ -5587,6 +5691,7 @@
     "cooldown": 0.81
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "베르고조합",
     "vergo"
@@ -5624,6 +5729,7 @@
     "cooldown": 0.64
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "방주맥심조합",
     "maxim"
@@ -5661,6 +5767,7 @@
     "cooldown": 0.86
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "이완코브조합",
     "ivankov"
@@ -5693,6 +5800,7 @@
     "cooldown": 0.75
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "아카이누조합",
     "akainu"
@@ -5725,6 +5833,7 @@
     "cooldown": 0.79
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "아오키지조합",
     "aokiji"
@@ -5762,6 +5871,7 @@
     "cooldown": 1.05
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "검호조합",
     "mihawk"
@@ -5809,6 +5919,7 @@
     "cooldown": 0.67
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "류마조합",
     "ryuma"
@@ -5836,6 +5947,7 @@
     "cooldown": 0.6
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "킬러조합",
     "killer"
@@ -5873,6 +5985,7 @@
     "cooldown": 0.62
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "키쿠조합",
     "kiku"
@@ -5905,6 +6018,7 @@
     "cooldown": 0.49
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "피셔타이거조합",
     "tiger"
@@ -5937,6 +6051,7 @@
     "cooldown": 0.6
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "스튜시조합",
     "stussy"
@@ -5969,6 +6084,7 @@
     "cooldown": 0.87
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0DF",
@@ -5997,6 +6113,7 @@
     "cooldown": 0.7
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "캐럿조합",
     "carrot"
@@ -6034,6 +6151,7 @@
     "cooldown": 0.6
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0GO",
@@ -6062,6 +6180,7 @@
     "cooldown": 0.61
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0QW",
@@ -6095,6 +6214,7 @@
     "cooldown": 0.74
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0R6",
@@ -6167,6 +6287,7 @@
     "cooldown": 0.85
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0RD",
@@ -6205,6 +6326,7 @@
     "cooldown": 0.52
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0CR",
@@ -6233,6 +6355,7 @@
     "cooldown": 0.8
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A1BF",
@@ -6261,6 +6384,7 @@
     "cooldown": 0.79
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A130",
@@ -6304,6 +6428,7 @@
     "cooldown": 0.75
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A19R",
@@ -6395,6 +6520,7 @@
     "cooldown": 0.52
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0G5",
@@ -6438,6 +6564,7 @@
     "cooldown": 0.88
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0TD",
@@ -6486,6 +6613,7 @@
     "cooldown": 0.61
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0VR",
@@ -6529,6 +6657,7 @@
     "cooldown": 0.67
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0ZE",
@@ -6577,6 +6706,7 @@
     "cooldown": 0.64
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A175",
@@ -6625,6 +6755,7 @@
     "cooldown": 4.5
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0MV",
@@ -6668,6 +6799,7 @@
     "cooldown": 0.93
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "baseForm": "h08O",
    "skills": [
     {
@@ -6717,6 +6849,7 @@
     "cooldown": 0.64
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0SA",
@@ -6788,6 +6921,7 @@
     "cooldown": 0.71
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0YB",
@@ -6821,6 +6955,7 @@
     "cooldown": 0.58
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A19W",
@@ -6859,6 +6994,7 @@
     "cooldown": 0.5
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0Y3",
@@ -6924,6 +7060,7 @@
     "cooldown": 2.08
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A19U",
@@ -7058,6 +7195,7 @@
     "cooldown": 0.49
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0Z0",
@@ -7091,6 +7229,7 @@
     "cooldown": 0.52
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0YK",
@@ -7124,6 +7263,7 @@
     "cooldown": 0.73
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A19S",
@@ -7152,6 +7292,7 @@
     "cooldown": 0.9
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A19V",
@@ -7180,6 +7321,7 @@
     "cooldown": 0.71
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0XT",
@@ -7208,6 +7350,7 @@
     "cooldown": 0.7
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0X8",
@@ -7251,6 +7394,7 @@
     "cooldown": 0.94
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0W9",
@@ -7294,6 +7438,7 @@
     "cooldown": 0.7
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A10K",
@@ -7337,6 +7482,7 @@
     "cooldown": 1.01
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0ZS",
@@ -7370,6 +7516,7 @@
     "cooldown": 0.77
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0XK",
@@ -7408,6 +7555,7 @@
     "cooldown": 0.92
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0XD",
@@ -7446,6 +7594,7 @@
     "cooldown": 0.73
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0VT",
@@ -7484,6 +7633,7 @@
     "cooldown": 0.57
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0VZ",
@@ -7522,6 +7672,7 @@
     "cooldown": 0.85
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0Z8",
@@ -7560,6 +7711,7 @@
     "cooldown": 0.76
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0XU",
@@ -7598,6 +7750,7 @@
     "cooldown": 0.79
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0WW",
@@ -7636,6 +7789,7 @@
     "cooldown": 1
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0X1",
@@ -7674,6 +7828,7 @@
     "cooldown": 0.71
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0S1",
@@ -7717,6 +7872,7 @@
     "cooldown": 0.71
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A0ZI",
@@ -7760,6 +7916,7 @@
     "cooldown": 1.01
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "baseForm": "h09M",
    "skills": [
     {
@@ -7877,6 +8034,7 @@
     "cooldown": 0.88
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "해군의홍일점",
     "tashigi tr"
@@ -7968,6 +8126,7 @@
     "cooldown": 0.25
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A090",
@@ -7992,6 +8151,7 @@
     "cooldown": 0.63
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "baseForm": "H08V",
    "skills": [
     {
@@ -8054,6 +8214,7 @@
     "cooldown": 0.71
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "baseForm": "H098",
    "skills": [
     {
@@ -8094,6 +8255,7 @@
     "cooldown": 0.64
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "baseForm": "H0B5",
    "skills": [
     {
@@ -8160,6 +8322,7 @@
     "cooldown": 0.25
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0PO",
@@ -8226,6 +8389,7 @@
     "cooldown": 0.7
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "해왕류를다스리는인어공주",
     "shirahoshi tr"
@@ -8274,6 +8438,7 @@
     "cooldown": 0.63
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "날씨는맑음",
     "nami tr"
@@ -8322,6 +8487,7 @@
     "cooldown": 0.54
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "검은정의를좇는하얀새",
     "lucci tr"
@@ -8375,6 +8541,7 @@
     "cooldown": 0.94
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "분노하는맹호",
     "fujitora tr"
@@ -8428,6 +8595,7 @@
     "cooldown": 0.75
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "무적의아이언파이러츠",
     "franky tr"
@@ -8481,6 +8649,7 @@
     "cooldown": 0.6
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "정상해전종결자",
     "shanks tr"
@@ -8534,6 +8703,7 @@
     "cooldown": 0.61
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "치밀하고비열한어둠",
     "teach tr"
@@ -8624,6 +8794,7 @@
     "cooldown": 0.79
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "혁명군참모총장",
     "sabo tr"
@@ -8677,6 +8848,7 @@
     "cooldown": 1.2
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "baseForm": "H091",
    "skills": [
     {
@@ -8712,6 +8884,7 @@
     "cooldown": 0.71
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "운명의마술사",
     "hawkins tr"
@@ -8765,6 +8938,7 @@
     "cooldown": 0.73
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "해군원수붉은개",
     "akainu tr"
@@ -8813,6 +8987,7 @@
     "cooldown": 0.64
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "백개의심장을바친자",
     "law tr"
@@ -8866,6 +9041,7 @@
     "cooldown": 0.69
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "전해군대장푸른꿩",
     "aokiji tr"
@@ -8919,6 +9095,7 @@
     "cooldown": 0.71
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "aliases": [
     "악마의자식",
     "robin tr"
@@ -8962,6 +9139,7 @@
     "cooldown": 0.38
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "해적왕이될사나이",
     "luffy tr"
@@ -9010,6 +9188,7 @@
     "cooldown": 0.89
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "바다의협객",
     "jinbe tr"
@@ -9063,6 +9242,7 @@
     "cooldown": 0.52
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "바다의전사",
     "usopp tr"
@@ -9121,6 +9301,7 @@
     "cooldown": 0.48
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "baseForm": "H09B",
    "skills": [
     {
@@ -9166,6 +9347,7 @@
     "cooldown": 0.59
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "baseForm": "H09E",
    "skills": [
     {
@@ -9274,6 +9456,7 @@
     "cooldown": 0.67
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "최강의검사",
     "zoro tr"
@@ -9327,6 +9510,7 @@
     "cooldown": 0.44
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "baseForm": "H09H",
    "skills": [
     {
@@ -9377,6 +9561,7 @@
     "cooldown": 0.46
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "지옥에서돌아온자",
     "sanji tr"
@@ -9430,6 +9615,7 @@
     "cooldown": 0.61
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "소울킹",
     "brook tr"
@@ -9477,6 +9663,7 @@
     "cooldown": 5
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A12S",
@@ -9560,6 +9747,7 @@
     "cooldown": 0.88
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "baseForm": "H05N",
    "skills": [
     {
@@ -9652,6 +9840,7 @@
     "cooldown": 0.63
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0RC",
@@ -9686,6 +9875,7 @@
     "cooldown": 1.15
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A047",
@@ -9766,6 +9956,7 @@
     "cooldown": 0.89
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "baseForm": "H09A",
    "skills": [
     {
@@ -9816,6 +10007,7 @@
     "cooldown": 0.69
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "baseForm": "H097",
    "skills": [
     {
@@ -9861,6 +10053,7 @@
     "cooldown": 0.48
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "다섯번째황제",
     "snakeman tr"
@@ -9914,6 +10107,7 @@
     "cooldown": 0.45
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "baseForm": "H0B2",
    "skills": [
     {
@@ -9959,6 +10153,7 @@
     "cooldown": 0.99
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "신세대의이단아",
     "kid tr"
@@ -10012,6 +10207,7 @@
     "cooldown": 0.64
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "해군대장노란원숭이",
     "kizaru tr"
@@ -10197,6 +10393,7 @@
     "cooldown": 0.84
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "신해군대장초록소",
     "ryokugyu tr"
@@ -10250,6 +10447,7 @@
     "cooldown": 0.64
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "baseForm": "H096",
    "skills": [
     {
@@ -10300,6 +10498,7 @@
     "cooldown": 0.77
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "baseForm": "H0BL",
    "skills": [
     {
@@ -10389,6 +10588,7 @@
     "cooldown": 0.67
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "baseForm": "H09F",
    "skills": [
     {
@@ -10434,6 +10634,7 @@
     "cooldown": 0.75
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "baseForm": "H08Y",
    "skills": [
     {
@@ -10479,6 +10680,7 @@
     "cooldown": 0.9
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "일그러진미래",
     "bonney tr"
@@ -10527,6 +10729,7 @@
     "cooldown": 0.85
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "baseForm": "H0BX",
    "skills": [
     {
@@ -10667,6 +10870,7 @@
     "cooldown": 0.7
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "baseForm": "H08U",
    "skills": [
     {
@@ -10729,6 +10933,7 @@
     "cooldown": 0.38
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "baseForm": "H099",
    "skills": [
     {
@@ -10774,6 +10979,7 @@
     "cooldown": 0.54
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "baseForm": "H08W",
    "skills": [
     {
@@ -10829,6 +11035,7 @@
     "cooldown": 0.71
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "해군의미래",
     "koby tr"
@@ -10886,6 +11093,7 @@
     "cooldown": 0.58
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "명왕실버즈레일리",
     "rayleigh im"
@@ -10938,6 +11146,7 @@
     "cooldown": 0.73
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "대해적흰수염",
     "newgate im"
@@ -10985,6 +11194,7 @@
     "cooldown": 0.49
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "천신금사자시키",
     "shiki im"
@@ -11037,6 +11247,7 @@
     "cooldown": 0.63
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "aliases": [
     "해군영웅거프",
     "garp im"
@@ -11089,6 +11300,7 @@
     "cooldown": 0.61
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "폭풍을몰아오는바람",
     "dragon im"
@@ -11136,6 +11348,7 @@
     "cooldown": 0.7
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "부처님센고쿠",
     "Sengoku im"
@@ -11178,6 +11391,7 @@
     "cooldown": 0.24
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "aliases": [
     "산먹깨비",
     "gaban im"
@@ -11220,6 +11434,7 @@
     "cooldown": 0.66
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "신념의흑완제트",
     "z im"
@@ -11272,6 +11487,7 @@
     "cooldown": 0.49
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "해적왕골D로져",
     "roger im"
@@ -11319,6 +11535,7 @@
     "cooldown": 1.15
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "탐식의강철풍선",
     "bigmom im"
@@ -11388,6 +11605,7 @@
     "cooldown": 1.41
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "백수의제왕카이도",
     "kaido im"
@@ -11452,6 +11670,7 @@
     "cooldown": 1.2
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "괴물의후계자",
     "bullet im"
@@ -11504,6 +11723,7 @@
     "cooldown": 1.25
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "baseForm": "h07M",
    "skills": [
     {
@@ -11548,6 +11768,7 @@
     "cooldown": 0.73
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "baseForm": "h04A",
    "skills": [
     {
@@ -11636,6 +11857,7 @@
     "cooldown": 1.5
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0C9",
@@ -11659,6 +11881,7 @@
     "cooldown": 1.5
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0CQ",
@@ -11682,6 +11905,7 @@
     "cooldown": 0.7
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "baseForm": "h04E",
    "skills": [
     {
@@ -11721,6 +11945,7 @@
     "cooldown": 1.41
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "baseForm": "h07M",
    "skills": [
     {
@@ -11765,6 +11990,7 @@
     "cooldown": 0.74
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "파이러츠왕녀",
     "vivi et"
@@ -11817,6 +12043,7 @@
     "cooldown": 0.93
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "매의눈미호크",
     "mihawk et"
@@ -11864,6 +12091,7 @@
     "cooldown": 0.58
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "화권의에이스",
     "ace et"
@@ -11916,6 +12144,7 @@
     "cooldown": 0.82
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "aliases": [
     "천냥광대",
     "buggy et"
@@ -11963,6 +12192,7 @@
     "cooldown": 0.71
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "해적왕자",
     "cavendish et"
@@ -12015,6 +12245,7 @@
     "cooldown": 0.74
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "아마존릴리의여제",
     "hancock et"
@@ -12067,6 +12298,7 @@
     "cooldown": 0.67
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "세계의가희",
     "u-ta et"
@@ -12119,6 +12351,7 @@
     "cooldown": 0.7
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "최고의엔터테이너",
     "tesoro et"
@@ -12183,6 +12416,7 @@
     "cooldown": 0.93
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "baseForm": "h058",
    "skills": [
     {
@@ -12227,6 +12461,7 @@
     "cooldown": 0.64
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "참된호걸",
     "oden et"
@@ -12274,6 +12509,7 @@
     "cooldown": 0.74
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "baseForm": "h05C",
    "skills": [
     {
@@ -12323,6 +12559,7 @@
     "cooldown": 0.67
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "baseForm": "h067",
    "skills": [
     {
@@ -12373,6 +12610,7 @@
     "cooldown": 0.57
    },
    "damageHint": "혼합",
+   "damageType": "물딜",
    "aliases": [
     "태양의신",
     "nika et"
@@ -12437,6 +12675,7 @@
     "cooldown": 0.71
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "전설의사무라이",
     "ryuma et"
@@ -12506,6 +12745,7 @@
     "cooldown": 0.84
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "혁명군대리사범",
     "koala"
@@ -12699,6 +12939,7 @@
     "cooldown": 1.15
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "aliases": [
     "괴력의챔피언",
     "burgess"
@@ -12736,6 +12977,7 @@
     "cooldown": 0.85
    },
    "damageHint": "혼합",
+   "damageType": "마딜",
    "aliases": [
     "역재의사이보그",
     "queen"
@@ -12795,6 +13037,7 @@
     "cooldown": 1.5
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A0DI",
@@ -12980,6 +13223,7 @@
     "cooldown": 0.76
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A13S",
@@ -13018,6 +13262,7 @@
     "cooldown": 0.8
    },
    "damageHint": "물리",
+   "damageType": "물딜",
    "skills": [
     {
      "id": "A147",
@@ -13056,6 +13301,7 @@
     "cooldown": 0.69
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A098",
@@ -13104,6 +13350,7 @@
     "cooldown": 0.7
    },
    "damageHint": "마법",
+   "damageType": "마딜",
    "skills": [
     {
      "id": "A13W",

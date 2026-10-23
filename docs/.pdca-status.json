@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-10-23T06:15:53.242Z",
+  "lastUpdated": "2026-10-23T06:23:45.233Z",
   "activeFeatures": [
     "ord-core",
     "mock-exporter",
@@ -10,7 +10,8 @@
     "ui",
     "stores",
     "shell",
-    "panels"
+    "panels",
+    "map-extract"
   ],
   "primaryFeature": "ord-core",
   "features": {
@@ -23,9 +24,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-10-23T04:27:27.528Z",
-        "lastUpdated": "2026-10-23T06:11:22.513Z"
+        "lastUpdated": "2026-10-23T06:23:13.694Z"
       },
-      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\crates\\ord-core\\src\\solver.rs"
+      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\crates\\ord-core\\src\\model.rs"
     },
     "mock-exporter": {
       "phase": "do",
@@ -75,7 +76,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-10-23T04:43:44.717Z",
-        "lastUpdated": "2026-10-23T06:10:14.782Z"
+        "lastUpdated": "2026-10-23T06:23:45.233Z"
       },
       "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\api.ts"
     },
@@ -88,9 +89,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-10-23T05:01:12.477Z",
-        "lastUpdated": "2026-10-23T05:01:16.832Z"
+        "lastUpdated": "2026-10-23T06:23:14.607Z"
       },
-      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\ui\\Pill.svelte"
+      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\ui\\UnitIcon.svelte"
     },
     "stores": {
       "phase": "do",
@@ -127,9 +128,22 @@
       "documents": {},
       "timestamps": {
         "started": "2026-10-23T05:01:21.554Z",
-        "lastUpdated": "2026-10-23T06:10:16.287Z"
+        "lastUpdated": "2026-10-23T06:23:15.301Z"
       },
       "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\panels\\MainPanel.svelte"
+    },
+    "map-extract": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-10-23T06:21:43.378Z",
+        "lastUpdated": "2026-10-23T06:21:43.378Z"
+      },
+      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\tools\\map-extract\\icons.py"
     }
   },
   "pipeline": {
@@ -140,7 +154,7 @@
   "session": {
     "startedAt": "2026-10-23T04:27:27.528Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-10-23T06:15:53.242Z"
+    "lastActivity": "2026-10-23T06:23:45.233Z"
   },
   "history": [
     {
@@ -512,6 +526,42 @@
     {
       "timestamp": "2026-10-23T06:15:53.242Z",
       "feature": "routes",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:21:43.378Z",
+      "feature": "map-extract",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:23:13.694Z",
+      "feature": "ord-core",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:23:13.988Z",
+      "feature": "ORD",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:23:14.607Z",
+      "feature": "ui",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:23:15.301Z",
+      "feature": "panels",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T06:23:45.233Z",
+      "feature": "ORD",
       "phase": "do",
       "action": "updated"
     }

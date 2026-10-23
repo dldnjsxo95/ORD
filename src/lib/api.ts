@@ -24,6 +24,9 @@ export interface Unit {
   level?: number | null;
   attack?: Attack | null;
   damageHint?: string | null;
+  /** 물딜 | 마딜 | null(미분류) */
+  damageType?: string | null;
+  stun?: boolean;
   baseForm?: string | null;
   summon?: boolean;
   aliases?: string[];

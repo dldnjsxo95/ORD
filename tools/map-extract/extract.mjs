@@ -150,6 +150,12 @@ const units = [...ids].filter((id) => unitStrings[id]).map((id) => {
   const phys = (text.match(/물리/g) ?? []).length;
   const magic = (text.match(/마법/g) ?? []).length;
   const damageHint = phys && magic ? '혼합' : phys ? '물리' : magic ? '마법' : null;
+  // 물딜/마딜: "물리 데미지" 와 "마법 데미지" 언급 수의 다수결. 동률·없음은 null (data/overrides.json 으로 보정).
+  const physDmg = (text.match(/물리\s*(데미지|피해)/g) ?? []).length;
+  const magicDmg = (text.match(/마법\s*(데미지|피해)/g) ?? []).length;
+  const damageType = physDmg > magicDmg ? '물딜' : magicDmg > physDmg ? '마딜' : null;
+  // 스턴 유닛(임시 규칙): 스킬 이름에 기절·스턴이 들어가면 표시. overrides 로 확정한다.
+  const stun = skills.some((s) => /기절|스턴/.test(s.name));
   return {
     id, name, grade, title: title || undefined,
     icon: unitStrings[id].Art || undefined,
@@ -159,6 +165,8 @@ const units = [...ids].filter((id) => unitStrings[id]).map((id) => {
       range: Number(w.rangeN1) || 0, cooldown: Number(w.cool1) || 0,
     } : undefined,
     damageHint: damageHint || undefined,
+    damageType: damageType || undefined,
+    stun: stun || undefined,
     baseForm: baseForm[id],
     aliases: aliases[id],
     skills,
@@ -170,6 +178,18 @@ const involved = new Set();
 for (const r of outRecipes) { involved.add(r.result); r.materials.forEach((m) => involved.add(m.unit)); r.upperUnits.forEach((u) => involved.add(u)); }
 for (const [a, b] of Object.entries(baseForm)) { involved.add(a); involved.add(b); }
 for (const u of units) if (u.grade && !involved.has(u.id) && u.skills.length === 0) u.summon = true;
+
+// ── 수동 보정 (data/overrides.json) ─────────────────────────────────────
+let overrides = { units: {} };
+try { overrides = JSON.parse(readFileSync('data/overrides.json', 'utf-8')); } catch {}
+let applied = 0;
+for (const u of units) {
+  const o = overrides.units?.[u.id];
+  if (!o) continue;
+  if (o.damageType !== undefined) u.damageType = o.damageType || undefined;
+  if (o.stun !== undefined) u.stun = o.stun || undefined;
+  applied++;
+}
 
 // ── 정합성 ──────────────────────────────────────────────────────────────
 const known = new Set(units.map((u) => u.id));
@@ -221,4 +241,8 @@ console.log('등급별:', JSON.stringify(gradeCount));
 console.log('피해 유형 힌트:', JSON.stringify(units.reduce((a, u) => ((a[u.damageHint ?? '없음'] = (a[u.damageHint ?? '없음'] ?? 0) + 1), a), {})));
 console.log('등급 없는 유닛:', units.filter((u) => !u.grade).map((u) => `${u.id}:${u.name}`).join(', '));
 console.log('분신(summon) 표시:', units.filter((u) => u.summon).length, '종');
+const split = ['전설', '초월', '불멸', '영원', '제한', '신비'];
+const unresolved = units.filter((u) => split.includes(u.grade) && !u.summon && !u.baseForm && !u.damageType);
+console.log(`물딜/마딜 미분류 (${unresolved.length}):`, unresolved.map((u) => `${u.id}:${u.name}(${u.grade})`).join(', '));
+console.log('스턴 표시:', units.filter((u) => u.stun).length, '종 | 보정 적용:', applied);
 console.log(problems.length ? `문제 ${problems.length}건:\n  ${problems.join('\n  ')}` : '정합성 문제 없음');

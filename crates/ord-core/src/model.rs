@@ -39,6 +39,12 @@ pub struct Unit {
     /// 스킬 툴팁에서 추정한 피해 유형: "물리" | "마법" | "혼합". 휴리스틱.
     #[serde(default)]
     pub damage_hint: Option<String>,
+    /// 물딜/마딜 분류 ("물딜" | "마딜"). 다수결 + data/overrides.json 보정. 미분류는 None.
+    #[serde(default)]
+    pub damage_type: Option<String>,
+    /// 스턴 유닛 표시 (overrides 로 확정)
+    #[serde(default)]
+    pub stun: bool,
     /// 스킨·변형 유닛이면 기본 유닛 id. 보유 수를 셀 때 기본 유닛으로 합산한다.
     #[serde(default)]
     pub base_form: Option<String>,
