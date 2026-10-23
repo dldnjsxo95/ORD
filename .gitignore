@@ -14,3 +14,6 @@ vite.config.ts.timestamp-*
 
 # 로컬 실기 출력
 /fixtures/local/
+
+# 맵 파일 (저작물, 용량 큼)
+/maps/
