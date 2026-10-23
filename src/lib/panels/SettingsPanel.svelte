@@ -1,4 +1,4 @@
-<!-- 설정 뷰: 감시 폴더(바꾸면 즉시 반영), 테마, 정보. -->
+<!-- 설정 내용 (SettingsDialog 모달 안): 감시 폴더(바꾸면 즉시 반영), 테마, 정보. -->
 <script lang="ts">
   import { onMount } from 'svelte';
   import { ui, setTheme } from '$lib/stores/ui.svelte';

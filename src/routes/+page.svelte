@@ -1,16 +1,17 @@
-<!-- 메인 창, VS Code 셸: 타이틀바; 액티비티 바 + [뷰 위 하단 패널]; 상태 표시줄.
-     전체화면에서는 타이틀바를 숨기고 ESC 로 해제한다. -->
+<!-- 메인 창: 타이틀바; [메인 뷰 위 하단 패널]; 상태 표시줄. 설정은 가운데 모달로 띄운다.
+     전체화면에서는 타이틀바를 숨기고 ESC 로 해제한다 (조합 상세·설정 모달이 열려 있으면 ESC 는 모달부터 닫는다). -->
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
-  import { ui, setBottomVisible } from '$lib/stores/ui.svelte';
+  import { ui, setBottomVisible, setSettingsOpen } from '$lib/stores/ui.svelte';
   import { initGame, disposeGame, pushLog } from '$lib/stores/game.svelte';
   import { fullscreen, syncFullscreen, exitFullscreen } from '$lib/stores/fullscreen.svelte';
   import TopBar from '$lib/shell/TopBar.svelte';
-  import ActivityBar from '$lib/shell/ActivityBar.svelte';
   import StatusBar from '$lib/shell/StatusBar.svelte';
   import BottomPanel from '$lib/shell/BottomPanel.svelte';
   import MainPanel from '$lib/panels/MainPanel.svelte';
-  import SettingsPanel from '$lib/panels/SettingsPanel.svelte';
+  import SettingsDialog from '$lib/shell/SettingsDialog.svelte';
+  import UnitDetail from '$lib/panels/UnitDetail.svelte';
+  import { detail, closeDetail, backDetail, forwardDetail } from '$lib/stores/detail.svelte';
 
   onMount(() => {
     void initGame();
@@ -19,13 +20,33 @@
       if (e.ctrlKey && !e.shiftKey && !e.altKey && e.key.toLowerCase() === 'j') {
         e.preventDefault();
         setBottomVisible(!ui.bottomVisible);
+      } else if (e.key === 'Escape' && detail.current) {
+        e.preventDefault();
+        closeDetail();
+      } else if (e.key === 'Escape' && ui.settingsOpen) {
+        e.preventDefault();
+        setSettingsOpen(false);
       } else if (e.key === 'Escape' && fullscreen.active) {
         e.preventDefault();
         exitFullscreen().catch((err) => pushLog(`전체화면 해제 실패: ${err}`));
       }
     };
+    // 마우스 옆 버튼: 3 = 뒤로, 4 = 앞으로. 조합 상세 모달의 히스토리를 움직인다 (닫힌 뒤에도 앞으로가기로 다시 열림)
+    const onMouse = (e: MouseEvent) => {
+      if (e.button === 3) {
+        e.preventDefault();
+        if (detail.current) backDetail();
+      } else if (e.button === 4) {
+        e.preventDefault();
+        forwardDetail();
+      }
+    };
     window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    window.addEventListener('mouseup', onMouse);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      window.removeEventListener('mouseup', onMouse);
+    };
   });
   onDestroy(disposeGame);
 </script>
@@ -33,17 +54,16 @@
 <main>
   {#if !fullscreen.active}<TopBar />{/if}
   <div class="body">
-    <ActivityBar />
     <div class="center">
       <section class="view">
-        <div class="view-body">
-          {#if ui.view === 'main'}<MainPanel />{:else}<SettingsPanel />{/if}
-        </div>
+        <div class="view-body"><MainPanel /></div>
       </section>
       <BottomPanel />
     </div>
   </div>
   <StatusBar />
+  <SettingsDialog />
+  <UnitDetail />
 </main>
 
 <style>

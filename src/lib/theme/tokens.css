@@ -42,6 +42,9 @@
   --c-tier-3: #4daafc;
   --c-tier-4: #c586c0;
   --c-tier-5: #e2c08d;
+  /* 조합 게이지 구간: 진화체 / 흔함선택위습 (위습으로 완성되면 --c-danger) */
+  --c-gauge-evo: #c586c0;
+  --c-gauge-wisp: #cca700;
 }
 
 :root[data-theme="light"] {
@@ -82,6 +85,8 @@
   --c-tier-3: #005fb8;
   --c-tier-4: #7a3e9d;
   --c-tier-5: #9a6b00;
+  --c-gauge-evo: #7a3e9d;
+  --c-gauge-wisp: #bf8803;
 }
 
 :root {

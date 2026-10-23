@@ -1,8 +1,8 @@
-<!-- 프레임 없는 타이틀바 (35px), VS Code 식: 왼쪽 앱 이름, 오른쪽 도구 아이콘과 창 제어.
+<!-- 프레임 없는 타이틀바 (35px): 왼쪽 앱 이름, 오른쪽 도구 아이콘(하단 패널·테마·설정)과 창 제어.
      바 자체가 드래그 영역이고 (data-tauri-drag-region) 버튼은 아니다. 감시는 앱이 켜지면 자동으로 시작되며
-     폴더는 설정 뷰에서 바꾼다. -->
+     폴더는 설정 모달에서 바꾼다. -->
 <script lang="ts">
-  import { ui, setBottomVisible, setTheme } from '$lib/stores/ui.svelte';
+  import { ui, setBottomVisible, setTheme, setSettingsOpen } from '$lib/stores/ui.svelte';
   import IconButton from '$lib/ui/IconButton.svelte';
   import Icon from '$lib/ui/Icon.svelte';
   import WindowControls from './WindowControls.svelte';
@@ -15,6 +15,7 @@
   <div class="tools">
     <IconButton variant="titlebar" icon="panelBottom" active={ui.bottomVisible} label={ui.bottomVisible ? '하단 패널 숨기기' : '하단 패널 (Ctrl+J)'} onclick={() => setBottomVisible(!ui.bottomVisible)} />
     <IconButton variant="titlebar" icon={ui.theme === 'light' ? 'sun' : 'moon'} label={ui.theme === 'dark' ? '밝은 테마' : '어두운 테마'} onclick={() => setTheme(ui.theme === 'dark' ? 'light' : 'dark')} />
+    <IconButton variant="titlebar" icon="settings" active={ui.settingsOpen} label="설정" onclick={() => setSettingsOpen(!ui.settingsOpen)} />
   </div>
   <WindowControls />
 </header>

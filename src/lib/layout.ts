@@ -38,3 +38,10 @@ export interface PanelDef {
 
 export const COLUMNS: PanelDef[][] = (layoutJson as { columns: PanelDef[][] }).columns;
 export const ALL_PANELS: PanelDef[] = COLUMNS.flat();
+
+/** 유닛 id → 사양서 항목 + 속한 패널 제목 (예: "불멸 [마딜]"). 여러 행에 있으면 먼저 나온 것. */
+export const ENTRY_BY_ID: ReadonlyMap<string, Entry & { panel: string }> = (() => {
+  const m = new Map<string, Entry & { panel: string }>();
+  for (const p of ALL_PANELS) for (const e of p.entries ?? []) if (e.id && !m.has(e.id)) m.set(e.id, { ...e, panel: p.title });
+  return m;
+})();

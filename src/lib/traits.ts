@@ -56,6 +56,31 @@ export function labelsOfToken(tok: string): string[] {
   return [];
 }
 
+export interface NoteStat {
+  label: string;
+  /** 토큰에 붙은 숫자 (부호 포함, 예: "이감-15" → -15). 없으면 null */
+  value: number | null;
+}
+
+const NUM = /-?\d+(?:\.\d+)?/;
+
+/**
+ * 괄호 요약 → 라벨 + 숫자. "현재 능력치" 합산용.
+ * 한 토큰이 여러 라벨이 되면(광보잡 등) 숫자는 각 라벨에 그대로 붙는다.
+ */
+export function statsOfNote(note: string | undefined): NoteStat[] {
+  if (!note) return [];
+  const out: NoteStat[] = [];
+  for (const tok of note.split(/[,/]/)) {
+    const labels = labelsOfToken(tok);
+    if (labels.length === 0) continue;
+    const m = tok.match(NUM);
+    const value = m ? Number(m[0]) : null;
+    for (const label of labels) out.push({ label, value: Number.isFinite(value as number) ? value : null });
+  }
+  return out;
+}
+
 /** 괄호 요약 전체 → 필터 라벨 (중복 제거, 순서 유지) */
 export function labelsOfNote(note: string | undefined): string[] {
   if (!note) return [];

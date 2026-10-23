@@ -3,9 +3,11 @@
 <script lang="ts">
   import { game, unit as unitOf } from '$lib/stores/game.svelte';
   import { fullscreen, toggleFullscreen } from '$lib/stores/fullscreen.svelte';
-  import { plan, effectiveCount, rawCount, adjust, setAll, resetAll, clearManual, hasManual, adjustItem, setSort, toggleFilter, clearFilters, setFilterOpen, combos, onLiveUpdate, type SortMode } from '$lib/stores/plan.svelte';
-  import { COLUMNS, FILTERS, type Entry } from '$lib/layout';
-  import { traitsOf } from '$lib/traits';
+  import { plan, effectiveCount, effectiveCounts, rawCount, adjust, resetAll, clearManual, hasManual, setRound, toggleAssumed, clearAssumed, setSort, toggleFilter, clearFilters, setFilterOpen, combos, onLiveUpdate, type SortMode } from '$lib/stores/plan.svelte';
+  import { COLUMNS, ALL_PANELS, ENTRY_BY_ID, FILTERS, type Entry } from '$lib/layout';
+  import { traitsOf, statsOfNote } from '$lib/traits';
+  import { openDetail } from '$lib/stores/detail.svelte';
+  import { allocate, usedByGrade, compareUsage, type Holdings } from '$lib/combo-tree';
   import type { Unit } from '$lib/api';
   import CategoryPanel from './CategoryPanel.svelte';
   import UnitRow from './UnitRow.svelte';
@@ -24,9 +26,9 @@
     onLiveUpdate();
   });
 
-  /** 변형 유닛(baseForm 있음)은 그 코드의 원본 수량, 기본 유닛은 변형 합산 수량 */
+  /** 변형 유닛(baseForm 있음)은 그 코드의 원본 수량, 기본 유닛은 가정 배정 후 남은 수량 */
   function countOf(u: Unit): number {
-    return u.baseForm ? rawCount(u.id) : effectiveCount(u.id);
+    return u.baseForm ? rawCount(u.id) : (ctxFor(u.id).counts.get(u.id) ?? 0);
   }
 
   interface Row { entry: Entry; unit?: Unit }
@@ -34,21 +36,73 @@
     const list: Row[] = (entries ?? []).map((entry) => ({ entry, unit: entry.id ? unitOf(entry.id) : undefined }));
     if (plan.sort === 'name') return [...list].sort((a, b) => (a.entry.label ?? a.unit?.name ?? a.entry.text ?? '').localeCompare(b.entry.label ?? b.unit?.name ?? b.entry.text ?? '', 'ko'));
     if (plan.sort === 'count') return [...list].sort((a, b) => (b.unit ? countOf(b.unit) : -1) - (a.unit ? countOf(a.unit) : -1));
+    if (plan.sort === 'usage' && game.db) {
+      // 패 활용순: 보유 패를 높은 등급부터 많이 쓰는 조합이 위 (흔함은 최대한 아낀다). 같으면 사양서 순.
+      const db = game.db;
+      const key = new Map<Row, number[]>();
+      for (const r of list) {
+        if (!r.unit) continue;
+        const c = ctxFor(r.unit.id);
+        key.set(r, usedByGrade(db, r.unit.id, (u) => c.counts.get(u) ?? 0, c.evolution, c.wisps));
+      }
+      return [...list].sort((a, b) => (key.has(a) && key.has(b) ? compareUsage(key.get(a)!, key.get(b)!) : key.has(b) ? 1 : key.has(a) ? -1 : 0));
+    }
     return list;
   }
   const unitIds = (entries: Entry[] | undefined) => (entries ?? []).filter((e) => e.id && unitOf(e.id)).map((e) => e.id!);
-  const allOn = (entries: Entry[] | undefined) => { const ids = unitIds(entries); return ids.length > 0 && ids.every((id) => effectiveCount(id) > 0); };
 
-  /** 현재 능력치: 보유 유닛(수량 반영)의 괄호 요약 라벨 집계 */
+  /** 기록지침(아이템) 보유 여부: 게임에서 읽은 값 (플레이어 어빌리티 또는 인벤토리) */
+  const itemCount = (id: string) => game.payload?.state.items?.[id] ?? 0;
+
+  /** 오로성 효과가 적용되는 라운드 */
+  const GOROSEI_ROUND = 50;
+  /**
+   * 현재 능력치: 보유 유닛(수량 반영)과 보유 아이템의 괄호 요약을 라벨별로 합산한다.
+   * 숫자가 붙은 토큰은 부호 포함 합산(이감40 + 이감-15 = 25, 깍20 + 깍-15 = 5, 0.5스턴 + 1스턴 = 1.5), 숫자가 없는 토큰(암브 등)은 보유 개수.
+   * 오로성은 50라운드부터만 넣는다 (현재 라운드는 자원 패널에서 수동 입력).
+   */
   const statRows = $derived.by(() => {
-    const acc = new Map<string, number>();
+    const acc = new Map<string, { sum: number; count: number; numeric: boolean }>();
+    const add = (note: string | undefined, n: number) => {
+      for (const s of statsOfNote(note)) {
+        const cur = acc.get(s.label) ?? { sum: 0, count: 0, numeric: false };
+        cur.count += n;
+        if (s.value != null) { cur.sum += s.value * n; cur.numeric = true; }
+        acc.set(s.label, cur);
+      }
+    };
     for (const u of game.db?.units ?? []) {
       const n = effectiveCount(u.id);
       if (!n) continue;
-      for (const t of traitsOf(u.id)) acc.set(t, (acc.get(t) ?? 0) + n);
+      if (u.grade === '오로성' && plan.round < GOROSEI_ROUND) continue;
+      add(ENTRY_BY_ID.get(u.id)?.note, n);
     }
-    return [...acc.entries()].sort((a, b) => b[1] - a[1]);
+    for (const p of ALL_PANELS) {
+      if (p.kind !== 'items') continue;
+      for (const e of p.entries ?? []) {
+        const n = e.id ? itemCount(e.id) : 0;
+        if (n) add(e.note, n);
+      }
+    }
+    const fmt = (v: number) => (Number.isInteger(v) ? String(v) : v.toFixed(1).replace(/\.0$/, ''));
+    return [...acc.entries()]
+      .map(([label, v]) => ({ label, text: v.numeric ? fmt(v.sum) : String(v.count), negative: v.numeric && v.sum < 0, order: v.numeric ? Math.abs(v.sum) : v.count }))
+      .sort((a, b) => b.order - a.order);
   });
+
+  /** 모든 유닛의 유효 수량 표. 갱신당 한 번만 만들어 모든 행의 게이지 계산이 공유한다 */
+  const countMap = $derived(effectiveCounts());
+  /**
+   * 가정 배정: 우클릭으로 가정한 유닛들에 보유 패(위습·진화체 포함)를 순서대로 배정한 뒤 남은 상태.
+   * 가정하지 않은 행은 남은 패로, 가정한 행은 자기 배정 직전의 패로 수량·게이지·정렬을 계산한다.
+   */
+  const view = $derived.by(() => {
+    const live: Holdings = { counts: countMap, wisps: countMap.get('e018') ?? 0, evolution: game.payload?.state.evolution ?? null };
+    if (!game.db || plan.assumed.length === 0) return { ...live, before: new Map<string, Holdings>() };
+    return allocate(game.db, plan.assumed, countMap, live.evolution, live.wisps);
+  });
+  const ctxFor = (id: string): Holdings => view.before.get(id) ?? view;
+  const assumedName = (id: string) => ENTRY_BY_ID.get(id)?.label ?? unitOf(id)?.name ?? id;
 
   const readyCount = $derived(combos().filter((c) => c.craftable).length);
   /** 게임과 연동 중(실시간 state 수신): 수량은 게임 값이므로 +/− 버튼을 숨긴다 */
@@ -59,7 +113,6 @@
     toggleFullscreen().catch((e) => (game.error = String(e)));
   }
 
-  let noticeOpen = $state(false);
 </script>
 
 <div class="main">
@@ -68,9 +121,14 @@
     <span class="left">
       {#if hasManual()}<Button size="sm" variant="ghost" onclick={clearManual}>실시간 값으로 복귀</Button>{/if}
       {#if readyCount}<span class="ready-badge">조합 가능 {readyCount}</span>{/if}
+      {#if plan.assumed.length}
+        <span class="assumed">가정:
+          {#each plan.assumed as id (id)}<button type="button" class="chip" title="우클릭한 유닛. 누르면 해제" onclick={() => toggleAssumed(id)}>{assumedName(id)} ✕</button>{/each}
+          <button type="button" class="link" onclick={clearAssumed}>모두 해제</button>
+        </span>
+      {/if}
     </span>
     <span class="spacer"></span>
-    <button type="button" class="link" onclick={() => (noticeOpen = !noticeOpen)}><Icon name="info" size={12} /> 주의사항</button>
     <Button size="sm" onclick={() => setSort('count')}>추천 조합</Button>
     <button type="button" class="link" onclick={resetAll}>전체 초기화</button>
     <Button size="sm" variant="ghost" icon={fullscreen.active ? 'fullscreenExit' : 'fullscreen'} onclick={onFullscreen} title={fullscreen.active ? 'ESC 로도 해제됩니다' : undefined}>{fullscreen.active ? '전체화면 해제 (ESC)' : '전체화면'}</Button>
@@ -78,14 +136,9 @@
       <option value="default">기본순</option>
       <option value="name">이름순</option>
       <option value="count">수량순</option>
+      <option value="usage">패 활용순</option>
     </select>
   </div>
-  {#if noticeOpen}
-    <div class="notice">
-      괄호 요약은 사양서의 표기이고, 능력치 필터 태그는 스킬 설명 문구에서 자동 추정한 값입니다. 수량은 게임에서 읽은 값에 +/− 조정을 더한 것이며,
-      조정 중에는 조합이 그 값으로 다시 계산됩니다. 변형 유닛(쵸파 폭주, 상디 제르마 등)은 해당 코드의 원본 수량을 따로 보여 줍니다.
-    </div>
-  {/if}
 
   <!-- 2. 능력치 필터 -->
   <button type="button" class="filter-bar" onclick={() => setFilterOpen(!plan.filterOpen)}>
@@ -95,7 +148,7 @@
   {#if plan.filterOpen}
     <div class="filters">
       {#each FILTERS as f (f)}
-        <label class="f" class:on={filterSet.has(f)}>
+        <label class="f" class:on={filterSet.has(f)} title={f}>
           <input type="checkbox" checked={filterSet.has(f)} onchange={() => toggleFilter(f)} />
           <span>{f}</span>
         </label>
@@ -110,10 +163,10 @@
       <div class="col">
         {#each col as p (p.id)}
           {#if p.kind === 'units'}
-            <CategoryPanel id={p.id} title={p.title} count={unitIds(p.entries).length} allOn={allOn(p.entries)} onall={(on) => setAll(unitIds(p.entries), on)}>
+            <CategoryPanel id={p.id} title={p.title} count={unitIds(p.entries).length}>
               {#each rows(p.entries) as r, i (`${p.id}-${i}-${r.entry.id ?? 't'}`)}
                 {#if r.unit}
-                  <UnitRow unit={r.unit} label={r.entry.label} note={r.entry.note} badges={r.entry.badges} tier={r.entry.tier} count={countOf(r.unit)} combo={comboByResult.get(r.unit.id)} dimmed={!matches(r.unit)} adjustable={!live} onadjust={(d) => adjust(r.unit!.id, d)} />
+                  <UnitRow unit={r.unit} label={r.entry.label} note={r.entry.note} badges={r.entry.badges} tier={r.entry.tier} count={countOf(r.unit)} combo={comboByResult.get(r.unit.id)} dimmed={!matches(r.unit)} adjustable={!live} counts={ctxFor(r.unit.id).counts} wisps={ctxFor(r.unit.id).wisps} evolution={ctxFor(r.unit.id).evolution} assumed={plan.assumed.includes(r.unit.id)} onassume={() => toggleAssumed(r.unit!.id)} onadjust={(d) => adjust(r.unit!.id, d)} onopen={() => openDetail(r.unit!.id)} />
                 {:else}
                   <div class="row-text" class:unresolved={r.entry.unresolved || (r.entry.id && !r.unit)} title={r.entry.unresolved ? '데이터에서 찾지 못한 항목' : undefined}>
                     <span class="t">{r.entry.text ?? r.entry.label ?? r.entry.id}</span>
@@ -125,8 +178,17 @@
             </CategoryPanel>
           {:else if p.kind === 'stats'}
             <CategoryPanel id={p.id} title={p.title} count={statRows.length}>
-              {#each statRows as [tag, n] (tag)}
-                <div class="kv"><span class="k">{tag}</span><span class="v">{n}</span></div>
+              <!-- 현재 라운드: 게임에서 못 읽으므로 수동. 오로성 효과는 50라운드부터 합산 -->
+              <div class="kv">
+                <span class="k">현재 라운드 <span class="note">(오로성 {GOROSEI_ROUND}라~)</span></span>
+                <span class="ctl">
+                  <button type="button" onclick={() => setRound(plan.round + 1)}>+</button>
+                  <button type="button" onclick={() => setRound(plan.round - 1)} disabled={plan.round === 0}>−</button>
+                  <span class="v mono">{plan.round}</span>
+                </span>
+              </div>
+              {#each statRows as s (s.label)}
+                <div class="kv" title={s.label}><span class="k">{s.label}</span><span class="v mono" class:neg={s.negative}>{s.text}</span></div>
               {/each}
               {#if statRows.length === 0}<div class="empty">보유 유닛 없음</div>{/if}
             </CategoryPanel>
@@ -146,13 +208,10 @@
           {:else}
             <CategoryPanel id={p.id} title={p.title} count={(p.entries ?? []).length}>
               {#each p.entries ?? [] as e (e.id)}
+                {@const n = e.id ? itemCount(e.id) : 0}
                 <div class="kv">
                   <span class="k">{e.label}{#if e.note} <span class="note">({e.note})</span>{/if}</span>
-                  <span class="ctl">
-                    <button type="button" onclick={() => adjustItem(e.id!, 1)}>+</button>
-                    <button type="button" onclick={() => adjustItem(e.id!, -1)} disabled={!(plan.items[e.id!] ?? 0)}>−</button>
-                    <span class="v mono" class:zero={!(plan.items[e.id!] ?? 0)}>{plan.items[e.id!] ?? 0}</span>
-                  </span>
+                  <span class="cnt" class:zero={n === 0}>{n}</span>
                 </div>
               {/each}
             </CategoryPanel>
@@ -169,10 +228,12 @@
   .toolbar { display: flex; align-items: center; gap: var(--sp-2); height: 28px; padding: 0 var(--sp-3); flex: none; border-bottom: 1px solid var(--c-border); background: var(--c-bg-app); }
   .toolbar .left { display: inline-flex; gap: var(--sp-2); align-items: center; }
   .ready-badge { color: var(--c-ok-text); font-weight: 600; }
+  .assumed { display: inline-flex; align-items: center; gap: 3px; color: var(--c-text-2); }
+  .chip { border: 1px solid var(--c-accent); border-radius: var(--r-2); background: var(--c-accent-soft); color: var(--c-text); font: inherit; font-size: 10px; padding: 0 5px; cursor: pointer; }
+  .chip:hover { background: var(--c-danger); color: var(--c-on-accent); border-color: var(--c-danger); }
   .link { border: 0; background: none; color: var(--c-text-2); font: inherit; font-size: 11px; cursor: pointer; padding: 2px 4px; display: inline-flex; align-items: center; gap: 2px; }
   .link:hover { color: var(--c-text); }
   .sort { height: 20px; font-size: 11px; color: var(--c-text); background: var(--c-bg-input); border: 1px solid var(--c-border-strong); border-radius: var(--r-1); }
-  .notice { padding: var(--sp-2) var(--sp-4); color: var(--c-text-2); background: var(--c-bg-panel); border-bottom: 1px solid var(--c-border); line-height: 1.5; }
   .filter-bar { height: 20px; border: 0; border-bottom: 1px solid var(--c-border); background: var(--c-bg-panel); color: var(--c-text-2); font: inherit; font-size: 11px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; flex: none; }
   .filter-bar:hover { color: var(--c-text); }
   .filter-bar .n { color: var(--c-accent-text); font-weight: 600; }
@@ -195,7 +256,9 @@
   .kv .k { color: var(--c-text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .kv .note { color: var(--c-text-3); font-size: 10px; }
   .kv .v { color: var(--c-text); font-variant-numeric: tabular-nums; }
-  .kv .v.zero { color: var(--c-text-3); }
+  .kv .v.neg { color: var(--c-danger-text); }
+  .kv .cnt { min-width: 16px; text-align: center; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--c-accent-text); }
+  .kv .cnt.zero { color: var(--c-text-3); font-weight: 400; }
   .ctl { display: inline-flex; align-items: center; gap: 1px; flex: none; }
   .ctl button { width: 16px; height: 16px; padding: 0; border: 1px solid var(--c-border-strong); border-radius: 2px; background: var(--c-bg-input); color: var(--c-text-2); font-size: 11px; line-height: 1; cursor: pointer; }
   .ctl button:hover:not(:disabled) { background: var(--c-bg-raised); color: var(--c-text); }
