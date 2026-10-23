@@ -1,21 +1,44 @@
-<!-- 설정 뷰: 감시 폴더, 테마, 정보. -->
+<!-- 설정 뷰: 감시 폴더(바꾸면 즉시 반영), 테마, 정보. -->
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { ui, setTheme } from '$lib/stores/ui.svelte';
-  import { game, startWatch, stopWatch } from '$lib/stores/game.svelte';
+  import { game, changeDir, defaultDir } from '$lib/stores/game.svelte';
   import Button from '$lib/ui/Button.svelte';
+
+  let draft = $state('');
+  let fallback = $state('');
+  onMount(async () => {
+    fallback = await defaultDir();
+  });
+  // 바깥(초기화 등)에서 폴더가 바뀌면 입력 칸도 따라간다.
+  $effect(() => {
+    draft = game.dir;
+  });
+
+  async function apply() {
+    if (draft.trim() === game.dir) return;
+    await changeDir(draft);
+  }
+  function onKey(e: KeyboardEvent) {
+    if (e.key === 'Enter') (e.currentTarget as HTMLInputElement).blur();
+    else if (e.key === 'Escape') draft = game.dir;
+  }
 </script>
 
 <div class="panel">
   <p class="panel-sub cat first">데이터 소스</p>
   <div class="setting">
-    <div class="label">감시 폴더 <span class="hint">state.json 이 기록되는 위치</span></div>
+    <div class="label">감시 폴더 <span class="hint">state.json 이 기록되는 위치. 바꾸면 바로 적용됩니다.</span></div>
     <div class="control">
-      <input class="mono" type="text" bind:value={game.dir} disabled={game.watching} spellcheck="false" />
-      {#if game.watching}
-        <Button variant="ghost" onclick={() => void stopWatch()}>중지</Button>
-      {:else}
-        <Button onclick={() => void startWatch()}>시작</Button>
-      {/if}
+      <input class="mono" type="text" bind:value={draft} onblur={apply} onkeydown={onKey} spellcheck="false" placeholder={fallback} />
+      <Button size="sm" variant="ghost" disabled={!game.dir || game.dir === fallback} title={fallback} onclick={() => void changeDir('')}>기본값</Button>
+    </div>
+  </div>
+  <div class="setting">
+    <div class="label">상태</div>
+    <div class="control">
+      <span class="dot" class:on={game.watching}></span>
+      <span class="hint">{game.watching ? `감시 중 · ${game.dir}` : '감시가 시작되지 않았습니다'}</span>
     </div>
   </div>
 
@@ -41,7 +64,7 @@
 
 <style>
   .setting { display: flex; align-items: center; gap: var(--sp-4); padding: var(--sp-2) 0; border-bottom: 1px solid var(--c-border-row); }
-  .label { width: 160px; flex: none; }
+  .label { width: 200px; flex: none; }
   .label .hint { display: block; }
   .control { display: flex; align-items: center; gap: var(--sp-2); flex: 1; min-width: 0; }
   input {
@@ -49,5 +72,6 @@
     color: var(--c-text); background: var(--c-bg-input); border: 1px solid var(--c-border-strong); border-radius: var(--r-1);
   }
   input:focus { outline: 1px solid var(--c-focus); outline-offset: -1px; }
-  input:disabled { color: var(--c-text-2); }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--c-text-3); flex: none; }
+  .dot.on { background: var(--c-ok-text); }
 </style>
