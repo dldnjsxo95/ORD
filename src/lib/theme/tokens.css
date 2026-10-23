@@ -13,42 +13,43 @@
   --c-border: #2b2b2b;
   --c-border-strong: #3c3c3c;
   --c-border-row: #2b2b2b;
-  --c-text: #cccccc;
-  --c-text-2: #a0a0a0;
-  --c-text-3: #8b8b8b;
+  /* 글자색: 전부 흰색 계열로 밝게 (사용자 요청 2026-10-24) */
+  --c-text: #ffffff;
+  --c-text-2: #ececec;
+  --c-text-3: #cfcfcf;
   --c-accent: #0078d4;
-  --c-accent-text: #4daafc;
+  --c-accent-text: #6dbcff;
   --c-on-accent: #ffffff;
   --c-ok: #2ea043;
-  --c-ok-text: #89d185;
+  --c-ok-text: #9fe39b;
   --c-warn: #cca700;
-  --c-warn-text: #e2c08d;
+  --c-warn-text: #f0d2a0;
   --c-danger: #f14c4c;
-  --c-danger-text: #f88070;
+  --c-danger-text: #ff9a8a;
   --c-focus: #0078d4;
   --c-accent-soft: rgba(0, 120, 212, 0.18);
   --shadow-pop: 0 2px 8px rgba(0, 0, 0, 0.36);
   --c-scrollbar-thumb: rgba(121, 121, 121, 0.4);
   --c-scrollbar-thumb-hover: rgba(100, 100, 100, 0.7);
 
-  --c-titlebar-fg-active: #cccccc;
-  --c-titlebar-fg-inactive: #9d9d9d;
+  --c-titlebar-fg-active: #ffffff;
+  --c-titlebar-fg-inactive: #c4c4c4;
   --c-titlebar-bg-active: #181818;
   --c-titlebar-bg-inactive: #1f1f1f;
 
   /* 등급 색 (1~5티어). 유닛 표와 조합 목록에서 등급을 구분한다. */
-  --c-tier-1: #a0a0a0;
-  --c-tier-2: #89d185;
-  --c-tier-3: #4daafc;
-  --c-tier-4: #c586c0;
-  --c-tier-5: #e2c08d;
+  --c-tier-1: #bdbdbd;
+  --c-tier-2: #9fe39b;
+  --c-tier-3: #6dbcff;
+  --c-tier-4: #d8a3d3;
+  --c-tier-5: #f0d2a0;
   /* 조합 게이지 구간: 보유 / 진화체 / 흔함선택위습 (위습으로 완성되면 --c-danger). 행 글자가 흰색이라 밝게 */
   --c-gauge-own: #3fb950;
   --c-gauge-evo: #d2a8ff;
   --c-gauge-wisp: #e3b341;
   /* 유닛 행 글자: 회색이 아니라 흰색 (사용자 요청 2026-10-24) */
-  --c-row-text: #f2f2f2;
-  --c-row-text-2: #c8c8c8;
+  --c-row-text: #ffffff;
+  --c-row-text-2: #e4e4e4;
 }
 
 :root[data-theme="light"] {
