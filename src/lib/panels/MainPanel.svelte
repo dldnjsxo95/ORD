@@ -103,8 +103,6 @@
 
   /** 게임과 연동 중(실시간 state 수신): 수량은 게임 값이므로 +/− 버튼을 숨긴다 */
   const live = $derived(game.watching && game.payload != null);
-  /** 연결 상태 (툴바 표시): 연결됨 = 감시 중이고 state.json 을 받은 상태 */
-  const connTitle = $derived(game.error ? game.error : live ? `연결됨: ${game.dir}` : game.watching ? `감시 중, state.json 대기: ${game.dir}` : '감시 중지됨');
 
   // 전체화면 (ESC 로 해제, 상단 바 숨김: +page.svelte)
   function onFullscreen() {
@@ -117,6 +115,7 @@
   <!-- 1. 상단 툴바 -->
   <div class="toolbar">
     <span class="left">
+      <button type="button" class="link" onclick={resetAll}>전체 초기화</button>
       {#if hasManual()}<Button size="sm" variant="ghost" onclick={clearManual}>실시간 값으로 복귀</Button>{/if}
       {#if plan.assumed.length}
         <span class="assumed">가정:
@@ -126,10 +125,6 @@
       {/if}
     </span>
     <span class="spacer"></span>
-    <span class="conn" class:ok={live} class:muted={!live} class:danger={!!game.error} use:hoverCard={() => infoCard(live ? '게임 연결됨' : '게임 연결 안 됨', [connTitle])}>
-      <span class="dot"></span>{live ? '연결됨' : '해제됨'}
-    </span>
-    <button type="button" class="link" onclick={resetAll}>전체 초기화</button>
     <Button size="sm" variant="ghost" icon={fullscreen.active ? 'fullscreenExit' : 'fullscreen'} onclick={onFullscreen} title={fullscreen.active ? 'ESC 로도 해제됩니다' : undefined}>{fullscreen.active ? '전체화면 해제 (ESC)' : '전체화면'}</Button>
     <select class="sort" value={plan.sort} onchange={(e) => setSort((e.currentTarget as HTMLSelectElement).value as SortMode)}>
       <option value="default">기본순</option>
@@ -250,12 +245,6 @@
   .kv.item .note { font-size: 8px; color: var(--c-row-text-2); }
   .kv .v { color: var(--c-text); font-variant-numeric: tabular-nums; }
   .kv .v.neg { color: var(--c-danger-text); }
-  /* 연결 상태 (툴바, 전체 초기화 왼쪽) */
-  .conn { display: inline-flex; align-items: center; gap: var(--sp-1); padding: 0 var(--sp-2); white-space: nowrap; font-size: 11px; }
-  .conn.muted { color: var(--c-text-3); }
-  .conn.ok { color: var(--c-ok-text); }
-  .conn.danger { color: var(--c-danger-text); }
-  .conn .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
   .kv .cnt { min-width: 16px; text-align: center; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--c-accent-text); }
   .kv .cnt.zero { color: var(--c-text-3); font-weight: 400; }
   .ctl { display: inline-flex; align-items: center; gap: 1px; flex: none; }
