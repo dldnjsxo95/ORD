@@ -121,10 +121,9 @@
 </div>
 
 <style>
-  .row { display: flex; align-items: center; gap: 2px; height: 20px; padding: 0 2px 0 3px; font-size: 9px; color: var(--c-text-2); border-bottom: 1px solid var(--c-border-row); }
-  .row:hover { background: var(--c-bg-hover); color: var(--c-text); }
+  .row { display: flex; align-items: center; gap: 2px; height: 20px; padding: 0 2px 0 3px; font-size: 9px; color: var(--c-row-text); border-bottom: 1px solid var(--c-border-row); }
+  .row:hover { background: var(--c-bg-hover); }
   .open { display: inline-flex; flex: none; cursor: pointer; }
-  .row.owned { color: var(--c-text); }
   .row.dimmed { opacity: 0.28; }
   .row.assumed { outline: 1px solid var(--c-accent); outline-offset: -1px; }
   .asm { flex: none; font-size: 7px; line-height: 11px; padding: 0 3px; border-radius: 2px; background: var(--c-accent); color: var(--c-on-accent); font-weight: 700; }
@@ -134,12 +133,12 @@
   /* 게이지 영역: 퍼센트 글자 + 이름 칸. 채움은 위아래 꽉 차게 */
   .main { position: relative; flex: 1; min-width: 0; display: flex; align-items: center; gap: 2px; height: 100%; overflow: hidden; cursor: pointer; }
   .fill { position: absolute; top: 0; bottom: 0; left: 0; }
-  .fill.own { background: color-mix(in srgb, var(--c-ok) 45%, transparent); }
-  .fill.evo { background: color-mix(in srgb, var(--c-gauge-evo) 50%, transparent); }
-  .fill.wisp { background: color-mix(in srgb, var(--c-gauge-wisp) 50%, transparent); }
-  .fill.wisp.complete { background: color-mix(in srgb, var(--c-danger) 55%, transparent); }
+  .fill.own { background: color-mix(in srgb, var(--c-gauge-own) 62%, transparent); }
+  .fill.evo { background: color-mix(in srgb, var(--c-gauge-evo) 62%, transparent); }
+  .fill.wisp { background: color-mix(in srgb, var(--c-gauge-wisp) 62%, transparent); }
+  .fill.wisp.complete { background: color-mix(in srgb, var(--c-danger) 62%, transparent); }
   /* 조합 진행도: 등급과 이름 사이, 숫자가 있을 때만 자리를 차지한다 */
-  .pct { position: relative; flex: none; padding-left: 1px; font-size: 8px; color: var(--c-ok-text); font-variant-numeric: tabular-nums; }
+  .pct { position: relative; flex: none; padding-left: 1px; font-size: 8px; color: var(--c-row-text); font-variant-numeric: tabular-nums; }
   .cell { position: relative; flex: 1; min-width: 0; display: flex; align-items: center; gap: 2px; height: 100%; overflow: hidden; }
   .tier { flex: none; font-size: 8px; font-weight: 700; color: var(--c-text-3); }
   .t-S { color: var(--c-danger-text); } .t-Ap, .t-A { color: var(--c-warn-text); } .t-B { color: var(--c-accent-text); } .t-C { color: var(--c-ok-text); }
@@ -148,7 +147,7 @@
   .badge.flag { color: var(--c-danger); } .badge.sword { color: var(--c-text-2); }
   .badge.heart-blue { color: var(--c-accent-text); } .badge.heart-red { color: var(--c-danger-text); } .badge.heart-white { color: var(--c-text); } .badge.plus { color: var(--c-text); }
   /* 요약만 줄어든다 (이름·배지는 항상 보임) */
-  .stat { flex: 1 1 0; min-width: 0; color: var(--c-text-3); font-size: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .stat { flex: 1 1 0; min-width: 0; color: var(--c-row-text-2); font-size: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .ctl { display: inline-flex; align-items: center; gap: 1px; flex: none; }
   .ctl button { width: 14px; height: 14px; padding: 0; border: 1px solid var(--c-border-strong); border-radius: 2px; background: var(--c-bg-input); color: var(--c-text-2); font-size: 10px; line-height: 1; cursor: pointer; }
   .ctl button:hover:not(:disabled) { background: var(--c-bg-raised); color: var(--c-text); }
