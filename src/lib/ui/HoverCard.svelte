@@ -20,7 +20,7 @@
 {#if hover.content}
   <div class="card" bind:this={el} style:left={`${pos.x}px`} style:top={`${pos.y}px`} role="tooltip">
     <div class="title">{hover.content.title}</div>
-    {#each hover.content.recipe as line, i (i)}<div class="line">{line}</div>{/each}
+    {#each hover.content.recipe as line, i (i)}<div class="line" class:done={line.done}>{line.text}</div>{/each}
     <div class="sep"></div>
     {#if hover.content.features.length === 0}
       <div class="line muted">특징 정보 없음</div>
@@ -38,5 +38,6 @@
   .title { color: var(--c-accent-text); font-weight: 600; margin-bottom: 2px; }
   .line { white-space: nowrap; }
   .muted { color: var(--c-text-3); }
+  .done { color: var(--c-text-3); text-decoration: line-through; }
   .sep { border-top: 1px dashed var(--c-border-strong); margin: 4px 0; }
 </style>

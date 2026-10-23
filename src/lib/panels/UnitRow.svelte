@@ -36,9 +36,7 @@
   function enter(e: MouseEvent) {
     // 스킨·변형 유닛은 기본 유닛의 조합식을 보여 준다
     const recipe = recipeOf(unit.id) ?? recipeOf(base(unit.id));
-    const content = buildHover(unit, { label, note, tier }, recipe, unitName);
-    if (combo) content.recipe.push(combo.craftable ? '▶ 지금 조합 가능' : `▶ 재료 ${combo.have}/${combo.need}`);
-    showHover(content, e.clientX, e.clientY);
+    showHover(buildHover(unit, { label, note, tier }, recipe, unitName, combo), e.clientX, e.clientY);
   }
 </script>
 

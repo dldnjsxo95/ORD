@@ -1,5 +1,5 @@
 // 호버 카드 내용 생성: 조합식(재료·비용·조건) → 구분선 → 특징(요약 약어를 풀어 씀).
-import type { Recipe, Unit, Condition } from '$lib/api';
+import type { Recipe, Unit, Condition, ComboStatus } from '$lib/api';
 
 /** 약어 → 읽기 쉬운 표현. 숫자가 붙는 것은 "라벨 : 값" 꼴로 만든다. */
 const NUMERIC: Array<[RegExp, string, string]> = [
@@ -74,9 +74,15 @@ const COND_TEXT: Record<string, (c: Condition) => string> = {
   king: () => '',
 };
 
+export interface HoverLine {
+  text: string;
+  /** 이미 보유한 재료: 가운데 줄 + 회색 */
+  done?: boolean;
+}
+
 export interface HoverContent {
   title: string;
-  recipe: string[];
+  recipe: HoverLine[];
   features: string[];
 }
 
@@ -85,23 +91,29 @@ export function buildHover(
   entry: { label?: string; note?: string; tier?: string },
   recipe: Recipe | undefined,
   unitName: (id: string) => string,
+  combo?: ComboStatus,
 ): HoverContent {
   const title = [entry.tier ? `(${entry.tier})` : '', entry.label ?? unit.name, unit.grade ? `· ${unit.grade}` : ''].filter(Boolean).join(' ');
-  const lines: string[] = [];
+  const lines: HoverLine[] = [];
+  const push = (text: string, done = false) => lines.push({ text, done });
   if (recipe && recipe.kind === 'craft') {
-    for (const m of recipe.materials) lines.push(unitName(m.unit) + (m.count > 1 ? ` ×${m.count}` : ''));
-    if (recipe.gold) lines.push(`골드 ${recipe.gold.toLocaleString()}`);
-    if (recipe.wood) lines.push(`목재 ${recipe.wood}`);
-    if (recipe.woodIncremental) lines.push(`목재 ${recipe.woodIncremental} (조합마다 증가)`);
-    for (const i of recipe.items) lines.push(`아이템 : ${i.name}`);
+    // 보유한 재료(부족 목록에 없는 것)는 done 표시
+    const missing = new Set((combo?.missing ?? []).map((m) => m.unit));
+    const evaluated = !!combo;
+    for (const m of recipe.materials) push(unitName(m.unit) + (m.count > 1 ? ` ×${m.count}` : ''), evaluated && !missing.has(m.unit));
+    if (recipe.gold) push(`골드 ${recipe.gold.toLocaleString()}`, combo?.gold_ok === true);
+    if (recipe.wood) push(`목재 ${recipe.wood}`, combo?.wood_ok === true);
+    if (recipe.woodIncremental) push(`목재 ${recipe.woodIncremental} (조합마다 증가)`);
+    for (const i of recipe.items) push(`아이템 : ${i.name}`);
     for (const c of recipe.conditions) {
       const t = (COND_TEXT[c.type] ?? ((x: Condition) => `${x.type} ${x.value}`))(c);
-      if (t) lines.push(t);
+      if (t) push(t);
     }
-  } else if (recipe?.kind === 'random_only') lines.push('랜덤전용 (조합 불가)');
-  else if (recipe?.kind === 'special') lines.push('특수 획득 (조합 불가)');
-  else if (unit.grade === '흔함') lines.push('뽑기');
-  else lines.push('조합식 없음');
+    if (combo?.craftable) push('▶ 지금 조합 가능');
+  } else if (recipe?.kind === 'random_only') push('랜덤전용 (조합 불가)');
+  else if (recipe?.kind === 'special') push('특수 획득 (조합 불가)');
+  else if (unit.grade === '흔함') push('뽑기');
+  else push('조합식 없음');
 
   let features = expandNote(entry.note);
   if (features.length === 0 && unit.tags?.length) features = unit.tags.slice(0, 8);
