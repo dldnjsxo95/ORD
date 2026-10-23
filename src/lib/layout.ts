@@ -10,7 +10,7 @@ export const FILTERS = [
   '범위 잃은 체력 퍼센트 대미지', '단일아머브레이크', '중첩방어력 감소', '순간이동', '범위 퍼센트 대미지', '범위 끝딜',
 ];
 
-export type PanelKind = 'units' | 'stats' | 'resources' | 'items' | 'recommend';
+export type PanelKind = 'units' | 'stats' | 'resources' | 'items';
 
 export interface Entry {
   /** 유닛 rawcode 또는 아이템 id (AI00 등) */

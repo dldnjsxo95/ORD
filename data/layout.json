@@ -8,11 +8,6 @@
     "kind": "stats"
    },
    {
-    "id": "recommend",
-    "title": "추천 조합",
-    "kind": "recommend"
-   },
-   {
     "id": "common",
     "title": "흔함",
     "kind": "units",

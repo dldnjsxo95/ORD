@@ -14,8 +14,6 @@ interface PlanState {
   /** 유닛 id -> 수동 증감 (음수 가능, 유효 수량은 0 이상으로 보정) */
   manual: Record<string, number>;
   skillPoints: number;
-  /** 추천 조합 모드 (물딜/마딜) */
-  mode: string;
   sort: SortMode;
   filters: string[];
   filterOpen: boolean;
@@ -31,12 +29,12 @@ interface PlanState {
 const KEY = 'ord-helper.plan';
 
 function load(): PlanState {
-  const base: PlanState = { manual: {}, skillPoints: 0, mode: '물딜', sort: 'default', filters: [], filterOpen: true, collapsed: {}, simulated: null, assumed: [], assumedBase: {} };
+  const base: PlanState = { manual: {}, skillPoints: 0, sort: 'default', filters: [], filterOpen: true, collapsed: {}, simulated: null, assumed: [], assumedBase: {} };
   try {
     const raw = localStorage.getItem(KEY);
     if (!raw) return base;
     const saved = JSON.parse(raw);
-    return { ...base, mode: saved.mode === '마딜' ? '마딜' : '물딜', sort: saved.sort ?? 'default', filters: saved.filters ?? [], filterOpen: saved.filterOpen ?? true, collapsed: saved.collapsed ?? {} };
+    return { ...base, sort: saved.sort ?? 'default', filters: saved.filters ?? [], filterOpen: saved.filterOpen ?? true, collapsed: saved.collapsed ?? {} };
   } catch {
     return base;
   }
@@ -46,7 +44,7 @@ export const plan = $state<PlanState>(load());
 
 function save() {
   try {
-    localStorage.setItem(KEY, JSON.stringify({ mode: plan.mode, sort: plan.sort, filters: plan.filters, filterOpen: plan.filterOpen, collapsed: plan.collapsed }));
+    localStorage.setItem(KEY, JSON.stringify({ sort: plan.sort, filters: plan.filters, filterOpen: plan.filterOpen, collapsed: plan.collapsed }));
   } catch {
     /* 무시 */
   }
@@ -139,11 +137,6 @@ function releaseCraftedAssumed() {
     delete plan.assumedBase[id];
     pushLog(`가정 해제: ${unitName(id)} 생성됨`);
   }
-}
-
-export function setMode(mode: string) {
-  plan.mode = mode;
-  save();
 }
 
 export function setSort(sort: SortMode) {

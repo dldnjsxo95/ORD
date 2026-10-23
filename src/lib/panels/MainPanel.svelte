@@ -3,20 +3,15 @@
 <script lang="ts">
   import { game, unit as unitOf } from '$lib/stores/game.svelte';
   import { fullscreen, toggleFullscreen } from '$lib/stores/fullscreen.svelte';
-  import { plan, effectiveCount, effectiveCounts, rawCount, adjust, resetAll, clearManual, hasManual, toggleAssumed, clearAssumed, setSort, setMode, toggleFilter, clearFilters, setFilterOpen, combos, onLiveUpdate, type SortMode } from '$lib/stores/plan.svelte';
+  import { plan, effectiveCount, effectiveCounts, rawCount, adjust, resetAll, clearManual, hasManual, toggleAssumed, clearAssumed, setSort, toggleFilter, clearFilters, setFilterOpen, combos, onLiveUpdate, type SortMode } from '$lib/stores/plan.svelte';
   import { COLUMNS, ALL_PANELS, ENTRY_BY_ID, FILTERS, type Entry } from '$lib/layout';
   import { traitsOf, statsOfNote } from '$lib/traits';
   import { openDetail } from '$lib/stores/detail.svelte';
-  import { allocate, usedByGrade, compareUsage, craftRecipe, rankOf, type Holdings } from '$lib/combo-tree';
-  import type { Recommendation } from '$lib/recommend';
-  import type { RunRequest, DbRequest, RunResult } from '$lib/recommend.worker';
-  import { copyText } from '$lib/clipboard';
-  import { craftWord, pushLog } from '$lib/stores/game.svelte';
+  import { allocate, usedByGrade, compareUsage, type Holdings } from '$lib/combo-tree';
   import { hoverCard, infoCard, unitCard } from '$lib/actions/hover';
-  import type { Unit, Database } from '$lib/api';
+  import type { Unit } from '$lib/api';
   import CategoryPanel from './CategoryPanel.svelte';
   import UnitRow from './UnitRow.svelte';
-  import UnitIcon from '$lib/ui/UnitIcon.svelte';
   import Button from '$lib/ui/Button.svelte';
   import Icon from '$lib/ui/Icon.svelte';
   import HoverCard from '$lib/ui/HoverCard.svelte';
@@ -106,74 +101,6 @@
   const ctxFor = (id: string): Holdings => view.before.get(id) ?? view;
   const assumedName = (id: string) => ENTRY_BY_ID.get(id)?.label ?? unitOf(id)?.name ?? id;
 
-  /** 추천 모드 선택지 */
-  const MODES = ['물딜', '마딜'];
-  /**
-   * 추천 후보: 모드 태그가 없거나 선택한 모드의 패널에 있고, 조합식이 있으며 전설 이상인 유닛.
-   * "[스턴]" 처럼 모드가 아닌 태그가 붙은 패널은 양쪽 모두에 넣는다.
-   */
-  const recommendCandidates = $derived.by(() => {
-    const db = game.db;
-    if (!db) return [] as string[];
-    const other = plan.mode === '물딜' ? '[마딜]' : '[물딜]';
-    const minRank = db.grades.indexOf('전설');
-    const out: string[] = [];
-    for (const p of ALL_PANELS) {
-      if (p.kind !== 'units' || p.title.includes(other)) continue;
-      for (const e of p.entries ?? []) {
-        if (!e.id || !unitOf(e.id) || !craftRecipe(db, e.id)) continue;
-        if (rankOf(db, e.id) < minRank) continue;
-        out.push(e.id);
-      }
-    }
-    return out;
-  });
-  /**
-   * 추천 조합: 가정 배정 뒤 남은 패로, 남는 패가 가장 적은 조합 묶음. 묶음 탐색은 수백 ms 걸릴 수 있어
-   * 워커에서 돌리고, 입력이 바뀌면 150ms 뒤에 다시 요청한다. 늦게 온 옛 결과는 seq 로 버린다.
-   */
-  let recommendation = $state<Recommendation | null>(null);
-  let recommending = $state(false);
-  let worker: Worker | null = null;
-  let seq = 0;
-  let workerDb: Database | null = null;
-  function ensureWorker(): Worker {
-    if (worker) return worker;
-    worker = new Worker(new URL('../recommend.worker.ts', import.meta.url), { type: 'module' });
-    worker.onmessage = (e: MessageEvent<RunResult>) => {
-      if (e.data.seq !== seq) return;
-      recommendation = e.data.result;
-      recommending = false;
-    };
-    return worker;
-  }
-  $effect(() => {
-    const db = game.db;
-    const counts = view.counts;
-    const evolution = view.evolution;
-    const candidates = recommendCandidates;
-    if (!db) return;
-    const timer = setTimeout(() => {
-      const w = ensureWorker();
-      if (workerDb !== db) {
-        // game.db 는 $state 프록시라 구조 복제가 안 된다 → 스냅샷(평범한 객체)으로 보낸다 (DB 가 바뀔 때 한 번)
-        w.postMessage({ type: 'db', db: $state.snapshot(db) as Database } satisfies DbRequest);
-        workerDb = db;
-      }
-      seq += 1;
-      recommending = true;
-      w.postMessage({ type: 'run', seq, counts: [...counts], evolution, opts: { candidates } } satisfies RunRequest);
-    }, 150);
-    return () => clearTimeout(timer);
-  });
-  $effect(() => () => worker?.terminate());
-  async function copyWord(id: string) {
-    const w = craftWord(id);
-    if (!w) return;
-    const ok = await copyText(w);
-    pushLog(ok ? `복사: ${w}` : `복사 실패: ${w}`);
-  }
-
   /** 게임과 연동 중(실시간 state 수신): 수량은 게임 값이므로 +/− 버튼을 숨긴다 */
   const live = $derived(game.watching && game.payload != null);
 
@@ -250,50 +177,6 @@
               {/each}
               {#if statRows.length === 0}<div class="empty">보유 유닛 없음</div>{/if}
             </CategoryPanel>
-          {:else if p.kind === 'recommend'}
-            <!-- 추천 조합: 모드(물딜/마딜)별 후보 중 지금 패로 만들 수 있는 묶음 가운데 남는 패가 가장 적은 것. 가정한 유닛은 고정 -->
-            <CategoryPanel id={p.id} title={recommending ? `${p.title} …` : p.title} count={recommendation?.picks.length}>
-              <div class="kv">
-                <span class="k">딜 타입</span>
-                <select class="sort" value={plan.mode} onchange={(e) => setMode((e.currentTarget as HTMLSelectElement).value)} use:hoverCard={() => infoCard('딜 타입', ['물딜: [물딜] 패널 + 태그 없는 패널', '마딜: [마딜] 패널 + 태그 없는 패널', '전설 이상, 지금 패로 바로 만들 수 있는 조합만'])}>
-                  {#each MODES as m (m)}<option value={m}>{m}</option>{/each}
-                </select>
-              </div>
-              {#each plan.assumed as id (id)}
-                <div class="rec fixed" use:hoverCard={() => unitCard(id, [{ text: '가정한 유닛 (고정). 누르면 해제', ok: true }])}>
-                  <button type="button" class="open" onclick={() => toggleAssumed(id)}>
-                    <UnitIcon {id} name={assumedName(id)} size={16} />
-                    <span class="nm">{assumedName(id)}</span>
-                    <span class="gr">{unitOf(id)?.grade ?? ''}</span>
-                    <span class="tag">가정</span>
-                  </button>
-                  {#if craftWord(id)}<button type="button" class="cp" aria-label="조합어 복사" onclick={() => copyWord(id)} use:hoverCard={() => infoCard('조합어 복사', [craftWord(id) ?? ''])}><Icon name="copy" size={11} /></button>{/if}
-                </div>
-              {/each}
-              {#if recommendation}
-                {#each recommendation.picks as r (r.id)}
-                  <div class="rec" use:hoverCard={() => unitCard(r.id, [`쓰는 패 ${r.cards}`, '누르면 가정에 추가 (고정)'])}>
-                    <button type="button" class="open" onclick={() => toggleAssumed(r.id)}>
-                      <UnitIcon id={r.id} name={assumedName(r.id)} size={16} />
-                      <span class="nm">{assumedName(r.id)}{#if r.times > 1} ×{r.times}{/if}</span>
-                      <span class="gr">{unitOf(r.id)?.grade ?? ''}</span>
-                      <span class="cards mono">패 {r.cards}</span>
-                    </button>
-                    {#if craftWord(r.id)}<button type="button" class="cp" aria-label="조합어 복사" onclick={() => copyWord(r.id)} use:hoverCard={() => infoCard('조합어 복사', [craftWord(r.id) ?? ''])}><Icon name="copy" size={11} /></button>{/if}
-                  </div>
-                {/each}
-                {#if recommendation.picks.length === 0 && plan.assumed.length === 0}
-                  <div class="empty">지금 패로 만들 수 있는 조합 없음</div>
-                {/if}
-                <div class="left-cards" use:hoverCard={() => infoCard(`남는 패 ${recommendation?.leftoverCount ?? 0}`, [...(recommendation?.leftover ?? []).map((n) => `${assumedName(n.id)}${n.count > 1 ? ` ×${n.count}` : ''}`), recommendation?.complete ? '' : '후보가 많아 일부만 탐색했습니다'])}>
-                  <span class="k">남는 패</span>
-                  <span class="v mono">{recommendation.leftoverCount}{#if !recommendation.complete} ≈{/if}</span>
-                </div>
-                {#if recommendation.leftover.length}
-                  <div class="left-list">{recommendation.leftover.map((n) => `${assumedName(n.id)}${n.count > 1 ? `×${n.count}` : ''}`).join(', ')}</div>
-                {/if}
-              {/if}
-            </CategoryPanel>
           {:else if p.kind === 'resources'}
             <CategoryPanel id={p.id} title={p.title}>
               <div class="kv"><span class="k">골드</span><span class="v mono">{(game.payload?.state.gold ?? 0).toLocaleString()}</span></div>
@@ -356,21 +239,6 @@
   .kv { display: flex; align-items: center; justify-content: space-between; gap: 4px; height: 20px; padding: 0 4px; border-bottom: 1px solid var(--c-border-row); }
   .kv .k { color: var(--c-text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .kv .note { color: var(--c-text-3); font-size: 10px; }
-  /* 추천 조합 행: 유닛 행과 같은 크기. 누르면 가정 토글, 오른쪽 작은 버튼은 조합어 복사 */
-  .rec { display: flex; align-items: center; gap: 2px; height: 20px; padding: 0 2px 0 3px; font-size: 9px; color: var(--c-row-text); border-bottom: 1px solid var(--c-border-row); }
-  .rec:hover { background: var(--c-bg-hover); }
-  .rec.fixed { outline: 1px solid var(--c-accent); outline-offset: -1px; }
-  .rec .open { flex: 1; min-width: 0; display: flex; align-items: center; gap: 3px; height: 100%; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; padding: 0; }
-  .rec .nm { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .rec .gr { flex: none; color: var(--c-text-3); font-size: 8px; }
-  .rec .tag { flex: none; font-size: 7px; line-height: 11px; padding: 0 3px; border-radius: 2px; background: var(--c-accent); color: var(--c-on-accent); font-weight: 700; }
-  .rec .cards { flex: none; margin-left: auto; color: var(--c-ok-text); font-size: 8px; }
-  .rec .cp { flex: none; width: 16px; height: 16px; padding: 0; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--c-border-strong); border-radius: 2px; background: var(--c-bg-input); color: var(--c-text-2); cursor: pointer; }
-  .rec .cp:hover { background: var(--c-bg-raised); color: var(--c-text); }
-  .left-cards { display: flex; align-items: center; justify-content: space-between; height: 20px; padding: 0 4px; font-size: 9px; border-bottom: 1px solid var(--c-border-row); }
-  .left-cards .k { color: var(--c-text-2); }
-  .left-cards .v { color: var(--c-warn-text); font-weight: 600; }
-  .left-list { padding: 2px 4px 3px; font-size: 8px; color: var(--c-row-text-2); white-space: normal; line-height: 1.3; }
   /* 아이템 행: 유닛 행과 같은 글자 크기 (이름 9px, 요약 8px) */
   .kv.item { font-size: 9px; color: var(--c-row-text); }
   .kv.item .k { color: var(--c-row-text); }
