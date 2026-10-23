@@ -7,7 +7,7 @@ local OUT_DIR     = os.getenv("LOCALAPPDATA") .. "\\ord-helper"
 local OUT         = OUT_DIR .. "\\state.json"
 local TMP         = OUT .. ".tmp"
 local INTERVAL    = 0.5     -- 초. 전체 유닛 순회를 매 틱 하지 말라는 TMO 문서 권고 반영
-local REVERSE_IDS = false   -- 출력의 rawcode 가 뒤집혀 보이면 true 로 바꾼다 (예: "100o" -> "o001")
+local REVERSE_IDS = true    -- 출력의 rawcode 가 뒤집혀 보이면 true 로 바꾼다 (예: "100o" -> "o001")
 local SCHEMA_V    = 1
 
 os.execute('mkdir "' .. OUT_DIR .. '" 2>nul')
