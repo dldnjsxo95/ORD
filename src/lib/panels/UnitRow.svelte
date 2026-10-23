@@ -5,6 +5,9 @@
   import UnitIcon from '$lib/ui/UnitIcon.svelte';
   import Icon from '$lib/ui/Icon.svelte';
   import type { IconName } from '$lib/ui/icons';
+  import { buildHover } from '$lib/tooltip';
+  import { showHover, moveHover, hideHover } from '$lib/stores/hover.svelte';
+  import { recipeOf, unitName, base } from '$lib/stores/game.svelte';
 
   interface Props {
     unit: Unit;
@@ -29,14 +32,18 @@
     초월: '초', 불멸: '불', 영원: '영', 왜곡: '왜', 특수: '특수', 세라핌: '세', 오로성: '오',
   };
   const pct = $derived(combo && combo.need ? Math.round((combo.have / combo.need) * 100) : 0);
-  const tip = $derived(
-    [unit.grade ? `${unit.name} (${unit.grade})` : unit.name, unit.title, unit.id, unit.tags?.length ? unit.tags.join(', ') : null, combo ? (combo.craftable ? '지금 조합 가능' : `재료 ${combo.have}/${combo.need}`) : null]
-      .filter(Boolean)
-      .join('\n'),
-  );
+
+  function enter(e: MouseEvent) {
+    // 스킨·변형 유닛은 기본 유닛의 조합식을 보여 준다
+    const recipe = recipeOf(unit.id) ?? recipeOf(base(unit.id));
+    const content = buildHover(unit, { label, note, tier }, recipe, unitName);
+    if (combo) content.recipe.push(combo.craftable ? '▶ 지금 조합 가능' : `▶ 재료 ${combo.have}/${combo.need}`);
+    showHover(content, e.clientX, e.clientY);
+  }
 </script>
 
-<div class="row" class:owned={count > 0} class:ready={combo?.craftable} class:dimmed title={tip}>
+<!-- svelte-ignore a11y_no_static_element_interactions -->
+<div class="row" class:owned={count > 0} class:ready={combo?.craftable} class:dimmed onmouseenter={enter} onmousemove={(e) => moveHover(e.clientX, e.clientY)} onmouseleave={hideHover}>
   <UnitIcon id={unit.id} name={unit.name} size={16} />
   {#if unit.grade}<span class="grade g-{unit.grade}">{GRADE_SHORT[unit.grade] ?? unit.grade}</span>{/if}
   <span class="cell">

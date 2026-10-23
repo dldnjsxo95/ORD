@@ -62,6 +62,17 @@ export function recipeOf(resultId: string): Recipe | undefined {
   return recipeByResult.get(resultId);
 }
 
+/** 스킨·변형 유닛이면 기본 유닛 id (최대 8단계), 아니면 그대로 */
+export function base(id: string): string {
+  let cur = id;
+  for (let i = 0; i < 8; i++) {
+    const b = unitIndex.get(cur)?.baseForm;
+    if (!b || b === cur) break;
+    cur = b;
+  }
+  return cur;
+}
+
 /** 이 유닛을 재료로 쓰는 조합식들 */
 export function usesOf(unitId: string): Recipe[] {
   return game.db?.recipes.filter((r) => r.kind === 'craft' && r.materials.some((m) => m.unit === unitId)) ?? [];

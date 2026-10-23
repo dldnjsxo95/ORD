@@ -11,6 +11,7 @@
   import UnitRow from './UnitRow.svelte';
   import Button from '$lib/ui/Button.svelte';
   import Icon from '$lib/ui/Icon.svelte';
+  import HoverCard from '$lib/ui/HoverCard.svelte';
 
   const comboByResult = $derived(new Map(combos().map((c) => [c.result, c])));
   const filterSet = $derived(new Set(plan.filters));
@@ -160,6 +161,7 @@
       </div>
     {/each}
   </div>
+  <HoverCard />
 </div>
 
 <style>

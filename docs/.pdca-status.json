@@ -1,6 +1,6 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-10-23T07:15:11.945Z",
+  "lastUpdated": "2026-10-23T07:21:48.275Z",
   "activeFeatures": [
     "ord-core",
     "mock-exporter",
@@ -76,9 +76,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-10-23T04:43:44.717Z",
-        "lastUpdated": "2026-10-23T07:11:37.617Z"
+        "lastUpdated": "2026-10-23T07:21:14.590Z"
       },
-      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\layout.ts"
+      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\tooltip.ts"
     },
     "ui": {
       "phase": "do",
@@ -89,9 +89,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-10-23T05:01:12.477Z",
-        "lastUpdated": "2026-10-23T06:35:05.658Z"
+        "lastUpdated": "2026-10-23T07:21:46.382Z"
       },
-      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\ui\\icons.ts"
+      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\ui\\HoverCard.svelte"
     },
     "stores": {
       "phase": "do",
@@ -102,9 +102,9 @@
       "documents": {},
       "timestamps": {
         "started": "2026-10-23T05:01:17.428Z",
-        "lastUpdated": "2026-10-23T06:46:25.748Z"
+        "lastUpdated": "2026-10-23T07:21:47.678Z"
       },
-      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\stores\\plan.svelte.ts"
+      "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\stores\\game.svelte.ts"
     },
     "shell": {
       "phase": "do",
@@ -128,7 +128,7 @@
       "documents": {},
       "timestamps": {
         "started": "2026-10-23T05:01:21.554Z",
-        "lastUpdated": "2026-10-23T07:15:11.945Z"
+        "lastUpdated": "2026-10-23T07:21:48.275Z"
       },
       "lastFile": "C:\\Users\\pnc\\Desktop\\LWT\\Projects\\ORD\\src\\lib\\panels\\MainPanel.svelte"
     },
@@ -154,7 +154,7 @@
   "session": {
     "startedAt": "2026-10-23T04:27:27.528Z",
     "onboardingCompleted": false,
-    "lastActivity": "2026-10-23T07:15:11.945Z"
+    "lastActivity": "2026-10-23T07:21:48.275Z"
   },
   "history": [
     {
@@ -741,6 +741,54 @@
     },
     {
       "timestamp": "2026-10-23T07:15:11.945Z",
+      "feature": "panels",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T07:21:14.590Z",
+      "feature": "ORD",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T07:21:45.693Z",
+      "feature": "stores",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T07:21:46.382Z",
+      "feature": "ui",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T07:21:47.074Z",
+      "feature": "panels",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T07:21:47.369Z",
+      "feature": "panels",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T07:21:47.678Z",
+      "feature": "stores",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T07:21:47.989Z",
+      "feature": "panels",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-10-23T07:21:48.275Z",
       "feature": "panels",
       "phase": "do",
       "action": "updated"
