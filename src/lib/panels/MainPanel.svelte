@@ -112,10 +112,12 @@
             <CategoryPanel id={p.id} title={p.title} count={unitIds(p.entries).length} allOn={allOn(p.entries)} onall={(on) => setAll(unitIds(p.entries), on)}>
               {#each rows(p.entries) as r, i (r.entry.id ?? `${p.id}-${i}`)}
                 {#if r.unit}
-                  <UnitRow unit={r.unit} label={r.entry.label} note={r.entry.note} count={countOf(r.unit)} combo={comboByResult.get(r.unit.id)} dimmed={!matches(r.unit)} onadjust={(d) => adjust(r.unit!.id, d)} />
+                  <UnitRow unit={r.unit} label={r.entry.label} note={r.entry.note} badges={r.entry.badges} tier={r.entry.tier} count={countOf(r.unit)} combo={comboByResult.get(r.unit.id)} dimmed={!matches(r.unit)} onadjust={(d) => adjust(r.unit!.id, d)} />
                 {:else}
                   <div class="row-text" class:unresolved={r.entry.unresolved || (r.entry.id && !r.unit)} title={r.entry.unresolved ? '데이터에서 찾지 못한 항목' : undefined}>
-                    <span class="t">{r.entry.text ?? r.entry.label ?? r.entry.id}</span>{#if r.entry.unresolved}<span class="q">?</span>{/if}
+                    <span class="t">{r.entry.text ?? r.entry.label ?? r.entry.id}</span>
+                    {#each r.entry.badges ?? [] as b, bi (bi)}<span class="tb {b}"><Icon name={b === 'flag' ? 'flag' : b === 'sword' ? 'sword' : b === 'plus' ? 'plusCircle' : 'heart'} size={10} /></span>{/each}
+                    {#if r.entry.unresolved}<span class="q">?</span>{/if}
                   </div>
                 {/if}
               {/each}
@@ -186,6 +188,7 @@
   .row-text .t { overflow: hidden; text-overflow: ellipsis; }
   .row-text.unresolved { color: var(--c-text-3); }
   .row-text .q { color: var(--c-warn-text); font-weight: 700; }
+  .row-text .tb { display: inline-flex; color: var(--c-text-2); } .row-text .tb.flag { color: var(--c-danger); }
   .kv { display: flex; align-items: center; justify-content: space-between; gap: 4px; height: 20px; padding: 0 4px; border-bottom: 1px solid var(--c-border-row); }
   .kv .k { color: var(--c-text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .kv .note { color: var(--c-text-3); font-size: 10px; }

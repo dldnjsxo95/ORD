@@ -23,6 +23,10 @@ export interface Entry {
   text?: string;
   /** 데이터에서 찾지 못한 항목 */
   unresolved?: boolean;
+  /** 역할 배지: flag | sword | heart-blue | heart-red | heart-white | plus (사양서 표기) */
+  badges?: string[];
+  /** 티어 표기: F, D, C, B, A, A+, S */
+  tier?: string;
 }
 
 export interface PanelDef {

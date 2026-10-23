@@ -1,4 +1,4 @@
-<!-- 유닛 한 행(20px): 초상(16px) · 이름 · 역할 배지 · (요약) · [+] [−] 수량.
+<!-- 유닛 한 행(20px): 초상(16px) · 등급표기 · (티어)이름 · 배지들 · (요약) · [+] [−] 수량.
      이름 칸은 조합 진행도만큼 채워지는 게이지, 조합 가능하면 초록. 필터가 켜져 있고 안 맞으면 흐리게. -->
 <script lang="ts">
   import type { Unit, ComboStatus } from '$lib/api';
@@ -10,18 +10,25 @@
     unit: Unit;
     /** 표시 이름 (없으면 유닛 이름) */
     label?: string;
-    /** 괄호 요약 (없으면 자동 추출 statText) */
+    /** 괄호 요약 (사양서 표기) */
     note?: string;
+    /** 역할 배지 (사양서 표기) */
+    badges?: string[];
+    /** 티어 표기 (F~S) */
+    tier?: string;
     count: number;
     combo?: ComboStatus;
     dimmed?: boolean;
     onadjust: (delta: number) => void;
   }
-  let { unit, label, note, count, combo, dimmed = false, onadjust }: Props = $props();
+  let { unit, label, note, badges = [], tier, count, combo, dimmed = false, onadjust }: Props = $props();
 
-  const BADGE: Record<string, IconName> = { flag: 'flag', sword: 'sword', heart: 'heart', plus: 'plusCircle' };
+  const BADGE: Record<string, IconName> = { flag: 'flag', sword: 'sword', 'heart-blue': 'heart', 'heart-red': 'heart', 'heart-white': 'heart', plus: 'plusCircle' };
+  const GRADE_SHORT: Record<string, string> = {
+    흔함: '흔', 안흔함: '안', 특별: '특', 희귀: '희', 전설: '전', 히든: '히', 변화: '변', 제한: '제', 랜덤전용: '랜', 신비: '신',
+    초월: '초', 불멸: '불', 영원: '영', 왜곡: '왜', 특수: '특수', 세라핌: '세', 오로성: '오',
+  };
   const pct = $derived(combo && combo.need ? Math.round((combo.have / combo.need) * 100) : 0);
-  const shownNote = $derived(note ?? unit.statText ?? '');
   const tip = $derived(
     [unit.grade ? `${unit.name} (${unit.grade})` : unit.name, unit.title, unit.id, unit.tags?.length ? unit.tags.join(', ') : null, combo ? (combo.craftable ? '지금 조합 가능' : `재료 ${combo.have}/${combo.need}`) : null]
       .filter(Boolean)
@@ -31,11 +38,13 @@
 
 <div class="row" class:owned={count > 0} class:ready={combo?.craftable} class:dimmed title={tip}>
   <UnitIcon id={unit.id} name={unit.name} size={16} />
+  {#if unit.grade}<span class="grade g-{unit.grade}">{GRADE_SHORT[unit.grade] ?? unit.grade}</span>{/if}
   <span class="cell">
     {#if pct > 0}<span class="fill" style:width={`${pct}%`}></span>{/if}
+    {#if tier}<span class="tier t-{tier.replace('+', 'p')}">({tier})</span>{/if}
     <span class="nm">{label ?? unit.name}</span>
-    {#each unit.badges ?? [] as b}{#if BADGE[b]}<span class="badge {b}"><Icon name={BADGE[b]} size={10} /></span>{/if}{/each}
-    {#if shownNote}<span class="stat">({shownNote})</span>{/if}
+    {#each badges as b, i (i)}{#if BADGE[b]}<span class="badge {b}"><Icon name={BADGE[b]} size={10} /></span>{/if}{/each}
+    {#if note}<span class="stat">({note})</span>{/if}
     {#if pct > 0}<span class="pct">{pct}%</span>{/if}
   </span>
   <span class="ctl">
@@ -51,12 +60,18 @@
   .row.owned { color: var(--c-text); background: var(--c-accent-soft); }
   .row.ready .nm { color: var(--c-ok-text); font-weight: 600; }
   .row.dimmed { opacity: 0.28; }
+  .grade { flex: none; min-width: 12px; padding: 0 2px; border-radius: 2px; font-size: 9px; line-height: 13px; text-align: center; color: var(--c-bg-app); background: var(--c-text-3); }
+  .g-흔함, .g-안흔함 { background: var(--c-tier-1); } .g-특별, .g-희귀 { background: var(--c-tier-2); } .g-전설, .g-히든, .g-변화, .g-해적선 { background: var(--c-tier-3); }
+  .g-제한, .g-랜덤전용, .g-신비, .g-왜곡, .g-특수 { background: var(--c-tier-4); } .g-초월, .g-불멸, .g-영원, .g-세라핌, .g-오로성 { background: var(--c-tier-5); }
   .cell { position: relative; flex: 1; min-width: 0; display: flex; align-items: center; gap: 3px; height: 100%; overflow: hidden; }
   .fill { position: absolute; left: 0; top: 2px; bottom: 2px; background: color-mix(in srgb, var(--c-accent) 22%, transparent); border-radius: 2px; }
   .ready .fill { background: color-mix(in srgb, var(--c-ok) 26%, transparent); }
+  .tier { position: relative; flex: none; font-size: 10px; font-weight: 700; color: var(--c-text-3); }
+  .t-S { color: var(--c-danger-text); } .t-Ap, .t-A { color: var(--c-warn-text); } .t-B { color: var(--c-accent-text); } .t-C { color: var(--c-ok-text); }
   .nm { position: relative; white-space: nowrap; flex: none; }
-  .badge { position: relative; display: inline-flex; flex: none; color: var(--c-text-3); }
-  .badge.flag { color: var(--c-accent-text); } .badge.sword { color: var(--c-danger-text); } .badge.heart { color: var(--c-ok-text); } .badge.plus { color: var(--c-warn-text); }
+  .badge { position: relative; display: inline-flex; flex: none; }
+  .badge.flag { color: var(--c-danger); } .badge.sword { color: var(--c-text-2); }
+  .badge.heart-blue { color: var(--c-accent-text); } .badge.heart-red { color: var(--c-danger-text); } .badge.heart-white { color: var(--c-text); } .badge.plus { color: var(--c-text); }
   /* 요약만 줄어든다 (이름·배지·퍼센트는 항상 보임) */
   .stat { position: relative; flex: 1 1 0; min-width: 0; color: var(--c-text-3); font-size: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .pct { position: relative; margin-left: auto; padding-right: 3px; flex: none; font-size: 10px; color: var(--c-accent-text); font-variant-numeric: tabular-nums; }
