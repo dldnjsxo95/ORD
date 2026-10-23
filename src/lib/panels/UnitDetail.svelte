@@ -5,6 +5,7 @@
      타일·항목을 클릭하면 그 유닛으로 이동하고 ← 로 돌아온다. 수량은 메인 화면과 같은 값(실시간 + 수동 조정)을 쓰므로
      +/− 로 바꾸면 즉시 다시 계산된다. -->
 <script lang="ts">
+  import { hoverCard, infoCard } from '$lib/actions/hover';
   import { detail, pushDetail, backDetail, forwardDetail, canForward, closeDetail } from '$lib/stores/detail.svelte';
   import { game, unit as unitOf, unitGrade } from '$lib/stores/game.svelte';
   import { effectiveCount, effectiveCounts } from '$lib/stores/plan.svelte';
@@ -25,7 +26,8 @@
   const grade = (u: string) => unitGrade(u) ?? '';
 
   // 트리 계산. effectiveCount 가 plan/game 상태를 읽으므로 수량이 바뀌면 다시 계산된다.
-  // 진화체는 그 유닛 1기를 더 가진 것으로, 흔함선택위습은 부족한 흔함 재료 대체로 반영한다 (게이지와 같은 기준).
+  // 진화체는 그 유닛 1기를 더 가진 것으로 반영한다. 흔함선택위습은 부족 목록에서 빼지 않고 "위습으로 대체 가능한 수"로만 보여 준다
+  // (위습으로 뽑을 수 있을 뿐 실제로 있는 유닛이 아니므로. 게이지와 같은 기준).
   const tree = $derived.by(() => {
     const db = game.db;
     if (!db || !id) return null;
@@ -38,6 +40,7 @@
     return {
       direct: s.direct,
       missingBase: s.missingBase,
+      wispsUsed: s.wispsUsed,
       lower: directMaterials(db, id),
       base,
       parents: parents(db, id),
@@ -83,7 +86,7 @@
               {#each entry?.badges ?? [] as b, i (i)}{#if BADGE_ICON[b]}<span class="badge {b}"><Icon name={BADGE_ICON[b]} size={12} /></span>{/if}{/each}
               {#if entry?.note}<span class="note">({entry.note})</span>{/if}
               {#if entry?.panel ?? unit.grade}<span class="gr">[{entry?.panel ?? unit.grade}]</span>{/if}
-              <span class="cnt" title="현재 보유">보유 {effectiveCount(id)}</span>
+              <span class="cnt" use:hoverCard={() => infoCard('현재 보유', ['게임에서 읽은 수량 (가정 배정 전)'])}>보유 {effectiveCount(id)}</span>
             </div>
             {#if DESCRIPTIONS[id]}
               <div class="card">{DESCRIPTIONS[id]}</div>
@@ -93,12 +96,12 @@
           {#if tree}
             {@const sections = [
               { title: '부족한 재료', items: tree.direct, pct: true, empty: craftRecipe(game.db!, id) ? '없음 (재료를 모두 보유)' : '조합식 없음' },
-              { title: '부족한 최하위 재료', items: tree.missingBase, pct: false, empty: '없음' },
+              { title: '부족한 최하위 재료', items: tree.missingBase, pct: false, empty: '없음', hint: tree.wispsUsed ? `위습으로 ${tree.wispsUsed}개 대체 가능` : '' },
               { title: '하위 재료', items: tree.lower, pct: false, empty: '없음 (최하위 유닛)' },
               { title: '최하위 재료', items: tree.lower.length ? tree.base : [], pct: false, empty: '없음' },
             ]}
             {#each sections as sec (sec.title)}
-              <h3>{sec.title}</h3>
+              <h3>{sec.title}{#if sec.hint} <span class="hint">({sec.hint})</span>{/if}</h3>
               {#if sec.items.length === 0}
                 <div class="empty">{sec.empty}</div>
               {:else}
@@ -188,6 +191,7 @@
 
   h3 { margin: var(--sp-4) 0 var(--sp-2); font-size: 11px; font-weight: 600; color: var(--c-accent-text); text-transform: none; }
   .right h3 { margin-top: 0; }
+  h3 .hint { font-weight: 400; color: var(--c-text-3); }
   .empty { color: var(--c-text-3); padding: 2px 0; }
 
   /* 타일: 배경 없이 초상화 + 글자만. 최대화(가로 2048px) 기준 왼쪽 영역 약 736px 에 한 줄 10개 (66px + 간격 6px) */

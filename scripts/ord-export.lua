@@ -15,6 +15,10 @@ local REVERSE_IDS = true    -- 출력의 rawcode 가 뒤집혀 보이면 true �
 local SCHEMA_V    = 1
 
 local EVO_ABILITY = "Ane2"
+-- 난이도: JASS 전역 변수 이름과 값 → 표기. 변수 이름을 모르면 nil 로 두면 "difficulty":null 로 나간다.
+-- (맵 스크립트의 변수명은 war3.jass.variables() 로 덤프해서 찾는다. 스크랩: scripts/ord-probe.lua)
+local DIFF_VAR    = nil
+local DIFF_MAP    = { }   -- 예: { [1] = "신", [2] = "악몽" } 또는 { ["God"] = "신" }
 local GOROSEI     = { o02E = true, o031 = true, o032 = true }
 local INV_ITEMS   = { I001 = "AI00", I000 = "AI01", I002 = "AI02", I003 = "AI03" }
 local ITEM_ABILS  = {}
@@ -58,10 +62,18 @@ local function sortedKeys(t)
   return keys
 end
 
+local function difficultyName()
+  if not DIFF_VAR then return nil end
+  local ok, v = pcall(war3.jass.get, DIFF_VAR)
+  if not ok or v == nil then return nil end
+  return DIFF_MAP[v] or DIFF_MAP[tostring(v)]
+end
+
 local function snapshot()
   if not (war3.isRunning() and war3.hasWorld()) then return nil end
   local me = war3.getLocalPlayer()
   if me < 0 then return nil end
+  local difficulty = difficultyName()
   local sx, sy = war3.getPlayerStartLocation(me)
 
   local counts, items = {}, {}
@@ -118,13 +130,14 @@ local function snapshot()
   end
 
   return string.format(
-    '{"v":%d,"t":%.3f,"map":%s,"player":%d,"gold":%d,"wood":%d,"units":{%s},"items":{%s},"evolution":%s,"names":{%s}}',
+    '{"v":%d,"t":%.3f,"map":%s,"player":%d,"gold":%d,"wood":%d,"units":{%s},"items":{%s},"evolution":%s,"names":{%s},"difficulty":%s}',
     SCHEMA_V, os.clock(), jsonStr(war3.getMapName() or ""), me,
     war3.getPlayerState(me, PLAYER_STATE_RESOURCE_GOLD) or 0,
     war3.getPlayerState(me, PLAYER_STATE_RESOURCE_LUMBER) or 0,
     table.concat(unitParts, ","), table.concat(itemParts, ","),
     evolution and jsonStr(evolution) or "null",
-    table.concat(nameParts, ","))
+    table.concat(nameParts, ","),
+    difficulty and jsonStr(difficulty) or "null")
 end
 
 local function writeAtomic(text)

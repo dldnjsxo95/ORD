@@ -3,11 +3,12 @@
 <script lang="ts">
   import { game, unit as unitOf } from '$lib/stores/game.svelte';
   import { fullscreen, toggleFullscreen } from '$lib/stores/fullscreen.svelte';
-  import { plan, effectiveCount, effectiveCounts, rawCount, adjust, resetAll, clearManual, hasManual, setRound, toggleAssumed, clearAssumed, setSort, toggleFilter, clearFilters, setFilterOpen, combos, onLiveUpdate, type SortMode } from '$lib/stores/plan.svelte';
+  import { plan, effectiveCount, effectiveCounts, rawCount, adjust, resetAll, clearManual, hasManual, toggleAssumed, clearAssumed, setSort, toggleFilter, clearFilters, setFilterOpen, combos, onLiveUpdate, type SortMode } from '$lib/stores/plan.svelte';
   import { COLUMNS, ALL_PANELS, ENTRY_BY_ID, FILTERS, type Entry } from '$lib/layout';
   import { traitsOf, statsOfNote } from '$lib/traits';
   import { openDetail } from '$lib/stores/detail.svelte';
   import { allocate, usedByGrade, compareUsage, type Holdings } from '$lib/combo-tree';
+  import { hoverCard, infoCard, unitCard } from '$lib/actions/hover';
   import type { Unit } from '$lib/api';
   import CategoryPanel from './CategoryPanel.svelte';
   import UnitRow from './UnitRow.svelte';
@@ -54,12 +55,9 @@
   /** 기록지침(아이템) 보유 여부: 게임에서 읽은 값 (플레이어 어빌리티 또는 인벤토리) */
   const itemCount = (id: string) => game.payload?.state.items?.[id] ?? 0;
 
-  /** 오로성 효과가 적용되는 라운드 */
-  const GOROSEI_ROUND = 50;
   /**
    * 현재 능력치: 보유 유닛(수량 반영)과 보유 아이템의 괄호 요약을 라벨별로 합산한다.
    * 숫자가 붙은 토큰은 부호 포함 합산(이감40 + 이감-15 = 25, 깍20 + 깍-15 = 5, 0.5스턴 + 1스턴 = 1.5), 숫자가 없는 토큰(암브 등)은 보유 개수.
-   * 오로성은 50라운드부터만 넣는다 (현재 라운드는 자원 패널에서 수동 입력).
    */
   const statRows = $derived.by(() => {
     const acc = new Map<string, { sum: number; count: number; numeric: boolean }>();
@@ -74,7 +72,6 @@
     for (const u of game.db?.units ?? []) {
       const n = effectiveCount(u.id);
       if (!n) continue;
-      if (u.grade === '오로성' && plan.round < GOROSEI_ROUND) continue;
       add(ENTRY_BY_ID.get(u.id)?.note, n);
     }
     for (const p of ALL_PANELS) {
@@ -104,9 +101,10 @@
   const ctxFor = (id: string): Holdings => view.before.get(id) ?? view;
   const assumedName = (id: string) => ENTRY_BY_ID.get(id)?.label ?? unitOf(id)?.name ?? id;
 
-  const readyCount = $derived(combos().filter((c) => c.craftable).length);
   /** 게임과 연동 중(실시간 state 수신): 수량은 게임 값이므로 +/− 버튼을 숨긴다 */
   const live = $derived(game.watching && game.payload != null);
+  /** 연결 상태 (툴바 표시): 연결됨 = 감시 중이고 state.json 을 받은 상태 */
+  const connTitle = $derived(game.error ? game.error : live ? `연결됨: ${game.dir}` : game.watching ? `감시 중, state.json 대기: ${game.dir}` : '감시 중지됨');
 
   // 전체화면 (ESC 로 해제, 상단 바 숨김: +page.svelte)
   function onFullscreen() {
@@ -120,16 +118,17 @@
   <div class="toolbar">
     <span class="left">
       {#if hasManual()}<Button size="sm" variant="ghost" onclick={clearManual}>실시간 값으로 복귀</Button>{/if}
-      {#if readyCount}<span class="ready-badge">조합 가능 {readyCount}</span>{/if}
       {#if plan.assumed.length}
         <span class="assumed">가정:
-          {#each plan.assumed as id (id)}<button type="button" class="chip" title="우클릭한 유닛. 누르면 해제" onclick={() => toggleAssumed(id)}>{assumedName(id)} ✕</button>{/each}
+          {#each plan.assumed as id (id)}<button type="button" class="chip" use:hoverCard={() => unitCard(id, ['우클릭으로 가정한 유닛. 누르면 해제'])} onclick={() => toggleAssumed(id)}>{assumedName(id)} ✕</button>{/each}
           <button type="button" class="link" onclick={clearAssumed}>모두 해제</button>
         </span>
       {/if}
     </span>
     <span class="spacer"></span>
-    <Button size="sm" onclick={() => setSort('count')}>추천 조합</Button>
+    <span class="conn" class:ok={live} class:muted={!live} class:danger={!!game.error} use:hoverCard={() => infoCard(live ? '게임 연결됨' : '게임 연결 안 됨', [connTitle])}>
+      <span class="dot"></span>{live ? '연결됨' : '해제됨'}
+    </span>
     <button type="button" class="link" onclick={resetAll}>전체 초기화</button>
     <Button size="sm" variant="ghost" icon={fullscreen.active ? 'fullscreenExit' : 'fullscreen'} onclick={onFullscreen} title={fullscreen.active ? 'ESC 로도 해제됩니다' : undefined}>{fullscreen.active ? '전체화면 해제 (ESC)' : '전체화면'}</Button>
     <select class="sort" value={plan.sort} onchange={(e) => setSort((e.currentTarget as HTMLSelectElement).value as SortMode)}>
@@ -148,7 +147,7 @@
   {#if plan.filterOpen}
     <div class="filters">
       {#each FILTERS as f (f)}
-        <label class="f" class:on={filterSet.has(f)} title={f}>
+        <label class="f" class:on={filterSet.has(f)} use:hoverCard={() => infoCard(f, [filterSet.has(f) ? '필터 켜짐 (누르면 끔)' : '누르면 이 특징을 가진 유닛만 남김'])}>
           <input type="checkbox" checked={filterSet.has(f)} onchange={() => toggleFilter(f)} />
           <span>{f}</span>
         </label>
@@ -178,17 +177,8 @@
             </CategoryPanel>
           {:else if p.kind === 'stats'}
             <CategoryPanel id={p.id} title={p.title} count={statRows.length}>
-              <!-- 현재 라운드: 게임에서 못 읽으므로 수동. 오로성 효과는 50라운드부터 합산 -->
-              <div class="kv">
-                <span class="k">현재 라운드 <span class="note">(오로성 {GOROSEI_ROUND}라~)</span></span>
-                <span class="ctl">
-                  <button type="button" onclick={() => setRound(plan.round + 1)}>+</button>
-                  <button type="button" onclick={() => setRound(plan.round - 1)} disabled={plan.round === 0}>−</button>
-                  <span class="v mono">{plan.round}</span>
-                </span>
-              </div>
               {#each statRows as s (s.label)}
-                <div class="kv" title={s.label}><span class="k">{s.label}</span><span class="v mono" class:neg={s.negative}>{s.text}</span></div>
+                <div class="kv" use:hoverCard={() => infoCard(s.label, [`합계 ${s.text}`, '괄호 요약 숫자를 부호 포함 합산 (흔함·안흔함·특별 제외)'])}><span class="k">{s.label}</span><span class="v mono" class:neg={s.negative}>{s.text}</span></div>
               {/each}
               {#if statRows.length === 0}<div class="empty">보유 유닛 없음</div>{/if}
             </CategoryPanel>
@@ -227,7 +217,6 @@
   .main { display: flex; flex-direction: column; height: 100%; font-size: 11px; }
   .toolbar { display: flex; align-items: center; gap: var(--sp-2); height: 28px; padding: 0 var(--sp-3); flex: none; border-bottom: 1px solid var(--c-border); background: var(--c-bg-app); }
   .toolbar .left { display: inline-flex; gap: var(--sp-2); align-items: center; }
-  .ready-badge { color: var(--c-ok-text); font-weight: 600; }
   .assumed { display: inline-flex; align-items: center; gap: 3px; color: var(--c-text-2); }
   .chip { border: 1px solid var(--c-accent); border-radius: var(--r-2); background: var(--c-accent-soft); color: var(--c-text); font: inherit; font-size: 10px; padding: 0 5px; cursor: pointer; }
   .chip:hover { background: var(--c-danger); color: var(--c-on-accent); border-color: var(--c-danger); }
@@ -257,6 +246,12 @@
   .kv .note { color: var(--c-text-3); font-size: 10px; }
   .kv .v { color: var(--c-text); font-variant-numeric: tabular-nums; }
   .kv .v.neg { color: var(--c-danger-text); }
+  /* 연결 상태 (툴바, 전체 초기화 왼쪽) */
+  .conn { display: inline-flex; align-items: center; gap: var(--sp-1); padding: 0 var(--sp-2); white-space: nowrap; font-size: 11px; }
+  .conn.muted { color: var(--c-text-3); }
+  .conn.ok { color: var(--c-ok-text); }
+  .conn.danger { color: var(--c-danger-text); }
+  .conn .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
   .kv .cnt { min-width: 16px; text-align: center; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--c-accent-text); }
   .kv .cnt.zero { color: var(--c-text-3); font-weight: 400; }
   .ctl { display: inline-flex; align-items: center; gap: 1px; flex: none; }

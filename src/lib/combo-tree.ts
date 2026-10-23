@@ -13,13 +13,13 @@ export interface MissingDirect extends Need {
 export interface Shortage {
   /** 부족한 직속 재료 */
   direct: MissingDirect[];
-  /** 보유량을 반영하고도 모자라는 최하위 재료 */
+  /** 보유량을 반영하고도 모자라는 최하위 재료. 위습으로 대신할 수 있는 것도 실제로는 없으므로 그대로 남긴다 */
   missingBase: Need[];
   /** 아직 만들어야 하는 중간 유닛 (최하위·최종 유닛 제외), 낮은 등급부터 */
   toCraft: Need[];
   /** 이 조합에 쓰이는 보유 패 (유닛 id → 소모 수). 진화체(extra)로 대신한 몫도 포함 */
   used: Map<string, number>;
-  /** 부족한 흔함 재료를 대신하는 데 쓴 흔함선택위습 수 */
+  /** missingBase 중 보유한 흔함선택위습으로 대신할 수 있는 수 (참고용. missingBase·missingTotal 에서 빼지 않는다) */
   wispsUsed: number;
 }
 
@@ -134,7 +134,7 @@ const sum = (m: Map<string, number>) => [...m.values()].reduce((a, b) => a + b, 
 export interface ShortageOpts {
   /** 보유량에 더해 쓸 수 있는 유닛 (예: 진화체 → 그 유닛 1기). 키는 유닛 id 또는 기본형 id */
   extra?: ReadonlyMap<string, number>;
-  /** 흔함선택위습 수. 부족한 흔함 최하위 재료를 하나씩 대신한다 */
+  /** 흔함선택위습 수. 부족한 흔함 최하위 재료 중 몇 개를 대신할 수 있는지(wispsUsed)만 센다 */
   wisps?: number;
   /** 흔함 유닛 판정 (위습 대체 대상) */
   isCommon?: (id: string) => boolean;
@@ -145,7 +145,8 @@ export interface ShortageOpts {
 /**
  * 보유 수량을 반영한 부족분. 보유한 중간 재료는 그만큼 하위로 펼치지 않고 차감한다.
  * 재료 사이에 공유되는 하위 재료가 이중으로 계산되지 않도록 보유량 차감은 재료 순서대로 누적한다.
- * opts.extra(진화체)는 보유량처럼 차감되고, opts.wisps 는 마지막에 부족한 흔함 재료를 대신한다.
+ * opts.extra(진화체)는 보유량처럼 차감된다. opts.wisps 는 부족한 흔함 재료 중 몇 개를 위습으로 대신할 수 있는지(wispsUsed)만
+ * 세고, 부족 목록·부족 수에서는 빼지 않는다 (위습으로 뽑을 수 있을 뿐 실제로 있는 유닛이 아니므로).
  */
 export function shortage(
   db: Database,
@@ -194,25 +195,23 @@ export function shortage(
   const byGrade = (a: Need, b: Need) => gradeRank(a.id) - gradeRank(b.id) || a.id.localeCompare(b.id);
   const missingBase = [...missing.entries()].map(([id, count]) => ({ id, count })).sort(byGrade);
 
-  // 흔함선택위습: 부족한 흔함 최하위 재료를 낮은 등급·id 순으로 하나씩 대신한다
-  const pool0 = Math.max(0, opts.wisps ?? 0);
-  let pool = pool0;
-  if (pool > 0) {
-    for (const m of missingBase) {
-      if (pool <= 0) break;
-      if (!common(m.id)) continue;
-      const take = Math.min(pool, m.count);
-      m.count -= take;
-      pool -= take;
-    }
+  // 흔함선택위습: 부족한 흔함 최하위 재료 중 위습으로 대신할 수 있는 수. 목록에서 지우지는 않는다
+  let pool = Math.max(0, opts.wisps ?? 0);
+  let wispsUsed = 0;
+  for (const m of missingBase) {
+    if (pool <= 0) break;
+    if (!common(m.id)) continue;
+    const take = Math.min(pool, m.count);
+    wispsUsed += take;
+    pool -= take;
   }
 
   return {
     direct,
-    missingBase: missingBase.filter((m) => m.count > 0),
+    missingBase,
     toCraft: [...toCraft.entries()].map(([id, count]) => ({ id, count })).sort(byGrade),
     used,
-    wispsUsed: pool0 - pool,
+    wispsUsed,
     total: leafTotal(db, id),
     missingTotal: missingBase.reduce((a, m) => a + m.count, 0),
   };
@@ -284,7 +283,10 @@ export function compareUsage(a: number[], b: number[]): number {
   return 0;
 }
 
-/** 조합 게이지 구간 (전체 최하위 재료 대비 비율): 보유 → 진화체가 덮는 몫 → 위습이 대신하는 몫 */
+/**
+ * 조합 게이지 구간 (전체 최하위 재료 대비 비율): 보유 → 진화체가 덮는 몫 → 위습이 대신할 수 있는 몫.
+ * 진행도 숫자에는 own + evo 만 넣는다. 위습 구간은 "위습으로 뽑으면 되는 흔함"을 보여 줄 뿐 실제 보유가 아니다.
+ */
 export interface Gauge {
   own: number;
   evo: number;
@@ -296,8 +298,8 @@ export interface Gauge {
 }
 
 /**
- * 유닛 하나의 게이지. 진화체(evolution)는 그 유닛 1기를 더 가진 것으로, 위습은 흔함 재료 대체로 계산해
- * "보유만 / 보유+진화체 / 보유+진화체+위습" 세 번의 부족분 차이로 구간 크기를 낸다.
+ * 유닛 하나의 게이지. 진화체(evolution)는 그 유닛 1기를 더 가진 것으로 계산해 "보유만 / 보유+진화체" 두 번의
+ * 부족분 차이로 구간 크기를 낸다. 위습 구간은 남은 부족분 중 위습으로 대신할 수 있는 수(wispsUsed).
  * 진화체가 이 유닛 자체면 부족분 전체를 진화체 구간으로 본다.
  */
 export function gauge(db: Database, id: string, count: (id: string) => number, evolution: string | null | undefined, wisps: number): Gauge | null {
@@ -309,6 +311,7 @@ export function gauge(db: Database, id: string, count: (id: string) => number, e
   const evoSelf = !!evolution && baseOf(db, evolution) === baseOf(db, id);
   const extra = evolution && !evoSelf ? new Map([[baseOf(db, evolution), 1]]) : undefined;
   const m1 = evoSelf ? 0 : extra ? shortage(db, id, count, { extra }).missingTotal : m0;
-  const m2 = wisps > 0 && m1 > 0 ? shortage(db, id, count, { extra, wisps }).missingTotal : m1;
-  return { own: (total - m0) / total, evo: (m0 - m1) / total, wisp: (m1 - m2) / total, ready: m1 === 0, complete: m1 > 0 && m2 === 0 };
+  const wispCover = wisps > 0 && m1 > 0 ? shortage(db, id, count, { extra, wisps }).wispsUsed : 0;
+  const m2 = m1 - wispCover;
+  return { own: (total - m0) / total, evo: (m0 - m1) / total, wisp: wispCover / total, ready: m1 === 0, complete: m1 > 0 && m2 === 0 };
 }

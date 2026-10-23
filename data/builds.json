@@ -1,0 +1,1200 @@
+{
+ "_note": "커뮤니티 평가 종합(2026-10-23). trait = 특성 강화 우선순위(1 필수 · 2 조건부 필수 · 3 있으면 좋음 · 4 낮음/비추 · 0 특강 없음·자료 없음, null 미평가), 다상위일 때 낮은 숫자부터 찍는다. 2.323 시기(2026) 글을 우선, 2024 글은 성향만. tops=최상위 유닛별 딜타입/유형(공증·암브·스킬·깡딜·폭발·끝딜·버퍼·보조)/한 줄 평/파트너, sets=실제로 가는 구성. 근거는 docs/03-research/ord-2.323-추천빌드.md",
+ "formulas": {
+  "물딜": {
+   "상위딜러": 1,
+   "깍": "180~210",
+   "스턴": 1.5,
+   "이감": 102,
+   "보스딜러": 1,
+   "우선순위": "깍 > 이감 > 스턴",
+   "예외": "니카·거프는 버프 충분하면 120깍"
+  },
+  "마딜": {
+   "상위딜러": 2,
+   "토키": true,
+   "스턴": 1.5,
+   "이감": 102,
+   "광보잡": 1,
+   "마방깍·마뎀증": "에제·후지토라·방주맥심·쿠마물약"
+  }
+ },
+ "sources": {
+  "phys2026": "https://gall.dcinside.com/mgallery/board/view/?id=ordc1&no=250199",
+  "magic2026": "https://gall.dcinside.com/mgallery/board/view/?id=ordc1&no=250811",
+  "franky2026": "https://gall.dcinside.com/mgallery/board/view/?id=ordc1&no=251432",
+  "trait2026": "https://gall.dcinside.com/mgallery/board/view/?id=ordc1&no=239868",
+  "review2024": "https://gall.dcinside.com/mgallery/board/view/?id=ordc1&no=133998",
+  "tier2024": "https://gall.dcinside.com/mgallery/board/view/?id=ordc1&no=155804",
+  "jinbe-deck": "https://gall.dcinside.com/mgallery/board/view/?id=ordc1&no=253720",
+  "namu": "https://namu.wiki/w/원피스%20랜덤%20디펜스",
+  "ordsearch": "https://ordsearch.net/how-about-decks"
+ },
+ "tops": {
+  "h07I": {
+   "name": "샬롯 카타쿠리",
+   "title": null,
+   "trait": null,
+   "grade": "제한",
+   "dmg": "물딜",
+   "archetype": "공증",
+   "community": "악몽 물딜 1순위. 싸고 스토리 빨라 흔함을 아낀다. 풀깍 + 샤크/퀸 하나면 클각",
+   "partners": [
+    "h0A0",
+    "h0CI",
+    "h05A",
+    "h04J",
+    "h02T",
+    "h03Q"
+   ],
+   "notRecommended": false
+  },
+  "H09A": {
+   "name": "징베",
+   "title": "바다의 협객",
+   "trait": {
+    "priority": 1,
+    "note": "암브 조합 필수, 다상위 시 특공"
+   },
+   "grade": "초월",
+   "dmg": "물딜",
+   "archetype": "암브",
+   "community": "징초 킹제 + 스모커 = 0 확정. 암브·마젠 시너지",
+   "partners": [
+    "h0AI",
+    "h02V",
+    "h0CI",
+    "h03V",
+    "h045",
+    "h03U"
+   ],
+   "notRecommended": false
+  },
+  "H0BT": {
+   "name": "롤로노아 조로",
+   "title": "염왕",
+   "trait": {
+    "priority": 1,
+    "note": "염왕 = 특강 + 슈스이 강화. 슈스이 방깍 유지(총 45)"
+   },
+   "grade": "초월",
+   "dmg": "물딜",
+   "archetype": "스킬",
+   "community": "슈스이 뜨면 조초. 조크봉(크제+봉쿠레)으로 이감·스턴",
+   "partners": [
+    "h05F",
+    "h03O"
+   ],
+   "notRecommended": false
+  },
+  "H09F": {
+   "name": "롤로노아 조로",
+   "title": "최강의 검사",
+   "trait": {
+    "priority": 2,
+    "note": "준필수: 귀기 강화 (방깍·이감 +5 → 35). 슈스이 뜨면 염왕 필수"
+   },
+   "grade": "초월",
+   "dmg": "물딜",
+   "archetype": "스킬",
+   "community": "깍·이감·짤스턴 다 주면서 딜. 염왕 강화 전",
+   "partners": [
+    "h05F",
+    "h03O"
+   ],
+   "notRecommended": false
+  },
+  "H09B": {
+   "name": "우솝",
+   "title": "바다의 전사",
+   "trait": null,
+   "grade": "초월",
+   "dmg": "물딜",
+   "archetype": "공증",
+   "community": "보잡 최상급, 자체 깍30+맵 전체 8. 이감·스턴 꽉",
+   "partners": [
+    "h02Z",
+    "h039",
+    "h02V",
+    "h03Q"
+   ],
+   "notRecommended": false
+  },
+  "H0BK": {
+   "name": "니카",
+   "title": "태양의 신",
+   "trait": {
+    "priority": 0,
+    "note": "특강 없음"
+   },
+   "grade": "영원",
+   "dmg": "물딜",
+   "archetype": "공증",
+   "community": "이감 먼저, 깍은 120부터 클각. 벨류 S",
+   "partners": [
+    "h02V",
+    "h03Q",
+    "h087"
+   ],
+   "notRecommended": false
+  },
+  "h04C": {
+   "name": "몽키.D.거프",
+   "title": null,
+   "trait": null,
+   "grade": "불멸",
+   "dmg": "물딜",
+   "archetype": "공증",
+   "community": "버프 많으면 110깍으로 0. 적 방어 +15 페널티",
+   "partners": [
+    "H091",
+    "h049",
+    "h05A",
+    "h03Y",
+    "h087",
+    "h03E",
+    "h02V",
+    "h03Q"
+   ],
+   "notRecommended": false
+  },
+  "H08X": {
+   "name": "후지토라 잇쇼우",
+   "title": "분노하는 맹호",
+   "trait": {
+    "priority": 1,
+    "note": "암브 조합·원딜 시 필수 (토키/로우/발라 불필요해짐)"
+   },
+   "grade": "초월",
+   "dmg": "물딜",
+   "archetype": "암브",
+   "community": "레포·발라 달면 고점 폭발. 특강 운석낙하",
+   "partners": [
+    "h03U",
+    "h03P",
+    "h05A",
+    "h0BC",
+    "h08Q",
+    "h02V"
+   ],
+   "notRecommended": false
+  },
+  "h04F": {
+   "name": "스코퍼 가반",
+   "title": null,
+   "trait": null,
+   "grade": "불멸",
+   "dmg": "물딜",
+   "archetype": "공증",
+   "community": "단일 보스 깡패. 가반쵸초 또는 비영. 69·72·74라 풀삭",
+   "partners": [
+    "H091",
+    "h057",
+    "h049",
+    "h05A"
+   ],
+   "notRecommended": false
+  },
+  "h04J": {
+   "name": "골.D.로져",
+   "title": null,
+   "trait": null,
+   "grade": "불멸",
+   "dmg": "물딜",
+   "archetype": "버퍼",
+   "community": "깍60·이감50·공증60. 평타딜러와 2상위",
+   "partners": [
+    "h04F",
+    "h049",
+    "h07I",
+    "H0BT",
+    "h03G",
+    "h03V"
+   ],
+   "notRecommended": false
+  },
+  "h04A": {
+   "name": "흰수염",
+   "title": null,
+   "trait": null,
+   "grade": "불멸",
+   "dmg": "물딜",
+   "archetype": "스킬",
+   "community": "깍45·스턴·이감·라인딜 혼자. 초보 추천",
+   "partners": [
+    "h045",
+    "h07I",
+    "h02Z"
+   ],
+   "notRecommended": false
+  },
+  "h05B": {
+   "name": "카벤딧슈",
+   "title": null,
+   "trait": {
+    "priority": 1,
+    "note": "암브 조합 시 필수, 다상위 시 우선도 높음"
+   },
+   "grade": "영원",
+   "dmg": "물딜",
+   "archetype": "공증",
+   "community": "육각형, 물딜 클리어 보증수표. 암브 조합이면 특강",
+   "partners": [
+    "h05F",
+    "h07I",
+    "h03Q"
+   ],
+   "notRecommended": false
+  },
+  "h08Q": {
+   "name": "알비다",
+   "title": null,
+   "trait": null,
+   "grade": "제한",
+   "dmg": "물딜",
+   "archetype": "암브",
+   "community": "풀이감이면 넉백으로 라인 관리. 공속 고정 → 공증만",
+   "partners": [
+    "H09A",
+    "h0AI",
+    "h02X"
+   ],
+   "notRecommended": false
+  },
+  "H0BL": {
+   "name": "료쿠규",
+   "title": "신 해군대장 초록 소",
+   "trait": {
+    "priority": 2,
+    "note": "암브 조합 시 필수, 암브 없으면 안 찍고 선위"
+   },
+   "grade": "초월",
+   "dmg": "물딜",
+   "archetype": "암브",
+   "community": "발동 이감42·깍15 잘 터짐. 변신 타이밍",
+   "partners": [
+    "h0BC",
+    "h08Q",
+    "h045"
+   ],
+   "notRecommended": false
+  },
+  "H0BD": {
+   "name": "야마토",
+   "title": "오니히메",
+   "trait": {
+    "priority": 1,
+    "note": "필수 (원딜 아니면 안 감)"
+   },
+   "grade": "초월",
+   "dmg": "물딜",
+   "archetype": "스킬",
+   "community": "킹 전설 이감 + 카르가라 깍 날먹. 풀이감이면 마딜도",
+   "partners": [
+    "h0AH",
+    "h03F",
+    "h04Q",
+    "h058"
+   ],
+   "notRecommended": false
+  },
+  "h049": {
+   "name": "실버즈 레일리",
+   "title": null,
+   "trait": null,
+   "grade": "불멸",
+   "dmg": "물딜",
+   "archetype": "버퍼",
+   "community": "공속45·깍20·암브5 + 유닛회유. 메인 딜러 필요",
+   "partners": [
+    "h04F",
+    "h04C",
+    "h04D"
+   ],
+   "notRecommended": false
+  },
+  "h05A": {
+   "name": "버기",
+   "title": null,
+   "trait": {
+    "priority": 0,
+    "note": "특강 없음"
+   },
+   "grade": "영원",
+   "dmg": "물딜",
+   "archetype": "버퍼",
+   "community": "공속65·공증75. 느린 딜러와",
+   "partners": [
+    "H08X",
+    "h058",
+    "h04F"
+   ],
+   "notRecommended": false
+  },
+  "H091": {
+   "name": "토니토니 쵸파",
+   "title": "순록 의사",
+   "trait": {
+    "priority": 4,
+    "note": "버퍼로 쓰면 특강 X (딜러로 쓸 때만 필수)"
+   },
+   "grade": "초월",
+   "dmg": "물딜",
+   "archetype": "버퍼",
+   "community": "공증·깍50·공속40. 평타딜러와",
+   "partners": [
+    "h04F",
+    "h04C",
+    "h049"
+   ],
+   "notRecommended": false
+  },
+  "H099": {
+   "name": "몽키.D.루피",
+   "title": "해적왕이 될 사나이",
+   "trait": {
+    "priority": 1,
+    "note": "필수 (특강해야 스턴이 잡힘)"
+   },
+   "grade": "초월",
+   "dmg": "물딜",
+   "archetype": "공증",
+   "community": "120~130깍 + 보잡 따로. 풀깍 필수",
+   "partners": [
+    "h045",
+    "h03U",
+    "h03Y"
+   ],
+   "notRecommended": false
+  },
+  "h05F": {
+   "name": "크로커다일",
+   "title": null,
+   "trait": null,
+   "grade": "제한",
+   "dmg": "물딜",
+   "archetype": "보조",
+   "community": "스턴·이감·깍 보조. 특강 침식윤회",
+   "partners": [
+    "H0BT",
+    "H098"
+   ],
+   "notRecommended": false
+  },
+  "h0AI": {
+   "name": "킹",
+   "title": null,
+   "trait": null,
+   "grade": "제한",
+   "dmg": "물딜",
+   "archetype": "암브",
+   "community": "AB50 처형 1000만 고정. 암브·마젠 챙길 것",
+   "partners": [
+    "H09A",
+    "h03V",
+    "h02V"
+   ],
+   "notRecommended": false
+  },
+  "h08O": {
+   "name": "마르코",
+   "title": null,
+   "trait": null,
+   "grade": "제한",
+   "dmg": "물딜",
+   "archetype": "보조",
+   "community": "비추: 2전설 먹는데 노깍, 특포 금지",
+   "partners": [],
+   "notRecommended": true
+  },
+  "H098": {
+   "name": "니코 로빈",
+   "title": "악마의 자식",
+   "trait": {
+    "priority": 2,
+    "note": "준필수 (라인딜), 다상위면 특공"
+   },
+   "grade": "초월",
+   "dmg": "물딜",
+   "archetype": "보조",
+   "community": "비추: 첫패로 X, 스토리 느림. 가반 날개용",
+   "partners": [
+    "h04F"
+   ],
+   "notRecommended": true
+  },
+  "h081": {
+   "name": "더글라스 불릿",
+   "title": null,
+   "trait": null,
+   "grade": "불멸",
+   "dmg": "물딜",
+   "archetype": "암브",
+   "community": "비추: 이해도 없으면 X",
+   "partners": [],
+   "notRecommended": true
+  },
+  "H0BX": {
+   "name": "주얼리 보니",
+   "title": "일그러진 미래",
+   "trait": {
+    "priority": 0,
+    "note": "자료 없음"
+   },
+   "grade": "초월",
+   "dmg": "물딜",
+   "archetype": "보조",
+   "community": "비추 (단일깍40)",
+   "partners": [],
+   "notRecommended": true
+  },
+  "H092": {
+   "name": "사보",
+   "title": "혁명군 참모총장",
+   "trait": {
+    "priority": 1,
+    "note": "필수 (버영 또는 원딜)"
+   },
+   "grade": "초월",
+   "dmg": "물딜",
+   "archetype": "스킬",
+   "community": "단독 비추. 버영 있으면",
+   "partners": [
+    "h05A"
+   ],
+   "notRecommended": true
+  },
+  "h05I": {
+   "name": "레베카",
+   "title": null,
+   "trait": null,
+   "grade": "제한",
+   "dmg": "물딜",
+   "archetype": "공증",
+   "community": "공속·깍·이감·스턴 다 챙겨야 함. 레일리 전설과",
+   "partners": [
+    "h03A",
+    "h037"
+   ],
+   "notRecommended": true
+  },
+  "h04Q": {
+   "name": "빅 맘",
+   "title": null,
+   "trait": null,
+   "grade": "불멸",
+   "dmg": "마딜",
+   "archetype": "깡딜",
+   "community": "에제 세트로 꿀. 이감70·즉사. 크래커 포만감",
+   "partners": [
+    "h05E",
+    "h087",
+    "h0A1",
+    "h03H",
+    "H09G"
+   ],
+   "notRecommended": false
+  },
+  "H08V": {
+   "name": "나미",
+   "title": "날씨는 맑음",
+   "trait": {
+    "priority": 3,
+    "note": "제우스 소환. 라인딜 상승이라 다상위면 우선도 낮음"
+   },
+   "grade": "초월",
+   "dmg": "마딜",
+   "archetype": "깡딜",
+   "community": "라인딜 최강급. 에제 세트. 제우스 특강",
+   "partners": [
+    "h05E",
+    "h087",
+    "h0A1"
+   ],
+   "notRecommended": false
+  },
+  "H08Y": {
+   "name": "프랑키",
+   "title": "무적의 아이언 파이러츠",
+   "trait": {
+    "priority": 1,
+    "note": "필수, 라인딜 유의미 상승"
+   },
+   "grade": "초월",
+   "dmg": "마딜",
+   "archetype": "깡딜",
+   "community": "프랑키+에넬+코알라(+고죠). 써니호 마나컨",
+   "partners": [
+    "h05E",
+    "h03V",
+    "h03L",
+    "h05O",
+    "h09M",
+    "h059",
+    "h08R"
+   ],
+   "notRecommended": false
+  },
+  "H095": {
+   "name": "아카이누",
+   "title": "해군원수 붉은 개",
+   "trait": {
+    "priority": 2,
+    "note": "집탄율·딜 상승 유의미"
+   },
+   "grade": "초월",
+   "dmg": "마딜",
+   "archetype": "깡딜",
+   "community": "스토리·보스·광폭 혼자. 에영 특강과",
+   "partners": [
+    "h059",
+    "h05E",
+    "h087",
+    "h0A1"
+   ],
+   "notRecommended": false
+  },
+  "H09G": {
+   "name": "상디",
+   "title": "지옥에서 돌아온 자",
+   "trait": {
+    "priority": 0,
+    "note": "자료 없음"
+   },
+   "grade": "초월",
+   "dmg": "마딜",
+   "archetype": "깡딜",
+   "community": "상초+빅맘 안정 조합. 발라티에 강화",
+   "partners": [
+    "h04Q",
+    "h03P",
+    "h05E"
+   ],
+   "notRecommended": false
+  },
+  "H09H": {
+   "name": "상디",
+   "title": "지옥에서 돌아온 자",
+   "trait": {
+    "priority": 0,
+    "note": "자료 없음"
+   },
+   "grade": "초월",
+   "dmg": "마딜",
+   "archetype": "깡딜",
+   "community": "상디 초월 (제르마 전)",
+   "partners": [
+    "h04Q",
+    "h03P",
+    "h05E"
+   ],
+   "notRecommended": false
+  },
+  "H0B5": {
+   "name": "키자루",
+   "title": "해군대장 노란 원숭이",
+   "trait": {
+    "priority": 1,
+    "note": "필수. 레일리 떠서 특공 가면 많이 강함"
+   },
+   "grade": "초월",
+   "dmg": "마딜",
+   "archetype": "깡딜",
+   "community": "특강 필수, 레일리 뜨면 특공",
+   "partners": [
+    "h05E",
+    "h087",
+    "h0A1"
+   ],
+   "notRecommended": false
+  },
+  "h058": {
+   "name": "쥬라클 미호크",
+   "title": null,
+   "trait": {
+    "priority": 0,
+    "note": "특강 없음"
+   },
+   "grade": "영원",
+   "dmg": "마딜",
+   "archetype": "폭발",
+   "community": "공증 세트로 쉽게. 페루 + 배 1개면 무조건",
+   "partners": [
+    "h09Z",
+    "H093",
+    "h087",
+    "h05R",
+    "h047"
+   ],
+   "notRecommended": false
+  },
+  "h04E": {
+   "name": "센고쿠",
+   "title": null,
+   "trait": null,
+   "grade": "불멸",
+   "dmg": "마딜",
+   "archetype": "폭발",
+   "community": "공증 세트. 광보잡 따로",
+   "partners": [
+    "h09Z",
+    "H093",
+    "h087",
+    "H096"
+   ],
+   "notRecommended": false
+  },
+  "H0CO": {
+   "name": "코비",
+   "title": "해군의 미래",
+   "trait": {
+    "priority": 4,
+    "note": "방무뎀 조합 다상위 시 우선도 낮음"
+   },
+   "grade": "초월",
+   "dmg": "마딜",
+   "archetype": "폭발",
+   "community": "공증 세트. 방무뎀 조합",
+   "partners": [
+    "h09Z",
+    "H093",
+    "h087"
+   ],
+   "notRecommended": false
+  },
+  "H09I": {
+   "name": "브룩",
+   "title": "소울 킹",
+   "trait": {
+    "priority": 4,
+    "note": "다상위 시 우선도 낮음 (미니 라분, 이감7, 노래 공속25)"
+   },
+   "grade": "초월",
+   "dmg": "마딜",
+   "archetype": "끝딜",
+   "community": "2끝딜(라분·류마·페로나 소비). 브초+에영 악몽 클리어 기록",
+   "partners": [
+    "h059",
+    "h04I",
+    "h044",
+    "h048"
+   ],
+   "notRecommended": false
+  },
+  "H08U": {
+   "name": "시라호시",
+   "title": "해왕류를 다스리는 인어공주",
+   "trait": {
+    "priority": 0,
+    "note": "자료 없음"
+   },
+   "grade": "초월",
+   "dmg": "마딜",
+   "archetype": "깡딜",
+   "community": "에제 세트, 토키와 오른쪽 배치",
+   "partners": [
+    "h05E",
+    "h087",
+    "h0A1",
+    "h031",
+    "h07N"
+   ],
+   "notRecommended": false
+  },
+  "h067": {
+   "name": "우타",
+   "title": null,
+   "trait": {
+    "priority": 0,
+    "note": "특강 없음"
+   },
+   "grade": "영원",
+   "dmg": "마딜",
+   "archetype": "깡딜",
+   "community": "기록지침 레일리·초월위습 템으로 강제. 마방깍 후지토라·방주맥심·에제",
+   "partners": [
+    "h031",
+    "h03X",
+    "h05E",
+    "h0A1"
+   ],
+   "notRecommended": false
+  },
+  "H096": {
+   "name": "트라팔가 로우",
+   "title": "백개의 심장을 바친 자",
+   "trait": {
+    "priority": 4,
+    "note": "주의: 방무뎀·공증 사라지고 현퍼·라인딜. 방무뎀 조합이면 특강 X"
+   },
+   "grade": "초월",
+   "dmg": "마딜",
+   "archetype": "폭발",
+   "community": "페루 받으면. 방무뎀이면 특강 X",
+   "partners": [
+    "h05E",
+    "h087",
+    "h05R"
+   ],
+   "notRecommended": false
+  },
+  "h0CJ": {
+   "name": "시모츠키 류마",
+   "title": null,
+   "trait": {
+    "priority": 3,
+    "note": "특강해도 보잡 필요. 슈스이 라인딜 조금 상승"
+   },
+   "grade": "영원",
+   "dmg": "마딜",
+   "archetype": "끝딜",
+   "community": "시류·류마·로우전설 스타트 → 류마 영원 먼저 스택 → 에제/오뎅",
+   "partners": [
+    "h03J",
+    "h044",
+    "h03C",
+    "h05E",
+    "h08R"
+   ],
+   "notRecommended": false
+  },
+  "h06A": {
+   "name": "길드 테조로",
+   "title": null,
+   "trait": {
+    "priority": 4,
+    "note": "바헌. 특강 없어도 큰 문제 없음"
+   },
+   "grade": "영원",
+   "dmg": "마딜",
+   "archetype": "끝딜",
+   "community": "바헌 + 레일리 + 배, 캐럿·모비딕·토키. 비추 쪽",
+   "partners": [
+    "h07L",
+    "h03Q",
+    "h087",
+    "h03C"
+   ],
+   "notRecommended": false
+  },
+  "h04G": {
+   "name": "제트",
+   "title": null,
+   "trait": null,
+   "grade": "불멸",
+   "dmg": "마딜",
+   "archetype": "끝딜",
+   "community": "토키 + 단일 3~4개. 깡딜용 비추",
+   "partners": [
+    "h087"
+   ],
+   "notRecommended": false
+  },
+  "h04D": {
+   "name": "몽키.D.드래곤",
+   "title": null,
+   "trait": null,
+   "grade": "불멸",
+   "dmg": "마딜",
+   "archetype": "폭발",
+   "community": "스턴·공속·폭뎀증·삭. 똥패 소화. ☆5",
+   "partners": [
+    "h058",
+    "H096"
+   ],
+   "notRecommended": false
+  },
+  "h05G": {
+   "name": "패트릭 레드필드",
+   "title": null,
+   "trait": null,
+   "grade": "제한",
+   "dmg": "마딜",
+   "archetype": "끝딜",
+   "community": "41라 이전. 보스 고정·보잡·2끝딜. 솔신 국밥",
+   "partners": [],
+   "notRecommended": false
+  },
+  "H0B2": {
+   "name": "스네이크맨",
+   "title": "다섯번째 황제",
+   "trait": {
+    "priority": 0,
+    "note": "자료 없음"
+   },
+   "grade": "초월",
+   "dmg": "마딜",
+   "archetype": "폭발",
+   "community": "라인딜 최강. 샹크스 스턴. 이감 유닛 상극",
+   "partners": [
+    "h035",
+    "h04E"
+   ],
+   "notRecommended": false
+  },
+  "H0B4": {
+   "name": "유스타스 키드",
+   "title": "신세대의 이단아",
+   "trait": {
+    "priority": 2,
+    "note": "특강 후 모비딕 붙이면 1스턴"
+   },
+   "grade": "초월",
+   "dmg": "마딜",
+   "archetype": "끝딜",
+   "community": "특강 + 모비딕 1스턴. 단끝",
+   "partners": [
+    "h03Q"
+   ],
+   "notRecommended": false
+  },
+  "H097": {
+   "name": "아오키지",
+   "title": "전 해군대장 푸른 꿩",
+   "trait": {
+    "priority": 3,
+    "note": "공중이동, 폭뎀5, 이감10 추가"
+   },
+   "grade": "초월",
+   "dmg": "마딜",
+   "archetype": "폭발",
+   "community": "아오초+레필+비영 가성비. 이감80",
+   "partners": [
+    "h05G",
+    "h057"
+   ],
+   "notRecommended": false
+  },
+  "h05C": {
+   "name": "보아 핸콕",
+   "title": null,
+   "trait": {
+    "priority": 3,
+    "note": "특강해야 1스턴. 다상위에 스턴 여유 있으면 우선도 낮음"
+   },
+   "grade": "영원",
+   "dmg": "마딜",
+   "archetype": "깡딜",
+   "community": "마딜 단독 비추. 물딜 하이브리드(징초+핸영 기록)",
+   "partners": [
+    "H09A"
+   ],
+   "notRecommended": true
+  },
+  "h05E": {
+   "name": "갓 에넬",
+   "title": null,
+   "trait": null,
+   "grade": "제한",
+   "dmg": "마딜",
+   "archetype": "세트",
+   "community": "에제 세트 축: 마방깍18·마젠1.5·낙뢰 패기",
+   "partners": [
+    "h087",
+    "h0A1",
+    "H08Y",
+    "h03V"
+   ],
+   "notRecommended": false
+  },
+  "h084": {
+   "name": "시노부",
+   "title": null,
+   "trait": null,
+   "grade": "제한",
+   "dmg": "마딜",
+   "archetype": "보조",
+   "community": "이감+끝딜+보잡 가성비",
+   "partners": [],
+   "notRecommended": false
+  },
+  "h08R": {
+   "name": "코즈키 오뎅",
+   "title": null,
+   "trait": {
+    "priority": 3,
+    "note": "킨에몬 전설 추가. 다상위 시 우선도 애매"
+   },
+   "grade": "영원",
+   "dmg": "마딜",
+   "archetype": "깡딜",
+   "community": "라인딜·뽕맛. 조로 소비. 류마와 순서",
+   "partners": [
+    "h0CJ",
+    "h05E"
+   ],
+   "notRecommended": false
+  },
+  "h04B": {
+   "name": "금사자 시키",
+   "title": null,
+   "trait": null,
+   "grade": "불멸",
+   "dmg": "마딜",
+   "archetype": "보조",
+   "community": "마뎀증 15% 기생(빅맘·나초)",
+   "partners": [
+    "h04Q",
+    "H08V"
+   ],
+   "notRecommended": false
+  },
+  "h057": {
+   "name": "네펠타리 비비",
+   "title": null,
+   "trait": {
+    "priority": 0,
+    "note": "자료 없음"
+   },
+   "grade": "영원",
+   "dmg": "마딜",
+   "archetype": "강화",
+   "community": "강화 도박. 삭 중요. 가반과 2개 클리어",
+   "partners": [
+    "h04F",
+    "h03P",
+    "h087"
+   ],
+   "notRecommended": false
+  },
+  "H090": {
+   "name": "검은수염",
+   "title": "치밀하고 비열한 어둠",
+   "trait": {
+    "priority": 0,
+    "note": "자료 없음"
+   },
+   "grade": "초월",
+   "dmg": "마딜",
+   "archetype": "보조",
+   "community": "보스 끌기. 2전설 비용",
+   "partners": [],
+   "notRecommended": false
+  },
+  "h040": {
+   "name": "아인",
+   "title": null,
+   "trait": null,
+   "grade": "제한",
+   "dmg": "마딜",
+   "archetype": "보조",
+   "community": "다수 가야 함. 비추",
+   "partners": [],
+   "notRecommended": true
+  }
+ },
+ "sets": [
+  {
+   "id": "phys-formula",
+   "dmg": "물딜",
+   "name": "악몽 물딜 공식",
+   "members": [],
+   "why": "상위딜러 1 + 풀깍 180~210 + 스턴 1.5 + 이감 102% + 보스딜러 1. 우선순위 깍 > 이감 > 스턴",
+   "sources": [
+    "phys2026"
+   ]
+  },
+  {
+   "id": "magic-formula",
+   "dmg": "마딜",
+   "name": "악몽 마딜 공식",
+   "members": [
+    "h087"
+   ],
+   "why": "상위딜러 2 + 토키 + 스턴 1.5 + 이감 102% + 광보잡 1 + 마방깍·마뎀증",
+   "sources": [
+    "magic2026"
+   ]
+  },
+  {
+   "id": "enel-set",
+   "dmg": "마딜",
+   "name": "에제 세트",
+   "members": [
+    "h05E",
+    "h087",
+    "h0A1"
+   ],
+   "why": "깡딜 마딜 조합의 클리어 키. 빅맘·나미초·시라호시·프랑키초가 쉽게 깨짐",
+   "sources": [
+    "magic2026"
+   ]
+  },
+  {
+   "id": "buff-set",
+   "dmg": "마딜",
+   "name": "공증 세트",
+   "members": [
+    "h09Z",
+    "H093",
+    "h087"
+   ],
+   "why": "미호크 영원·센고쿠 불멸·코비 초월이 쉽게 깨짐",
+   "sources": [
+    "magic2026"
+   ]
+  },
+  {
+   "id": "jinbe-king",
+   "dmg": "물딜",
+   "name": "징초 킹제 스모커",
+   "members": [
+    "H09A",
+    "h0AI",
+    "h02V",
+    "h0CI",
+    "h03V",
+    "h045"
+   ],
+   "why": "암브 시너지. 0 확정",
+   "sources": [
+    "review2024",
+    "jinbe-deck"
+   ]
+  },
+  {
+   "id": "katakuri-cheap",
+   "dmg": "물딜",
+   "name": "떡맨 가성비",
+   "members": [
+    "h07I",
+    "h0A0",
+    "h0CI"
+   ],
+   "why": "풀깍에 샤크 또는 퀸 하나",
+   "sources": [
+    "phys2026"
+   ]
+  },
+  {
+   "id": "zoro-croc-bon",
+   "dmg": "물딜",
+   "name": "조크봉",
+   "members": [
+    "H0BT",
+    "h05F",
+    "h03O"
+   ],
+   "why": "조로 초월 + 크로커다일 제한 + 봉쿠레 히든",
+   "sources": [
+    "namu"
+   ]
+  },
+  {
+   "id": "garban-chopper",
+   "dmg": "물딜",
+   "name": "가반쵸초",
+   "members": [
+    "h04F",
+    "H091"
+   ],
+   "why": "풀깍 노스턴 전통 조합",
+   "sources": [
+    "namu"
+   ]
+  },
+  {
+   "id": "cavendish-record",
+   "dmg": "물딜",
+   "name": "카벤딧슈 악몽 기록",
+   "members": [
+    "h05B",
+    "h05F",
+    "h07I",
+    "h03Q"
+   ],
+   "why": "2.323 악몽 클리어 기록",
+   "sources": [
+    "ordsearch"
+   ]
+  },
+  {
+   "id": "yamato-record",
+   "dmg": "물딜",
+   "name": "야마토 악몽 기록",
+   "members": [
+    "H0BD",
+    "h03H",
+    "h07I",
+    "h0A0",
+    "H0BL",
+    "h02V",
+    "h03Q",
+    "h04E"
+   ],
+   "why": "2.323 악몽 클리어 기록(야마토 특강)",
+   "sources": [
+    "ordsearch"
+   ]
+  },
+  {
+   "id": "franky-enel-koala",
+   "dmg": "마딜",
+   "name": "프초 에제 코알라",
+   "members": [
+    "H08Y",
+    "h05E",
+    "h03V",
+    "h09M"
+   ],
+   "why": "이감만 맞춰도 강력. 고죠까지",
+   "sources": [
+    "franky2026"
+   ]
+  },
+  {
+   "id": "bigmom-enel",
+   "dmg": "마딜",
+   "name": "빅맘 에제",
+   "members": [
+    "h04Q",
+    "h05E",
+    "h087",
+    "h0A1"
+   ],
+   "why": "초보 추천 깡딜",
+   "sources": [
+    "magic2026"
+   ]
+  },
+  {
+   "id": "akainu-ace",
+   "dmg": "마딜",
+   "name": "아카초 에영",
+   "members": [
+    "H095",
+    "h059"
+   ],
+   "why": "에영 특강 즉발과 궁합",
+   "sources": [
+    "trait2026"
+   ]
+  },
+  {
+   "id": "brook-ace-record",
+   "dmg": "마딜",
+   "name": "브초 에영 기록",
+   "members": [
+    "H09I",
+    "h059"
+   ],
+   "why": "2.323 악몽 클리어 기록",
+   "sources": [
+    "ordsearch"
+   ]
+  },
+  {
+   "id": "sanji-bigmom",
+   "dmg": "마딜",
+   "name": "상초 빅맘",
+   "members": [
+    "H09G",
+    "h04Q"
+   ],
+   "why": "안정 조합",
+   "sources": [
+    "magic2026"
+   ]
+  }
+ ]
+}

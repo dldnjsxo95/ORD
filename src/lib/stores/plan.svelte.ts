@@ -14,8 +14,6 @@ interface PlanState {
   /** 유닛 id -> 수동 증감 (음수 가능, 유효 수량은 0 이상으로 보정) */
   manual: Record<string, number>;
   skillPoints: number;
-  /** 현재 라운드 (수동 입력). 오로성 효과는 50라운드부터 능력치에 반영한다 */
-  round: number;
   sort: SortMode;
   filters: string[];
   filterOpen: boolean;
@@ -29,12 +27,12 @@ interface PlanState {
 const KEY = 'ord-helper.plan';
 
 function load(): PlanState {
-  const base: PlanState = { manual: {}, skillPoints: 0, round: 0, sort: 'default', filters: [], filterOpen: true, collapsed: {}, simulated: null, assumed: [] };
+  const base: PlanState = { manual: {}, skillPoints: 0, sort: 'default', filters: [], filterOpen: true, collapsed: {}, simulated: null, assumed: [] };
   try {
     const raw = localStorage.getItem(KEY);
     if (!raw) return base;
     const saved = JSON.parse(raw);
-    return { ...base, round: Number(saved.round) || 0, sort: saved.sort ?? 'default', filters: saved.filters ?? [], filterOpen: saved.filterOpen ?? true, collapsed: saved.collapsed ?? {} };
+    return { ...base, sort: saved.sort ?? 'default', filters: saved.filters ?? [], filterOpen: saved.filterOpen ?? true, collapsed: saved.collapsed ?? {} };
   } catch {
     return base;
   }
@@ -44,7 +42,7 @@ export const plan = $state<PlanState>(load());
 
 function save() {
   try {
-    localStorage.setItem(KEY, JSON.stringify({ round: plan.round, sort: plan.sort, filters: plan.filters, filterOpen: plan.filterOpen, collapsed: plan.collapsed }));
+    localStorage.setItem(KEY, JSON.stringify({ sort: plan.sort, filters: plan.filters, filterOpen: plan.filterOpen, collapsed: plan.collapsed }));
   } catch {
     /* 무시 */
   }
@@ -110,12 +108,6 @@ export function toggleAssumed(id: string) {
 
 export function clearAssumed() {
   plan.assumed = [];
-}
-
-/** 현재 라운드 (0 이상) */
-export function setRound(round: number) {
-  plan.round = Math.max(0, Math.floor(round));
-  save();
 }
 
 export function setSort(sort: SortMode) {

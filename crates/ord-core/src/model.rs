@@ -175,6 +175,9 @@ pub struct GameState {
     /// rawcode -> 게임 내 이름 (DB 에 없는 코드를 확인하는 용도)
     #[serde(default)]
     pub names: BTreeMap<String, String>,
+    /// 난이도 ("신"/"악몽" 등). 스크립트가 JASS 전역 변수에서 읽는다. 모르면 None
+    #[serde(default)]
+    pub difficulty: Option<String>,
 }
 
 impl Database {

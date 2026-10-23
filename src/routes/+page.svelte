@@ -1,4 +1,4 @@
-<!-- 메인 창: 타이틀바; [메인 뷰 위 하단 패널]; 상태 표시줄. 설정은 가운데 모달로 띄운다.
+<!-- 메인 창: 타이틀바; [메인 뷰 위 하단 패널]. 연결 상태는 메인 뷰 툴바에 있다. 설정은 가운데 모달로 띄운다.
      전체화면에서는 타이틀바를 숨기고 ESC 로 해제한다 (조합 상세·설정 모달이 열려 있으면 ESC 는 모달부터 닫는다). -->
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
@@ -6,7 +6,6 @@
   import { initGame, disposeGame, pushLog } from '$lib/stores/game.svelte';
   import { fullscreen, syncFullscreen, exitFullscreen } from '$lib/stores/fullscreen.svelte';
   import TopBar from '$lib/shell/TopBar.svelte';
-  import StatusBar from '$lib/shell/StatusBar.svelte';
   import BottomPanel from '$lib/shell/BottomPanel.svelte';
   import MainPanel from '$lib/panels/MainPanel.svelte';
   import SettingsDialog from '$lib/shell/SettingsDialog.svelte';
@@ -61,7 +60,6 @@
       <BottomPanel />
     </div>
   </div>
-  <StatusBar />
   <SettingsDialog />
   <UnitDetail />
 </main>

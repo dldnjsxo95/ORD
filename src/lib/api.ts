@@ -86,6 +86,8 @@ export interface GameState {
   evolution?: string | null;
   /** rawcode -> 게임 내 이름 */
   names?: Record<string, string>;
+  /** 난이도 (신/악몽). 스크립트가 못 읽으면 null */
+  difficulty?: string | null;
 }
 export interface OwnedUnit {
   id: string;

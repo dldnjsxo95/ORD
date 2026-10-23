@@ -78,12 +78,21 @@ export interface HoverLine {
   text: string;
   /** 이미 보유한 재료: 가운데 줄 + 회색 */
   done?: boolean;
+  muted?: boolean;
+  ok?: boolean;
+  warn?: boolean;
 }
 
 export interface HoverContent {
   title: string;
   recipe: HoverLine[];
   features: string[];
+  /** 패 활용순일 때: 이 조합이 쓰는 내 보유 패 (흔함 제외, 높은 등급부터). 오른쪽 칸에 표시 */
+  used?: string[];
+  /** 특징 구역 없이 제목 + 줄만 보여 주는 설명 카드 (필터 라벨, 계산기 행 등) */
+  plain?: boolean;
+  /** 특징 아래 구분선 뒤에 덧붙이는 줄 (보유/부족/기여 등) */
+  extra?: HoverLine[];
 }
 
 export function buildHover(

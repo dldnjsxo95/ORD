@@ -89,6 +89,7 @@ async fn refresh(app: &AppHandle, db: &Database, file: &Path, last_hash: &mut Op
     state.units.hash(&mut hasher);
     state.items.hash(&mut hasher);
     state.evolution.hash(&mut hasher);
+    state.difficulty.hash(&mut hasher);
     let hash = hasher.finish();
     if *last_hash == Some(hash) {
         return;

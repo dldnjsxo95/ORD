@@ -1,7 +1,7 @@
 <!-- 유닛 한 행(20px, 항상 한 줄): 초상(16px) · 등급표기 · [게이지 영역: 진행도%(있을 때만) · (티어)이름 · 배지들 · (요약)] · [+] [−](수동 모드만) · 수량.
      게이지는 퍼센트 글자부터 요약까지 영역을 위아래 꽉 채우며 왼쪽부터 찬다. 구간은 세 가지:
        보유 재료(초록) → 진화체로 대신할 수 있는 재료(보라) → 흔함선택위습으로 대신할 수 있는 흔함 재료(노랑).
-     100% 라고 색을 따로 바꾸지 않는다. 위습까지 써야 100% 면 위습 구간만 빨강.
+     100% 라고 색을 따로 바꾸지 않는다. 위습까지 써야 100% 면 위습 구간만 빨강. 진행도 숫자에는 위습 구간을 넣지 않는다.
      우클릭 = 이 유닛을 간다고 가정 (MainPanel 이 나머지 행의 수량·게이지를 남은 패로 다시 계산).
      필터가 켜져 있고 안 맞으면 흐리게. -->
 <script lang="ts">
@@ -11,8 +11,9 @@
   import { BADGE_ICON as BADGE } from '$lib/badges';
   import { buildHover } from '$lib/tooltip';
   import { showHover, moveHover, hideHover } from '$lib/stores/hover.svelte';
-  import { game, recipeOf, unitName, base } from '$lib/stores/game.svelte';
-  import { gauge } from '$lib/combo-tree';
+  import { game, recipeOf, unitName, unitGrade, gradeRank, base } from '$lib/stores/game.svelte';
+  import { plan } from '$lib/stores/plan.svelte';
+  import { gauge, shortage, craftRecipe, baseOf } from '$lib/combo-tree';
 
   interface Props {
     unit: Unit;
@@ -52,7 +53,8 @@
 
   /**
    * 게이지 구간: 재료 트리를 최하위까지 펼친 전체 재료 대비 비율 (combo-tree.gauge).
-   * 보유 재료가 덮는 몫 → 진화체가 덮는 몫(그 유닛의 하위 재료까지) → 흔함선택위습이 대신하는 흔함 재료 몫.
+   * 보유 재료가 덮는 몫 → 진화체가 덮는 몫(그 유닛의 하위 재료까지) → 흔함선택위습이 대신할 수 있는 흔함 재료 몫.
+   * 진행도 숫자(pct)는 보유 + 진화체만. 위습 구간은 색으로만 보여 주고 숫자에 넣지 않는다 (실제로 있는 유닛이 아니므로).
    * counts(수량 표)가 바뀌면 다시 계산된다. 계산 안에서는 반응형 상태를 읽지 않는다 (성능).
    */
   const seg = $derived.by(() => {
@@ -60,16 +62,31 @@
     const g = gauge(game.db, unit.id, (u) => counts.get(u) ?? 0, evolution, wisps);
     if (!g) return null;
     const w = (f: number) => `${f * 100}%`;
-    return { ...g, pct: Math.round((g.own + g.evo + g.wisp) * 100), ownW: w(g.own), evoW: w(g.evo), wispW: w(g.wisp), evoL: w(g.own), wispL: w(g.own + g.evo) };
+    return { ...g, pct: Math.round((g.own + g.evo) * 100), ownW: w(g.own), evoW: w(g.evo), wispW: w(g.wisp), evoL: w(g.own), wispL: w(g.own + g.evo) };
   });
   const pct = $derived(seg?.pct ?? 0);
   /** 진화체가 바로 이 유닛이면 수량에 +1 을 보라색으로 보여 준다 */
   const evoHere = $derived(!!evolution && base(evolution) === base(unit.id));
 
+  /** 패 활용순일 때 호버 오른쪽에 보여 줄 "사용 패": 이 조합이 소모하는 내 보유 유닛 (흔함 제외, 높은 등급부터) */
+  function usedCards(): string[] | undefined {
+    if (plan.sort !== 'usage' || !game.db || !craftRecipe(game.db, unit.id)) return undefined;
+    const db = game.db;
+    const evoBase = evolution ? baseOf(db, evolution) : null;
+    const extra = evoBase && evoBase !== baseOf(db, unit.id) ? new Map([[evoBase, 1]]) : undefined;
+    const s = shortage(db, unit.id, (u) => counts.get(u) ?? 0, { extra, wisps });
+    return [...s.used.entries()]
+      .filter(([u]) => unitGrade(u) !== '흔함')
+      .sort((a, b) => gradeRank(unitGrade(b[0])) - gradeRank(unitGrade(a[0])) || a[0].localeCompare(b[0]))
+      .map(([u, n]) => `${unitName(u)}${unitGrade(u) ? ` (${unitGrade(u)})` : ''}${n > 1 ? ` ×${n}` : ''}`);
+  }
+
   function enter(e: MouseEvent) {
     // 스킨·변형 유닛은 기본 유닛의 조합식을 보여 준다
     const recipe = recipeOf(unit.id) ?? recipeOf(base(unit.id));
-    showHover(buildHover(unit, { label, note, tier }, recipe, unitName, combo), e.clientX, e.clientY);
+    const content = buildHover(unit, { label, note, tier }, recipe, unitName, combo);
+    content.used = usedCards();
+    showHover(content, e.clientX, e.clientY);
   }
 </script>
 
