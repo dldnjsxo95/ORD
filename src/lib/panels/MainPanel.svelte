@@ -71,12 +71,16 @@
             {#each list as u (u.id)}
               {@const n = ownedCount.get(u.id) ?? 0}
               {@const c = combos.get(u.id)}
+              {@const pct = c && c.need ? Math.round((c.have / c.need) * 100) : 0}
               <div class="tile" class:owned={n > 0} class:ready={c?.craftable} title={tip(u)}>
                 <UnitIcon id={u.id} name={u.name} size={22} />
-                <span class="nm">{u.name}</span>
+                <span class="nm-wrap">
+                  {#if pct > 0}<span class="fill" style:width={`${pct}%`}></span>{/if}
+                  <span class="nm">{u.name}</span>
+                  {#if cat.rest}<span class="gr">{u.grade}</span>{/if}
+                  {#if pct > 0}<span class="pct">{pct}%</span>{/if}
+                </span>
                 {#if n > 0}<span class="cnt">{n}</span>{/if}
-                {#if cat.rest}<span class="gr">{u.grade}</span>{/if}
-                {#if c && !c.craftable && c.have > 0}<span class="prog" style:width={`${(c.have / c.need) * 100}%`}></span>{/if}
               </div>
             {/each}
             {#if list.length === 0}<span class="empty">—</span>{/if}
@@ -89,26 +93,31 @@
 
 <style>
   .fit-host { position: relative; width: 100%; height: 100%; overflow: hidden; }
+  /* 분류 하나가 한 줄을 차지하고, 높이는 타일 수만큼만 쓴다 */
   .grid {
     transform-origin: top left; box-sizing: border-box; padding: var(--sp-3) var(--sp-4);
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--sp-3) var(--sp-4); align-content: start;
+    display: flex; flex-direction: column; gap: var(--sp-2);
   }
   .cat { min-width: 0; }
-  .cat.rest { grid-column: 1 / -1; }
   h3 { margin: 0 0 var(--sp-1); font-size: var(--fs-1); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--c-accent-text); border-bottom: 1px solid var(--c-border); padding-bottom: 2px; }
   h3 small { color: var(--c-text-3); margin-left: var(--sp-1); font-weight: 400; }
   .tiles { display: flex; flex-wrap: wrap; gap: 3px; }
   .tile {
-    position: relative; display: inline-flex; align-items: center; gap: 4px; height: 26px; padding: 0 6px 0 2px; box-sizing: border-box;
+    position: relative; display: inline-flex; align-items: center; gap: 4px; height: 26px; padding: 0 4px 0 2px; box-sizing: border-box;
     border: 1px solid var(--c-border); border-radius: var(--r-1); background: var(--c-bg-app); font-size: var(--fs-1); color: var(--c-text-2);
     overflow: hidden; user-select: none;
   }
-  .tile:hover { background: var(--c-bg-hover); color: var(--c-text); }
+  .tile:hover { color: var(--c-text); border-color: var(--c-border-strong); }
   .tile.owned { color: var(--c-text); border-color: var(--c-border-strong); background: var(--c-bg-input); }
-  .tile.ready { border-color: var(--c-ok); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c-ok) 50%, transparent); }
-  .nm { white-space: nowrap; }
+  .tile.ready { border-color: var(--c-ok); }
+  /* 이름 칸: 진행도만큼 왼쪽부터 채워지는 게이지 + 퍼센트 */
+  .nm-wrap { position: relative; display: inline-flex; align-items: center; gap: 4px; height: 100%; padding: 0 4px; border-radius: var(--r-1); overflow: hidden; }
+  .fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--c-accent-soft); }
+  .ready .fill { background: color-mix(in srgb, var(--c-ok) 28%, transparent); }
+  .nm { position: relative; white-space: nowrap; }
+  .pct { position: relative; font-variant-numeric: tabular-nums; color: var(--c-accent-text); font-size: 10px; }
+  .ready .pct { color: var(--c-ok-text); }
   .cnt { font-variant-numeric: tabular-nums; color: var(--c-accent-text); font-weight: 600; }
-  .gr { color: var(--c-text-3); }
-  .prog { position: absolute; left: 0; bottom: 0; height: 2px; background: var(--c-accent); }
+  .gr { position: relative; color: var(--c-text-3); }
   .empty { color: var(--c-text-3); font-size: var(--fs-1); }
 </style>
