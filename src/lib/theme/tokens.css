@@ -1,0 +1,165 @@
+/* 디자인 토큰. UI 계층에서 색 리터럴이 나오는 유일한 곳이며, 컴포넌트는 var(--c-*) 만 참조한다.
+   팔레트는 VS Code "Dark Modern" / "Light Modern" 을 따른다 (D-SAFE hub-gcs 와 동일 체계):
+   낮은 대비의 경계선, 평면 컨트롤, 강조색 하나, 13px. */
+
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --c-bg-app: #181818;
+  --c-bg-panel: #1f1f1f;
+  --c-bg-input: #313131;
+  --c-bg-raised: #3c3c3c;
+  --c-bg-hover: #2a2d2e;
+  --c-border: #2b2b2b;
+  --c-border-strong: #3c3c3c;
+  --c-border-row: #2b2b2b;
+  --c-text: #cccccc;
+  --c-text-2: #a0a0a0;
+  --c-text-3: #8b8b8b;
+  --c-accent: #0078d4;
+  --c-accent-text: #4daafc;
+  --c-on-accent: #ffffff;
+  --c-ok: #2ea043;
+  --c-ok-text: #89d185;
+  --c-warn: #cca700;
+  --c-warn-text: #e2c08d;
+  --c-danger: #f14c4c;
+  --c-danger-text: #f88070;
+  --c-focus: #0078d4;
+  --c-accent-soft: rgba(0, 120, 212, 0.18);
+  --shadow-pop: 0 2px 8px rgba(0, 0, 0, 0.36);
+  --c-scrollbar-thumb: rgba(121, 121, 121, 0.4);
+  --c-scrollbar-thumb-hover: rgba(100, 100, 100, 0.7);
+
+  --c-titlebar-fg-active: #cccccc;
+  --c-titlebar-fg-inactive: #9d9d9d;
+  --c-titlebar-bg-active: #181818;
+  --c-titlebar-bg-inactive: #1f1f1f;
+
+  /* 등급 색 (1~5티어). 유닛 표와 조합 목록에서 등급을 구분한다. */
+  --c-tier-1: #a0a0a0;
+  --c-tier-2: #89d185;
+  --c-tier-3: #4daafc;
+  --c-tier-4: #c586c0;
+  --c-tier-5: #e2c08d;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --c-bg-app: #f8f8f8;
+  --c-bg-panel: #ffffff;
+  --c-bg-input: #ffffff;
+  --c-bg-raised: #e5e5e5;
+  --c-bg-hover: #f2f2f2;
+  --c-border: #e5e5e5;
+  --c-border-strong: #cecece;
+  --c-border-row: #e5e5e5;
+  --c-text: #3b3b3b;
+  --c-text-2: #616161;
+  --c-text-3: #6f6f6f;
+  --c-accent: #005fb8;
+  --c-accent-text: #005fb8;
+  --c-on-accent: #ffffff;
+  --c-ok: #1a7f37;
+  --c-ok-text: #1a7f37;
+  --c-warn: #bf8803;
+  --c-warn-text: #7a5a00;
+  --c-danger: #cd3131;
+  --c-danger-text: #b3261e;
+  --c-focus: #005fb8;
+  --c-accent-soft: rgba(0, 95, 184, 0.12);
+  --shadow-pop: 0 2px 8px rgba(0, 0, 0, 0.16);
+  --c-scrollbar-thumb: rgba(100, 100, 100, 0.4);
+  --c-scrollbar-thumb-hover: rgba(100, 100, 100, 0.7);
+
+  --c-titlebar-fg-active: #3b3b3b;
+  --c-titlebar-fg-inactive: #6f6f6f;
+  --c-titlebar-bg-active: #f8f8f8;
+  --c-titlebar-bg-inactive: #ffffff;
+
+  --c-tier-1: #6f6f6f;
+  --c-tier-2: #1a7f37;
+  --c-tier-3: #005fb8;
+  --c-tier-4: #7a3e9d;
+  --c-tier-5: #9a6b00;
+}
+
+:root {
+  --sp-1: 4px;
+  --sp-2: 6px;
+  --sp-3: 8px;
+  --sp-4: 10px;
+  --sp-5: 12px;
+  --sp-6: 16px;
+  --r-1: 2px;
+  --r-2: 2px;
+  --r-3: 4px;
+  --fs-1: 11px;
+  --fs-2: 12px;
+  --fs-3: 13px;
+  --fs-5: 14px;
+  --fs-6: 16px;
+  --font-ui: "Segoe UI", system-ui, -apple-system, "Malgun Gothic", sans-serif;
+  --font-mono: "Cascadia Mono", Consolas, monospace;
+  --titlebar-h: 35px;
+  --tab-h: 28px;
+  --statusbar-h: 22px;
+  --activitybar-w: 44px;
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-1: 0ms; --dur-2: 0ms; }
+}
+
+/* 창 포커스: 루트 레이아웃이 data-window 를 세팅하면 타이틀바만 반응한다 (VS Code 와 같음). */
+:root { --c-titlebar-fg: var(--c-titlebar-fg-active); --c-titlebar-bg: var(--c-titlebar-bg-active); }
+:root[data-window="inactive"] { --c-titlebar-fg: var(--c-titlebar-fg-inactive); --c-titlebar-bg: var(--c-titlebar-bg-inactive); }
+
+/* ── Base ────────────────────────────────────────────────────────────── */
+html, body { height: 100%; overflow: hidden; }
+body {
+  margin: 0;
+  background: var(--c-bg-app);
+  color: var(--c-text);
+  font: var(--fs-3) / 1.4 var(--font-ui);
+  user-select: none;
+}
+::selection { background: var(--c-accent-soft); }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--c-scrollbar-thumb); }
+::-webkit-scrollbar-thumb:hover { background: var(--c-scrollbar-thumb-hover); }
+::-webkit-scrollbar-corner { background: transparent; }
+
+/* ── 공용 유틸 ──────────────────────────────────────────────────────── */
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.hint { color: var(--c-text-3); font-size: var(--fs-2); }
+.spacer { flex: 1; }
+
+/* ── 패널 구조 ─────────────────────────────────────────────────────────
+   .panel       패딩 10/12, 세로 flex, 블록 간격 6px
+   .panel-head  상단 도구 행 (sticky)
+   .panel-sub   소제목 (대문자, 작은 글씨)
+   .data-table  행 목록 */
+.panel { padding: var(--sp-4) var(--sp-5); box-sizing: border-box; display: flex; flex-direction: column; gap: var(--sp-2); }
+.panel-head {
+  display: flex; align-items: center; gap: var(--sp-2); min-height: 20px; flex: none; flex-wrap: wrap; row-gap: var(--sp-1);
+  position: sticky; top: 0; z-index: 2; background: var(--c-bg-panel);
+  margin: calc(-1 * var(--sp-4)) calc(-1 * var(--sp-5)) calc(-1 * var(--sp-2)); padding: var(--sp-1) var(--sp-5);
+}
+.panel-head > :not(.spacer) { flex: none; }
+.panel-sub { margin: var(--sp-1) 0 0; font-size: var(--fs-1); color: var(--c-text-3); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.panel-sub.cat { color: var(--c-accent-text); border-top: 1px solid var(--c-border); padding-top: var(--sp-3); margin-top: var(--sp-4); }
+.panel-sub.cat.first { border-top: 0; padding-top: 0; margin-top: var(--sp-2); }
+
+.data-table { width: 100%; border-collapse: collapse; font-size: var(--fs-3); }
+.data-table th, .data-table td { text-align: left; padding: 3px var(--sp-3); border-bottom: 1px solid var(--c-border-row); }
+.data-table th { color: var(--c-text-3); font-weight: 600; font-size: var(--fs-1); text-transform: uppercase; letter-spacing: 0.04em; }
+.data-table td.num, .data-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.data-table tbody tr:hover td { background: var(--c-bg-hover); }
+
+.empty { color: var(--c-text-3); font-size: var(--fs-2); padding: var(--sp-3) 0; }

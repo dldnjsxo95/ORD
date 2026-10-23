@@ -1,0 +1,34 @@
+// 인라인 SVG 아이콘 (24×24 viewBox, stroke). 패널 안에 <svg> 를 직접 쓰지 말고 여기에 추가한다.
+
+export const ICONS = {
+  close: 'M6 6l12 12M18 6L6 18',
+  check: 'M5 12l5 5L20 7',
+  plus: 'M12 5v14M5 12h14',
+  minus: 'M5 12h14',
+  play: 'M7 5l12 7-12 7z',
+  stop: 'M6 6h12v12H6z',
+  trash: 'M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3',
+  lock: 'M6 11h12v9H6zM9 11V7a3 3 0 0 1 6 0v4',
+  unlock: 'M6 11h12v9H6zM9 11V7a3 3 0 0 1 5.5-1.7',
+  sun: 'M12 4v2M12 18v2M4 12h2M18 12h2M6.3 6.3l1.4 1.4M16.3 16.3l1.4 1.4M6.3 17.7l1.4-1.4M16.3 7.7l1.4-1.4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z',
+  moon: 'M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z',
+  layers: 'M12 3l9 5-9 5-9-5zM3 13l9 5 9-5',
+  cube: 'M12 3l8 4.5v9L12 21l-8-4.5v-9zM12 12l8-4.5M12 12L4 7.5M12 12v9',
+  warning: 'M12 3l10 18H2zM12 10v5M12 18v.5',
+  info: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 11v6M12 7v.5',
+  chevronDown: 'M6 9l6 6 6-6',
+  chevronRight: 'M9 6l6 6-6 6',
+  refresh: 'M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5',
+  panelBottom: 'M4 5h16v14H4zM4 14h16M8 16.5h8',
+  folder: 'M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z',
+  clock: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2',
+  coins: 'M12 3a8 3 0 1 0 0 6 8 3 0 0 0 0-6zM4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6',
+  flask: 'M9 3h6M10 3v6L4 20h16l-6-11V3',
+  windowMin: 'M5 12h14',
+  windowMax: 'M5 5h14v14H5z',
+  windowRestore: 'M8 8h11v11H8zM5 16V5h11',
+  windowClose: 'M6 6l12 12M18 6L6 18',
+  settings: 'M19.1 10.9L21.5 11.2L21.5 12.8L19.1 13.1L17.8 16.3L19.3 18.1L18.1 19.3L16.3 17.8L13.1 19.1L12.8 21.5L11.2 21.5L10.9 19.1L7.7 17.8L5.9 19.3L4.7 18.1L6.2 16.3L4.9 13.1L2.5 12.8L2.5 11.2L4.9 10.9L6.2 7.7L4.7 5.9L5.9 4.7L7.7 6.2L10.9 4.9L11.2 2.5L12.8 2.5L13.1 4.9L16.3 6.2L18.1 4.7L19.3 5.9L17.8 7.7zM15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0',
+} as const;
+
+export type IconName = keyof typeof ICONS;
