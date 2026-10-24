@@ -22,7 +22,7 @@
     <div class="title">{hover.content.title}</div>
     <div class="cols">
       <div class="main">
-        {#each hover.content.recipe as line, i (i)}<div class="line" class:done={line.done} class:muted={line.muted}>{line.text}</div>{/each}
+        {#each hover.content.recipe as line, i (i)}<div class="line" class:done={line.done} class:muted={line.muted} class:ok={line.ok} class:warn={line.warn}>{line.text}</div>{/each}
         {#if !hover.content.plain}
           <div class="sep"></div>
           {#if hover.content.features.length === 0}
@@ -33,6 +33,10 @@
         {#if hover.content.extra?.length}
           <div class="sep"></div>
           {#each hover.content.extra as line, i (i)}<div class="line" class:done={line.done} class:muted={line.muted} class:ok={line.ok} class:warn={line.warn}>{line.text}</div>{/each}
+        {/if}
+        {#if hover.content.memo}
+          <div class="sep"></div>
+          <div class="memo">{hover.content.memo}</div>
         {/if}
       </div>
       {#if hover.content.used}
@@ -50,7 +54,7 @@
 
 <style>
   .card {
-    position: fixed; z-index: 1000; min-width: 180px; max-width: 460px; padding: 6px 10px; pointer-events: none;
+    position: fixed; z-index: 1000; min-width: 180px; max-width: 540px; padding: 6px 10px; pointer-events: none;
     background: var(--c-bg-panel); border: 1px solid var(--c-border-strong); border-radius: var(--r-3); box-shadow: var(--shadow-pop);
     font-size: 12px; line-height: 18px; color: var(--c-text);
   }
@@ -59,10 +63,11 @@
   .main { min-width: 0; }
   .used { flex: none; padding-left: 10px; border-left: 1px dashed var(--c-border-strong); white-space: nowrap; }
   .used .head { color: var(--c-warn-text); font-weight: 600; margin-bottom: 2px; }
-  .line { white-space: nowrap; }
+  .line { white-space: pre-wrap; overflow-wrap: anywhere; }
   .muted { color: var(--c-text-3); }
   .done { color: var(--c-text-3); text-decoration: line-through; }
   .ok { color: var(--c-ok-text); }
   .warn { color: var(--c-warn-text); }
   .sep { border-top: 1px dashed var(--c-border-strong); margin: 4px 0; }
+  .memo { white-space: pre-wrap; overflow-wrap: anywhere; color: var(--c-warn-text); }
 </style>

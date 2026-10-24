@@ -13,6 +13,7 @@
   import { showHover, moveHover, hideHover } from '$lib/stores/hover.svelte';
   import { game, recipeOf, unitName, unitGrade, gradeRank, base, craftWord } from '$lib/stores/game.svelte';
   import { plan } from '$lib/stores/plan.svelte';
+  import { memoOf } from '$lib/stores/memo.svelte';
   import { gauge, shortage, craftRecipe, baseOf } from '$lib/combo-tree';
 
   interface Props {
@@ -41,10 +42,12 @@
     onopen?: () => void;
     /** 우클릭으로 "간다"고 가정한 유닛 */
     assumed?: boolean;
+    /** 그린블러드를 부여한 유닛 */
+    greenBlood?: boolean;
     /** 우클릭 (가정 토글) */
     onassume?: () => void;
   }
-  let { unit, label, note, badges = [], tier, count, counts, combo, dimmed = false, adjustable = true, wisps = 0, evolution = null, onadjust, onopen, assumed = false, onassume }: Props = $props();
+  let { unit, label, note, badges = [], tier, count, counts, combo, dimmed = false, adjustable = true, wisps = 0, evolution = null, onadjust, onopen, assumed = false, greenBlood = false, onassume }: Props = $props();
 
   const GRADE_SHORT: Record<string, string> = {
     흔함: '흔', 안흔함: '안', 특별: '특', 희귀: '희', 전설: '전', 히든: '히', 변화: '변', 제한: '제', 랜덤전용: '랜', 신비: '신',
@@ -86,8 +89,11 @@
     const recipe = recipeOf(unit.id) ?? recipeOf(base(unit.id));
     const content = buildHover(unit, { label, note, tier, word: craftWord(unit.id) }, recipe, unitName, combo);
     content.used = usedCards();
+    const m = memoOf(unit.id);
+    if (m) content.memo = m;
     showHover(content, e.clientX, e.clientY);
   }
+
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -104,7 +110,7 @@
     {/if}
     {#if pct > 0}<span class="pct">{pct}%</span>{/if}
     <span class="cell">
-      {#if assumed}<span class="asm" title="간다고 가정한 유닛 (우클릭으로 해제)">가정</span>{/if}
+      {#if assumed}<span class="asm" title="간다고 가정한 유닛 (우클릭으로 해제)">가정</span>{/if}{#if greenBlood}<span class="asm gb" title="그린블러드 부여 (실전 효과 패널에서 지정)">GB</span>{/if}
       {#if tier}<span class="tier t-{tier.replace('+', 'p')}">({tier})</span>{/if}
       <span class="nm">{label ?? unit.name}</span>
       {#each badges as b, i (i)}{#if BADGE[b]}<span class="badge {b}"><Icon name={BADGE[b]} size={9} /></span>{/if}{/each}
@@ -125,6 +131,7 @@
   .row:hover { background: var(--c-bg-hover); }
   .open { display: inline-flex; flex: none; cursor: pointer; }
   .row.dimmed { opacity: 0.28; }
+  .asm.gb { background: #2bb454; color: #fff; }
   .row.assumed { outline: 1px solid var(--c-accent); outline-offset: -1px; }
   .asm { flex: none; font-size: 7px; line-height: 11px; padding: 0 3px; border-radius: 2px; background: var(--c-accent); color: var(--c-on-accent); font-weight: 700; }
   .grade { flex: none; min-width: 11px; padding: 0 2px; border-radius: 2px; font-size: 8px; line-height: 12px; text-align: center; color: var(--c-bg-app); background: var(--c-text-3); }

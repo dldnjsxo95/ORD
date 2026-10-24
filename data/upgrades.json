@@ -1,0 +1,12187 @@
+{
+ "_doc": "맵에서 추출한 유닛별 공격속도 업그레이드와 회복량. upgrades[id]: 레벨 n 공속 보너스(%) = base + inc×(n−1), 최대 max. units[id].upgrade 가 그 유닛의 공속 업그레이드 id.",
+ "source": "ORDR_S2_2.323[C].w3x",
+ "extractedAt": "2026-10-24T03:15:02.080Z",
+ "upgrades": {
+  "R000": {
+   "name": "전설 업그레이드",
+   "max": 21,
+   "base": 195,
+   "inc": 5
+  },
+  "R001": {
+   "name": "히든 업그레이드",
+   "max": 21,
+   "base": 160,
+   "inc": 5
+  },
+  "R002": {
+   "name": "불멸 업그레이드",
+   "max": 21,
+   "base": 210,
+   "inc": 6
+  },
+  "R003": {
+   "name": "초월 업그레이드",
+   "max": 21,
+   "base": 215,
+   "inc": 6
+  },
+  "R004": {
+   "name": "제한 업그레이드",
+   "max": 21,
+   "base": 185,
+   "inc": 5
+  },
+  "R005": {
+   "name": "초월 업그레이드-타시기",
+   "max": 21,
+   "base": 165,
+   "inc": 7
+  },
+  "R006": {
+   "name": "제한 업그레이드-레베카",
+   "max": 21,
+   "base": 60,
+   "inc": 4
+  },
+  "R007": {
+   "name": "[영원]미호크 업그레이드",
+   "max": 21,
+   "base": 5,
+   "inc": 7
+  },
+  "R008": {
+   "name": "희귀 업그레이드",
+   "max": 16,
+   "base": 70,
+   "inc": 4
+  },
+  "R00C": {
+   "name": "초월 업그레이드-후지토라",
+   "max": 21,
+   "base": 75,
+   "inc": 7
+  },
+  "R00D": {
+   "name": "초월 업그레이드-사보",
+   "max": 21,
+   "base": 77,
+   "inc": 9
+  },
+  "R00E": {
+   "name": "특별 업그레이드",
+   "max": 15,
+   "base": 25,
+   "inc": 2
+  },
+  "R00Q": {
+   "name": "샌즈 업그레이드",
+   "max": 30,
+   "base": 14,
+   "inc": 14
+  },
+  "R00X": {
+   "name": "[영원]에이스 업그레이드",
+   "max": 21,
+   "base": 14,
+   "inc": 15
+  },
+  "R013": {
+   "name": "[영원]비비 업그레이드",
+   "max": 21,
+   "base": 20,
+   "inc": 14
+  },
+  "R014": {
+   "name": "[영원]버기 업그레이드",
+   "max": 21,
+   "base": 14,
+   "inc": 14
+  },
+  "R015": {
+   "name": "[영원]카벤딧슈 업그레이드",
+   "max": 21,
+   "base": 15,
+   "inc": 15
+  },
+  "R016": {
+   "name": "[영원]핸콕 업그레이드",
+   "max": 21,
+   "base": 30,
+   "inc": 15
+  },
+  "R019": {
+   "name": "랜덤전용 유닛 업그레이드",
+   "max": 21,
+   "base": 25,
+   "inc": 14
+  },
+  "R01J": {
+   "name": "전설 업그레이드-라분",
+   "max": 21,
+   "base": 35,
+   "inc": 4
+  },
+  "R01T": {
+   "name": "왜곡 업그레이드",
+   "max": 21,
+   "base": 160,
+   "inc": 6
+  },
+  "R01U": {
+   "name": "왜곡 업그레이드",
+   "max": 21,
+   "base": 40,
+   "inc": 2
+  },
+  "R01V": {
+   "name": "[영원]테조로 업그레이드",
+   "max": 21,
+   "base": 15,
+   "inc": 15
+  },
+  "R01X": {
+   "name": "전설 업그레이드-후지토라",
+   "max": 21,
+   "base": 76,
+   "inc": 7
+  },
+  "R01Y": {
+   "name": "히든 업그레이드-미호크",
+   "max": 21,
+   "base": 60,
+   "inc": 6
+  },
+  "R01Z": {
+   "name": "전설 업그레이드-조로",
+   "max": 21,
+   "base": 85,
+   "inc": 6
+  },
+  "R020": {
+   "name": "불멸 업그레이드-빅맘",
+   "max": 21,
+   "base": 50,
+   "inc": 5
+  },
+  "R022": {
+   "name": "제한 업그레이드-카타쿠리",
+   "max": 21,
+   "base": 70,
+   "inc": 6
+  },
+  "R023": {
+   "name": "불멸 업그레이드-카이도우",
+   "max": 21,
+   "base": 45,
+   "inc": 5
+  },
+  "R02B": {
+   "name": "전설 업그레이드-나이트메어",
+   "max": 21,
+   "base": 135,
+   "inc": 4
+  },
+  "R02C": {
+   "name": "[영원]류마 업그레이드",
+   "max": 21,
+   "base": 13,
+   "inc": 13
+  },
+  "R02J": {
+   "name": "초월 업그레이드-징베",
+   "max": 21,
+   "base": 150,
+   "inc": 6
+  },
+  "R02O": {
+   "name": "[영원]오뎅 업그레이드",
+   "max": 21,
+   "base": 15,
+   "inc": 15
+  },
+  "R02Q": {
+   "name": "제한 업그레이드-킹",
+   "max": 21,
+   "base": 70,
+   "inc": 7
+  },
+  "R02S": {
+   "name": "전설 업그레이드-울티",
+   "max": 21,
+   "base": 40,
+   "inc": 3
+  },
+  "R02V": {
+   "name": "전설 업그레이드-모리아",
+   "max": 21,
+   "base": 80,
+   "inc": 5
+  },
+  "R02W": {
+   "name": "초월 업그레이드-야마토",
+   "max": 21,
+   "base": 160,
+   "inc": 5
+  },
+  "R032": {
+   "name": "[영원]우타 업그레이드",
+   "max": 21,
+   "base": 10,
+   "inc": 15
+  },
+  "R03F": {
+   "name": "[영원]류마 스택공격력업글",
+   "max": 1,
+   "base": 0,
+   "inc": 0
+  }
+ },
+ "units": {
+  "hbla": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1200
+  },
+  "hphx": {
+   "upgrade": null,
+   "cooldown": 1.4,
+   "regenMana": 0,
+   "regenHP": -25,
+   "mana": 0,
+   "hp": 1250
+  },
+  "hpxe": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 200
+  },
+  "hwat": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": 0,
+   "regenHP": 0.25,
+   "mana": 0,
+   "hp": 450
+  },
+  "ngz1": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 600
+  },
+  "ngzc": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 900
+  },
+  "nmdm": {
+   "upgrade": null,
+   "cooldown": 1.1,
+   "regenMana": 0.5,
+   "regenHP": 0.5,
+   "mana": 200,
+   "hp": 280
+  },
+  "nmed": {
+   "upgrade": null,
+   "cooldown": 1.1,
+   "regenMana": 0.5,
+   "regenHP": 0.5,
+   "mana": 200,
+   "hp": 280
+  },
+  "H05M": {
+   "upgrade": null,
+   "cooldown": 0.8,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 135,
+   "hp": 10
+  },
+  "H05N": {
+   "upgrade": "R005",
+   "cooldown": 0.88,
+   "regenMana": 0,
+   "regenHP": 0.25,
+   "mana": 135,
+   "hp": 100
+  },
+  "H08B": {
+   "upgrade": "R003",
+   "cooldown": 0.63,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "H08E": {
+   "upgrade": "R003",
+   "cooldown": 0.71,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 40
+  },
+  "H08J": {
+   "upgrade": "R003",
+   "cooldown": 0.64,
+   "regenMana": 0.5,
+   "regenHP": 0,
+   "mana": 100,
+   "hp": 10
+  },
+  "H08T": {
+   "upgrade": null,
+   "cooldown": 0.63,
+   "regenMana": 0,
+   "regenHP": 0.25,
+   "mana": 0,
+   "hp": 100
+  },
+  "H08U": {
+   "upgrade": "R003",
+   "cooldown": 0.7,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 120,
+   "hp": 10
+  },
+  "H08V": {
+   "upgrade": "R003",
+   "cooldown": 0.63,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "H08W": {
+   "upgrade": "R003",
+   "cooldown": 0.54,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "H08X": {
+   "upgrade": "R00C",
+   "cooldown": 0.94,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 140,
+   "hp": 10
+  },
+  "H08Y": {
+   "upgrade": "R003",
+   "cooldown": 0.75,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 150,
+   "hp": 10
+  },
+  "H08Z": {
+   "upgrade": "R003",
+   "cooldown": 0.6,
+   "regenMana": 1.35,
+   "regenHP": 0,
+   "mana": 35,
+   "hp": 10
+  },
+  "H090": {
+   "upgrade": "R003",
+   "cooldown": 0.61,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 85
+  },
+  "H091": {
+   "upgrade": "R003",
+   "cooldown": 0.62,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 150,
+   "hp": 10
+  },
+  "H092": {
+   "upgrade": "R00D",
+   "cooldown": 0.79,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 125,
+   "hp": 145
+  },
+  "H093": {
+   "upgrade": "R003",
+   "cooldown": 1.2,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "H094": {
+   "upgrade": "R003",
+   "cooldown": 0.71,
+   "regenMana": 0,
+   "regenHP": 0.33,
+   "mana": 100,
+   "hp": 40
+  },
+  "H095": {
+   "upgrade": "R003",
+   "cooldown": 0.73,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 135,
+   "hp": 10
+  },
+  "H096": {
+   "upgrade": "R003",
+   "cooldown": 0.64,
+   "regenMana": 0,
+   "regenHP": 0.15,
+   "mana": 135,
+   "hp": 250
+  },
+  "H097": {
+   "upgrade": "R003",
+   "cooldown": 0.69,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 85,
+   "hp": 10
+  },
+  "H098": {
+   "upgrade": "R003",
+   "cooldown": 0.71,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 40
+  },
+  "H099": {
+   "upgrade": "R003",
+   "cooldown": 0.38,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 160,
+   "hp": 10
+  },
+  "H09A": {
+   "upgrade": "R02J",
+   "cooldown": 0.89,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 100,
+   "hp": 10
+  },
+  "H09B": {
+   "upgrade": "R003",
+   "cooldown": 0.52,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 140,
+   "hp": 10
+  },
+  "H09C": {
+   "upgrade": "R003",
+   "cooldown": 0.48,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 140,
+   "hp": 10
+  },
+  "H09D": {
+   "upgrade": "R003",
+   "cooldown": 0.59,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 150,
+   "hp": 10
+  },
+  "H09E": {
+   "upgrade": "R003",
+   "cooldown": 0.62,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 150,
+   "hp": 10
+  },
+  "H09F": {
+   "upgrade": "R003",
+   "cooldown": 0.67,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 145,
+   "hp": 10
+  },
+  "H09G": {
+   "upgrade": "R003",
+   "cooldown": 0.44,
+   "regenMana": 1.25,
+   "regenHP": 0,
+   "mana": 115,
+   "hp": 10
+  },
+  "H09H": {
+   "upgrade": "R003",
+   "cooldown": 0.46,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 115,
+   "hp": 10
+  },
+  "H09I": {
+   "upgrade": "R003",
+   "cooldown": 0.61,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 115,
+   "hp": 10
+  },
+  "H0A5": {
+   "upgrade": "R005",
+   "cooldown": 0.88,
+   "regenMana": 0,
+   "regenHP": 0.25,
+   "mana": 135,
+   "hp": 100
+  },
+  "H0AA": {
+   "upgrade": "R003",
+   "cooldown": 0.62,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 200,
+   "hp": 10
+  },
+  "H0AB": {
+   "upgrade": "R003",
+   "cooldown": 0.63,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 90,
+   "hp": 10
+  },
+  "H0AE": {
+   "upgrade": "R00C",
+   "cooldown": 1.15,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 110,
+   "hp": 10
+  },
+  "H0AM": {
+   "upgrade": "R003",
+   "cooldown": 0.75,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 100,
+   "hp": 10
+  },
+  "H0AO": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "H0AP": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "H0AQ": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "H0AR": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "H0AS": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "H0AT": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "H0AU": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "H0AW": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "H0AY": {
+   "upgrade": "R02J",
+   "cooldown": 0.89,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 100,
+   "hp": 10
+  },
+  "H0AZ": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "H0B0": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "H0B1": {
+   "upgrade": "R003",
+   "cooldown": 0.69,
+   "regenMana": 0.33,
+   "regenHP": 0,
+   "mana": 85,
+   "hp": 10
+  },
+  "H0B2": {
+   "upgrade": "R003",
+   "cooldown": 0.48,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 85,
+   "hp": 10
+  },
+  "H0B3": {
+   "upgrade": "R003",
+   "cooldown": 0.45,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 85,
+   "hp": 10
+  },
+  "H0B4": {
+   "upgrade": "R003",
+   "cooldown": 0.99,
+   "regenMana": 0,
+   "regenHP": 0.2,
+   "mana": 0,
+   "hp": 40
+  },
+  "H0B5": {
+   "upgrade": "R003",
+   "cooldown": 0.64,
+   "regenMana": 0.5,
+   "regenHP": 0,
+   "mana": 100,
+   "hp": 10
+  },
+  "H0B6": {
+   "upgrade": "R003",
+   "cooldown": 1.2,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 150,
+   "hp": 10
+  },
+  "H0BD": {
+   "upgrade": "R02W",
+   "cooldown": 0.99,
+   "regenMana": 0,
+   "regenHP": 0.33,
+   "mana": 0,
+   "hp": 95
+  },
+  "H0BE": {
+   "upgrade": "R02W",
+   "cooldown": 0.92,
+   "regenMana": 0,
+   "regenHP": 0.33,
+   "mana": 0,
+   "hp": 95
+  },
+  "H0BK": {
+   "upgrade": "R003",
+   "cooldown": 0.57,
+   "regenMana": 0,
+   "regenHP": 0.25,
+   "mana": 150,
+   "hp": 115
+  },
+  "H0BL": {
+   "upgrade": "R003",
+   "cooldown": 0.84,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 130,
+   "hp": 10
+  },
+  "H0BN": {
+   "upgrade": "R003",
+   "cooldown": 0.64,
+   "regenMana": 0,
+   "regenHP": 0.15,
+   "mana": 135,
+   "hp": 250
+  },
+  "H0BO": {
+   "upgrade": "R003",
+   "cooldown": 0.77,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 130,
+   "hp": 10
+  },
+  "H0BT": {
+   "upgrade": "R003",
+   "cooldown": 0.67,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 145,
+   "hp": 10
+  },
+  "H0BV": {
+   "upgrade": "R003",
+   "cooldown": 0.75,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 150,
+   "hp": 10
+  },
+  "H0BX": {
+   "upgrade": "R003",
+   "cooldown": 0.9,
+   "regenMana": 0,
+   "regenHP": 0.25,
+   "mana": 150,
+   "hp": 150
+  },
+  "H0BY": {
+   "upgrade": "R003",
+   "cooldown": 0.85,
+   "regenMana": 0,
+   "regenHP": 0.25,
+   "mana": 100,
+   "hp": 100
+  },
+  "H0BZ": {
+   "upgrade": "R02W",
+   "cooldown": 0.99,
+   "regenMana": 0,
+   "regenHP": 0.33,
+   "mana": 0,
+   "hp": 95
+  },
+  "H0C0": {
+   "upgrade": "R02W",
+   "cooldown": 0.92,
+   "regenMana": 0,
+   "regenHP": 0.33,
+   "mana": 0,
+   "hp": 95
+  },
+  "H0C1": {
+   "upgrade": "R003",
+   "cooldown": 0.7,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 120,
+   "hp": 10
+  },
+  "H0C4": {
+   "upgrade": null,
+   "cooldown": 0.8,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 135,
+   "hp": 10
+  },
+  "H0C9": {
+   "upgrade": "R003",
+   "cooldown": 0.38,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 160,
+   "hp": 10
+  },
+  "H0CL": {
+   "upgrade": "R003",
+   "cooldown": 0.54,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "H0CO": {
+   "upgrade": "R00C",
+   "cooldown": 0.71,
+   "regenMana": 0.5,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 150
+  },
+  "e000": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e001": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e002": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e003": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 15
+  },
+  "e004": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e005": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e006": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e007": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "e008": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 15
+  },
+  "e009": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00A": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 2
+  },
+  "e00B": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 2
+  },
+  "e00C": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "e00D": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00E": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00F": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 6
+  },
+  "e00G": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00H": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00I": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e00J": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00K": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e00L": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e00M": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00N": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00O": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00P": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00Q": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00R": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e00S": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e00T": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00U": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00V": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00W": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00X": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00Y": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e00Z": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e010": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e011": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e012": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e013": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e014": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e015": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 10
+  },
+  "e016": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 10
+  },
+  "e017": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 10
+  },
+  "e018": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 10
+  },
+  "e019": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 10
+  },
+  "e01A": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 10
+  },
+  "e01B": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01C": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e01D": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e01E": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01F": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01G": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01H": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01I": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01J": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01K": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01L": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01M": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01N": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e01O": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01P": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01Q": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01R": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01S": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01T": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01U": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01V": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "e01W": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01X": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01Y": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e01Z": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e020": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e021": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e022": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e023": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e024": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e025": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e026": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e027": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e028": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e029": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02A": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e02B": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e02C": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e02D": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02E": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e02F": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02G": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02H": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02I": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02J": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02K": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02L": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02M": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02N": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e02O": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02P": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02Q": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02R": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e02S": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02T": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e02U": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02V": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02W": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02X": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02Y": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e02Z": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e030": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e031": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e032": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e033": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e034": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e035": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "e036": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e037": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e038": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e039": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e03A": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03B": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03C": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03D": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e03E": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03F": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03G": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03H": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03I": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03J": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03K": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03L": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03M": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03N": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03O": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e03P": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03Q": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03R": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03S": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03T": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03U": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "e03V": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03W": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03X": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e03Y": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e03Z": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e040": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e041": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e042": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e043": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e044": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e045": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e046": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e047": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e048": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e049": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04A": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04B": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e04C": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04D": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e04E": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04F": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e04G": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04H": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e04I": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04J": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04K": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04L": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04M": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04N": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04O": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04P": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04Q": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e04R": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e04S": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04T": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04U": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04V": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04W": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04X": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04Y": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e04Z": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e050": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e051": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e052": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e053": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e054": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e055": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e056": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e057": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e058": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e059": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05A": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e05B": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05C": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05D": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05E": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05F": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05G": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05H": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05I": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05J": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05K": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05L": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05M": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e05N": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05O": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05P": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e05Q": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05R": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05S": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05T": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05U": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05V": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05W": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05X": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05Y": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e05Z": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e060": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e061": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e062": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e063": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e064": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e065": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e066": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e067": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e068": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e069": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06A": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06B": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06C": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06D": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e06E": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e06F": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06G": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06H": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e06I": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e06J": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06K": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06L": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06M": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06N": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06O": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e06P": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06Q": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06R": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06S": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06T": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "e06U": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e06V": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e06W": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e06X": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e06Y": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e06Z": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e070": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "e071": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 7
+  },
+  "e072": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e073": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e074": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e075": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e076": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e077": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e078": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e079": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07A": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07B": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07C": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07D": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e07E": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e07F": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e07G": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07H": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07I": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07J": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07K": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07L": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07M": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07N": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07O": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e07P": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07Q": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07R": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07S": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e07T": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07U": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07V": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07W": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07X": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07Y": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e07Z": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e080": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e081": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e082": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e083": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e084": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e085": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e086": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e087": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e088": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e089": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08A": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08B": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e08C": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08D": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08E": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08F": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e08G": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08H": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08I": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08J": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e08K": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08L": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08M": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08N": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e08O": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e08P": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08Q": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e08R": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08S": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08T": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08U": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08V": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08W": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08X": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e08Y": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e08Z": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e090": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e091": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e092": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e093": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e094": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e095": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e096": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e097": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e098": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e099": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09A": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e09B": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09C": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e09D": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09E": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09F": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09G": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e09H": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09I": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e09J": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09K": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09L": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09M": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09N": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09P": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09Q": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09R": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09S": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09T": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09U": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09W": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09X": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09Y": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e09Z": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0A0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0A1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0A2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0A3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0A4": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0A5": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0A6": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0A7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0A8": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0A9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0AA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0AB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0AC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0AD": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0AE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 6
+  },
+  "e0AF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0AG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0AH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0AI": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0AJ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0AK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0AL": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0AM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0AN": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0AO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0AP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0AQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0AR": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0AS": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0AT": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0AU": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0AV": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0AW": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0AX": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0AY": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0AZ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0B0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0B1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0B2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0B3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0B4": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0B5": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0B6": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0B7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0B8": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0B9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0BD": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0BE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0BG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BI": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BJ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0BL": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BN": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0BQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0BR": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BS": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BT": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0BU": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BV": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BW": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0BX": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0BY": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0BZ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0C0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0C1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0C2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0C3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0C4": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0C5": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0C6": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0C7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0C8": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0C9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CD": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0CH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CI": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CJ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0CL": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0CN": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0CP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CR": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CS": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CT": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CU": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0CV": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CW": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CX": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CY": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0CZ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0D0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0D1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0D2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0D3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 15
+  },
+  "e0D4": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0D5": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0D6": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0D7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0D9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DD": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0DG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0DH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0DI": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DJ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0DL": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0DM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DN": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DR": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DS": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DT": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DU": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DV": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DW": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DX": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DY": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0DZ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0E0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0E1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0E2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0E3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0E4": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0E5": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0E6": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0E7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0E8": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0E9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0EC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0ED": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EI": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EJ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EL": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EN": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0ER": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0ES": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0ET": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0EU": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0EV": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EW": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EX": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EY": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0EZ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0F0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0F1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0F2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0F3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0F4": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0F5": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0F6": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0F7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0F8": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0F9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FD": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0FF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0FG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0FH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FI": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FJ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FL": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FN": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FR": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FS": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FT": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0FU": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0FV": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0FW": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0FX": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0FY": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0FZ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0G0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0G1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0G2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0G3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0G4": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0G5": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0G6": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0G7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0G8": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0G9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0GC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0GD": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0GE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GI": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GJ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GL": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GN": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0GP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GR": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GS": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GT": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GV": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GW": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GX": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GY": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0GZ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0H0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0H1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0H2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0H3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0H4": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0H5": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0H6": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0H7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0H8": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0H9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0HA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0HB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0HC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "e0HD": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0HE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0HF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0HG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0HH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0HI": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0HJ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0HK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0HL": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0HM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0HN": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0HO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0HP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 10
+  },
+  "e0HQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0HR": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0HS": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0HT": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0HU": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0HV": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0HW": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0HX": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0HY": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0HZ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0I0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0I1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0I2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0I3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0I4": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0I5": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0I6": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0I7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0I8": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0I9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0IB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0ID": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0II": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0IJ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IL": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IN": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0IP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IR": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IS": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0IT": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IU": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IV": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IW": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IX": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 10
+  },
+  "e0IY": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0IZ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0J0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0J1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0J2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0J3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0J4": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0J5": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0J6": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0J7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0J8": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0J9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0JA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0JC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JD": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0JI": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JJ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JL": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JN": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0JR": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JS": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JT": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JU": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JV": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JW": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JX": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JY": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0JZ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0K0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "e0K1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0K2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0K3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0K4": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0K5": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0K6": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0K7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0K8": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0K9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0KA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0KB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0KC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0KD": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0KE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0KF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0KG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0KH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0KI": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0KJ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0KK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0KL": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0KM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0KN": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "e0KO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0KP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0KQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0KR": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0KS": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0KT": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0KU": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0KV": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0KW": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0KX": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0KY": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0KZ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "e0L0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 10
+  },
+  "e0L1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0L2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "e0L3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0L4": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0L5": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0L6": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0L7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0L8": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0L9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0LA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0LB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0LC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0LD": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0LE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0LF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0LG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0LH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0LI": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0LK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0LL": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0LM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0LN": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0LO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0LP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0LQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0LR": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0LS": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0LT": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0LU": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0LV": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0LW": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0LX": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0LY": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0LZ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0M0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0M1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0M2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0M3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0M4": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0M5": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0M6": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0M7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0M8": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0M9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0MA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0MB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 10
+  },
+  "e0MC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0MD": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "e0ME": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0MF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0MG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0MH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0MI": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0MJ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0MK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0ML": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0MM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0MN": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0MO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0MP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0MQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0MR": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0MS": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0MT": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0MV": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0MW": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 20
+  },
+  "e0MX": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0MY": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0MZ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0N0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0N1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0N4": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 20
+  },
+  "e0N5": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 20
+  },
+  "e0N6": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0N7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 20
+  },
+  "e0N8": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0N9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 20
+  },
+  "e0NA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 20
+  },
+  "e0NB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 20
+  },
+  "e0NC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0ND": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NI": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NJ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NL": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NN": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NR": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NS": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NT": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NU": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NV": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NW": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0NX": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0O0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0O1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0O2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0O3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0O5": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0O6": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0O7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0O8": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0O9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OD": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OI": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0OJ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0OK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 4
+  },
+  "e0OL": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0ON": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OR": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OS": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OT": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OU": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OV": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OW": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0OX": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "e0OZ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0P0": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0P1": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 7
+  },
+  "e0P2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0P3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0P4": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0P7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0P8": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0P9": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0PA": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0PB": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0PC": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0PD": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0PE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0PH": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0PI": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 7
+  },
+  "e0PJ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0PK": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0PL": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0PM": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0PN": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0PO": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0PP": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0PQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0PR": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0PS": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "e0RE": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 15
+  },
+  "e0RF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 15
+  },
+  "e0RQ": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "e0SF": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "e0SG": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "eBS2": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "eBS3": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 5
+  },
+  "h000": {
+   "upgrade": null,
+   "cooldown": 0.05,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h001": {
+   "upgrade": null,
+   "cooldown": 0.98,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h002": {
+   "upgrade": null,
+   "cooldown": 1.03,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h003": {
+   "upgrade": null,
+   "cooldown": 1.02,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h004": {
+   "upgrade": null,
+   "cooldown": 0.77,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h005": {
+   "upgrade": null,
+   "cooldown": 0.99,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h006": {
+   "upgrade": null,
+   "cooldown": 0.94,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h007": {
+   "upgrade": null,
+   "cooldown": 0.84,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h008": {
+   "upgrade": null,
+   "cooldown": 0.57,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h009": {
+   "upgrade": null,
+   "cooldown": 0.96,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00A": {
+   "upgrade": null,
+   "cooldown": 1.3,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00B": {
+   "upgrade": "R00E",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00C": {
+   "upgrade": null,
+   "cooldown": 1.07,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00D": {
+   "upgrade": null,
+   "cooldown": 0.74,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00E": {
+   "upgrade": null,
+   "cooldown": 0.96,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00F": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00G": {
+   "upgrade": null,
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00H": {
+   "upgrade": null,
+   "cooldown": 0.61,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00I": {
+   "upgrade": null,
+   "cooldown": 0.85,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00J": {
+   "upgrade": null,
+   "cooldown": 0.9,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00K": {
+   "upgrade": null,
+   "cooldown": 1.1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00L": {
+   "upgrade": null,
+   "cooldown": 0.89,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00M": {
+   "upgrade": null,
+   "cooldown": 1.32,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00N": {
+   "upgrade": null,
+   "cooldown": 1.4,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00O": {
+   "upgrade": null,
+   "cooldown": 1.2,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00P": {
+   "upgrade": "R00E",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00Q": {
+   "upgrade": "R00E",
+   "cooldown": 1.1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00R": {
+   "upgrade": "R00E",
+   "cooldown": 0.47,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00S": {
+   "upgrade": "R00E",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00T": {
+   "upgrade": "R00E",
+   "cooldown": 0.88,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00U": {
+   "upgrade": "R00E",
+   "cooldown": 0.68,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00V": {
+   "upgrade": "R00E",
+   "cooldown": 0.35,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00W": {
+   "upgrade": "R00E",
+   "cooldown": 0.88,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00X": {
+   "upgrade": "R00E",
+   "cooldown": 0.33,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00Y": {
+   "upgrade": "R00E",
+   "cooldown": 0.8,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h00Z": {
+   "upgrade": "R00E",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h010": {
+   "upgrade": "R00E",
+   "cooldown": 0.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h011": {
+   "upgrade": "R00E",
+   "cooldown": 0.55,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h012": {
+   "upgrade": "R00E",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h013": {
+   "upgrade": "R00E",
+   "cooldown": 0.55,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h014": {
+   "upgrade": "R00E",
+   "cooldown": 1.3,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h015": {
+   "upgrade": "R00E",
+   "cooldown": 1.2,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h016": {
+   "upgrade": "R00E",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h017": {
+   "upgrade": "R00E",
+   "cooldown": 0.25,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h018": {
+   "upgrade": "R00E",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h019": {
+   "upgrade": "R00E",
+   "cooldown": 0.8,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01A": {
+   "upgrade": "R00E",
+   "cooldown": 0.76,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01B": {
+   "upgrade": "R00E",
+   "cooldown": 0.8,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01C": {
+   "upgrade": "R00E",
+   "cooldown": 0.75,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01D": {
+   "upgrade": "R00E",
+   "cooldown": 1.03,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01E": {
+   "upgrade": "R00E",
+   "cooldown": 0.5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01F": {
+   "upgrade": "R00E",
+   "cooldown": 0.9,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01G": {
+   "upgrade": "R00E",
+   "cooldown": 1.15,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01H": {
+   "upgrade": "R00E",
+   "cooldown": 0.65,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01I": {
+   "upgrade": "R00E",
+   "cooldown": 0.57,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01J": {
+   "upgrade": "R00E",
+   "cooldown": 0.75,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01K": {
+   "upgrade": "R00E",
+   "cooldown": 0.8,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01L": {
+   "upgrade": "R008",
+   "cooldown": 0.65,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01M": {
+   "upgrade": "R008",
+   "cooldown": 0.68,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01N": {
+   "upgrade": "R008",
+   "cooldown": 0.56,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01O": {
+   "upgrade": "R008",
+   "cooldown": 0.82,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01P": {
+   "upgrade": "R008",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01Q": {
+   "upgrade": "R008",
+   "cooldown": 1.09,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01R": {
+   "upgrade": "R008",
+   "cooldown": 0.68,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01S": {
+   "upgrade": "R008",
+   "cooldown": 0.84,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01T": {
+   "upgrade": "R008",
+   "cooldown": 0.7,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01U": {
+   "upgrade": "R008",
+   "cooldown": 0.8,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01V": {
+   "upgrade": "R008",
+   "cooldown": 0.85,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01W": {
+   "upgrade": "R008",
+   "cooldown": 0.83,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01X": {
+   "upgrade": "R008",
+   "cooldown": 1.5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01Y": {
+   "upgrade": "R008",
+   "cooldown": 0.79,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h01Z": {
+   "upgrade": "R008",
+   "cooldown": 0.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h020": {
+   "upgrade": "R008",
+   "cooldown": 0.67,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h021": {
+   "upgrade": "R008",
+   "cooldown": 0.87,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h022": {
+   "upgrade": "R008",
+   "cooldown": 0.77,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h023": {
+   "upgrade": "R008",
+   "cooldown": 0.42,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h024": {
+   "upgrade": "R008",
+   "cooldown": 0.9,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h025": {
+   "upgrade": "R008",
+   "cooldown": 0.77,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h026": {
+   "upgrade": "R008",
+   "cooldown": 0.69,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h027": {
+   "upgrade": "R008",
+   "cooldown": 0.7,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h028": {
+   "upgrade": "R008",
+   "cooldown": 0.69,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h029": {
+   "upgrade": "R008",
+   "cooldown": 0.8,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02A": {
+   "upgrade": "R008",
+   "cooldown": 0.95,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02B": {
+   "upgrade": "R008",
+   "cooldown": 0.94,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02C": {
+   "upgrade": "R008",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02D": {
+   "upgrade": "R008",
+   "cooldown": 0.85,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 25
+  },
+  "h02E": {
+   "upgrade": "R008",
+   "cooldown": 0.97,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02F": {
+   "upgrade": "R008",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02G": {
+   "upgrade": "R008",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02H": {
+   "upgrade": "R008",
+   "cooldown": 0.61,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02I": {
+   "upgrade": "R008",
+   "cooldown": 0.4,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02J": {
+   "upgrade": "R008",
+   "cooldown": 0.82,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02K": {
+   "upgrade": "R008",
+   "cooldown": 0.95,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02L": {
+   "upgrade": "R008",
+   "cooldown": 0.62,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02M": {
+   "upgrade": "R008",
+   "cooldown": 1.05,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02N": {
+   "upgrade": "R02V",
+   "cooldown": 1.25,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02O": {
+   "upgrade": "R000",
+   "cooldown": 0.7,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02P": {
+   "upgrade": "R000",
+   "cooldown": 0.66,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 35
+  },
+  "h02Q": {
+   "upgrade": "R01J",
+   "cooldown": 1.33,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02R": {
+   "upgrade": "R000",
+   "cooldown": 0.52,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02S": {
+   "upgrade": "R01Z",
+   "cooldown": 0.79,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02T": {
+   "upgrade": "R000",
+   "cooldown": 0.64,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 25
+  },
+  "h02U": {
+   "upgrade": "R000",
+   "cooldown": 0.72,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 40
+  },
+  "h02V": {
+   "upgrade": "R000",
+   "cooldown": 0.84,
+   "regenMana": 0.5,
+   "regenHP": 0,
+   "mana": 50,
+   "hp": 10
+  },
+  "h02W": {
+   "upgrade": "R000",
+   "cooldown": 0.77,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02X": {
+   "upgrade": "R02S",
+   "cooldown": 0.84,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02Y": {
+   "upgrade": "R02B",
+   "cooldown": 1.4,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h02Z": {
+   "upgrade": "R000",
+   "cooldown": 0.71,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h030": {
+   "upgrade": "R000",
+   "cooldown": 0.69,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 115,
+   "hp": 10
+  },
+  "h031": {
+   "upgrade": "R01X",
+   "cooldown": 0.95,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h032": {
+   "upgrade": "R000",
+   "cooldown": 0.76,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h033": {
+   "upgrade": "R000",
+   "cooldown": 0.88,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h034": {
+   "upgrade": "R000",
+   "cooldown": 0.45,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h035": {
+   "upgrade": "R000",
+   "cooldown": 0.66,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h036": {
+   "upgrade": "R000",
+   "cooldown": 0.67,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h037": {
+   "upgrade": "R000",
+   "cooldown": 0.73,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h038": {
+   "upgrade": "R000",
+   "cooldown": 0.38,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h039": {
+   "upgrade": "R000",
+   "cooldown": 0.75,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h03A": {
+   "upgrade": "R000",
+   "cooldown": 0.58,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 115,
+   "hp": 10
+  },
+  "h03B": {
+   "upgrade": "R000",
+   "cooldown": 0.74,
+   "regenMana": 0,
+   "regenHP": 0.8,
+   "mana": 0,
+   "hp": 115
+  },
+  "h03C": {
+   "upgrade": "R000",
+   "cooldown": 0.64,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h03D": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 10
+  },
+  "h03E": {
+   "upgrade": "R000",
+   "cooldown": 0.57,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 115,
+   "hp": 10
+  },
+  "h03F": {
+   "upgrade": "R000",
+   "cooldown": 0.51,
+   "regenMana": 6,
+   "regenHP": 0,
+   "mana": 100,
+   "hp": 10
+  },
+  "h03G": {
+   "upgrade": "R000",
+   "cooldown": 0.85,
+   "regenMana": 2,
+   "regenHP": 0,
+   "mana": 85,
+   "hp": 10
+  },
+  "h03H": {
+   "upgrade": "R000",
+   "cooldown": 0.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h03I": {
+   "upgrade": "R000",
+   "cooldown": 0.63,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h03J": {
+   "upgrade": "R001",
+   "cooldown": 0.7,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 100,
+   "hp": 10
+  },
+  "h03K": {
+   "upgrade": "R000",
+   "cooldown": 0.85,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h03L": {
+   "upgrade": "R001",
+   "cooldown": 0.45,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 100,
+   "hp": 10
+  },
+  "h03M": {
+   "upgrade": "R001",
+   "cooldown": 0.83,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h03N": {
+   "upgrade": "R001",
+   "cooldown": 0.95,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 85,
+   "hp": 10
+  },
+  "h03O": {
+   "upgrade": "R001",
+   "cooldown": 0.94,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h03P": {
+   "upgrade": "R001",
+   "cooldown": 0.28,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h03Q": {
+   "upgrade": "R001",
+   "cooldown": 1.3,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h03R": {
+   "upgrade": "R001",
+   "cooldown": 0.66,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 95,
+   "hp": 10
+  },
+  "h03S": {
+   "upgrade": "R02S",
+   "cooldown": 1.02,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 35
+  },
+  "h03T": {
+   "upgrade": "R001",
+   "cooldown": 0.82,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h03U": {
+   "upgrade": "R001",
+   "cooldown": 0.64,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h03V": {
+   "upgrade": "R01T",
+   "cooldown": 0.84,
+   "regenMana": 2,
+   "regenHP": 0,
+   "mana": 135,
+   "hp": 10
+  },
+  "h03W": {
+   "upgrade": "R001",
+   "cooldown": 0.81,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 100,
+   "hp": 10
+  },
+  "h03X": {
+   "upgrade": "R001",
+   "cooldown": 0.64,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 150,
+   "hp": 10
+  },
+  "h03Y": {
+   "upgrade": "R001",
+   "cooldown": 0.86,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h03Z": {
+   "upgrade": "R001",
+   "cooldown": 0.75,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h040": {
+   "upgrade": "R004",
+   "cooldown": 0.79,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h041": {
+   "upgrade": "R001",
+   "cooldown": 0.79,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h042": {
+   "upgrade": "R000",
+   "cooldown": 0.7,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h043": {
+   "upgrade": "R01Y",
+   "cooldown": 1.05,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h044": {
+   "upgrade": "R001",
+   "cooldown": 0.67,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h045": {
+   "upgrade": "R001",
+   "cooldown": 0.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h046": {
+   "upgrade": "R001",
+   "cooldown": 0.62,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 35,
+   "hp": 10
+  },
+  "h047": {
+   "upgrade": "R001",
+   "cooldown": 0.49,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h048": {
+   "upgrade": "R01T",
+   "cooldown": 0.82,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 100,
+   "hp": 10
+  },
+  "h049": {
+   "upgrade": "R002",
+   "cooldown": 0.58,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 115,
+   "hp": 10
+  },
+  "h04A": {
+   "upgrade": "R002",
+   "cooldown": 0.73,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 115
+  },
+  "h04B": {
+   "upgrade": "R002",
+   "cooldown": 0.49,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 125,
+   "hp": 10
+  },
+  "h04C": {
+   "upgrade": "R002",
+   "cooldown": 0.63,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 160,
+   "hp": 10
+  },
+  "h04D": {
+   "upgrade": "R002",
+   "cooldown": 0.61,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 160,
+   "hp": 10
+  },
+  "h04E": {
+   "upgrade": "R002",
+   "cooldown": 0.7,
+   "regenMana": 0,
+   "regenHP": 1,
+   "mana": 0,
+   "hp": 75
+  },
+  "h04F": {
+   "upgrade": "R002",
+   "cooldown": 0.24,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 45,
+   "hp": 10
+  },
+  "h04G": {
+   "upgrade": "R002",
+   "cooldown": 0.66,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 160,
+   "hp": 10
+  },
+  "h04H": {
+   "upgrade": "R008",
+   "cooldown": 0.75,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h04I": {
+   "upgrade": null,
+   "cooldown": 5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h04J": {
+   "upgrade": "R002",
+   "cooldown": 0.49,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 150,
+   "hp": 10
+  },
+  "h04K": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h04L": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h04M": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 2
+  },
+  "h04N": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h04O": {
+   "upgrade": "R003",
+   "cooldown": 0.33,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 7
+  },
+  "h04P": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h04Q": {
+   "upgrade": "R020",
+   "cooldown": 1.15,
+   "regenMana": 0,
+   "regenHP": 0.25,
+   "mana": 0,
+   "hp": 115
+  },
+  "h04R": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 10
+  },
+  "h04S": {
+   "upgrade": "R003",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h04T": {
+   "upgrade": "R003",
+   "cooldown": 0.64,
+   "regenMana": 0,
+   "regenHP": 0.15,
+   "mana": 0,
+   "hp": 250
+  },
+  "h04U": {
+   "upgrade": "R01U",
+   "cooldown": 0.84,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h04V": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 15
+  },
+  "h04W": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h04X": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h04Y": {
+   "upgrade": "R020",
+   "cooldown": 0.9,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 115
+  },
+  "h04Z": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h050": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h051": {
+   "upgrade": null,
+   "cooldown": 1.25,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h053": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h054": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h055": {
+   "upgrade": "R001",
+   "cooldown": 0.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h056": {
+   "upgrade": null,
+   "cooldown": 0.71,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 40
+  },
+  "h057": {
+   "upgrade": "R013",
+   "cooldown": 0.74,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 150,
+   "hp": 10
+  },
+  "h058": {
+   "upgrade": "R007",
+   "cooldown": 0.93,
+   "regenMana": 2,
+   "regenHP": 0,
+   "mana": 175,
+   "hp": 10
+  },
+  "h059": {
+   "upgrade": "R00X",
+   "cooldown": 0.58,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 185,
+   "hp": 10
+  },
+  "h05A": {
+   "upgrade": "R014",
+   "cooldown": 0.82,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 100
+  },
+  "h05B": {
+   "upgrade": "R015",
+   "cooldown": 0.71,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 100,
+   "hp": 10
+  },
+  "h05C": {
+   "upgrade": "R016",
+   "cooldown": 0.74,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 175,
+   "hp": 10
+  },
+  "h05D": {
+   "upgrade": "R02V",
+   "cooldown": 1.25,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h05E": {
+   "upgrade": "R004",
+   "cooldown": 0.75,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 145,
+   "hp": 10
+  },
+  "h05F": {
+   "upgrade": "R004",
+   "cooldown": 0.56,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 115
+  },
+  "h05G": {
+   "upgrade": "R004",
+   "cooldown": 0.52,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 55
+  },
+  "h05H": {
+   "upgrade": "R004",
+   "cooldown": 0.13,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h05I": {
+   "upgrade": "R006",
+   "cooldown": 0.88,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 120,
+   "hp": 10
+  },
+  "h05J": {
+   "upgrade": "R002",
+   "cooldown": 0.58,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 115,
+   "hp": 2
+  },
+  "h05K": {
+   "upgrade": "R008",
+   "cooldown": 0.4,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h05L": {
+   "upgrade": "R008",
+   "cooldown": 0.96,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h05O": {
+   "upgrade": "R004",
+   "cooldown": 1.5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h05P": {
+   "upgrade": "R004",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h05Q": {
+   "upgrade": "R004",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h05R": {
+   "upgrade": "R004",
+   "cooldown": 0.82,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h05S": {
+   "upgrade": "R004",
+   "cooldown": 0.61,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h05T": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h05U": {
+   "upgrade": null,
+   "cooldown": 0.66,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h05V": {
+   "upgrade": "R01T",
+   "cooldown": 0.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h05W": {
+   "upgrade": "R004",
+   "cooldown": 0.74,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h05X": {
+   "upgrade": "R008",
+   "cooldown": 0.85,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h05Y": {
+   "upgrade": null,
+   "cooldown": 1.2,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h05Z": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 5
+  },
+  "h060": {
+   "upgrade": "R00E",
+   "cooldown": 0.9,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h061": {
+   "upgrade": null,
+   "cooldown": 0.95,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h062": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1200
+  },
+  "h063": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h064": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h065": {
+   "upgrade": "R019",
+   "cooldown": 4,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h066": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h067": {
+   "upgrade": "R032",
+   "cooldown": 0.67,
+   "regenMana": 1.25,
+   "regenHP": 0.2,
+   "mana": 100,
+   "hp": 150
+  },
+  "h068": {
+   "upgrade": "R003",
+   "cooldown": 0.65,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "h069": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "h06A": {
+   "upgrade": "R01V",
+   "cooldown": 0.7,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 90
+  },
+  "h06B": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "h06C": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "h06D": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "h06E": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h06F": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "h06G": {
+   "upgrade": "R003",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h06H": {
+   "upgrade": "R015",
+   "cooldown": 0.11,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 20,
+   "hp": 5
+  },
+  "h06I": {
+   "upgrade": "R000",
+   "cooldown": 1.25,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h06K": {
+   "upgrade": null,
+   "cooldown": 1.25,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h06L": {
+   "upgrade": "R000",
+   "cooldown": 1.25,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h06M": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h06N": {
+   "upgrade": "R000",
+   "cooldown": 0.39,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h06O": {
+   "upgrade": "R008",
+   "cooldown": 0.3,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h06P": {
+   "upgrade": "R000",
+   "cooldown": 0.3,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h06Q": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1200
+  },
+  "h06R": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1200
+  },
+  "h06S": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1200
+  },
+  "h06T": {
+   "upgrade": "R019",
+   "cooldown": 0.71,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 100,
+   "hp": 10
+  },
+  "h06U": {
+   "upgrade": "R019",
+   "cooldown": 0.58,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h06V": {
+   "upgrade": "R019",
+   "cooldown": 0.5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h06W": {
+   "upgrade": "R019",
+   "cooldown": 0.65,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h06X": {
+   "upgrade": "R019",
+   "cooldown": 2.08,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h06Y": {
+   "upgrade": "R019",
+   "cooldown": 0.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h06Z": {
+   "upgrade": "R019",
+   "cooldown": 0.55,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h070": {
+   "upgrade": "R019",
+   "cooldown": 1.18,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h071": {
+   "upgrade": "R019",
+   "cooldown": 0.49,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h072": {
+   "upgrade": "R019",
+   "cooldown": 0.52,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h073": {
+   "upgrade": "R019",
+   "cooldown": 0.73,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h074": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h075": {
+   "upgrade": null,
+   "cooldown": 0.38,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h076": {
+   "upgrade": "R001",
+   "cooldown": 0.87,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h077": {
+   "upgrade": "R004",
+   "cooldown": 0.83,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h078": {
+   "upgrade": "R000",
+   "cooldown": 1.5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h079": {
+   "upgrade": "R003",
+   "cooldown": 1.85,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h07A": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 485
+  },
+  "h07B": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h07C": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h07D": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h07E": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h07F": {
+   "upgrade": "R000",
+   "cooldown": 0.48,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "h07G": {
+   "upgrade": "R003",
+   "cooldown": 0.25,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "h07H": {
+   "upgrade": "R000",
+   "cooldown": 0.38,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h07I": {
+   "upgrade": "R022",
+   "cooldown": 0.61,
+   "regenMana": 0,
+   "regenHP": 1.5,
+   "mana": 0,
+   "hp": 50
+  },
+  "h07J": {
+   "upgrade": "R004",
+   "cooldown": 0.85,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h07K": {
+   "upgrade": "R000",
+   "cooldown": 1.25,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h07L": {
+   "upgrade": "R001",
+   "cooldown": 0.7,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h07M": {
+   "upgrade": "R023",
+   "cooldown": 1.41,
+   "regenMana": 0,
+   "regenHP": 0.33,
+   "mana": 0,
+   "hp": 100
+  },
+  "h07N": {
+   "upgrade": "R004",
+   "cooldown": 0.52,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h07O": {
+   "upgrade": "R023",
+   "cooldown": 2.25,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 2
+  },
+  "h07P": {
+   "upgrade": null,
+   "cooldown": 0.71,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "h07Q": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h07R": {
+   "upgrade": "R002",
+   "cooldown": 0.75,
+   "regenMana": 0,
+   "regenHP": 1,
+   "mana": 125,
+   "hp": 3
+  },
+  "h07S": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h07T": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h07U": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h07V": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h07W": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h07X": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h07Y": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h07Z": {
+   "upgrade": "R007",
+   "cooldown": 0.93,
+   "regenMana": 2,
+   "regenHP": 0,
+   "mana": 175,
+   "hp": 10
+  },
+  "h080": {
+   "upgrade": null,
+   "cooldown": 1.5,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 1
+  },
+  "h081": {
+   "upgrade": "R002",
+   "cooldown": 1.2,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 150,
+   "hp": 10
+  },
+  "h082": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 10
+  },
+  "h083": {
+   "upgrade": "R00Q",
+   "cooldown": 0.7,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 100,
+   "hp": 10
+  },
+  "h084": {
+   "upgrade": "R004",
+   "cooldown": 0.67,
+   "regenMana": 0,
+   "regenHP": 0.25,
+   "mana": 0,
+   "hp": 50
+  },
+  "h085": {
+   "upgrade": "R000",
+   "cooldown": 0.73,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 2
+  },
+  "h086": {
+   "upgrade": "R004",
+   "cooldown": 0.68,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h087": {
+   "upgrade": "R000",
+   "cooldown": 0.91,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h088": {
+   "upgrade": null,
+   "cooldown": 0.7,
+   "regenMana": 1.35,
+   "regenHP": -1,
+   "mana": 35,
+   "hp": 3
+  },
+  "h089": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1200
+  },
+  "h08A": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0.3,
+   "regenHP": 0,
+   "mana": 10000,
+   "hp": 1200
+  },
+  "h08C": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1200
+  },
+  "h08D": {
+   "upgrade": "R003",
+   "cooldown": 0.65,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "h08F": {
+   "upgrade": "R01T",
+   "cooldown": 0.82,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 100,
+   "hp": 10
+  },
+  "h08H": {
+   "upgrade": null,
+   "cooldown": 0.17,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1
+  },
+  "h08I": {
+   "upgrade": "R019",
+   "cooldown": 0.94,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 145,
+   "hp": 10
+  },
+  "h08K": {
+   "upgrade": "R020",
+   "cooldown": 0.9,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 115
+  },
+  "h08L": {
+   "upgrade": null,
+   "cooldown": 0.25,
+   "regenMana": 0,
+   "regenHP": 0.33,
+   "mana": 0,
+   "hp": 10
+  },
+  "h08M": {
+   "upgrade": "R019",
+   "cooldown": 0.7,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 75,
+   "hp": 45
+  },
+  "h08N": {
+   "upgrade": "R004",
+   "cooldown": 0.75,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h08O": {
+   "upgrade": "R004",
+   "cooldown": 0.64,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 85
+  },
+  "h08P": {
+   "upgrade": null,
+   "cooldown": 5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h08Q": {
+   "upgrade": "R004",
+   "cooldown": 4.5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 55,
+   "hp": 10
+  },
+  "h08R": {
+   "upgrade": "R02O",
+   "cooldown": 0.64,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 145,
+   "hp": 10
+  },
+  "h08S": {
+   "upgrade": "R000",
+   "cooldown": 0.85,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h09J": {
+   "upgrade": null,
+   "cooldown": 5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h09K": {
+   "upgrade": "R019",
+   "cooldown": 0.9,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h09L": {
+   "upgrade": "R019",
+   "cooldown": 0.71,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h09M": {
+   "upgrade": "R019",
+   "cooldown": 1.01,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 185,
+   "hp": 10
+  },
+  "h09N": {
+   "upgrade": "R019",
+   "cooldown": 0.77,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 145,
+   "hp": 10
+  },
+  "h09O": {
+   "upgrade": null,
+   "cooldown": 5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h09P": {
+   "upgrade": null,
+   "cooldown": 5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h09Q": {
+   "upgrade": "R004",
+   "cooldown": 0.93,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 85
+  },
+  "h09R": {
+   "upgrade": "R019",
+   "cooldown": 0.92,
+   "regenMana": 1,
+   "regenHP": 1,
+   "mana": 145,
+   "hp": 45
+  },
+  "h09S": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "h09T": {
+   "upgrade": "R004",
+   "cooldown": 0.82,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h09U": {
+   "upgrade": "R016",
+   "cooldown": 0.74,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 175,
+   "hp": 10
+  },
+  "h09V": {
+   "upgrade": "R01T",
+   "cooldown": 1.15,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h09W": {
+   "upgrade": "R019",
+   "cooldown": 0.73,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 100,
+   "hp": 10
+  },
+  "h09X": {
+   "upgrade": "R008",
+   "cooldown": 0.61,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h09Y": {
+   "upgrade": "R000",
+   "cooldown": 0.76,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h09Z": {
+   "upgrade": "R000",
+   "cooldown": 0.92,
+   "regenMana": 0,
+   "regenHP": 2,
+   "mana": 0,
+   "hp": 30
+  },
+  "h0A0": {
+   "upgrade": "R000",
+   "cooldown": 0.8,
+   "regenMana": 0,
+   "regenHP": 1,
+   "mana": 0,
+   "hp": 60
+  },
+  "h0A1": {
+   "upgrade": "R000",
+   "cooldown": 0.69,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0A2": {
+   "upgrade": "R019",
+   "cooldown": 0.57,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 115,
+   "hp": 10
+  },
+  "h0A3": {
+   "upgrade": "R001",
+   "cooldown": 0.7,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0A4": {
+   "upgrade": null,
+   "cooldown": 1.25,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0A6": {
+   "upgrade": "R019",
+   "cooldown": 0.85,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 125,
+   "hp": 10
+  },
+  "h0A7": {
+   "upgrade": "R001",
+   "cooldown": 0.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0A8": {
+   "upgrade": "R000",
+   "cooldown": 0.7,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0A9": {
+   "upgrade": "R000",
+   "cooldown": 0.73,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 2
+  },
+  "h0AC": {
+   "upgrade": "R019",
+   "cooldown": 0.76,
+   "regenMana": 0,
+   "regenHP": 0.3,
+   "mana": 0,
+   "hp": 75
+  },
+  "h0AD": {
+   "upgrade": "R023",
+   "cooldown": 1.25,
+   "regenMana": 0,
+   "regenHP": 0.33,
+   "mana": 0,
+   "hp": 100
+  },
+  "h0AF": {
+   "upgrade": "R032",
+   "cooldown": 0.67,
+   "regenMana": 1.25,
+   "regenHP": 0.2,
+   "mana": 100,
+   "hp": 150
+  },
+  "h0AG": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 10
+  },
+  "h0AH": {
+   "upgrade": "R000",
+   "cooldown": 0.92,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0AI": {
+   "upgrade": "R02Q",
+   "cooldown": 0.64,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 60,
+   "hp": 10
+  },
+  "h0AJ": {
+   "upgrade": "R003",
+   "cooldown": 0.71,
+   "regenMana": 0,
+   "regenHP": 0.33,
+   "mana": 100,
+   "hp": 40
+  },
+  "h0AK": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "h0AL": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "h0AN": {
+   "upgrade": null,
+   "cooldown": 1.25,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0AV": {
+   "upgrade": "R002",
+   "cooldown": 0.73,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 115
+  },
+  "h0AX": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 1
+  },
+  "h0B8": {
+   "upgrade": "R002",
+   "cooldown": 1.5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0B9": {
+   "upgrade": "R002",
+   "cooldown": 1.5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0BA": {
+   "upgrade": "R002",
+   "cooldown": 1.5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0BB": {
+   "upgrade": "R002",
+   "cooldown": 1.5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0BC": {
+   "upgrade": "R019",
+   "cooldown": 0.79,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 75,
+   "hp": 45
+  },
+  "h0BF": {
+   "upgrade": "R019",
+   "cooldown": 1,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 60,
+   "hp": 10
+  },
+  "h0BG": {
+   "upgrade": "R004",
+   "cooldown": 1.5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0BH": {
+   "upgrade": null,
+   "cooldown": 0.8,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "h0BI": {
+   "upgrade": null,
+   "cooldown": 0.98,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "h0BJ": {
+   "upgrade": null,
+   "cooldown": 0.88,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "h0BM": {
+   "upgrade": "R002",
+   "cooldown": 0.7,
+   "regenMana": 0,
+   "regenHP": 1,
+   "mana": 0,
+   "hp": 75
+  },
+  "h0BP": {
+   "upgrade": "R003",
+   "cooldown": 0.64,
+   "regenMana": 0,
+   "regenHP": 0.15,
+   "mana": 0,
+   "hp": 250
+  },
+  "h0BQ": {
+   "upgrade": "R000",
+   "cooldown": 0.64,
+   "regenMana": 0,
+   "regenHP": 0.5,
+   "mana": 0,
+   "hp": 25
+  },
+  "h0BR": {
+   "upgrade": null,
+   "cooldown": 0.8,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 135,
+   "hp": 10
+  },
+  "h0BU": {
+   "upgrade": null,
+   "cooldown": 0.8,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0BW": {
+   "upgrade": "R023",
+   "cooldown": 1.41,
+   "regenMana": 0,
+   "regenHP": 0.33,
+   "mana": 0,
+   "hp": 100
+  },
+  "h0C2": {
+   "upgrade": "R019",
+   "cooldown": 0.71,
+   "regenMana": 0,
+   "regenHP": 1,
+   "mana": 0,
+   "hp": 150
+  },
+  "h0C3": {
+   "upgrade": null,
+   "cooldown": 1.25,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0C5": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 20
+  },
+  "h0C6": {
+   "upgrade": "R020",
+   "cooldown": 0.9,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 115
+  },
+  "h0C7": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": -1,
+   "mana": 0,
+   "hp": 3
+  },
+  "h0C8": {
+   "upgrade": "R001",
+   "cooldown": 5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0CA": {
+   "upgrade": "R000",
+   "cooldown": 0.39,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0CC": {
+   "upgrade": "R019",
+   "cooldown": 0.71,
+   "regenMana": 0,
+   "regenHP": 1,
+   "mana": 120,
+   "hp": 200
+  },
+  "h0CD": {
+   "upgrade": "R019",
+   "cooldown": 0.71,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 120,
+   "hp": 200
+  },
+  "h0CE": {
+   "upgrade": "R019",
+   "cooldown": 1.01,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 185,
+   "hp": 10
+  },
+  "h0CF": {
+   "upgrade": "R003",
+   "cooldown": 2,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 2
+  },
+  "h0CG": {
+   "upgrade": null,
+   "cooldown": 0.38,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0CI": {
+   "upgrade": "R01T",
+   "cooldown": 0.85,
+   "regenMana": 1,
+   "regenHP": 0,
+   "mana": 65,
+   "hp": 10
+  },
+  "h0CJ": {
+   "upgrade": "R03F",
+   "cooldown": 0.71,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 150,
+   "hp": 10
+  },
+  "h0CK": {
+   "upgrade": "R004",
+   "cooldown": 0.8,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0CM": {
+   "upgrade": "R01X",
+   "cooldown": 4.5,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0CN": {
+   "upgrade": "R000",
+   "cooldown": 0.38,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0CP": {
+   "upgrade": "R000",
+   "cooldown": 0.71,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "h0D5": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": -1,
+   "regenHP": -1,
+   "mana": 1000,
+   "hp": 10
+  },
+  "h0F5": {
+   "upgrade": null,
+   "cooldown": 1.35,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 1000,
+   "hp": 20
+  },
+  "n000": {
+   "upgrade": null,
+   "cooldown": 2,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 70200
+  },
+  "n001": {
+   "upgrade": null,
+   "cooldown": 2,
+   "regenMana": 0,
+   "regenHP": 1000,
+   "mana": 0,
+   "hp": 115000000
+  },
+  "n002": {
+   "upgrade": null,
+   "cooldown": 2,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 255150
+  },
+  "n003": {
+   "upgrade": null,
+   "cooldown": 2,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 850500
+  },
+  "n004": {
+   "upgrade": null,
+   "cooldown": 2,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 2064300
+  },
+  "n005": {
+   "upgrade": null,
+   "cooldown": 2,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 4456200
+  },
+  "n006": {
+   "upgrade": null,
+   "cooldown": 2,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 11700000
+  },
+  "n007": {
+   "upgrade": null,
+   "cooldown": 2,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 21100000
+  },
+  "n008": {
+   "upgrade": null,
+   "cooldown": 2,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 45140000
+  },
+  "n009": {
+   "upgrade": null,
+   "cooldown": 2,
+   "regenMana": 0,
+   "regenHP": 1000,
+   "mana": 0,
+   "hp": 288800000
+  },
+  "n00A": {
+   "upgrade": null,
+   "cooldown": 2,
+   "regenMana": 0,
+   "regenHP": 1000,
+   "mana": 0,
+   "hp": 99225000
+  },
+  "n00B": {
+   "upgrade": null,
+   "cooldown": 2,
+   "regenMana": 0,
+   "regenHP": 1000,
+   "mana": 0,
+   "hp": 190000000
+  },
+  "n00C": {
+   "upgrade": null,
+   "cooldown": 2,
+   "regenMana": 0,
+   "regenHP": 1000,
+   "mana": 0,
+   "hp": 140000000
+  },
+  "n00D": {
+   "upgrade": null,
+   "cooldown": 2,
+   "regenMana": 0,
+   "regenHP": 1000,
+   "mana": 0,
+   "hp": 155000000
+  },
+  "n00E": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 200,
+   "mana": 4,
+   "hp": 360000
+  },
+  "n00F": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 25000,
+   "mana": 4,
+   "hp": 1000000
+  },
+  "n00G": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 40000,
+   "mana": 4,
+   "hp": 1200000
+  },
+  "n00K": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "o001": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 50000,
+   "mana": 0,
+   "hp": 12297000
+  },
+  "o002": {
+   "upgrade": "R00Q",
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 20000000
+  },
+  "o003": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1100
+  },
+  "o004": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 170
+  },
+  "o005": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 860
+  },
+  "o006": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 650
+  },
+  "o007": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 18900
+  },
+  "o008": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 380
+  },
+  "o009": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 300
+  },
+  "o00A": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 230
+  },
+  "o00B": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1020
+  },
+  "o00C": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1400
+  },
+  "o00D": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 510
+  },
+  "o00E": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 4970
+  },
+  "o00F": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1790
+  },
+  "o00G": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 3660
+  },
+  "o00H": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 2670
+  },
+  "o00I": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 135
+  },
+  "o00J": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 9900000,
+   "mana": 0,
+   "hp": 2050000
+  },
+  "o00K": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 16610000
+  },
+  "o00M": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 2240
+  },
+  "o00N": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 4450
+  },
+  "o00O": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 5600
+  },
+  "o00P": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 6500
+  },
+  "o00Q": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 7200
+  },
+  "o00R": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 9400
+  },
+  "o00S": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 12700
+  },
+  "o00T": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 15850
+  },
+  "o00U": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 23250
+  },
+  "o00V": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 26000
+  },
+  "o00X": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 32000
+  },
+  "o00Z": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10200000
+  },
+  "o010": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 67000
+  },
+  "o011": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 80000
+  },
+  "o012": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 90300
+  },
+  "o015": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1
+  },
+  "o017": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 108870
+  },
+  "o018": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 124200
+  },
+  "o019": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 138400
+  },
+  "o01A": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 145000
+  },
+  "o01B": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 350000
+  },
+  "o01D": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 750000
+  },
+  "o01E": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 600000
+  },
+  "o01F": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 450000
+  },
+  "o01G": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 54500
+  },
+  "o01H": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 1880000
+  },
+  "o01L": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 2285000
+  },
+  "o01M": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 2845200
+  },
+  "o01N": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 6500000
+  },
+  "o01O": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 950000
+  },
+  "o01Q": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 7150000
+  },
+  "o01R": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 7550000
+  },
+  "o01S": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 8690000
+  },
+  "o01T": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 3300000
+  },
+  "o01U": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 5700000
+  },
+  "o01V": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 10,
+   "hp": 14500
+  },
+  "o01W": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 20,
+   "hp": 85000
+  },
+  "o01X": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 30,
+   "hp": 750000
+  },
+  "o01Y": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 40,
+   "hp": 2900000
+  },
+  "o01Z": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 50,
+   "hp": 20800000
+  },
+  "o020": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10990000
+  },
+  "o021": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 11590000
+  },
+  "o025": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 14120000
+  },
+  "o026": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 45000,
+   "mana": 0,
+   "hp": 13582115
+  },
+  "o027": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 15610000
+  },
+  "o028": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 9400000
+  },
+  "o02B": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 50000,
+   "mana": 0,
+   "hp": 13595000
+  },
+  "o02C": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 50000,
+   "mana": 0,
+   "hp": 12750000
+  },
+  "o02D": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 12000
+  },
+  "o02E": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "o02F": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 32700000
+  },
+  "o02G": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 12450000
+  },
+  "o02H": {
+   "upgrade": null,
+   "cooldown": 1.6,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 16210000
+  },
+  "o02J": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 3500000
+  },
+  "o02K": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 3250000
+  },
+  "o02L": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 14000000
+  },
+  "o02M": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 33700000
+  },
+  "o02N": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 36000000
+  },
+  "o02Q": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 33700000
+  },
+  "o02R": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 33700000
+  },
+  "o02S": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 8250000
+  },
+  "o031": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "o032": {
+   "upgrade": null,
+   "cooldown": 2.31,
+   "regenMana": 0,
+   "regenHP": 0,
+   "mana": 0,
+   "hp": 10
+  },
+  "u000": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 2,
+   "mana": 0,
+   "hp": 125
+  },
+  "u001": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 2,
+   "mana": 0,
+   "hp": 125
+  },
+  "u002": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 2,
+   "mana": 0,
+   "hp": 125
+  },
+  "u003": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 2,
+   "mana": 0,
+   "hp": 125
+  },
+  "u004": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 2,
+   "mana": 0,
+   "hp": 125
+  },
+  "u005": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 2,
+   "mana": 0,
+   "hp": 125
+  },
+  "u006": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 2,
+   "mana": 0,
+   "hp": 125
+  },
+  "u007": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 2,
+   "mana": 0,
+   "hp": 125
+  },
+  "u009": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 2,
+   "mana": 0,
+   "hp": 125
+  },
+  "u00A": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 2,
+   "mana": 0,
+   "hp": 125
+  },
+  "u00B": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 2,
+   "mana": 0,
+   "hp": 125
+  },
+  "u00C": {
+   "upgrade": null,
+   "cooldown": 0,
+   "regenMana": 0,
+   "regenHP": 2,
+   "mana": 0,
+   "hp": 125
+  }
+ }
+}

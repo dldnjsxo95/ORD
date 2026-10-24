@@ -1,0 +1,351 @@
+{
+ "_doc": "아머브레이크(AB) 초당 환산용 손질 표. 출처: 2.323 스킬 툴팁(data/ord-2.323.json). 공속·회복은 data/upgrades.json(맵 추출). trigger.kind: attack(공격 시 확률%), mana(마나 소모; regen 은 툴팁의 기본회복, 없으면 유닛 regenMana; perAttack=공격당 충전), hp(체력 소모; regen/perAttack 같음), buff(확률로 duration초 버프, 버프 중 평타마다 stacks), skip(미계산). single=true 는 단일 대상에만.",
+ "units": {
+  "h02V": {
+   "name": "스모커",
+   "skills": [
+    {
+     "name": "화이트아웃",
+     "trigger": {
+      "kind": "mana",
+      "cost": 50,
+      "regen": 0.5,
+      "perAttack": 0.5
+     },
+     "stacks": 3
+    },
+    {
+     "name": "화이트바인",
+     "trigger": {
+      "kind": "attack",
+      "chance": 24
+     },
+     "stacks": 1
+    }
+   ]
+  },
+  "h039": {
+   "name": "시키",
+   "skills": [
+    {
+     "name": "바위 낙하",
+     "trigger": {
+      "kind": "attack",
+      "chance": 5
+     },
+     "stacks": 2
+    },
+    {
+     "name": "바닷물가두기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "stacks": 1
+    }
+   ]
+  },
+  "h03A": {
+   "name": "레일리",
+   "skills": [
+    {
+     "name": "패기 발산",
+     "trigger": {
+      "kind": "mana",
+      "cost": 115
+     },
+     "stacks": 3
+    }
+   ]
+  },
+  "h03W": {
+   "name": "베르고",
+   "skills": [
+    {
+     "name": "맥시멈스윙",
+     "trigger": {
+      "kind": "mana",
+      "cost": 100
+     },
+     "stacks": 4
+    },
+    {
+     "name": "도깨비대나무",
+     "trigger": {
+      "kind": "attack",
+      "chance": 20
+     },
+     "stacks": 2,
+     "note": "범위 1 + 단일 1"
+    }
+   ]
+  },
+  "h07N": {
+   "name": "베이비5",
+   "skills": [
+    {
+     "name": "무기무기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "stacks": 1
+    }
+   ]
+  },
+  "h08Q": {
+   "name": "알비다",
+   "skills": [
+    {
+     "name": "버기즈딜리버리",
+     "trigger": {
+      "kind": "mana",
+      "cost": 55
+     },
+     "stacks": 10
+    }
+   ]
+  },
+  "h0AI": {
+   "name": "킹",
+   "skills": [
+    {
+     "name": "잔혹한검술",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "stacks": 4,
+     "single": true
+    },
+    {
+     "name": "참수",
+     "trigger": {
+      "kind": "skip"
+     },
+     "stacks": 1,
+     "note": "AB 50 이상일 때만 (미계산)"
+    }
+   ]
+  },
+  "h09R": {
+   "name": "죠타로",
+   "skills": [
+    {
+     "name": "러쉬",
+     "trigger": {
+      "kind": "hp",
+      "cost": 45,
+      "regen": 1,
+      "perAttack": 0.8
+     },
+     "stacks": 10,
+     "note": "명중당 1, 1회 최대 10 가정"
+    },
+    {
+     "name": "더월드",
+     "trigger": {
+      "kind": "mana",
+      "cost": 145,
+      "regen": 1,
+      "perAttack": 1
+     },
+     "stacks": 15
+    },
+    {
+     "name": "오라!",
+     "trigger": {
+      "kind": "attack",
+      "chance": 6.25
+     },
+     "stacks": 2
+    }
+   ]
+  },
+  "h0BC": {
+   "name": "타츠마키",
+   "skills": [
+    {
+     "name": "염동회오리",
+     "trigger": {
+      "kind": "hp",
+      "cost": 45,
+      "regen": 0,
+      "perAttack": 1
+     },
+     "stacks": 10
+    },
+    {
+     "name": "운석낙하",
+     "trigger": {
+      "kind": "mana",
+      "cost": 75
+     },
+     "stacks": 15
+    }
+   ]
+  },
+  "H05N": {
+   "name": "타시기",
+   "skills": [
+    {
+     "name": "박무",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "stacks": 5
+    }
+   ]
+  },
+  "H08X": {
+   "name": "후지토라",
+   "skills": [
+    {
+     "name": "중력장",
+     "trigger": {
+      "kind": "attack",
+      "chance": 4.5
+     },
+     "stacks": 3
+    },
+    {
+     "name": "중력검 맹호",
+     "trigger": {
+      "kind": "attack",
+      "chance": 15
+     },
+     "stacks": 2
+    },
+    {
+     "name": "씽크홀",
+     "trigger": {
+      "kind": "skip"
+     },
+     "stacks": 9,
+     "note": "발동 조건 미확인 (미계산)"
+    }
+   ]
+  },
+  "H09A": {
+   "name": "징베",
+   "skills": [
+    {
+     "name": "해류 한판 업어치기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 6.25
+     },
+     "stacks": 3
+    },
+    {
+     "name": "진각",
+     "trigger": {
+      "kind": "attack",
+      "chance": 14.25
+     },
+     "stacks": 1
+    },
+    {
+     "name": "무뢰관",
+     "trigger": {
+      "kind": "mana",
+      "cost": 100
+     },
+     "stacks": 3
+    }
+   ]
+  },
+  "h049": {
+   "name": "레일리",
+   "skills": [
+    {
+     "name": "패기 발산",
+     "trigger": {
+      "kind": "mana",
+      "cost": 115
+     },
+     "stacks": 5
+    }
+   ]
+  },
+  "h04B": {
+   "name": "시키",
+   "skills": [
+    {
+     "name": "바닷물가두기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "stacks": 1
+    }
+   ]
+  },
+  "h081": {
+   "name": "불릿",
+   "skills": [
+    {
+     "name": "육식",
+     "trigger": {
+      "kind": "buff",
+      "chance": 7,
+      "duration": 3
+     },
+     "stacks": 1,
+     "note": "유니크 아이템 시 2"
+    }
+   ]
+  },
+  "h0CI": {
+   "name": "퀸",
+   "skills": [
+    {
+     "name": "빙귀",
+     "trigger": {
+      "kind": "attack",
+      "chance": 15
+     },
+     "stacks": 1
+    },
+    {
+     "name": "브라키오봄버",
+     "trigger": {
+      "kind": "mana",
+      "cost": 65
+     },
+     "stacks": 3
+    }
+   ]
+  },
+  "h0A0": {
+   "name": "S-샤크",
+   "skills": [
+    {
+     "name": "해류한판업어치기",
+     "trigger": {
+      "kind": "hp",
+      "cost": 60,
+      "regen": 1,
+      "perAttack": 1
+     },
+     "stacks": 3
+    }
+   ]
+  },
+  "h0A3": {
+   "name": "S-호크",
+   "skills": [
+    {
+     "name": "일섬",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "stacks": 2,
+     "single": true
+    }
+   ]
+  }
+ }
+}

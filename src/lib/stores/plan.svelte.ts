@@ -24,12 +24,14 @@ interface PlanState {
   assumed: string[];
   /** 가정한 시점의 실시간 보유 수 (유닛 id → 수). 보유가 이보다 늘면 = 실제로 만들어졌으므로 가정을 자동 해제한다 */
   assumedBase: Record<string, number>;
+  /** 그린블러드(기록지침)를 부여한 유닛 id. 1기에만 적용되며 세션 한정 */
+  greenBlood: string | null;
 }
 
 const KEY = 'ord-helper.plan';
 
 function load(): PlanState {
-  const base: PlanState = { manual: {}, skillPoints: 0, sort: 'default', filters: [], filterOpen: true, collapsed: {}, simulated: null, assumed: [], assumedBase: {} };
+  const base: PlanState = { manual: {}, skillPoints: 0, sort: 'default', filters: [], filterOpen: true, collapsed: {}, simulated: null, assumed: [], assumedBase: {}, greenBlood: null };
   try {
     const raw = localStorage.getItem(KEY);
     if (!raw) return base;
@@ -89,6 +91,7 @@ export function adjust(id: string, delta: number) {
 }
 
 export function resetAll() {
+  plan.greenBlood = null;
   // 실시간 보유량까지 0 으로 보이게: 음수 보정
   const next: Record<string, number> = {};
   for (const o of game.payload?.owned ?? []) next[o.id] = -o.count;
@@ -120,6 +123,11 @@ export function toggleAssumed(id: string) {
     plan.assumed = [...plan.assumed, id];
     plan.assumedBase[id] = liveCountWithBase(id);
   }
+}
+
+/** 그린블러드 부여 대상 지정 (null 이면 해제) */
+export function setGreenBlood(id: string | null) {
+  plan.greenBlood = id;
 }
 
 export function clearAssumed() {

@@ -1,0 +1,1060 @@
+{
+ "units": {
+  "h02B": {
+   "name": "아오키지",
+   "skills": [
+    {
+     "name": "얼음얼음열매",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 0.95
+    }
+   ]
+  },
+  "h02C": {
+   "name": "우솝",
+   "skills": [
+    {
+     "name": "필살초록성",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 1.15
+    }
+   ]
+  },
+  "h02A": {
+   "name": "이완",
+   "skills": [
+    {
+     "name": "호르몬호르몬열매",
+     "trigger": {
+      "kind": "attack",
+      "chance": 7
+     },
+     "duration": 1.4
+    }
+   ]
+  },
+  "h02W": {
+   "name": "드래곤",
+   "skills": [
+    {
+     "name": "바람바람열매",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 2.75
+    }
+   ]
+  },
+  "h02Q": {
+   "name": "라분",
+   "skills": [
+    {
+     "name": "레드라인을부수는박치기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 27
+     },
+     "duration": 2.25,
+     "single": true
+    }
+   ]
+  },
+  "h02Z": {
+   "name": "바르토로메오",
+   "skills": [
+    {
+     "name": "배리어피스트",
+     "trigger": {
+      "kind": "attack",
+      "chance": 17
+     },
+     "duration": 0.5,
+     "single": true
+    },
+    {
+     "name": "배리어배리어열매",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 2.75
+    }
+   ]
+  },
+  "h035": {
+   "name": "샹크스",
+   "skills": [
+    {
+     "name": "패기의검술",
+     "trigger": {
+      "kind": "attack",
+      "chance": 20
+     },
+     "duration": 0.75,
+     "single": true
+    },
+    {
+     "name": "패기의검술",
+     "trigger": {
+      "kind": "attack",
+      "chance": 11
+     },
+     "duration": 2.2
+    }
+   ]
+  },
+  "h039": {
+   "name": "시키",
+   "skills": [
+    {
+     "name": "바닷물가두기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 3
+    }
+   ]
+  },
+  "h030": {
+   "name": "쿠마",
+   "skills": [
+    {
+     "name": "압력포",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 1.4
+    },
+    {
+     "name": "우르스쇼크",
+     "trigger": {
+      "kind": "mana",
+      "cost": 115
+     },
+     "duration": 1.05
+    }
+   ]
+  },
+  "h031": {
+   "name": "후지토라",
+   "skills": [
+    {
+     "name": "중력검",
+     "trigger": {
+      "kind": "attack",
+      "chance": 14
+     },
+     "duration": 2.4,
+     "single": true
+    }
+   ]
+  },
+  "h03O": {
+   "name": "봉쿠레",
+   "skills": [
+    {
+     "name": "폭격백조",
+     "trigger": {
+      "kind": "attack",
+      "chance": 12
+     },
+     "duration": 1.65
+    }
+   ]
+  },
+  "h03Y": {
+   "name": "이완코브",
+   "skills": [
+    {
+     "name": "호르몬호르몬열매",
+     "trigger": {
+      "kind": "attack",
+      "chance": 11
+     },
+     "duration": 1.65
+    }
+   ]
+  },
+  "h041": {
+   "name": "아오키지",
+   "skills": [
+    {
+     "name": "얼음얼음열매",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 1.7,
+     "single": true
+    }
+   ]
+  },
+  "h047": {
+   "name": "피셔타이거",
+   "skills": [
+    {
+     "name": "레드라인을돌파한사나이",
+     "trigger": {
+      "kind": "attack",
+      "chance": 22
+     },
+     "duration": 0.75,
+     "resist": "ignore",
+     "single": true
+    },
+    {
+     "name": "마리조아탈환",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 2
+    }
+   ]
+  },
+  "h03L": {
+   "name": "써니호",
+   "skills": [
+    {
+     "name": "어흥포",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 1.4
+    },
+    {
+     "name": "어흥포",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 3,
+     "resist": 70,
+     "single": true
+    }
+   ]
+  },
+  "h04U": {
+   "name": "블랙마리아",
+   "skills": [
+    {
+     "name": "꼼짝말란마리아",
+     "trigger": {
+      "kind": "period",
+      "seconds": 5
+     },
+     "duration": 3.5
+    },
+    {
+     "name": "거미거미열매",
+     "trigger": {
+      "kind": "attack",
+      "chance": 15
+     },
+     "duration": 2,
+     "single": true
+    }
+   ]
+  },
+  "h0CI": {
+   "name": "퀸",
+   "skills": [
+    {
+     "name": "역재",
+     "trigger": {
+      "kind": "attack",
+      "chance": 15
+     },
+     "duration": 0.95
+    }
+   ]
+  },
+  "h09V": {
+   "name": "바제스",
+   "skills": [
+    {
+     "name": "파동엘보",
+     "trigger": {
+      "kind": "period",
+      "seconds": 12
+     },
+     "duration": 2.5,
+     "single": true,
+     "note": "기본 공격 피해량에 따라 최소 9초"
+    }
+   ]
+  },
+  "H098": {
+   "name": "로빈",
+   "skills": [
+    {
+     "name": "기간테스코 마노",
+     "trigger": {
+      "kind": "hp",
+      "cost": 40,
+      "regen": 0.5,
+      "perAttack": 1
+     },
+     "duration": 1.15,
+     "resist": "ignore"
+    }
+   ]
+  },
+  "H099": {
+   "name": "루피",
+   "skills": [
+    {
+     "name": "기간트개틀링",
+     "trigger": {
+      "kind": "attack",
+      "chance": 1.25
+     },
+     "duration": 0.75
+    },
+    {
+     "name": "기간트개틀링",
+     "trigger": {
+      "kind": "attack",
+      "chance": 2.5
+     },
+     "duration": 1.5
+    },
+    {
+     "name": "숙련된 패기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 6.25
+     },
+     "duration": 2,
+     "single": true
+    },
+    {
+     "name": "레드호크",
+     "trigger": {
+      "kind": "mana",
+      "cost": 160
+     },
+     "duration": 2.5
+    }
+   ]
+  },
+  "H092": {
+   "name": "사보",
+   "skills": [
+    {
+     "name": "용의숨결",
+     "trigger": {
+      "kind": "mana",
+      "cost": 125
+     },
+     "duration": 1.25,
+     "resist": "ignore"
+    },
+    {
+     "name": "용조권",
+     "trigger": {
+      "kind": "attack",
+      "chance": 20
+     },
+     "duration": 1.85,
+     "single": true
+    },
+    {
+     "name": "화염용왕",
+     "trigger": {
+      "kind": "period",
+      "seconds": 12.5
+     },
+     "duration": 2.5,
+     "resist": 50,
+     "single": true
+    }
+   ]
+  },
+  "H09F": {
+   "name": "조로",
+   "skills": [
+    {
+     "name": "이강력참",
+     "trigger": {
+      "kind": "attack",
+      "chance": 25
+     },
+     "duration": 3,
+     "single": true
+    },
+    {
+     "name": "사자의노래",
+     "trigger": {
+      "kind": "attack",
+      "chance": 17
+     },
+     "duration": 2,
+     "single": true
+    },
+    {
+     "name": "\"!0702_번뇌봉,대천세계\"",
+     "trigger": {
+      "kind": "mana",
+      "cost": 145
+     },
+     "duration": 3,
+     "resist": "ignore"
+    },
+    {
+     "name": "삼도류",
+     "trigger": {
+      "kind": "attack",
+      "chance": 7
+     },
+     "duration": 2.5
+    }
+   ]
+  },
+  "H0BT": {
+   "name": "조로 염왕",
+   "skills": [
+    {
+     "name": "엔마",
+     "trigger": {
+      "kind": "attack",
+      "chance": 25
+     },
+     "duration": 3,
+     "single": true
+    },
+    {
+     "name": "비룡화염",
+     "trigger": {
+      "kind": "attack",
+      "chance": 17
+     },
+     "duration": 2,
+     "single": true
+    },
+    {
+     "name": "\"!0702_번뇌봉,대천세계\"",
+     "trigger": {
+      "kind": "mana",
+      "cost": 145
+     },
+     "duration": 3,
+     "resist": "ignore"
+    },
+    {
+     "name": "삼도류",
+     "trigger": {
+      "kind": "attack",
+      "chance": 7
+     },
+     "duration": 2.5
+    }
+   ]
+  },
+  "H08X": {
+   "name": "후지토라",
+   "skills": [
+    {
+     "name": "중력장",
+     "trigger": {
+      "kind": "attack",
+      "chance": 4.5
+     },
+     "duration": 2.5
+    },
+    {
+     "name": "중력검",
+     "trigger": {
+      "kind": "attack",
+      "chance": 15
+     },
+     "duration": 2.6,
+     "single": true
+    }
+   ]
+  },
+  "H0AM": {
+   "name": "요크",
+   "skills": [
+    {
+     "name": "(요크)PUNK샷건",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 2.75
+    },
+    {
+     "name": "(요크)PUNK로켓",
+     "trigger": {
+      "kind": "mana",
+      "cost": 100
+     },
+     "duration": 3.75
+    }
+   ]
+  },
+  "h04C": {
+   "name": "거프",
+   "skills": [
+    {
+     "name": "\"!0905_특제 대포환,갤럭시임팩트\"",
+     "trigger": {
+      "kind": "mana",
+      "cost": 160
+     },
+     "duration": 2.5
+    },
+    {
+     "name": "패기의주먹",
+     "trigger": {
+      "kind": "attack",
+      "chance": 20
+     },
+     "duration": 3,
+     "single": true
+    },
+    {
+     "name": "무장색의패기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 2.5
+    }
+   ]
+  },
+  "h04A": {
+   "name": "흰수염",
+   "skills": [
+    {
+     "name": "대지진",
+     "trigger": {
+      "kind": "hp",
+      "cost": 115,
+      "regen": 0.5,
+      "perAttack": 1
+     },
+     "duration": 3,
+     "resist": 50
+    },
+    {
+     "name": "격진",
+     "trigger": {
+      "kind": "attack",
+      "chance": 5
+     },
+     "duration": 3,
+     "resist": 50,
+     "single": true,
+     "note": "툴팁의 중복 불가 문구는 대지진 관련으로 보고 포함"
+    }
+   ]
+  },
+  "H0BK": {
+   "name": "니카(뱀초)",
+   "skills": [
+    {
+     "name": "고무고무 던 개틀링",
+     "trigger": {
+      "kind": "attack",
+      "chance": 20
+     },
+     "duration": 2,
+     "single": true
+    },
+    {
+     "name": "바즈랑건",
+     "trigger": {
+      "kind": "mana",
+      "cost": 150
+     },
+     "duration": 2.5
+    },
+    {
+     "name": "번개던지기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 2
+    },
+    {
+     "name": "번개던지기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 20
+     },
+     "duration": 2
+    }
+   ]
+  },
+  "h05A": {
+   "name": "버기",
+   "skills": [
+    {
+     "name": "전설을살아가는사나이",
+     "trigger": {
+      "kind": "attack",
+      "chance": 7.77
+     },
+     "duration": 7.77,
+     "single": true
+    }
+   ]
+  },
+  "h05B": {
+   "name": "카벤딧슈",
+   "skills": [
+    {
+     "name": "기면증",
+     "trigger": {
+      "kind": "attack",
+      "chance": 20
+     },
+     "duration": 3,
+     "single": true
+    },
+    {
+     "name": "백조의호수",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 2.3
+    },
+    {
+     "name": "듀란달",
+     "trigger": {
+      "kind": "attack",
+      "chance": 20
+     },
+     "duration": 3,
+     "single": true
+    }
+   ]
+  },
+  "h05F": {
+   "name": "크로커다일",
+   "skills": [
+    {
+     "name": "금강보도",
+     "trigger": {
+      "kind": "attack",
+      "chance": 5
+     },
+     "duration": 2.5
+    }
+   ]
+  },
+  "H08Z": {
+   "name": "샹크스",
+   "skills": [
+    {
+     "name": "하늘을찢는패기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 9
+     },
+     "duration": 2,
+     "resist": 50
+    },
+    {
+     "name": "패기의검술",
+     "trigger": {
+      "kind": "attack",
+      "chance": 12
+     },
+     "duration": 3,
+     "single": true
+    },
+    {
+     "name": "패기의검술",
+     "trigger": {
+      "kind": "attack",
+      "chance": 11
+     },
+     "duration": 2.25,
+     "resist": 50
+    },
+    {
+     "name": "패기발현",
+     "trigger": {
+      "kind": "mana",
+      "cost": 35,
+      "regen": 1.35
+     },
+     "duration": 3,
+     "resist": "ignore"
+    }
+   ]
+  },
+  "H08U": {
+   "name": "시라호시",
+   "skills": [
+    {
+     "name": "해왕류다이브",
+     "trigger": {
+      "kind": "mana",
+      "cost": 120
+     },
+     "duration": 3,
+     "resist": "ignore"
+    },
+    {
+     "name": "해류조정",
+     "trigger": {
+      "kind": "attack",
+      "chance": 12
+     },
+     "duration": 2.35,
+     "resist": "ignore"
+    }
+   ]
+  },
+  "H097": {
+   "name": "아오키지",
+   "skills": [
+    {
+     "name": "아이스에이지",
+     "trigger": {
+      "kind": "mana",
+      "cost": 50
+     },
+     "duration": 3
+    },
+    {
+     "name": "얼음얼음열매 Lv.3",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 2.3
+    }
+   ]
+  },
+  "H0B4": {
+   "name": "키드",
+   "skills": [
+    {
+     "name": "펑크깁슨",
+     "trigger": {
+      "kind": "hp",
+      "cost": 40,
+      "regen": 0.2
+     },
+     "duration": 2.2
+    },
+    {
+     "name": "펑크깁슨",
+     "trigger": {
+      "kind": "hp",
+      "cost": 40,
+      "regen": 0.2
+     },
+     "duration": 2.85
+    },
+    {
+     "name": "리펠",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 3,
+     "single": true
+    },
+    {
+     "name": "펑크 바이스",
+     "trigger": {
+      "kind": "attack",
+      "chance": 6.5
+     },
+     "duration": 3,
+     "single": true
+    },
+    {
+     "name": "자석팔",
+     "trigger": {
+      "kind": "attack",
+      "chance": 35
+     },
+     "duration": 1.5,
+     "single": true
+    }
+   ]
+  },
+  "H0B5": {
+   "name": "키자루",
+   "skills": [
+    {
+     "name": "빛의기둥",
+     "trigger": {
+      "kind": "attack",
+      "chance": 8.25
+     },
+     "duration": 2.75
+    },
+    {
+     "name": "빛빛열매",
+     "trigger": {
+      "kind": "attack",
+      "chance": 15
+     },
+     "duration": 3,
+     "single": true
+    }
+   ]
+  },
+  "h04E": {
+   "name": "센고쿠",
+   "skills": [
+    {
+     "name": "사람사람열매",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 2.85
+    }
+   ]
+  },
+  "h0BM": {
+   "name": "센고쿠",
+   "skills": [
+    {
+     "name": "포격지원",
+     "trigger": {
+      "kind": "attack",
+      "chance": 8
+     },
+     "duration": 2.5
+    },
+    {
+     "name": "사람사람열매",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 2.85
+    }
+   ]
+  },
+  "h04B": {
+   "name": "시키",
+   "skills": [
+    {
+     "name": "바닷물가두기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 3
+    },
+    {
+     "name": "사자떨어뜨리기",
+     "trigger": {
+      "kind": "mana",
+      "cost": 125
+     },
+     "duration": 3
+    },
+    {
+     "name": "부유물낙하",
+     "trigger": {
+      "kind": "attack",
+      "chance": 5.55
+     },
+     "duration": 1.5,
+     "single": true
+    }
+   ]
+  },
+  "h067": {
+   "name": "우타",
+   "skills": [
+    {
+     "name": "노래노래열매",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 1.5
+    }
+   ]
+  },
+  "h05C": {
+   "name": "핸콕",
+   "skills": [
+    {
+     "name": "쿠사의패기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 15
+     },
+     "duration": 3,
+     "single": true
+    },
+    {
+     "name": "파퓸페뮤르",
+     "trigger": {
+      "kind": "mana",
+      "cost": 175
+     },
+     "duration": 2.5,
+     "resist": "ignore"
+    },
+    {
+     "name": "석화",
+     "trigger": {
+      "kind": "attack",
+      "chance": 7.5
+     },
+     "duration": 2.75
+    },
+    {
+     "name": "석화",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 2.75
+    }
+   ]
+  },
+  "h06A": {
+   "name": "테조로",
+   "skills": [
+    {
+     "name": "골드스플래시",
+     "trigger": {
+      "kind": "attack",
+      "chance": 12
+     },
+     "duration": 2.4
+    },
+    {
+     "name": "곤릴라디디오",
+     "trigger": {
+      "kind": "hp",
+      "cost": 90,
+      "perAttack": 1
+     },
+     "duration": 2.4
+    }
+   ]
+  },
+  "h06U": {
+   "name": "k'",
+   "skills": [
+    {
+     "name": "미닛츠스파이크",
+     "trigger": {
+      "kind": "attack",
+      "chance": 3
+     },
+     "duration": 3
+    }
+   ]
+  },
+  "h06V": {
+   "name": "나루토 선인모드",
+   "skills": [
+    {
+     "name": "대옥나선환",
+     "trigger": {
+      "kind": "attack",
+      "chance": 4
+     },
+     "duration": 2.85
+    }
+   ]
+  },
+  "h06Z": {
+   "name": "엘리자베스",
+   "skills": [
+    {
+     "name": "액션펭귄",
+     "trigger": {
+      "kind": "attack",
+      "chance": 14
+     },
+     "duration": 3
+    }
+   ]
+  },
+  "h06Y": {
+   "name": "카미조 토우마",
+   "skills": [
+    {
+     "name": "신의손",
+     "trigger": {
+      "kind": "attack",
+      "chance": 100
+     },
+     "duration": 3,
+     "note": "툴팁 100% 확률 표기 그대로 (조건부일 수 있음)"
+    }
+   ]
+  },
+  "h0BC": {
+   "name": "타츠마키",
+   "skills": [
+    {
+     "name": "염동력",
+     "trigger": {
+      "kind": "attack",
+      "chance": 18
+     },
+     "duration": 1.75
+    }
+   ]
+  },
+  "h09M": {
+   "name": "고죠사토루",
+   "skills": [
+    {
+     "name": "아오",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 2,
+     "resist": "ignore"
+    }
+   ]
+  },
+  "h09W": {
+   "name": "미나토",
+   "skills": [
+    {
+     "name": "비뢰신이의단",
+     "trigger": {
+      "kind": "attack",
+      "chance": 6.25
+     },
+     "duration": 3,
+     "single": true
+    },
+    {
+     "name": "섬광연무",
+     "trigger": {
+      "kind": "attack",
+      "chance": 13.5
+     },
+     "duration": 3
+    }
+   ]
+  }
+ },
+ "_doc": "스턴 가동률 계산용 손질 표 (툴팁 자동 추출 + 보정, 2026-10-24). trigger.kind: attack(공격 시 %), mana/hp(소모·회복; regen/perAttack), period(N초마다), duration=초. resist: ignore(저항 무시) 또는 무시 비율(%). single=단일 대상. 패왕색 패기류(개체당 1회)는 제외. 저항은 설정(stunResist)의 지속 감소율을 모든 적에 적용 (사용자 결정: 라인몹도 보스 기준)."
+}

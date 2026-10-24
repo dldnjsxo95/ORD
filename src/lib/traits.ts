@@ -63,6 +63,8 @@ export interface NoteStat {
   label: string;
   /** 토큰에 붙은 숫자 (부호 포함, 예: "이감-15" → -15). 없으면 null */
   value: number | null;
+  /** 원본 토큰 (예: "이감-15") — 현재 능력치 호버 내역 표시용 */
+  token: string;
 }
 
 /** 이 값 이상이면 퍼센트가 아닌 고정 수치로 본다 (예: 무장도끼 "공증 5000") */
@@ -96,7 +98,7 @@ export function statsOfNote(note: string | undefined): NoteStat[] {
     const value = valueOfToken(tok);
     // 1000 이상은 퍼센트가 아니라 고정 수치(예: 무장도끼 "공증 5000") → 능력치에 넣지 않는다 (사용자 결정 2026-10-23)
     if (value != null && Math.abs(value) >= FLAT_MIN) continue;
-    for (const label of labels) out.push({ label, value });
+    for (const label of labels) out.push({ label, value, token: tok.trim() });
   }
   return out;
 }

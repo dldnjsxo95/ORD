@@ -15,10 +15,11 @@ local REVERSE_IDS = true    -- 출력의 rawcode 가 뒤집혀 보이면 true �
 local SCHEMA_V    = 1
 
 local EVO_ABILITY = "Ane2"
--- 난이도: JASS 전역 변수 이름과 값 → 표기. 변수 이름을 모르면 nil 로 두면 "difficulty":null 로 나간다.
--- (맵 스크립트의 변수명은 war3.jass.variables() 로 덤프해서 찾는다. 스크랩: scripts/ord-probe.lua)
-local DIFF_VAR    = nil
-local DIFF_MAP    = { }   -- 예: { [1] = "신", [2] = "악몽" } 또는 { ["God"] = "신" }
+-- 난이도: 맵 스크립트가 모드 선택 시 전역 문자열 변수에 "|cffffd700신|r" 처럼 색 코드 붙은 이름을 넣는다
+-- (2.323[C] 에서는 변수명 ij). 빌드마다 난독화 이름이 다를 수 있어, 먼저 DIFF_VAR 를 읽어 보고 안 되면
+-- war3.jass.variables() 의 문자열 전역 중 난이도 이름이 들어 있는 것을 찾아 그 이름을 기억한다.
+local DIFF_VAR    = "ij"
+local DIFF_NAMES  = { "쉬움", "보통", "어려움", "지옥", "신", "악몽" }
 local GOROSEI     = { o02E = true, o031 = true, o032 = true }
 local INV_ITEMS   = { I001 = "AI00", I000 = "AI01", I002 = "AI02", I003 = "AI03" }
 local ITEM_ABILS  = {}
@@ -62,11 +63,47 @@ local function sortedKeys(t)
   return keys
 end
 
+-- "|cffffd700신|r" → "신". 난이도 이름이 없으면 nil
+local function parseDifficulty(v)
+  if type(v) ~= "string" or v == "" then return nil end
+  local plain = v:gsub("|[cC]%x%x%x%x%x%x%x%x", ""):gsub("|[rR]", "")
+  for _, name in ipairs(DIFF_NAMES) do
+    if plain == name then return name end
+  end
+  return nil
+end
+
+local diffScanTick = 0
+-- 변수명을 모를 때 전역 목록을 훑어 난이도 문자열을 가진 변수를 찾는다 (모드 선택 전이면 값이 비어 있어 못 찾으므로 주기적으로 다시 시도)
+local function findDifficultyVar()
+  local ok, vars = pcall(war3.jass.variables)
+  if not ok or type(vars) ~= "table" then return end
+  for _, var in ipairs(vars) do
+    if var.type == "string" and parseDifficulty(var.value) then
+      DIFF_VAR = var.name
+      return
+    end
+  end
+end
+
 local function difficultyName()
-  if not DIFF_VAR then return nil end
-  local ok, v = pcall(war3.jass.get, DIFF_VAR)
-  if not ok or v == nil then return nil end
-  return DIFF_MAP[v] or DIFF_MAP[tostring(v)]
+  if DIFF_VAR then
+    local ok, v = pcall(war3.jass.get, DIFF_VAR)
+    local name = ok and parseDifficulty(v) or nil
+    if name then return name end
+  end
+  -- 이름이 틀리거나(다른 빌드) 아직 모드 선택 전: 약 5초(10틱)에 한 번 전역을 훑는다
+  diffScanTick = diffScanTick + 1
+  if diffScanTick >= 10 then
+    diffScanTick = 0
+    local before = DIFF_VAR
+    findDifficultyVar()
+    if DIFF_VAR and DIFF_VAR ~= before then
+      local ok, v = pcall(war3.jass.get, DIFF_VAR)
+      if ok then return parseDifficulty(v) end
+    end
+  end
+  return nil
 end
 
 local function snapshot()

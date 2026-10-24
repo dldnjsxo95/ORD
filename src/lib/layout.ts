@@ -10,7 +10,7 @@ export const FILTERS = [
   '범위 잃은 체력 퍼센트 대미지', '단일아머브레이크', '중첩방어력 감소', '순간이동', '범위 퍼센트 대미지', '범위 끝딜',
 ];
 
-export type PanelKind = 'units' | 'stats' | 'resources' | 'items';
+export type PanelKind = 'units' | 'stats' | 'resources' | 'items' | 'effects' | 'nav';
 
 export interface Entry {
   /** 유닛 rawcode 또는 아이템 id (AI00 등) */
@@ -27,6 +27,10 @@ export interface Entry {
   badges?: string[];
   /** 티어 표기: F, D, C, B, A, A+, S */
   tier?: string;
+  /** 항법 항목: 속한 항법 이름 (연합세력·패왕의길·도박광·최고의도움) */
+  group?: string;
+  /** 항법 항목: 효과 설명 (한 줄씩) */
+  desc?: string[];
 }
 
 export interface PanelDef {
@@ -40,6 +44,13 @@ export const COLUMNS: PanelDef[][] = (layoutJson as { columns: PanelDef[][] }).c
 export const ALL_PANELS: PanelDef[] = COLUMNS.flat();
 
 /** 유닛 id → 사양서 항목 + 속한 패널 제목 (예: "불멸 [마딜]"). 여러 행에 있으면 먼저 나온 것. */
+/** 항법 항목 id → 항목 (kind 'nav' 패널) */
+export const NAV_BY_ID: ReadonlyMap<string, Entry> = (() => {
+  const m = new Map<string, Entry>();
+  for (const p of ALL_PANELS) if (p.kind === 'nav') for (const e of p.entries ?? []) if (e.id) m.set(e.id, e);
+  return m;
+})();
+
 export const ENTRY_BY_ID: ReadonlyMap<string, Entry & { panel: string }> = (() => {
   const m = new Map<string, Entry & { panel: string }>();
   for (const p of ALL_PANELS) for (const e of p.entries ?? []) if (e.id && !m.has(e.id)) m.set(e.id, { ...e, panel: p.title });

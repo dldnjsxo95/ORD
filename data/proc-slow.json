@@ -1,0 +1,587 @@
+{
+ "units": {
+  "h02P": {
+   "name": "나미",
+   "skills": [
+    {
+     "name": "크리마텍트",
+     "trigger": {
+      "kind": "attack",
+      "chance": 8.8
+     },
+     "duration": 3,
+     "value": 42
+    }
+   ]
+  },
+  "h033": {
+   "name": "레이쥬",
+   "skills": [
+    {
+     "name": "독기",
+     "trigger": {
+      "kind": "every"
+     },
+     "duration": 6,
+     "value": 15,
+     "single": true,
+     "note": "공격한 유닛에게"
+    }
+   ]
+  },
+  "h03B": {
+   "name": "흰수염",
+   "skills": [
+    {
+     "name": "흔들흔들열매-보스",
+     "trigger": {
+      "kind": "attack",
+      "chance": 11
+     },
+     "duration": 2,
+     "value": 10
+    },
+    {
+     "name": "흔들흔들열매-보스",
+     "trigger": {
+      "kind": "attack",
+      "chance": 11
+     },
+     "duration": 3,
+     "value": 25
+    }
+   ]
+  },
+  "h03C": {
+   "name": "로우",
+   "skills": [
+    {
+     "name": "인젝션샷",
+     "trigger": {
+      "kind": "attack",
+      "chance": 12.5
+     },
+     "duration": 2.5,
+     "value": 99,
+     "single": true
+    }
+   ]
+  },
+  "h0AH": {
+   "name": "킹",
+   "skills": [
+    {
+     "name": "용용열매",
+     "trigger": {
+      "kind": "every"
+     },
+     "duration": 3,
+     "value": 45,
+     "single": true
+    }
+   ]
+  },
+  "h03N": {
+   "name": "료쿠규",
+   "skills": [
+    {
+     "name": "양분흡수",
+     "trigger": {
+      "kind": "every"
+     },
+     "duration": 5,
+     "value": 15,
+     "single": true
+    },
+    {
+     "name": "!0411!0727_숲숲열매",
+     "trigger": {
+      "kind": "skip"
+     },
+     "duration": 3,
+     "value": 20,
+     "note": "다른 스킬 발동 시 여진 (미계산)"
+    }
+   ]
+  },
+  "h03X": {
+   "name": "방주맥심",
+   "skills": [
+    {
+     "name": "쿠릉쿠릉열매_방주맥심",
+     "trigger": {
+      "kind": "attack",
+      "chance": 14
+     },
+     "duration": 3,
+     "value": 30
+    }
+   ]
+  },
+  "h03Z": {
+   "name": "아카이누",
+   "skills": [
+    {
+     "name": "지천을녹이는열기",
+     "trigger": {
+      "kind": "skip"
+     },
+     "duration": 2,
+     "value": 10,
+     "note": "다른 스킬 사용 시 여진 (미계산)"
+    }
+   ]
+  },
+  "h05E": {
+   "name": "에넬",
+   "skills": [
+    {
+     "name": "방전",
+     "trigger": {
+      "kind": "skip"
+     },
+     "duration": 4,
+     "value": 35,
+     "note": "방전 10회 뒤 발동 (미계산)"
+    }
+   ]
+  },
+  "h05I": {
+   "name": "레베카",
+   "skills": [
+    {
+     "name": "배수의 검무",
+     "trigger": {
+      "kind": "attack",
+      "chance": 8
+     },
+     "duration": 2.5,
+     "value": 60
+    }
+   ]
+  },
+  "h0AI": {
+   "name": "킹",
+   "skills": [
+    {
+     "name": "용용열매",
+     "trigger": {
+      "kind": "every"
+     },
+     "duration": 3,
+     "value": 45,
+     "single": true
+    }
+   ]
+  },
+  "h072": {
+   "name": "하네카와 츠바사",
+   "skills": [
+    {
+     "name": "고양이발톱",
+     "trigger": {
+      "kind": "attack",
+      "chance": 4
+     },
+     "duration": 3,
+     "value": 70
+    }
+   ]
+  },
+  "h08M": {
+   "name": "아냐",
+   "skills": [
+    {
+     "name": "스파이패밀리",
+     "trigger": {
+      "kind": "hp",
+      "cost": 45
+     },
+     "duration": 3,
+     "value": 30
+    }
+   ]
+  },
+  "h0CC": {
+   "name": "요우무",
+   "skills": [
+    {
+     "name": "성불득탈참",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 3,
+     "value": 50
+    }
+   ]
+  },
+  "H08V": {
+   "name": "나미",
+   "skills": [
+    {
+     "name": "웨더리아",
+     "trigger": {
+      "kind": "attack",
+      "chance": 4.15
+     },
+     "duration": 5,
+     "value": 45,
+     "group": "웨더리아"
+    },
+    {
+     "name": "날씨조작술",
+     "trigger": {
+      "kind": "period",
+      "seconds": 3.5
+     },
+     "duration": 2.5,
+     "value": 45,
+     "group": "웨더리아"
+    }
+   ]
+  },
+  "H08X": {
+   "name": "후지토라",
+   "skills": [
+    {
+     "name": "씽크홀",
+     "trigger": {
+      "kind": "mana",
+      "cost": 140
+     },
+     "duration": 4,
+     "value": 99
+    }
+   ]
+  },
+  "H090": {
+   "name": "검은수염",
+   "skills": [
+    {
+     "name": "흔들흔들열매 ver 검은수염",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 2,
+     "value": 10
+    },
+    {
+     "name": "흔들흔들열매 ver 검은수염",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 3,
+     "value": 75
+    },
+    {
+     "name": "흔들흔들열매 ver 검은수염",
+     "trigger": {
+      "kind": "attack",
+      "chance": 17
+     },
+     "duration": 2,
+     "value": 10
+    },
+    {
+     "name": "흔들흔들열매 ver 검은수염",
+     "trigger": {
+      "kind": "attack",
+      "chance": 17
+     },
+     "duration": 3,
+     "value": 75
+    },
+    {
+     "name": "흔들흔들열매 ver 검은수염",
+     "trigger": {
+      "kind": "attack",
+      "chance": 33
+     },
+     "duration": 2,
+     "value": 10
+    },
+    {
+     "name": "흔들흔들열매 ver 검은수염",
+     "trigger": {
+      "kind": "attack",
+      "chance": 33
+     },
+     "duration": 3,
+     "value": 75
+    }
+   ]
+  },
+  "H092": {
+   "name": "사보",
+   "skills": [
+    {
+     "name": "이글이글열매",
+     "trigger": {
+      "kind": "attack",
+      "chance": 10
+     },
+     "duration": 2,
+     "value": 30
+    }
+   ]
+  },
+  "H095": {
+   "name": "아카이누",
+   "skills": [
+    {
+     "name": "지천을녹이는열기",
+     "trigger": {
+      "kind": "skip"
+     },
+     "duration": 2,
+     "value": 12,
+     "note": "다른 스킬 사용 시 여진 (미계산)"
+    }
+   ]
+  },
+  "H096": {
+   "name": "로우",
+   "skills": [
+    {
+     "name": "라디오나이프",
+     "trigger": {
+      "kind": "attack",
+      "chance": 5
+     },
+     "duration": 5,
+     "value": 99,
+     "single": true
+    },
+    {
+     "name": "룸",
+     "trigger": {
+      "kind": "skip"
+     },
+     "duration": 5,
+     "value": 45,
+     "note": "룸 발동 조건 미확인"
+    },
+    {
+     "name": "인젝션샷",
+     "trigger": {
+      "kind": "attack",
+      "chance": 12.5
+     },
+     "duration": 3,
+     "value": 99,
+     "single": true
+    },
+    {
+     "name": "인젝션샷",
+     "trigger": {
+      "kind": "attack",
+      "chance": 12.5
+     },
+     "duration": 3,
+     "value": 40
+    }
+   ]
+  },
+  "H099": {
+   "name": "루피",
+   "skills": [
+    {
+     "name": "고무고무열매",
+     "trigger": {
+      "kind": "attack",
+      "chance": 17.5
+     },
+     "duration": 2,
+     "value": 33
+    }
+   ]
+  },
+  "H09A": {
+   "name": "징베",
+   "skills": [
+    {
+     "name": "해류 한판 업어치기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 6.25
+     },
+     "duration": 3,
+     "value": 50
+    }
+   ]
+  },
+  "H09E": {
+   "name": "도플라밍고",
+   "skills": [
+    {
+     "name": "실실열매",
+     "trigger": {
+      "kind": "attack",
+      "chance": 18
+     },
+     "duration": 2,
+     "value": 75
+    },
+    {
+     "name": "실실열매",
+     "trigger": {
+      "kind": "attack",
+      "chance": 18
+     },
+     "duration": 4.5,
+     "value": 250,
+     "note": "250%: 사실상 정지 (풀이감 초과분은 상한에서 잘림)"
+    }
+   ]
+  },
+  "H09G": {
+   "name": "상디 제르마",
+   "skills": [
+    {
+     "name": "디아블 잠브 :: 무통 샷",
+     "trigger": {
+      "kind": "attack",
+      "chance": 5
+     },
+     "duration": 3.5,
+     "value": 50
+    },
+    {
+     "name": "디아블 잠브 :: 무통 샷",
+     "trigger": {
+      "kind": "attack",
+      "chance": 5.5
+     },
+     "duration": 3.5,
+     "value": 50
+    }
+   ]
+  },
+  "H09H": {
+   "name": "상디",
+   "skills": [
+    {
+     "name": "디아블 잠브 :: 무통 샷",
+     "trigger": {
+      "kind": "attack",
+      "chance": 5
+     },
+     "duration": 3.5,
+     "value": 50
+    },
+    {
+     "name": "디아블 잠브 :: 무통 샷",
+     "trigger": {
+      "kind": "attack",
+      "chance": 5.5
+     },
+     "duration": 3.5,
+     "value": 50
+    }
+   ]
+  },
+  "H0BL": {
+   "name": "료쿠규",
+   "skills": [
+    {
+     "name": "양분흡수",
+     "trigger": {
+      "kind": "every"
+     },
+     "duration": 5,
+     "value": 85,
+     "single": true
+    },
+    {
+     "name": "숲가꾸기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 14
+     },
+     "duration": 3,
+     "value": 25
+    }
+   ]
+  },
+  "h04A": {
+   "name": "흰수염",
+   "skills": [
+    {
+     "name": "해진",
+     "trigger": {
+      "kind": "attack",
+      "chance": 12.5
+     },
+     "duration": 2,
+     "value": 10
+    },
+    {
+     "name": "해진",
+     "trigger": {
+      "kind": "attack",
+      "chance": 12.5
+     },
+     "duration": 3.5,
+     "value": 45
+    }
+   ]
+  },
+  "h04J": {
+   "name": "로져",
+   "skills": [
+    {
+     "name": "고대병기",
+     "trigger": {
+      "kind": "mana",
+      "cost": 150
+     },
+     "duration": 3.25,
+     "value": 200
+    },
+    {
+     "name": "최상명검에이스",
+     "trigger": {
+      "kind": "attack",
+      "chance": 8.5
+     },
+     "duration": 1,
+     "value": 99,
+     "single": true
+    }
+   ]
+  },
+  "h05C": {
+   "name": "핸콕",
+   "skills": [
+    {
+     "name": "쿠사의패기",
+     "trigger": {
+      "kind": "attack",
+      "chance": 7.5
+     },
+     "duration": 2.5,
+     "value": 60,
+     "note": "범위 추가효과 7.5% 쪽 현기증"
+    }
+   ]
+  },
+  "h0A1": {
+   "name": "S-베어",
+   "skills": [
+    {
+     "name": "파시피스타레이저::베어",
+     "trigger": {
+      "kind": "every"
+     },
+     "duration": 4,
+     "value": 30,
+     "note": "매 공격 발동 가정 (시전 0.7초)"
+    }
+   ]
+  }
+ },
+ "_doc": "발동이감(시간제 이동속도 감소) 표. 툴팁 자동 추출 + 보정 (2026-10-24). trigger: attack(공격 시 %), every(매 공격), period(N초마다), mana/hp(소모), skip(미계산). value=이감 %, duration=초. single=단일 대상(라인 이속 미반영, 참고만). group=같은 이름끼리 중첩 불가(가동률 합집합). 기대 이감 = value × 가동률(1−exp(−발동빈도×지속))."
+}
