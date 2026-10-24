@@ -11,6 +11,7 @@
   import { copyText } from '$lib/clipboard';
   import { effectiveCount, effectiveCounts } from '$lib/stores/plan.svelte';
   import { ENTRY_BY_ID } from '$lib/layout';
+  import { memo, memoOf, setMemo, flushMemos } from '$lib/stores/memo.svelte';
   import { BADGE_ICON } from '$lib/badges';
   import { shortage, directMaterials, baseMaterials, parents, topParents, craftRecipe, rankOf, baseOf as baseIdOf, type Need, type MissingDirect } from '$lib/combo-tree';
   import descriptionsJson from '../../../data/descriptions.json';
@@ -71,6 +72,16 @@
     rightEl?.scrollTo(0, 0);
   });
 
+  // 메모: 입력은 즉시 상태에 반영(호버·행 표시), 저장은 0.5초 뒤 파일에. 모달을 떠나면 바로 저장
+  let memoEl: HTMLTextAreaElement | undefined = $state();
+  const memoText = $derived(id ? memoOf(id) : '');
+  $effect(() => {
+    if (detail.focusMemo && id && memoEl) {
+      detail.focusMemo = false;
+      memoEl.focus();
+    }
+  });
+
   // ESC 는 +page.svelte 에서 처리한다 (상세 모달 → 설정 → 전체화면 순)
 </script>
 
@@ -108,6 +119,13 @@
             {#if DESCRIPTIONS[id]}
               <div class="card">{DESCRIPTIONS[id]}</div>
             {/if}
+          </div>
+          <div class="memo-box">
+            <div class="memo-head">
+              <span>메모</span>
+              <span class="hint">{memo.error ? `저장 실패: ${memo.error}` : '유닛 행의 메 버튼·호버 카드에 표시. 앱을 다시 설치해도 유지'}</span>
+            </div>
+            <textarea bind:this={memoEl} rows="3" placeholder="이 유닛에 대한 메모 (빌드 순서, 주의점 등)" value={memoText} oninput={(e) => setMemo(id, (e.currentTarget as HTMLTextAreaElement).value)} onblur={() => void flushMemos()}></textarea>
           </div>
 
           {#if tree}
@@ -210,6 +228,14 @@
   .who .cp:hover { background: var(--c-bg-hover); color: var(--c-text); }
   .card { flex: none; max-width: 40%; white-space: pre-line; line-height: 1.5; padding: var(--sp-2) var(--sp-4); color: var(--c-text-2); background: var(--c-bg-app); border: 1px solid var(--c-border-strong); border-radius: var(--r-3); }
 
+  .memo-box { margin: 0 0 var(--sp-2); }
+  .memo-head { display: flex; align-items: center; gap: var(--sp-2); margin-bottom: 2px; font-weight: 600; color: var(--c-warn-text); }
+  .memo-head .hint { font-weight: 400; color: var(--c-text-3); }
+  .memo-box textarea {
+    width: 100%; box-sizing: border-box; resize: vertical; min-height: 44px; padding: var(--sp-2) var(--sp-3); font: inherit; line-height: 1.5;
+    color: var(--c-text); background: var(--c-bg-input); border: 1px solid var(--c-border-strong); border-radius: var(--r-2);
+  }
+  .memo-box textarea:focus { outline: 1px solid var(--c-focus); outline-offset: -1px; }
   h3 { margin: var(--sp-4) 0 var(--sp-2); font-size: 11px; font-weight: 600; color: var(--c-accent-text); text-transform: none; }
   .right h3 { margin-top: 0; }
   h3 .hint { font-weight: 400; color: var(--c-text-3); }

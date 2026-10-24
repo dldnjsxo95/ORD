@@ -128,6 +128,9 @@ export const api = {
   startWatch: (dir?: string) => invoke<string>('start_watch', { dir: dir ?? null }),
   stopWatch: () => invoke<void>('stop_watch'),
   getDatabase: () => invoke<Database>('get_database'),
+  /** 유닛 메모 (id → 본문). %LOCALAPPDATA%\ord-helper\memos.json */
+  loadMemos: () => invoke<Record<string, string>>('load_memos'),
+  saveMemos: (memos: Record<string, string>) => invoke<void>('save_memos', { memos }),
   simulate: (units: Record<string, number>, gold?: number, wood?: number) =>
     invoke<ComboStatus[]>('simulate', { units, gold: gold ?? null, wood: wood ?? null }),
   onState: (cb: (p: StatePayload) => void): Promise<UnlistenFn> =>

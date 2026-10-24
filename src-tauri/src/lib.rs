@@ -16,6 +16,8 @@ pub fn run() {
             watcher::stop_watch,
             watcher::get_database,
             watcher::simulate,
+            watcher::load_memos,
+            watcher::save_memos,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

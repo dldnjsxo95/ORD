@@ -93,6 +93,8 @@ export interface HoverContent {
   plain?: boolean;
   /** 특징 아래 구분선 뒤에 덧붙이는 줄 (보유/부족/기여 등) */
   extra?: HoverLine[];
+  /** 사용자 메모 (stores/memo). 있으면 맨 아래 구분선 뒤에 표시 */
+  memo?: string;
 }
 
 export function buildHover(

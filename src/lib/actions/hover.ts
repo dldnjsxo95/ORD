@@ -4,6 +4,7 @@
 import { buildHover, type HoverContent, type HoverLine } from '$lib/tooltip';
 import { showHover, moveHover, hideHover } from '$lib/stores/hover.svelte';
 import { game, recipeOf, unitName, base, craftWord } from '$lib/stores/game.svelte';
+import { memoOf } from '$lib/stores/memo.svelte';
 import { ENTRY_BY_ID } from '$lib/layout';
 
 export type HoverSource = () => HoverContent | null | undefined;
@@ -51,5 +52,7 @@ export function unitCard(id: string, extra: Array<string | HoverLine> = []): Hov
   const content = buildHover(u, { label: entry?.label, note: entry?.note, tier: entry?.tier, word: craftWord(id) }, recipe, unitName, combo);
   const ex = toLines(extra);
   if (ex.length) content.extra = ex;
+  const m = memoOf(id);
+  if (m) content.memo = m;
   return content;
 }

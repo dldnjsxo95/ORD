@@ -4,16 +4,19 @@
   import { onDestroy, onMount } from 'svelte';
   import { ui, setBottomVisible, setSettingsOpen } from '$lib/stores/ui.svelte';
   import { initGame, disposeGame, pushLog } from '$lib/stores/game.svelte';
+  import { initMemos } from '$lib/stores/memo.svelte';
   import { fullscreen, syncFullscreen, exitFullscreen } from '$lib/stores/fullscreen.svelte';
   import TopBar from '$lib/shell/TopBar.svelte';
   import BottomPanel from '$lib/shell/BottomPanel.svelte';
   import MainPanel from '$lib/panels/MainPanel.svelte';
   import SettingsDialog from '$lib/shell/SettingsDialog.svelte';
   import UnitDetail from '$lib/panels/UnitDetail.svelte';
+  import NavDetail from '$lib/panels/NavDetail.svelte';
   import { detail, closeDetail, backDetail, forwardDetail } from '$lib/stores/detail.svelte';
 
   onMount(() => {
     void initGame();
+    void initMemos();
     void syncFullscreen();
     const onKey = (e: KeyboardEvent) => {
       if (e.ctrlKey && !e.shiftKey && !e.altKey && e.key.toLowerCase() === 'j') {
@@ -62,6 +65,7 @@
   </div>
   <SettingsDialog />
   <UnitDetail />
+  <NavDetail />
 </main>
 
 <style>

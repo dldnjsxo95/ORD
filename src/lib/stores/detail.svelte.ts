@@ -12,9 +12,11 @@ interface DetailState {
   stack: string[];
   /** 뒤로가기로 떠난 유닛들 (앞으로가기) */
   forward: string[];
+  /** 유닛 행의 메모 버튼으로 열었을 때: 모달이 열리면 메모 칸에 포커스하고 false 로 되돌린다 */
+  focusMemo: boolean;
 }
 
-export const detail = $state<DetailState>({ current: null, stack: [], forward: [] });
+export const detail = $state<DetailState>({ current: null, stack: [], forward: [], focusMemo: false });
 
 /** 메인 화면에서 열기: 히스토리를 비우고 시작 */
 export function openDetail(id: string) {

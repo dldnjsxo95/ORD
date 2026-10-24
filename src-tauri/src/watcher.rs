@@ -196,3 +196,32 @@ pub fn get_database(state: State<'_, AppState>) -> Database {
 pub fn simulate(state: State<'_, AppState>, units: BTreeMap<String, u32>, gold: Option<i64>, wood: Option<i64>) -> Vec<ComboStatus> {
     evaluate(&state.db, &units, gold, wood)
 }
+
+/// 유닛 메모 파일: %LOCALAPPDATA%\ord-helper\memos.json (앱을 다시 빌드·설치해도 남는다)
+fn memos_path() -> Result<PathBuf, String> {
+    let dir = default_dir().map(PathBuf::from).ok_or("로컬 앱 데이터 폴더를 찾을 수 없습니다")?;
+    std::fs::create_dir_all(&dir).map_err(|e| format!("{} 생성 실패: {e}", dir.display()))?;
+    Ok(dir.join("memos.json"))
+}
+
+/// 유닛 id → 메모 본문. 파일이 없으면 빈 표.
+#[tauri::command]
+pub fn load_memos() -> Result<BTreeMap<String, String>, String> {
+    let path = memos_path()?;
+    if !path.exists() {
+        return Ok(BTreeMap::new());
+    }
+    let text = std::fs::read_to_string(&path).map_err(|e| format!("{} 읽기 실패: {e}", path.display()))?;
+    serde_json::from_str(&text).map_err(|e| format!("{} 해석 실패: {e}", path.display()))
+}
+
+/// 전체 메모를 덮어쓴다 (임시 파일에 쓰고 교체해 깨진 파일이 남지 않게).
+#[tauri::command]
+pub fn save_memos(memos: BTreeMap<String, String>) -> Result<(), String> {
+    let path = memos_path()?;
+    let tmp = path.with_extension("json.tmp");
+    let text = serde_json::to_string_pretty(&memos).map_err(|e| e.to_string())?;
+    std::fs::write(&tmp, text).map_err(|e| format!("{} 쓰기 실패: {e}", tmp.display()))?;
+    std::fs::rename(&tmp, &path).map_err(|e| format!("{} 교체 실패: {e}", path.display()))?;
+    Ok(())
+}

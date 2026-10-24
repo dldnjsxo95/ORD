@@ -4,12 +4,11 @@
 <script lang="ts">
   import { ui, setBottomVisible, setTheme, setSettingsOpen } from '$lib/stores/ui.svelte';
   import IconButton from '$lib/ui/IconButton.svelte';
-  import Icon from '$lib/ui/Icon.svelte';
   import WindowControls from './WindowControls.svelte';
 </script>
 
 <header class="titlebar" data-tauri-drag-region>
-  <span class="mark" data-tauri-drag-region><Icon name="layers" size={16} /></span>
+  <span class="mark" data-tauri-drag-region><img class="logo" src="/app-mark.png" alt="" width="16" height="16" draggable="false" /></span>
   <span class="title" data-tauri-drag-region>ORD Helper <span class="v">2.323</span></span>
   <span class="spacer" data-tauri-drag-region></span>
   <div class="tools">
@@ -27,6 +26,7 @@
     transition: background-color var(--dur-1), color var(--dur-1);
   }
   .mark { display: inline-flex; margin-right: var(--sp-2); color: var(--c-accent-text); }
+  .mark .logo { border-radius: 3px; }
   :root[data-window="inactive"] .mark { color: var(--c-titlebar-fg); }
   .title { font-size: var(--fs-2); color: var(--c-titlebar-fg); opacity: 0.85; white-space: nowrap; margin-right: var(--sp-3); }
   .v { color: var(--c-accent-text); }
